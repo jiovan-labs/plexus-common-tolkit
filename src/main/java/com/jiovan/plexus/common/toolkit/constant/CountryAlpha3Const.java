@@ -48,7 +48,7 @@ public abstract class CountryAlpha3Const {
     public static final String AIA = "AIA";    // $NON-NLS-1$
 
     /**
-     * Aaland Island
+     * Åland Islands
      */
     public static final String ALA = "ALA";    // $NON-NLS-1$
 
@@ -318,7 +318,7 @@ public abstract class CountryAlpha3Const {
     public static final String CYP = "CYP";    // $NON-NLS-1$
 
     /**
-     * Czech Repoublic
+     * Czech Republic
      */
     public static final String CZE = "CZE";    // $NON-NLS-1$
 
@@ -513,7 +513,7 @@ public abstract class CountryAlpha3Const {
     public static final String HKG = "HKG";    // $NON-NLS-1$
 
     /**
-     * Heard islands and Mc Donald Islands
+     * Heard islands and McDonald Islands
      */
     public static final String HMD = "HMD";    // $NON-NLS-1$
 
@@ -778,7 +778,7 @@ public abstract class CountryAlpha3Const {
     public static final String MNG = "MNG";    // $NON-NLS-1$
 
     /**
-     * Northern Marianas
+     * Northern Asians
      */
     public static final String MNP = "MNP";    // $NON-NLS-1$
 
@@ -1013,7 +1013,7 @@ public abstract class CountryAlpha3Const {
     public static final String SHN = "SHN";    // $NON-NLS-1$
 
     /**
-     * Svalbard and jan Mayen Islands
+     * Svalbard and jan Mayne Island
      */
     public static final String SJM = "SJM";    // $NON-NLS-1$
 
@@ -1023,7 +1023,7 @@ public abstract class CountryAlpha3Const {
     public static final String SLB = "SLB";    // $NON-NLS-1$
 
     /**
-     * Sierra leone
+     * Sierra Leone
      */
     public static final String SLE = "SLE";    // $NON-NLS-1$
 
@@ -1033,7 +1033,7 @@ public abstract class CountryAlpha3Const {
     public static final String SLV = "SLV";    // $NON-NLS-1$
 
     /**
-     * San Marion
+     * San Marino
      */
     public static final String SMR = "SMR";    // $NON-NLS-1$
 
@@ -1058,7 +1058,7 @@ public abstract class CountryAlpha3Const {
     public static final String SSD = "SSD";    // $NON-NLS-1$
 
     /**
-     * Sao Tome and Principe
+     * São Tomé and Príncipe
      */
     public static final String STP = "STP";    // $NON-NLS-1$
 
@@ -1228,7 +1228,7 @@ public abstract class CountryAlpha3Const {
     public static final String VIR = "VIR";    // $NON-NLS-1$
 
     /**
-     * Viet Nam
+     * Vietnam
      */
     public static final String VNM = "VNM";    // $NON-NLS-1$
 

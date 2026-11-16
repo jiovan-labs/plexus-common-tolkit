@@ -323,7 +323,7 @@ public abstract class StringSubstitutorWraps {
     }
 
     /**
-     * Replaces variables in parenthesis format "(variable)"
+     * Replaces variables in parentheses format "(variable)"
      *
      * @param source The source text containing variables to substitute
      * @param mappings The map containing variable names and their replacement values

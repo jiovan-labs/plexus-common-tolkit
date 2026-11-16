@@ -29,14 +29,27 @@ import java.util.Iterator;
  */
 @SuppressWarnings("unused")
 public record EnumerationIterator<E>(Enumeration<? extends E> enumeration) implements Iterator<E> {
+    /**
+     * Checks whether the iteration has more elements.
+     *
+     * @return {@code true} when another element is available; {@code false} otherwise
+     */
     public boolean hasNext() {
         return enumeration.hasMoreElements();
     }
 
+    /**
+     * Returns the next element of the iteration.
+     *
+     * @return the next element
+     */
     public E next() {
         return enumeration.nextElement();
     }
 
+    /**
+     * Removes the last element returned by the iterator.
+     */
     public void remove() {
         throw new UnsupportedOperationException();
     }

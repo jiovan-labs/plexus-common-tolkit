@@ -17,11 +17,8 @@
 package com.jiovan.plexus.common.toolkit.util;
 
 
-import org.apache.commons.lang3.StringUtils;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import com.jiovan.plexus.common.toolkit.util.FilenamePlainWraps;
-import com.jiovan.plexus.common.toolkit.util.StackTraceWraps;
 import lombok.extern.slf4j.Slf4j;
 
 
@@ -35,7 +32,7 @@ class FilenamePlainWrapsTest {
     @Test
     void appendSlash() {
         String text = FilenamePlainWraps.appendSlash("C:/Windows/System32");    // $NON-NLS-1$
-        boolean result = StringUtils.equals(text, "C:/Windows/System32/");    // $NON-NLS-1$
+        boolean result = StringUtilsWraps.equals(text, "C:/Windows/System32/");    // $NON-NLS-1$
         log.info("{}: {}", StackTraceWraps.getExecutingMethodName(), result);
         Assertions.assertTrue(result);
     }
@@ -43,7 +40,7 @@ class FilenamePlainWrapsTest {
     @Test
     void removeEndSlashes() {
         String text = FilenamePlainWraps.removeEndSlashes("C:\\Windows\\System32\\");    // $NON-NLS-1$
-        boolean result = StringUtils.equals(text, "C:\\Windows\\System32");    // $NON-NLS-1$
+        boolean result = StringUtilsWraps.equals(text, "C:\\Windows\\System32");    // $NON-NLS-1$
         log.info("{}: {}", StackTraceWraps.getExecutingMethodName(), result);
         Assertions.assertTrue(result);
     }
@@ -52,6 +49,6 @@ class FilenamePlainWrapsTest {
     void removeExtensionDot() {
         String result = FilenamePlainWraps.removeExtensionDot("..tmp");    // $NON-NLS-1$
         log.info("{}: {}", StackTraceWraps.getExecutingMethodName(), result);
-        Assertions.assertTrue(StringUtils.equals(result, "tmp"));    // $NON-NLS-1$
+        Assertions.assertTrue(StringUtilsWraps.equals(result, "tmp"));    // $NON-NLS-1$
     }
 }

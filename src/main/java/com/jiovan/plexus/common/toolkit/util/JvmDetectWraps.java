@@ -387,6 +387,7 @@ public abstract class JvmDetectWraps {
      * @return Java version (e.g., "17.0.1")
      */
     @Nonnull
+    @SuppressWarnings("SameReturnValue")
     public static String getJavaVersion() {
         return SystemUtils.JAVA_VERSION;
     }
@@ -397,6 +398,7 @@ public abstract class JvmDetectWraps {
      * @return Java spec version (e.g., "17")
      */
     @Nonnull
+    @SuppressWarnings("SameReturnValue")
     public static String getJavaSpecVersion() {
         return SystemUtils.JAVA_SPECIFICATION_VERSION;
     }
@@ -481,6 +483,6 @@ public abstract class JvmDetectWraps {
      */
     public static boolean isJvmDebugMode() {
         List<String> inputArgs = getJvmInputArguments();
-        return inputArgs.stream().anyMatch(arg -> StringUtils.containsAnyIgnoreCase(arg, "-agentlib:jdwp", "-Xdebug"));    // $NON-NLS-1$ // $NON-NLS-2$
+        return inputArgs.stream().anyMatch(arg -> StringUtilsWraps.containsAnyIgnoreCase(arg, "-agentlib:jdwp", "-Xdebug"));    // $NON-NLS-1$ // $NON-NLS-2$
     }
 }

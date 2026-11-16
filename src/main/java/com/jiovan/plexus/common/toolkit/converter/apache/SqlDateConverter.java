@@ -44,10 +44,23 @@ import lombok.Setter;
 public class SqlDateConverter extends DateTimeConverter<Date> {
     private String[] formats = TemporalFormatCombo.ALL_DATETIME_DATES;
 
+    /**
+     * Creates a converter with the given default value.
+     *
+     * @param defaultValue the value returned when conversion fails, or null when absent
+     */
     public SqlDateConverter(@Nullable Date defaultValue) {
         super(defaultValue);
     }
 
+    /**
+     * Converts the given value to the requested date type. Tries the configured date-time patterns and wraps the result as an SQL date.
+     *
+     * @param type the target type, which must be assignable from Date
+     * @param value the value to convert, or null when absent
+     * @return the converted value, or null when the value is null
+     * @throws Exception when the value cannot be converted
+     */
     @Override
     protected <T> T convertToType(@Nonnull Class<T> type, @Nullable Object value) throws Exception {
         if (value == null) {
@@ -64,6 +77,11 @@ public class SqlDateConverter extends DateTimeConverter<Date> {
         return super.convertToType(type, value);
     }
 
+    /**
+     * Returns the default target type of this converter.
+     *
+     * @return the Date class
+     */
     @Override
     protected Class<Date> getDefaultType() {
         return Date.class;

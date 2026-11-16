@@ -33,16 +33,30 @@ import jakarta.annotation.Nullable;
 public class HtmlScriptStruct extends HtmlTagStruct {
     public static final String DEFAULT_TYPE = "text/javascript";    // $NON-NLS-1$
 
+    /**
+     * Creates a script structure with the default type.
+     */
     public HtmlScriptStruct() {
         super.setTag(HTML.Tag.SCRIPT);
         super.addAttribute(HTML.Attribute.TYPE, DEFAULT_TYPE);
     }
 
+    /**
+     * Creates a script structure with the given script contents.
+     *
+     * @param contents the script or style lines, or null when absent
+     */
     public HtmlScriptStruct(@Nullable List<String> contents) {
         this();
         super.setSubNodes(contents);
     }
 
+    /**
+     * Creates a script structure with the given source URLs.
+     *
+     * @param src the primary script URL, or null when absent
+     * @param lowsrc the fallback script URL, or null when absent
+     */
     public HtmlScriptStruct(@Nullable String src, @Nullable String lowsrc) {
         this();
         super.addAttribute(HTML.Attribute.SRC, src);

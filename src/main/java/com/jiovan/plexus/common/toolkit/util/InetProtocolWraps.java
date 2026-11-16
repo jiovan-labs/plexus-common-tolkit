@@ -84,7 +84,7 @@ public abstract class InetProtocolWraps {
      * @return {@code true} if the path starts with the specified protocol, {@code false} otherwise
      */
     public static boolean isProtocol(@Nullable String path, @Nullable InetProtocolType type) {
-        return type != null && StringUtils.startsWithIgnoreCase(path, StringUtils.join(type.getValue(), SymbolVariantConst.PROTOCOL_DELIMITER));
+        return type != null && StringUtilsWraps.startsWithIgnoreCase(path, StringUtils.join(type.getValue(), SymbolVariantConst.PROTOCOL_DELIMITER));
     }
 
     /**
@@ -95,7 +95,7 @@ public abstract class InetProtocolWraps {
      * @return {@code true} if the path starts with a protocol prefix (e.g., http://, https://, ftp://, etc.), {@code false} otherwise
      */
     public static boolean startsWithProtocol(@Nullable String path) {
-        return StringUtils.isNotBlank(path) && Arrays.stream(InetProtocolType.class.getEnumConstants()).anyMatch(item -> StringUtils.startsWithIgnoreCase(path, StringUtils.join(item.getValue(), SymbolVariantConst.PROTOCOL_DELIMITER)));
+        return StringUtils.isNotBlank(path) && Arrays.stream(InetProtocolType.class.getEnumConstants()).anyMatch(item -> StringUtilsWraps.startsWithIgnoreCase(path, StringUtils.join(item.getValue(), SymbolVariantConst.PROTOCOL_DELIMITER)));
     }
 
     /**

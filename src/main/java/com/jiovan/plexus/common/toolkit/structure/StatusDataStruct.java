@@ -42,17 +42,37 @@ import lombok.NoArgsConstructor;
 public class StatusDataStruct<T> extends DataTextStruct<T> {
     private Integer status;
 
+    /**
+     * Creates a structure with the given status and data.
+     *
+     * @param status the status code, or null when absent
+     * @param data the data payload, or null when absent
+     */
     public StatusDataStruct(@Nullable Integer status, @Nullable T data) {
         this.status = status;
         super.setData(data);
     }
 
+    /**
+     * Creates a structure with the given status, data, and text messages.
+     *
+     * @param status the status code, or null when absent
+     * @param data the data payload, or null when absent
+     * @param texts the text messages, or null when absent
+     */
     public StatusDataStruct(@Nullable Integer status, @Nullable T data, @Nullable String... texts) {
         this.status = status;
         super.setData(data);
         super.addText(texts);
     }
 
+    /**
+     * Creates a structure with the given status, data, and text messages.
+     *
+     * @param status the status code, or null when absent
+     * @param data the data payload, or null when absent
+     * @param texts the text messages, or null when absent
+     */
     public StatusDataStruct(@Nullable Integer status, @Nullable T data, @Nullable Collection<String> texts) {
         this.status = status;
         super.setData(data);

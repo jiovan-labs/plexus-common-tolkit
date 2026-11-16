@@ -39,7 +39,7 @@ public abstract class CharSequenceWraps {
      * @return empty CharSequence if equal, original sequence otherwise
      */
     public static CharSequence emptyIfEquals(@Nullable CharSequence sequence, @Nullable CharSequence comparison) {
-        return StringUtils.equals(sequence, comparison) ? StringUtils.EMPTY : sequence;
+        return StringUtilsWraps.equals(sequence, comparison) ? StringUtils.EMPTY : sequence;
     }
 
     /**
@@ -50,7 +50,7 @@ public abstract class CharSequenceWraps {
      * @return empty CharSequence if equal ignoring case, original sequence otherwise
      */
     public static CharSequence emptyIfEqualsIgnoreCase(@Nullable CharSequence sequence, @Nullable CharSequence comparison) {
-        return StringUtils.equalsIgnoreCase(sequence, comparison) ? StringUtils.EMPTY : sequence;
+        return StringUtilsWraps.equalsIgnoreCase(sequence, comparison) ? StringUtils.EMPTY : sequence;
     }
 
     /**

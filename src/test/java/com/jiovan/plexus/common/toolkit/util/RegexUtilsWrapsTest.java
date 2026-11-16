@@ -17,13 +17,11 @@
 package com.jiovan.plexus.common.toolkit.util;
 
 
-import org.apache.commons.lang3.StringUtils;
+import java.util.regex.Pattern;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import com.jiovan.plexus.common.toolkit.constant.CharVariantConst;
 import com.jiovan.plexus.common.toolkit.constant.RegexVariantConst;
-import com.jiovan.plexus.common.toolkit.util.RegexUtilsWraps;
-import com.jiovan.plexus.common.toolkit.util.StackTraceWraps;
 import lombok.extern.slf4j.Slf4j;
 
 
@@ -59,9 +57,27 @@ class RegexUtilsWrapsTest {
     }
 
     @Test
+    void removeAllPattern() {
+        StringBuilder text = new StringBuilder("ABCabc123abc");    // $NON-NLS-1$
+        Assertions.assertEquals("ABC123", RegexUtilsWraps.removeAll(text, Pattern.compile("[a-z]")));    // $NON-NLS-1$ // $NON-NLS-2$
+    }
+
+    @Test
+    void replaceAllPattern() {
+        StringBuilder text = new StringBuilder("ABCabc123abc");    // $NON-NLS-1$
+        Assertions.assertEquals("ABC_123_", RegexUtilsWraps.replaceAll(text, Pattern.compile("[a-z]+"), "_"));    // $NON-NLS-1$ // $NON-NLS-2$ // $NON-NLS-3$
+    }
+
+    @Test
+    void replaceFirstPattern() {
+        StringBuilder text = new StringBuilder("ABCabc123abc");    // $NON-NLS-1$
+        Assertions.assertEquals("ABC_123abc", RegexUtilsWraps.replaceFirst(text, Pattern.compile("[a-z]+"), "_"));    // $NON-NLS-1$ // $NON-NLS-2$ // $NON-NLS-3$
+    }
+
+    @Test
     void reserveNumeric() {
         String text = RegexUtilsWraps.reserveNumeric("ABC_123_456-DEF");    // $NON-NLS-1$
-        boolean result = StringUtils.equals(text, "123456");    // $NON-NLS-1$
+        boolean result = StringUtilsWraps.equals(text, "123456");    // $NON-NLS-1$
         log.info("{}: {}", StackTraceWraps.getExecutingMethodName(), result);
         Assertions.assertTrue(result);
     }
@@ -69,7 +85,7 @@ class RegexUtilsWrapsTest {
     @Test
     void reserveNumericHyphen() {
         String text = RegexUtilsWraps.reserveNumericHyphen("ABC_123_456-DEF");    // $NON-NLS-1$
-        boolean result = StringUtils.equals(text, "123456-");    // $NON-NLS-1$
+        boolean result = StringUtilsWraps.equals(text, "123456-");    // $NON-NLS-1$
         log.info("{}: {}", StackTraceWraps.getExecutingMethodName(), result);
         Assertions.assertTrue(result);
     }
@@ -77,7 +93,7 @@ class RegexUtilsWrapsTest {
     @Test
     void reserveWord() {
         String text = RegexUtilsWraps.reserveWord("ABC#_123@_456-DEF");    // $NON-NLS-1$
-        boolean result = StringUtils.equals(text, "ABC_123_456DEF");    // $NON-NLS-1$
+        boolean result = StringUtilsWraps.equals(text, "ABC_123_456DEF");    // $NON-NLS-1$
         log.info("{}: {}", StackTraceWraps.getExecutingMethodName(), result);
         Assertions.assertTrue(result);
     }
@@ -85,7 +101,7 @@ class RegexUtilsWrapsTest {
     @Test
     void reserveWordHyphen() {
         String text = RegexUtilsWraps.reserveWordHyphen("ABC#_123@_456-DEF");    // $NON-NLS-1$
-        boolean result = StringUtils.equals(text, "ABC_123_456-DEF");    // $NON-NLS-1$
+        boolean result = StringUtilsWraps.equals(text, "ABC_123_456-DEF");    // $NON-NLS-1$
         log.info("{}: {}", StackTraceWraps.getExecutingMethodName(), result);
         Assertions.assertTrue(result);
     }

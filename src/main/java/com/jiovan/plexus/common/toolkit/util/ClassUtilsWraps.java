@@ -41,21 +41,53 @@ import com.jiovan.plexus.common.toolkit.constant.CharVariantConst;
  */
 @SuppressWarnings({"unused", "BooleanMethodIsAlwaysInverted", "UnusedReturnValue"})
 public abstract class ClassUtilsWraps {
+    /**
+     * Checks whether all the given objects are instances of the given class.
+     *
+     * @param superclass The superclass to check
+     * @param objects The objects to check
+     *
+     * @return true when every object is an instance; false otherwise
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static boolean allInstance(@Nullable Class<?> superclass, @Nullable Object... objects) {
         return superclass != null && ArrayUtils.isNotEmpty(objects) && Arrays.stream(objects).allMatch(superclass::isInstance);
     }
 
+    /**
+     * Checks whether the object is an instance of all the given classes.
+     *
+     * @param object The object to check
+     * @param superclasses The superclasses to check
+     *
+     * @return true when every class matches the object; false otherwise
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static boolean allInstanceOf(@Nullable Object object, @Nullable Class<?>... superclasses) {
         return object != null && ArrayUtils.isNotEmpty(superclasses) && Arrays.stream(superclasses).allMatch(item -> item != null && item.isInstance(object));
     }
 
+    /**
+     * Checks whether any of the given objects is an instance of the given class.
+     *
+     * @param superclass The superclass to check
+     * @param objects The objects to check
+     *
+     * @return true when at least one object is an instance; false otherwise
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static boolean anyInstance(@Nullable Class<?> superclass, @Nullable Object... objects) {
         return superclass != null && ArrayUtils.isNotEmpty(objects) && Arrays.stream(objects).filter(Objects::nonNull).anyMatch(superclass::isInstance);
     }
 
+    /**
+     * Checks whether the object is an instance of the given classes.
+     *
+     * @param object The object to check
+     * @param superclasses The superclasses to check
+     *
+     * @return true when at least one class matches the object; false otherwise
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static boolean anyInstanceOf(@Nullable Object object, @Nullable Class<?>... superclasses) {
         return object != null && ArrayUtils.isNotEmpty(superclasses) && Arrays.stream(superclasses).filter(Objects::nonNull).anyMatch(item -> item.isInstance(object));
@@ -74,31 +106,79 @@ public abstract class ClassUtilsWraps {
         return one.getClass() == two.getClass();
     }
 
+    /**
+     * Checks whether the class equals any of the given classes.
+     *
+     * @param target The target collection
+     * @param comparisons The items to look for
+     *
+     * @return true when a match is found; false otherwise
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static boolean equalsAnyClasses(@Nullable Class<?> target, @Nullable Class<?>... comparisons) {
         return target != null && ArrayUtils.isNotEmpty(comparisons) && Arrays.stream(comparisons).filter(Objects::nonNull).anyMatch(comparison -> comparison == target);
     }
 
+    /**
+     * Checks whether the class equals any of the given classes.
+     *
+     * @param target The target collection
+     * @param comparisons The items to look for
+     *
+     * @return true when a match is found; false otherwise
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static boolean equalsAnyClasses(@Nullable Object target, @Nullable Object... comparisons) {
         return target != null && ArrayUtils.isNotEmpty(comparisons) && Arrays.stream(comparisons).filter(Objects::nonNull).anyMatch(comparison -> comparison.getClass() == target.getClass());
     }
 
+    /**
+     * Loads a class by its fully qualified name.
+     *
+     * @param className The fully qualified class name
+     *
+     * @return the loaded class
+     */
     @Nullable
     public static Class<?> forName(@Nullable String className) throws ClassNotFoundException {
         return forName(className, null);
     }
 
+    /**
+     * Loads a class by its fully qualified name.
+     *
+     * @param className The fully qualified class name
+     * @param classLoader The class loader to use
+     *
+     * @return the loaded class
+     */
     @Nullable
     public static Class<?> forName(@Nullable String className, @Nullable ClassLoader classLoader) throws ClassNotFoundException {
         return StringUtils.isBlank(className) ? null : ClassUtils.getClass(classLoader, className);
     }
 
+    /**
+     * Loads a class by name and casts it to the expected type.
+     *
+     * @param className The fully qualified class name
+     * @param expectType The expected component type
+     *
+     * @return the loaded class, or null when it cannot be loaded or cast
+     */
     @Nullable
     public static <T> Class<? extends T> forNameAs(@Nullable String className, @Nullable Class<T> expectType) throws ClassNotFoundException {
         return forNameAs(className, null, expectType);
     }
 
+    /**
+     * Loads a class by name and casts it to the expected type.
+     *
+     * @param className The fully qualified class name
+     * @param classLoader The class loader to use
+     * @param expectType The expected component type
+     *
+     * @return the loaded class, or null when it cannot be loaded or cast
+     */
     @Nullable
     @SuppressWarnings("unchecked")
     public static <T> Class<T> forNameAs(@Nullable String className, @Nullable ClassLoader classLoader, @Nullable Class<T> expectType) throws ClassNotFoundException {
@@ -109,11 +189,26 @@ public abstract class ClassUtilsWraps {
         return ClassUtils.isAssignable(result, expectType) ? (Class<T>) result : null;
     }
 
+    /**
+     * Loads a class by name without throwing exceptions.
+     *
+     * @param className The fully qualified class name
+     *
+     * @return the loaded class, or null when it cannot be loaded
+     */
     @Nullable
     public static Class<?> forNameQuietly(@Nullable String className) {
         return forNameQuietly(className, null);
     }
 
+    /**
+     * Loads a class by name without throwing exceptions.
+     *
+     * @param className The fully qualified class name
+     * @param classLoader The class loader to use
+     *
+     * @return the loaded class, or null when it cannot be loaded
+     */
     @Nullable
     public static Class<?> forNameQuietly(@Nullable String className, @Nullable ClassLoader classLoader) {
         try {
@@ -123,11 +218,28 @@ public abstract class ClassUtilsWraps {
         return null;
     }
 
+    /**
+     * Loads a class by name without throwing exceptions.
+     *
+     * @param className The fully qualified class name
+     * @param expectType The expected component type
+     *
+     * @return the loaded class, or null when it cannot be loaded or cast
+     */
     @Nullable
     public static <T> Class<? extends T> forNameAsQuietly(@Nullable String className, @Nullable Class<T> expectType) {
         return forNameAsQuietly(className, null, expectType);
     }
 
+    /**
+     * Loads a class by name without throwing exceptions.
+     *
+     * @param className The fully qualified class name
+     * @param classLoader The class loader to use
+     * @param expectType The expected component type
+     *
+     * @return the loaded class, or null when it cannot be loaded or cast
+     */
     @Nullable
     public static <T> Class<T> forNameAsQuietly(@Nullable String className, @Nullable ClassLoader classLoader, @Nullable Class<T> expectType) {
         try {
@@ -137,6 +249,13 @@ public abstract class ClassUtilsWraps {
         return null;
     }
 
+    /**
+     * Returns the class of the given object.
+     *
+     * @param object The object to check
+     *
+     * @return the object class, or null when the object is null
+     */
     @Nullable
     public static Class<?> getObjectClass(@Nullable Object object) {
         return (object == null) ? null : object.getClass();
@@ -159,6 +278,13 @@ public abstract class ClassUtilsWraps {
         return result;
     }
 
+    /**
+     * Returns the canonical package path for the given class or package name.
+     *
+     * @param clazz The target class
+     *
+     * @return the canonical package path, or null when it cannot be resolved
+     */
     @Nullable
     public static String getPackageCanonicalPath(@Nullable Class<?> clazz) {
         return getPackageCanonicalPath(clazz, 0);
@@ -190,6 +316,13 @@ public abstract class ClassUtilsWraps {
         return null;
     }
 
+    /**
+     * Returns the canonical package path for the given class or package name.
+     *
+     * @param source The source collection
+     *
+     * @return the canonical package path, or null when it cannot be resolved
+     */
     @Nullable
     public static String getPackageCanonicalPath(@Nullable Object source) {
         return getPackageCanonicalPath(source, 0);
@@ -208,6 +341,13 @@ public abstract class ClassUtilsWraps {
         return (source == null) ? null : getPackageCanonicalPath(source.getClass(), subtracts);
     }
 
+    /**
+     * Returns the short canonical name of the given class.
+     *
+     * @param source The source collection
+     *
+     * @return the short canonical name, or null when it cannot be resolved
+     */
     @Nullable
     public static String getShortCanonicalName(@Nullable Object source) {
         return ClassUtils.getShortCanonicalName(source, null);
@@ -230,40 +370,103 @@ public abstract class ClassUtilsWraps {
         return result.isEmpty() ? null : result;
     }
 
+    /**
+     * Returns all superclasses of the given class up to Object.
+     *
+     * @param clazz The target class
+     *
+     * @return a list of superclasses
+     */
     @Nullable
     public static List<Class<?>> getSuperclassesUntilObject(@Nullable Class<?> clazz) {
         return getSuperclassesUntil(clazz, Object.class);
     }
 
+    /**
+     * Checks whether the given class has the specified annotation.
+     *
+     * @param clazz The target class
+     * @param annotation The annotation type
+     *
+     * @return true when the annotation is present; false otherwise
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static boolean hasAnnotation(@Nullable Class<?> clazz, @Nullable Class<? extends Annotation> annotation) {
         return ObjectUtils.allNotNull(clazz, annotation) && clazz.getAnnotation(annotation) != null;
     }
 
+    /**
+     * Runs an action when the class is present.
+     *
+     * @param className The fully qualified class name
+     * @param action The action to perform
+     */
     public static void ifPresent(@Nullable String className, @Nullable Consumer<String> action) {
         ifPresent(className, null, action);
     }
 
+    /**
+     * Runs an action when the class is present.
+     *
+     * @param className The fully qualified class name
+     * @param action The action to perform
+     */
     public static void ifPresent(@Nullable String className, @Nullable Runnable action) {
         ifPresent(className, null, action);
     }
 
+    /**
+     * Runs an action when the class is present.
+     *
+     * @param className The fully qualified class name
+     * @param classLoader The class loader to use
+     * @param action The action to perform
+     */
     public static void ifPresent(@Nullable String className, @Nullable ClassLoader classLoader, @Nullable Consumer<String> action) {
         ifPresentOrElse(className, classLoader, action, null);
     }
 
+    /**
+     * Runs an action when the class is present.
+     *
+     * @param className The fully qualified class name
+     * @param classLoader The class loader to use
+     * @param action The action to perform
+     */
     public static void ifPresent(@Nullable String className, @Nullable ClassLoader classLoader, @Nullable Runnable action) {
         ifPresentOrElse(className, classLoader, action, null);
     }
 
+    /**
+     * Runs one of two actions depending on whether the class is present.
+     *
+     * @param className The fully qualified class name
+     * @param presentAction The action to run when the condition is satisfied
+     * @param absentAction The action to run when the condition is not satisfied
+     */
     public static void ifPresentOrElse(@Nullable String className, @Nullable Consumer<String> presentAction, @Nullable Consumer<String> absentAction) {
         ifPresentOrElse(className, null, presentAction, absentAction);
     }
 
+    /**
+     * Runs one of two actions depending on whether the class is present.
+     *
+     * @param className The fully qualified class name
+     * @param presentAction The action to run when the condition is satisfied
+     * @param absentAction The action to run when the condition is not satisfied
+     */
     public static void ifPresentOrElse(@Nullable String className, @Nullable Runnable presentAction, @Nullable Runnable absentAction) {
         ifPresentOrElse(className, null, presentAction, absentAction);
     }
 
+    /**
+     * Runs one of two actions depending on whether the class is present.
+     *
+     * @param className The fully qualified class name
+     * @param classLoader The class loader to use
+     * @param presentAction The action to run when the condition is satisfied
+     * @param absentAction The action to run when the condition is not satisfied
+     */
     public static void ifPresentOrElse(@Nullable String className, @Nullable ClassLoader classLoader, @Nullable Consumer<String> presentAction, @Nullable Consumer<String> absentAction) {
         if (isPresent(className, classLoader)) {
             if (presentAction != null) {
@@ -276,6 +479,14 @@ public abstract class ClassUtilsWraps {
         }
     }
 
+    /**
+     * Runs one of two actions depending on whether the class is present.
+     *
+     * @param className The fully qualified class name
+     * @param classLoader The class loader to use
+     * @param presentAction The action to run when the condition is satisfied
+     * @param absentAction The action to run when the condition is not satisfied
+     */
     public static void ifPresentOrElse(@Nullable String className, @Nullable ClassLoader classLoader, @Nullable Runnable presentAction, @Nullable Runnable absentAction) {
         if (isPresent(className, classLoader)) {
             if (presentAction != null) {
@@ -288,55 +499,150 @@ public abstract class ClassUtilsWraps {
         }
     }
 
+    /**
+     * Runs an action when the class is not present.
+     *
+     * @param className The fully qualified class name
+     * @param action The action to perform
+     */
     public static void ifNotPresent(@Nullable String className, @Nullable Consumer<String> action) {
         ifNotPresent(className, null, action);
     }
 
+    /**
+     * Runs an action when the class is not present.
+     *
+     * @param className The fully qualified class name
+     * @param action The action to perform
+     */
     public static void ifNotPresent(@Nullable String className, @Nullable Runnable action) {
         ifNotPresent(className, null, action);
     }
 
+    /**
+     * Runs an action when the class is not present.
+     *
+     * @param className The fully qualified class name
+     * @param classLoader The class loader to use
+     * @param action The action to perform
+     */
     public static void ifNotPresent(@Nullable String className, @Nullable ClassLoader classLoader, @Nullable Consumer<String> action) {
         if (isNotPresent(className, classLoader) && action != null) {
             action.accept(className);
         }
     }
 
+    /**
+     * Runs an action when the class is not present.
+     *
+     * @param className The fully qualified class name
+     * @param classLoader The class loader to use
+     * @param action The action to perform
+     */
     public static void ifNotPresent(@Nullable String className, @Nullable ClassLoader classLoader, @Nullable Runnable action) {
         if (isNotPresent(className, classLoader) && action != null) {
             action.run();
         }
     }
 
+    /**
+     * Checks whether the subclass can be assigned to the superclass.
+     *
+     * @param superclass The superclass to check
+     * @param subclass The subclass to check
+     *
+     * @return true when the assignment is valid; false otherwise
+     */
     public static boolean isAssignable(@Nullable Class<?> superclass, @Nullable Class<?> subclass) {
         return ClassUtils.isAssignable(subclass, superclass);
     }
 
+    /**
+     * Checks whether the subclass can be assigned to the superclass.
+     *
+     * @param superclass The superclass to check
+     * @param subclassName The fully qualified subclass name
+     *
+     * @return true when the assignment is valid; false otherwise
+     */
     public static boolean isAssignable(@Nullable String superclass, @Nullable String subclassName) {
         return isAssignable(superclass, subclassName, null);
     }
 
+    /**
+     * Checks whether the subclass can be assigned to the superclass.
+     *
+     * @param superclass The superclass to check
+     * @param subclassName The fully qualified subclass name
+     * @param classLoader The class loader to use
+     *
+     * @return true when the assignment is valid; false otherwise
+     */
     public static boolean isAssignable(@Nullable String superclass, @Nullable String subclassName, @Nullable ClassLoader classLoader) {
         return StringUtils.isNoneBlank(superclass, subclassName) && isAssignable(forNameQuietly(superclass, classLoader), forNameQuietly(subclassName, classLoader));
     }
 
+    /**
+     * Checks whether the value can be assigned to the given class.
+     *
+     * @param superclass The superclass to check
+     * @param value The value to check
+     *
+     * @return true when the value is assignable; false otherwise
+     */
     public static boolean isAssignableValue(@Nullable Class<?> superclass, @Nullable Object value) {
         return isAssignableValue(superclass, value, true);
     }
 
+    /**
+     * Checks whether the value can be assigned to the given class.
+     *
+     * @param superclass The superclass to check
+     * @param value The value to check
+     * @param autoboxing Whether autoboxing is allowed
+     *
+     * @return true when the value is assignable; false otherwise
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static boolean isAssignableValue(@Nullable Class<?> superclass, @Nullable Object value, boolean autoboxing) {
         return superclass == null || ClassUtils.isAssignable(value.getClass(), superclass, autoboxing);
     }
 
+    /**
+     * Checks whether the value can be assigned to the given class.
+     *
+     * @param superclass The superclass to check
+     * @param value The value to check
+     *
+     * @return true when the value is assignable; false otherwise
+     */
     public static boolean isAssignableValue(@Nullable String superclass, @Nullable Object value) {
         return isAssignableValue(superclass, value, true, null);
     }
 
+    /**
+     * Checks whether the value can be assigned to the given class.
+     *
+     * @param superclass The superclass to check
+     * @param value The value to check
+     * @param autoboxing Whether autoboxing is allowed
+     *
+     * @return true when the value is assignable; false otherwise
+     */
     public static boolean isAssignableValue(@Nullable String superclass, @Nullable Object value, boolean autoboxing) {
         return isAssignableValue(superclass, value, autoboxing, null);
     }
 
+    /**
+     * Checks whether the value can be assigned to the given class.
+     *
+     * @param superclass The superclass to check
+     * @param value The value to check
+     * @param autoboxing Whether autoboxing is allowed
+     * @param classLoader The class loader to use
+     *
+     * @return true when the value is assignable; false otherwise
+     */
     public static boolean isAssignableValue(@Nullable String superclass, @Nullable Object value, boolean autoboxing, @Nullable ClassLoader classLoader) {
         return StringUtils.isNotBlank(superclass) && ClassUtils.isAssignable(getObjectClass(value), forNameQuietly(superclass, classLoader), autoboxing);
     }
@@ -360,10 +666,25 @@ public abstract class ClassUtilsWraps {
         return true;
     }
 
+    /**
+     * Checks whether the class can be loaded.
+     *
+     * @param className The fully qualified class name
+     *
+     * @return true when the class is present; false otherwise
+     */
     public static boolean isPresent(@Nullable String className) {
         return isPresent(className, null);
     }
 
+    /**
+     * Checks whether the class can be loaded.
+     *
+     * @param className The fully qualified class name
+     * @param classLoader The class loader to use
+     *
+     * @return true when the class is present; false otherwise
+     */
     public static boolean isPresent(@Nullable String className, @Nullable ClassLoader classLoader) {
         if (StringUtils.isBlank(className)) {
             return false;
@@ -376,10 +697,27 @@ public abstract class ClassUtilsWraps {
         return true;
     }
 
+    /**
+     * Checks whether the object is an instance of the named class.
+     *
+     * @param source The source collection
+     * @param superclass The superclass to check
+     *
+     * @return true when the object is an instance; false otherwise
+     */
     public static boolean isInstanceOf(@Nullable Object source, @Nullable String superclass) {
         return isInstanceOf(source, superclass, null);
     }
 
+    /**
+     * Checks whether the object is an instance of the named class.
+     *
+     * @param source The source collection
+     * @param superclass The superclass to check
+     * @param loader The class loader to use
+     *
+     * @return true when the object is an instance; false otherwise
+     */
     public static boolean isInstanceOf(@Nullable Object source, @Nullable String superclass, @Nullable ClassLoader loader) {
         if (source == null || StringUtils.isBlank(superclass)) {
             return false;
@@ -388,19 +726,42 @@ public abstract class ClassUtilsWraps {
         return clazz != null && clazz.isInstance(source);
     }
 
+    /**
+     * Checks whether the class cannot be loaded.
+     *
+     * @param className The fully qualified class name
+     *
+     * @return true when the class is not present; false otherwise
+     */
     public static boolean isNotPresent(@Nullable String className) {
         return !isPresent(className);
     }
 
+    /**
+     * Checks whether the class cannot be loaded.
+     *
+     * @param className The fully qualified class name
+     * @param classLoader The class loader to use
+     *
+     * @return true when the class is not present; false otherwise
+     */
     public static boolean isNotPresent(@Nullable String className, @Nullable ClassLoader classLoader) {
         return !isPresent(className, classLoader);
     }
 
+    /**
+     * Checks whether two classes belong to the same package.
+     *
+     * @param clazz1 The first class
+     * @param clazz2 The second class
+     *
+     * @return true when both classes share a package; false otherwise
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static boolean isSamePackage(@Nullable Class<?> clazz1, @Nullable Class<?> clazz2) {
         if (ObjectUtils.anyNull(clazz1, clazz2) || clazz1.getClassLoader() != clazz2.getClassLoader()) {
             return false;
         }
-        return StringUtils.equals(ClassUtils.getPackageName(clazz1), ClassUtils.getPackageName(clazz2));
+        return StringUtilsWraps.equals(ClassUtils.getPackageName(clazz1), ClassUtils.getPackageName(clazz2));
     }
 }

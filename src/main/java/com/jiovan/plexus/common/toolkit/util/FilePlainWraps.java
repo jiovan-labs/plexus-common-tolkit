@@ -60,6 +60,13 @@ public abstract class FilePlainWraps {
     private static final long GB = MB * 1024L;
     private static final long TB = GB * 1024L;
 
+    /**
+     * Checks whether the path is hidden.
+     *
+     * @param path The path
+     *
+     * @return true when the path is hidden; false otherwise
+     */
     public static boolean isHidden(@Nullable Path path) {
         if (path == null) {
             return false;
@@ -71,6 +78,13 @@ public abstract class FilePlainWraps {
         return false;
     }
 
+    /**
+     * Returns the size of the given file.
+     *
+     * @param path The path
+     *
+     * @return the file size in bytes, or zero when it cannot be determined
+     */
     public static long size(@Nullable Path path) {
         if (path == null) {
             return 0L;
@@ -82,6 +96,13 @@ public abstract class FilePlainWraps {
         return 0L;
     }
 
+    /**
+     * Returns the file size as a human-readable string.
+     *
+     * @param path The path
+     *
+     * @return a human-readable size string
+     */
     public static String sizeToHumanReadable(@Nullable Path path) {
         return sizeToHumanReadable(size(path));
     }
@@ -112,6 +133,13 @@ public abstract class FilePlainWraps {
         return String.format("%.2f TB", bytes / (double) TB);    // $NON-NLS-1$
     }
 
+    /**
+     * Reads all lines from the given file.
+     *
+     * @param path The path
+     *
+     * @return a stream of lines, or null when the file cannot be read
+     */
     @Nullable
     public static Stream<String> lines(@Nullable Path path) {
         if (path == null) {
@@ -124,6 +152,14 @@ public abstract class FilePlainWraps {
         return null;
     }
 
+    /**
+     * Reads all lines from the given file.
+     *
+     * @param path The path
+     * @param charset The character set
+     *
+     * @return a stream of lines, or null when the file cannot be read
+     */
     @Nullable
     public static Stream<String> lines(@Nullable Path path, @Nullable Charset charset) {
         if (path == null) {
@@ -136,6 +172,13 @@ public abstract class FilePlainWraps {
         return null;
     }
 
+    /**
+     * Lists the entries of the given directory.
+     *
+     * @param path The path
+     *
+     * @return a stream of entries, or null when the directory cannot be read
+     */
     @Nullable
     public static Stream<Path> list(@Nullable Path path) {
         if (path == null) {
@@ -148,6 +191,16 @@ public abstract class FilePlainWraps {
         return null;
     }
 
+    /**
+     * Finds paths under the given directory that match the glob pattern.
+     *
+     * @param path The path
+     * @param maxDepth The maximum depth to traverse
+     * @param filter The predicate used to filter results
+     * @param options The options
+     *
+     * @return a stream of matching paths, or null when the search fails
+     */
     @Nullable
     @SuppressWarnings("DataFlowIssue")
     public static Stream<Path> find(@Nullable Path path, int maxDepth, @Nullable BiPredicate<Path, BasicFileAttributes> filter, @Nullable FileVisitOption[] options) {
@@ -161,6 +214,16 @@ public abstract class FilePlainWraps {
         return null;
     }
 
+    /**
+     * Writes bytes to the given file.
+     *
+     * @param path The path
+     * @param lines The lines to write
+     * @param charset The character set
+     * @param options The options
+     *
+     * @return the target path, or null when the write fails
+     */
     @Nullable
     @SuppressWarnings("DataFlowIssue")
     public static Path write(@Nullable Path path, @Nullable Iterable<? extends CharSequence> lines, @Nullable Charset charset, @Nullable OpenOption[] options) {
@@ -174,6 +237,15 @@ public abstract class FilePlainWraps {
         return null;
     }
 
+    /**
+     * Writes bytes to the given file.
+     *
+     * @param path The path
+     * @param bytes The bytes to write
+     * @param options The options
+     *
+     * @return the target path, or null when the write fails
+     */
     @Nullable
     @SuppressWarnings("DataFlowIssue")
     public static Path write(@Nullable Path path, @Nullable byte[] bytes, @Nullable OpenOption[] options) {
@@ -187,6 +259,15 @@ public abstract class FilePlainWraps {
         return null;
     }
 
+    /**
+     * Writes bytes to the given file.
+     *
+     * @param path The path
+     * @param lines The lines to write
+     * @param options The options
+     *
+     * @return the target path, or null when the write fails
+     */
     @Nullable
     @SuppressWarnings("DataFlowIssue")
     public static Path write(@Nullable Path path, @Nullable Iterable<? extends CharSequence> lines, @Nullable OpenOption[] options) {
@@ -200,6 +281,11 @@ public abstract class FilePlainWraps {
         return null;
     }
 
+    /**
+     * Deletes the given path.
+     *
+     * @param path The path
+     */
     public static void delete(@Nullable Path path) {
         if (path == null) {
             return;
@@ -210,6 +296,15 @@ public abstract class FilePlainWraps {
         }
     }
 
+    /**
+     * Copies the source path to the target path.
+     *
+     * @param inputStream The input stream
+     * @param path The path
+     * @param options The options
+     *
+     * @return the target path, or null when the copy fails
+     */
     @SuppressWarnings("DataFlowIssue")
     public static long copy(@Nullable InputStream inputStream, @Nullable Path path, @Nullable CopyOption[] options) {
         if (inputStream == null || path == null) {
@@ -222,6 +317,15 @@ public abstract class FilePlainWraps {
         return 0L;
     }
 
+    /**
+     * Copies the source path to the target path.
+     *
+     * @param source The source path
+     * @param target The target path
+     * @param options The options
+     *
+     * @return the target path, or null when the copy fails
+     */
     @Nullable
     @SuppressWarnings("DataFlowIssue")
     public static Path copy(@Nullable Path source, @Nullable Path target, @Nullable CopyOption[] options) {
@@ -235,6 +339,14 @@ public abstract class FilePlainWraps {
         return null;
     }
 
+    /**
+     * Copies the source path to the target path.
+     *
+     * @param path The path
+     * @param outputStream The output stream
+     *
+     * @return the target path, or null when the copy fails
+     */
     public static long copy(@Nullable Path path, @Nullable OutputStream outputStream) {
         if (path == null || outputStream == null) {
             return 0L;
@@ -246,6 +358,13 @@ public abstract class FilePlainWraps {
         return 0L;
     }
 
+    /**
+     * Reads all bytes from the given file.
+     *
+     * @param path The path
+     *
+     * @return a byte array, or null when the file cannot be read
+     */
     @Nullable
     public static byte[] readAllBytes(@Nullable Path path) {
         if (path == null) {
@@ -258,6 +377,15 @@ public abstract class FilePlainWraps {
         return null;
     }
 
+    /**
+     * Returns a stream that walks the file tree rooted at the given path.
+     *
+     * @param path The path
+     * @param maxDepth The maximum depth to traverse
+     * @param options The options
+     *
+     * @return a stream of paths, or null when the tree cannot be walked
+     */
     @Nullable
     @SuppressWarnings("DataFlowIssue")
     public static Stream<Path> walk(@Nullable Path path, int maxDepth, @Nullable FileVisitOption[] options) {
@@ -271,6 +399,14 @@ public abstract class FilePlainWraps {
         return null;
     }
 
+    /**
+     * Returns a stream that walks the file tree rooted at the given path.
+     *
+     * @param path The path
+     * @param options The options
+     *
+     * @return a stream of paths, or null when the tree cannot be walked
+     */
     @Nullable
     @SuppressWarnings("DataFlowIssue")
     public static Stream<Path> walk(@Nullable Path path, @Nullable FileVisitOption[] options) {
@@ -284,6 +420,14 @@ public abstract class FilePlainWraps {
         return null;
     }
 
+    /**
+     * Checks whether the path exists.
+     *
+     * @param path The path
+     * @param options The options
+     *
+     * @return true when the path exists; false otherwise
+     */
     @SuppressWarnings("DataFlowIssue")
     public static boolean exists(@Nullable Path path, @Nullable LinkOption[] options) {
         if (path == null) {
@@ -296,6 +440,14 @@ public abstract class FilePlainWraps {
         return false;
     }
 
+    /**
+     * Finds the first position where two files differ.
+     *
+     * @param path1 The first path
+     * @param path2 The second path
+     *
+     * @return the mismatch position, or -1 when the files are identical
+     */
     public static long mismatch(@Nullable Path path1, @Nullable Path path2) {
         if (path1 == null || path2 == null) {
             return 0L;
@@ -307,6 +459,14 @@ public abstract class FilePlainWraps {
         return 0L;
     }
 
+    /**
+     * Checks whether the path is a directory.
+     *
+     * @param path The path
+     * @param options The options
+     *
+     * @return true when the path is a directory; false otherwise
+     */
     @SuppressWarnings("DataFlowIssue")
     public static boolean isDirectory(@Nullable Path path, @Nullable LinkOption[] options) {
         if (path == null) {
@@ -319,6 +479,14 @@ public abstract class FilePlainWraps {
         return false;
     }
 
+    /**
+     * Returns the last modified time of the given path.
+     *
+     * @param path The path
+     * @param options The options
+     *
+     * @return the last modified time, or null when it cannot be read
+     */
     @Nullable
     @SuppressWarnings("DataFlowIssue")
     public static FileTime getLastModifiedTime(@Nullable Path path, @Nullable LinkOption[] options) {
@@ -332,6 +500,14 @@ public abstract class FilePlainWraps {
         return null;
     }
 
+    /**
+     * Creates a directory.
+     *
+     * @param path The path
+     * @param attrs The file attributes
+     *
+     * @return the directory path, or null when creation fails
+     */
     @Nullable
     @SuppressWarnings("DataFlowIssue")
     public static Path createDirectory(@Nullable Path path, @Nullable FileAttribute<?>[] attrs) {
@@ -345,6 +521,14 @@ public abstract class FilePlainWraps {
         return null;
     }
 
+    /**
+     * Sets the last modified time of the given path.
+     *
+     * @param path The path
+     * @param time The time value
+     *
+     * @return the result of the operation
+     */
     @Nullable
     public static Path setLastModifiedTime(@Nullable Path path, @Nullable FileTime time) {
         if (path == null || time == null) {
@@ -357,6 +541,16 @@ public abstract class FilePlainWraps {
         return null;
     }
 
+    /**
+     * Creates a temporary file.
+     *
+     * @param path The path
+     * @param prefix The prefix
+     * @param suffix The suffix
+     * @param attrs The file attributes
+     *
+     * @return the temporary file path, or null when creation fails
+     */
     @Nullable
     @SuppressWarnings("DataFlowIssue")
     public static Path createTempFile(@Nullable Path path, @Nullable String prefix, @Nullable String suffix, @Nullable FileAttribute<?>[] attrs) {
@@ -370,6 +564,15 @@ public abstract class FilePlainWraps {
         return null;
     }
 
+    /**
+     * Creates a temporary file.
+     *
+     * @param prefix The prefix
+     * @param suffix The suffix
+     * @param attrs The file attributes
+     *
+     * @return the temporary file path, or null when creation fails
+     */
     @Nullable
     @SuppressWarnings("DataFlowIssue")
     public static Path createTempFile(@Nullable String prefix, @Nullable String suffix, @Nullable FileAttribute<?>[] attrs) {
@@ -380,6 +583,14 @@ public abstract class FilePlainWraps {
         return null;
     }
 
+    /**
+     * Checks whether the path is a regular file.
+     *
+     * @param path The path
+     * @param options The options
+     *
+     * @return true when the path is a regular file; false otherwise
+     */
     @SuppressWarnings("DataFlowIssue")
     public static boolean isRegularFile(@Nullable Path path, @Nullable LinkOption[] options) {
         if (path == null) {
@@ -392,6 +603,14 @@ public abstract class FilePlainWraps {
         return false;
     }
 
+    /**
+     * Opens an input stream for the given file.
+     *
+     * @param path The path
+     * @param options The options
+     *
+     * @return an input stream, or null when the file cannot be opened
+     */
     @Nullable
     @SuppressWarnings("DataFlowIssue")
     public static InputStream newInputStream(@Nullable Path path, @Nullable OpenOption[] options) {
@@ -405,6 +624,14 @@ public abstract class FilePlainWraps {
         return null;
     }
 
+    /**
+     * Opens an output stream for the given file.
+     *
+     * @param path The path
+     * @param options The options
+     *
+     * @return an output stream, or null when the file cannot be opened
+     */
     @Nullable
     @SuppressWarnings("DataFlowIssue")
     public static OutputStream newOutputStream(@Nullable Path path, @Nullable OpenOption[] options) {
@@ -418,6 +645,14 @@ public abstract class FilePlainWraps {
         return null;
     }
 
+    /**
+     * Opens a byte channel for the given file.
+     *
+     * @param path The path
+     * @param options The options
+     *
+     * @return a byte channel, or null when the file cannot be opened
+     */
     @Nullable
     @SuppressWarnings("DataFlowIssue")
     public static SeekableByteChannel newByteChannel(@Nullable Path path, @Nullable OpenOption[] options) {
@@ -431,6 +666,15 @@ public abstract class FilePlainWraps {
         return null;
     }
 
+    /**
+     * Opens a byte channel for the given file.
+     *
+     * @param path The path
+     * @param options The options
+     * @param attrs The file attributes
+     *
+     * @return a byte channel, or null when the file cannot be opened
+     */
     @Nullable
     @SuppressWarnings("DataFlowIssue")
     public static SeekableByteChannel newByteChannel(@Nullable Path path, @Nullable Set<? extends OpenOption> options, @Nullable FileAttribute<?>[] attrs) {
@@ -444,6 +688,13 @@ public abstract class FilePlainWraps {
         return null;
     }
 
+    /**
+     * Opens a directory stream for the given directory.
+     *
+     * @param path The path
+     *
+     * @return a directory stream, or null when the directory cannot be opened
+     */
     @Nullable
     public static DirectoryStream<Path> newDirectoryStream(@Nullable Path path) {
         if (path == null) {
@@ -456,6 +707,14 @@ public abstract class FilePlainWraps {
         return null;
     }
 
+    /**
+     * Opens a directory stream for the given directory.
+     *
+     * @param path The path
+     * @param filter The predicate used to filter results
+     *
+     * @return a directory stream, or null when the directory cannot be opened
+     */
     @Nullable
     public static DirectoryStream<Path> newDirectoryStream(@Nullable Path path, @Nullable DirectoryStream.Filter<? super Path> filter) {
         if (path == null || filter == null) {
@@ -468,6 +727,14 @@ public abstract class FilePlainWraps {
         return null;
     }
 
+    /**
+     * Opens a directory stream for the given directory.
+     *
+     * @param path The path
+     * @param glob The glob pattern
+     *
+     * @return a directory stream, or null when the directory cannot be opened
+     */
     @Nullable
     public static DirectoryStream<Path> newDirectoryStream(@Nullable Path path, @Nullable String glob) {
         if (path == null || glob == null) {
@@ -480,6 +747,15 @@ public abstract class FilePlainWraps {
         return null;
     }
 
+    /**
+     * Creates a temporary directory.
+     *
+     * @param path The path
+     * @param prefix The prefix
+     * @param attrs The file attributes
+     *
+     * @return the temporary directory path, or null when creation fails
+     */
     @Nullable
     @SuppressWarnings("DataFlowIssue")
     public static Path createTempDirectory(@Nullable Path path, @Nullable String prefix, @Nullable FileAttribute<?>[] attrs) {
@@ -493,6 +769,14 @@ public abstract class FilePlainWraps {
         return null;
     }
 
+    /**
+     * Creates a temporary directory.
+     *
+     * @param prefix The prefix
+     * @param attrs The file attributes
+     *
+     * @return the temporary directory path, or null when creation fails
+     */
     @Nullable
     @SuppressWarnings("DataFlowIssue")
     public static Path createTempDirectory(@Nullable String prefix, @Nullable FileAttribute<?>[] attrs) {
@@ -503,6 +787,15 @@ public abstract class FilePlainWraps {
         return null;
     }
 
+    /**
+     * Creates a symbolic link to the target.
+     *
+     * @param link The link path
+     * @param target The target path
+     * @param attrs The file attributes
+     *
+     * @return the link path, or null when creation fails
+     */
     @Nullable
     @SuppressWarnings("DataFlowIssue")
     public static Path createSymbolicLink(@Nullable Path link, @Nullable Path target, @Nullable FileAttribute<?>[] attrs) {
@@ -516,6 +809,14 @@ public abstract class FilePlainWraps {
         return null;
     }
 
+    /**
+     * Creates a hard link to the target.
+     *
+     * @param link The link path
+     * @param exist The expected existence state
+     *
+     * @return the link path, or null when creation fails
+     */
     @Nullable
     public static Path createLink(@Nullable Path link, @Nullable Path exist) {
         if (link == null || exist == null) {
@@ -528,6 +829,13 @@ public abstract class FilePlainWraps {
         return null;
     }
 
+    /**
+     * Deletes the given path if it exists.
+     *
+     * @param path The path
+     *
+     * @return true when the path was deleted; false otherwise
+     */
     public static boolean deleteIfExists(@Nullable Path path) {
         if (path == null) {
             return false;
@@ -539,6 +847,15 @@ public abstract class FilePlainWraps {
         return false;
     }
 
+    /**
+     * Moves the source path to the target path.
+     *
+     * @param source The source path
+     * @param target The target path
+     * @param options The options
+     *
+     * @return the target path, or null when the move fails
+     */
     @Nullable
     @SuppressWarnings("DataFlowIssue")
     public static Path move(@Nullable Path source, @Nullable Path target, @Nullable CopyOption[] options) {
@@ -552,6 +869,13 @@ public abstract class FilePlainWraps {
         return null;
     }
 
+    /**
+     * Reads the target of the given symbolic link.
+     *
+     * @param path The path
+     *
+     * @return the link target, or null when it cannot be read
+     */
     @Nullable
     public static Path readSymbolicLink(@Nullable Path path) {
         if (path == null) {
@@ -564,6 +888,13 @@ public abstract class FilePlainWraps {
         return null;
     }
 
+    /**
+     * Returns the file store that contains the given path.
+     *
+     * @param path The path
+     *
+     * @return the file store, or null when it cannot be determined
+     */
     @Nullable
     public static FileStore getFileStore(@Nullable Path path) {
         if (path == null) {
@@ -576,6 +907,14 @@ public abstract class FilePlainWraps {
         return null;
     }
 
+    /**
+     * Checks whether two paths locate the same file.
+     *
+     * @param path1 The first path
+     * @param path2 The second path
+     *
+     * @return true when both paths locate the same file; false otherwise
+     */
     public static boolean isSameFile(@Nullable Path path1, @Nullable Path path2) {
         if (path1 == null || path2 == null) {
             return false;
@@ -587,6 +926,13 @@ public abstract class FilePlainWraps {
         return false;
     }
 
+    /**
+     * Probes the content type of the given file.
+     *
+     * @param path The path
+     *
+     * @return the content type, or null when it cannot be determined
+     */
     @Nullable
     public static String probeContentType(@Nullable Path path) {
         if (path == null) {
@@ -599,6 +945,15 @@ public abstract class FilePlainWraps {
         return null;
     }
 
+    /**
+     * Returns a file attribute view of the requested type.
+     *
+     * @param path The path
+     * @param type The requested type
+     * @param options The options
+     *
+     * @return the attribute view, or null when it is unavailable
+     */
     @Nullable
     @SuppressWarnings("DataFlowIssue")
     public static <V extends FileAttributeView> V getFileAttributeView(@Nullable Path path, @Nullable Class<V> type, @Nullable LinkOption[] options) {
@@ -612,6 +967,15 @@ public abstract class FilePlainWraps {
         return null;
     }
 
+    /**
+     * Reads the attributes of the given path.
+     *
+     * @param path The path
+     * @param type The requested type
+     * @param options The options
+     *
+     * @return the attributes, or null when they cannot be read
+     */
     @Nullable
     @SuppressWarnings("DataFlowIssue")
     public static <A extends BasicFileAttributes> A readAttributes(@Nullable Path path, @Nullable Class<A> type, @Nullable LinkOption[] options) {
@@ -625,6 +989,15 @@ public abstract class FilePlainWraps {
         return null;
     }
 
+    /**
+     * Reads the attributes of the given path.
+     *
+     * @param path The path
+     * @param attrs The file attributes
+     * @param options The options
+     *
+     * @return the attributes, or null when they cannot be read
+     */
     @Nullable
     @SuppressWarnings("DataFlowIssue")
     public static Map<String, Object> readAttributes(@Nullable Path path, @Nullable String attrs, @Nullable LinkOption[] options) {
@@ -638,6 +1011,16 @@ public abstract class FilePlainWraps {
         return null;
     }
 
+    /**
+     * Sets the value of the given file attribute.
+     *
+     * @param path The path
+     * @param attr The attribute name
+     * @param value The value
+     * @param options The options
+     *
+     * @return the result of the operation
+     */
     @Nullable
     @SuppressWarnings("DataFlowIssue")
     public static Path setAttribute(@Nullable Path path, @Nullable String attr, @Nullable Object value, @Nullable LinkOption[] options) {
@@ -651,6 +1034,13 @@ public abstract class FilePlainWraps {
         return null;
     }
 
+    /**
+     * Checks whether the path is a symbolic link.
+     *
+     * @param path The path
+     *
+     * @return true when the path is a symbolic link; false otherwise
+     */
     public static boolean isSymbolicLink(@Nullable Path path) {
         if (path == null) {
             return false;
@@ -662,6 +1052,14 @@ public abstract class FilePlainWraps {
         return false;
     }
 
+    /**
+     * Walks the file tree rooted at the given path using the visitor.
+     *
+     * @param path The path
+     * @param visitor The file visitor
+     *
+     * @return the starting path, or null when the tree cannot be walked
+     */
     @Nullable
     public static Path walkFileTree(@Nullable Path path, @Nullable FileVisitor<? super Path> visitor) {
         if (path == null || visitor == null) {
@@ -674,6 +1072,16 @@ public abstract class FilePlainWraps {
         return null;
     }
 
+    /**
+     * Walks the file tree rooted at the given path using the visitor.
+     *
+     * @param path The path
+     * @param options The options
+     * @param maxDepth The maximum depth to traverse
+     * @param visitor The file visitor
+     *
+     * @return the starting path, or null when the tree cannot be walked
+     */
     @Nullable
     @SuppressWarnings("DataFlowIssue")
     public static Path walkFileTree(@Nullable Path path, @Nullable Set<FileVisitOption> options, int maxDepth, @Nullable FileVisitor<? super Path> visitor) {
@@ -687,6 +1095,13 @@ public abstract class FilePlainWraps {
         return null;
     }
 
+    /**
+     * Opens a buffered reader for the given file.
+     *
+     * @param path The path
+     *
+     * @return a buffered reader, or null when the file cannot be opened
+     */
     @Nullable
     public static BufferedReader newBufferedReader(@Nullable Path path) {
         if (path == null) {
@@ -699,6 +1114,14 @@ public abstract class FilePlainWraps {
         return null;
     }
 
+    /**
+     * Opens a buffered reader for the given file.
+     *
+     * @param path The path
+     * @param charset The character set
+     *
+     * @return a buffered reader, or null when the file cannot be opened
+     */
     @Nullable
     public static BufferedReader newBufferedReader(@Nullable Path path, @Nullable Charset charset) {
         if (path == null) {
@@ -711,6 +1134,14 @@ public abstract class FilePlainWraps {
         return null;
     }
 
+    /**
+     * Opens a buffered writer for the given file.
+     *
+     * @param path The path
+     * @param options The options
+     *
+     * @return a buffered writer, or null when the file cannot be opened
+     */
     @Nullable
     @SuppressWarnings("DataFlowIssue")
     public static BufferedWriter newBufferedWriter(@Nullable Path path, @Nullable OpenOption[] options) {
@@ -724,6 +1155,15 @@ public abstract class FilePlainWraps {
         return null;
     }
 
+    /**
+     * Opens a buffered writer for the given file.
+     *
+     * @param path The path
+     * @param charset The character set
+     * @param options The options
+     *
+     * @return a buffered writer, or null when the file cannot be opened
+     */
     @Nullable
     @SuppressWarnings("DataFlowIssue")
     public static BufferedWriter newBufferedWriter(@Nullable Path path, @Nullable Charset charset, @Nullable OpenOption[] options) {
@@ -737,6 +1177,14 @@ public abstract class FilePlainWraps {
         return null;
     }
 
+    /**
+     * Reads the entire content of the given file as a string.
+     *
+     * @param path The path
+     * @param charset The character set
+     *
+     * @return the file content, or null when the file cannot be read
+     */
     @Nullable
     public static String readString(@Nullable Path path, @Nullable Charset charset) {
         if (path == null) {
@@ -749,6 +1197,13 @@ public abstract class FilePlainWraps {
         return null;
     }
 
+    /**
+     * Reads the entire content of the given file as a string.
+     *
+     * @param path The path
+     *
+     * @return the file content, or null when the file cannot be read
+     */
     @Nullable
     public static String readString(@Nullable Path path) {
         if (path == null) {
@@ -761,6 +1216,13 @@ public abstract class FilePlainWraps {
         return null;
     }
 
+    /**
+     * Reads all lines from the given file.
+     *
+     * @param path The path
+     *
+     * @return a list of lines, or null when the file cannot be read
+     */
     @Nullable
     public static List<String> readAllLines(@Nullable Path path) {
         if (path == null) {
@@ -773,6 +1235,14 @@ public abstract class FilePlainWraps {
         return null;
     }
 
+    /**
+     * Reads all lines from the given file.
+     *
+     * @param path The path
+     * @param charset The character set
+     *
+     * @return a list of lines, or null when the file cannot be read
+     */
     @Nullable
     public static List<String> readAllLines(@Nullable Path path, @Nullable Charset charset) {
         if (path == null) {
@@ -785,6 +1255,15 @@ public abstract class FilePlainWraps {
         return null;
     }
 
+    /**
+     * Writes a string to the given file.
+     *
+     * @param path The path
+     * @param sequence The character sequence to write
+     * @param options The options
+     *
+     * @return the result of the operation
+     */
     @Nullable
     @SuppressWarnings("DataFlowIssue")
     public static Path writeString(@Nullable Path path, @Nullable CharSequence sequence, @Nullable OpenOption[] options) {
@@ -798,6 +1277,16 @@ public abstract class FilePlainWraps {
         return null;
     }
 
+    /**
+     * Writes a string to the given file.
+     *
+     * @param path The path
+     * @param sequence The character sequence to write
+     * @param charset The character set
+     * @param options The options
+     *
+     * @return the result of the operation
+     */
     @Nullable
     @SuppressWarnings("DataFlowIssue")
     public static Path writeString(@Nullable Path path, @Nullable CharSequence sequence, @Nullable Charset charset, @Nullable OpenOption[] options) {
@@ -811,6 +1300,14 @@ public abstract class FilePlainWraps {
         return null;
     }
 
+    /**
+     * Creates a new empty file.
+     *
+     * @param path The path
+     * @param attrs The file attributes
+     *
+     * @return the file path, or null when creation fails
+     */
     @Nullable
     @SuppressWarnings("DataFlowIssue")
     public static Path createFile(@Nullable Path path, @Nullable FileAttribute<?>[] attrs) {
@@ -824,6 +1321,14 @@ public abstract class FilePlainWraps {
         return null;
     }
 
+    /**
+     * Creates directories including any necessary parent directories.
+     *
+     * @param path The path
+     * @param attrs The file attributes
+     *
+     * @return the directory path, or null when creation fails
+     */
     @Nullable
     @SuppressWarnings("DataFlowIssue")
     public static Path createDirectories(@Nullable Path path, @Nullable FileAttribute<?>[] attrs) {
@@ -837,6 +1342,15 @@ public abstract class FilePlainWraps {
         return null;
     }
 
+    /**
+     * Returns the value of the given file attribute.
+     *
+     * @param path The path
+     * @param attr The attribute name
+     * @param options The options
+     *
+     * @return the attribute value, or null when it cannot be read
+     */
     @Nullable
     @SuppressWarnings("DataFlowIssue")
     public static Object getAttribute(@Nullable Path path, @Nullable String attr, @Nullable LinkOption[] options) {
@@ -850,6 +1364,14 @@ public abstract class FilePlainWraps {
         return null;
     }
 
+    /**
+     * Returns the POSIX permissions of the given path.
+     *
+     * @param path The path
+     * @param options The options
+     *
+     * @return the permissions, or null when they cannot be read
+     */
     @Nullable
     @SuppressWarnings("DataFlowIssue")
     public static Set<PosixFilePermission> getPosixFilePermissions(@Nullable Path path, @Nullable LinkOption[] options) {
@@ -863,6 +1385,14 @@ public abstract class FilePlainWraps {
         return null;
     }
 
+    /**
+     * Sets the POSIX permissions of the given path.
+     *
+     * @param path The path
+     * @param permissions The permissions
+     *
+     * @return the result of the operation
+     */
     @Nullable
     public static Path setPosixFilePermissions(@Nullable Path path, @Nullable Set<PosixFilePermission> permissions) {
         if (path == null || permissions == null) {
@@ -875,6 +1405,14 @@ public abstract class FilePlainWraps {
         return null;
     }
 
+    /**
+     * Checks whether the path does not exist.
+     *
+     * @param path The path
+     * @param options The options
+     *
+     * @return true when the path does not exist; false otherwise
+     */
     @SuppressWarnings("DataFlowIssue")
     public static boolean notExists(@Nullable Path path, @Nullable LinkOption[] options) {
         if (path == null) {
@@ -887,6 +1425,13 @@ public abstract class FilePlainWraps {
         return false;
     }
 
+    /**
+     * Checks whether the path is readable.
+     *
+     * @param path The path
+     *
+     * @return true when the path is readable; false otherwise
+     */
     public static boolean isReadable(@Nullable Path path) {
         if (path == null) {
             return false;
@@ -898,6 +1443,13 @@ public abstract class FilePlainWraps {
         return false;
     }
 
+    /**
+     * Checks whether the path is writable.
+     *
+     * @param path The path
+     *
+     * @return true when the path is writable; false otherwise
+     */
     public static boolean isWritable(@Nullable Path path) {
         if (path == null) {
             return false;
@@ -909,6 +1461,13 @@ public abstract class FilePlainWraps {
         return false;
     }
 
+    /**
+     * Checks whether the path is executable.
+     *
+     * @param path The path
+     *
+     * @return true when the path is executable; false otherwise
+     */
     public static boolean isExecutable(@Nullable Path path) {
         if (path == null) {
             return false;

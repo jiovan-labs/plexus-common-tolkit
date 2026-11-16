@@ -19,7 +19,6 @@ package com.jiovan.plexus.common.toolkit.util;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import com.jiovan.plexus.common.toolkit.util.PackagePlainWraps;
 import lombok.extern.slf4j.Slf4j;
 
 
@@ -32,6 +31,6 @@ import lombok.extern.slf4j.Slf4j;
 class PackagePlainWrapsTest {
     @Test
     void existsPackage() {
-        Assertions.assertTrue(PackagePlainWraps.existsPackage("com.jiovan.plexus.toolkit.util"));    // $NON-NLS-1$
+        Assertions.assertTrue(PackagePlainWraps.existsPackage("com.jiovan.plexus.common.toolkit.util"));    // $NON-NLS-1$
     }
 }

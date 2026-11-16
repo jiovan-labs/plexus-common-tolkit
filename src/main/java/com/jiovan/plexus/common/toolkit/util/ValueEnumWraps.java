@@ -21,7 +21,6 @@ import java.util.Arrays;
 import java.util.Objects;
 import jakarta.annotation.Nullable;
 import org.apache.commons.lang3.ArrayUtils;
-import org.apache.commons.lang3.StringUtils;
 import com.jiovan.plexus.common.toolkit.enumeration.KeyValueEnum;
 import com.jiovan.plexus.common.toolkit.enumeration.ValueEnum;
 
@@ -52,7 +51,7 @@ public abstract class ValueEnumWraps extends EnumPlainWraps {
      * @return true if the enum contains the key ignoring case, false otherwise
      */
     public static <K extends CharSequence, E extends Enum<E> & KeyValueEnum<K, ?>> boolean containsKeyIgnoreCase(@Nullable Class<E> enumClazz, @Nullable K key) {
-        return enumClazz != null && ArrayUtils.isNotEmpty(enumClazz.getEnumConstants()) && Arrays.stream(enumClazz.getEnumConstants()).anyMatch(item -> StringUtils.equalsIgnoreCase(item.getKey(), key));
+        return enumClazz != null && ArrayUtils.isNotEmpty(enumClazz.getEnumConstants()) && Arrays.stream(enumClazz.getEnumConstants()).anyMatch(item -> StringUtilsWraps.equalsIgnoreCase(item.getKey(), key));
     }
 
     /**
@@ -74,7 +73,7 @@ public abstract class ValueEnumWraps extends EnumPlainWraps {
      * @return true if the enum contains the value ignoring case, false otherwise
      */
     public static <V extends CharSequence, E extends Enum<E> & ValueEnum<V>> boolean containsValueIgnoreCase(@Nullable Class<E> enumClazz, @Nullable V value) {
-        return enumClazz != null && ArrayUtils.isNotEmpty(enumClazz.getEnumConstants()) && Arrays.stream(enumClazz.getEnumConstants()).anyMatch(item -> StringUtils.equalsIgnoreCase(item.getValue(), value));
+        return enumClazz != null && ArrayUtils.isNotEmpty(enumClazz.getEnumConstants()) && Arrays.stream(enumClazz.getEnumConstants()).anyMatch(item -> StringUtilsWraps.equalsIgnoreCase(item.getValue(), value));
     }
 
     /**
@@ -124,7 +123,7 @@ public abstract class ValueEnumWraps extends EnumPlainWraps {
      */
     @Nullable
     public static <K extends CharSequence, E extends Enum<E> & KeyValueEnum<K, ?>> E ofKeyIgnoreCase(@Nullable Class<E> enumClazz, @Nullable K key, @Nullable E defaultValue) {
-        return (enumClazz == null || ArrayUtils.isEmpty(enumClazz.getEnumConstants())) ? defaultValue : Arrays.stream(enumClazz.getEnumConstants()).filter(item -> StringUtils.equalsIgnoreCase(item.getKey(), key)).findFirst().orElse(defaultValue);
+        return (enumClazz == null || ArrayUtils.isEmpty(enumClazz.getEnumConstants())) ? defaultValue : Arrays.stream(enumClazz.getEnumConstants()).filter(item -> StringUtilsWraps.equalsIgnoreCase(item.getKey(), key)).findFirst().orElse(defaultValue);
     }
 
     /**
@@ -174,7 +173,7 @@ public abstract class ValueEnumWraps extends EnumPlainWraps {
      */
     @Nullable
     public static <V extends CharSequence, E extends Enum<E> & ValueEnum<V>> E ofValueIgnoreCase(@Nullable Class<E> enumClazz, @Nullable V value, @Nullable E defaultValue) {
-        return (enumClazz == null || ArrayUtils.isEmpty(enumClazz.getEnumConstants())) ? defaultValue : Arrays.stream(enumClazz.getEnumConstants()).filter(item -> StringUtils.equalsIgnoreCase(item.getValue(), value)).findFirst().orElse(defaultValue);
+        return (enumClazz == null || ArrayUtils.isEmpty(enumClazz.getEnumConstants())) ? defaultValue : Arrays.stream(enumClazz.getEnumConstants()).filter(item -> StringUtilsWraps.equalsIgnoreCase(item.getValue(), value)).findFirst().orElse(defaultValue);
     }
 
     /**

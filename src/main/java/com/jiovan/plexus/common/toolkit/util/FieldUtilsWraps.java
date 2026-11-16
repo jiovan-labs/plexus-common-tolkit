@@ -47,10 +47,23 @@ import org.apache.commons.lang3.reflect.FieldUtils;
  */
 @SuppressWarnings({"unused", "BooleanMethodIsAlwaysInverted", "UnusedReturnValue"})
 public abstract class FieldUtilsWraps {
+    /**
+     * Performs an action for each declared field of the given class.
+     *
+     * @param clazz The class to inspect
+     * @param action The action to perform
+     */
     public static void doWithDeclaredFields(@Nullable Class<?> clazz, @Nullable Consumer<Field> action) {
         doWithDeclaredFields(clazz, action, null);
     }
 
+    /**
+     * Performs an action for each declared field of the given class.
+     *
+     * @param clazz The class to inspect
+     * @param action The action to perform
+     * @param filter The predicate used to filter results
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static void doWithDeclaredFields(@Nullable Class<?> clazz, @Nullable Consumer<Field> action, @Nullable Predicate<Field> filter) {
         if (ObjectUtils.anyNull(clazz, action)) {
@@ -67,14 +80,34 @@ public abstract class FieldUtilsWraps {
         }
     }
 
+    /**
+     * Performs an action for each field of the given class and its superclasses.
+     *
+     * @param clazz The class to inspect
+     * @param action The action to perform
+     */
     public static void doWithNestedFields(@Nullable Class<?> clazz, @Nullable Consumer<Field> action) {
         doWithNestedFields(clazz, action, null);
     }
 
+    /**
+     * Performs an action for each field of the given class and its superclasses.
+     *
+     * @param clazz The class to inspect
+     * @param action The action to perform
+     * @param filter The predicate used to filter results
+     */
     public static void doWithNestedFields(@Nullable Class<?> clazz, @Nullable Consumer<Field> action, @Nullable Predicate<Field> filter) {
         doWithNestedFieldsUntil(clazz, null, action, filter);
     }
 
+    /**
+     * Performs an action for each field up to the specified boundary class.
+     *
+     * @param clazz The class to inspect
+     * @param untilClass The boundary class
+     * @param action The action to perform
+     */
     public static void doWithNestedFieldsUntil(@Nullable Class<?> clazz, @Nullable Class<?> untilClass, @Nullable Consumer<Field> action) {
         doWithNestedFieldsUntil(clazz, untilClass, action, null);
     }
@@ -104,22 +137,52 @@ public abstract class FieldUtilsWraps {
         }
     }
 
+    /**
+     * Returns the declared fields of the given class.
+     *
+     * @param clazz The class to inspect
+     *
+     * @return an array of declared fields, or null when there are none
+     */
     @Nullable
     public static Field[] getDeclaredFields(@Nullable Class<?> clazz) {
         return (clazz == null) ? null : clazz.getDeclaredFields();
     }
 
+    /**
+     * Returns the declared fields of the given class.
+     *
+     * @param clazz The class to inspect
+     * @param filter The predicate used to filter results
+     *
+     * @return an array of declared fields, or null when there are none
+     */
     @Nullable
     public static Field[] getDeclaredFields(@Nullable Class<?> clazz, @Nullable Predicate<Field> filter) {
         List<Field> fields = getDeclaredFieldsToList(clazz, filter);
         return CollectionPlainWraps.isEmpty(fields) ? null : fields.toArray(ArrayUtils.EMPTY_FIELD_ARRAY);
     }
 
+    /**
+     * Returns the declared fields as a list.
+     *
+     * @param clazz The class to inspect
+     *
+     * @return a list of declared fields, or null when there are none
+     */
     @Nullable
     public static List<Field> getDeclaredFieldsToList(@Nullable Class<?> clazz) {
         return getDeclaredFieldsToList(clazz, null);
     }
 
+    /**
+     * Returns the declared fields as a list.
+     *
+     * @param clazz The class to inspect
+     * @param filter The predicate used to filter results
+     *
+     * @return a list of declared fields, or null when there are none
+     */
     @Nullable
     public static List<Field> getDeclaredFieldsToList(@Nullable Class<?> clazz, @Nullable Predicate<Field> filter) {
         List<Field> result = new ArrayList<>();
@@ -127,6 +190,14 @@ public abstract class FieldUtilsWraps {
         return CollectionPlainWraps.isEmpty(result) ? null : result;
     }
 
+    /**
+     * Returns the declared field values as a map keyed by field name.
+     *
+     * @param object The target object
+     * @param filter The predicate used to filter results
+     *
+     * @return a map of field values, or null when there are no fields
+     */
     @Nullable
     public static Map<String, ?> getDeclaredFieldsToMap(@Nullable Object object, @Nullable Predicate<Field> filter) {
         if (object == null || ClassUtils.isPrimitiveOrWrapper(object.getClass())) {
@@ -137,33 +208,78 @@ public abstract class FieldUtilsWraps {
         return result.isEmpty() ? null : result;
     }
 
+    /**
+     * Returns the declared fields as a set.
+     *
+     * @param clazz The class to inspect
+     *
+     * @return a set of declared fields, or null when there are none
+     */
     @Nullable
     public static Set<Field> getDeclaredFieldsToSet(@Nullable Class<?> clazz) {
         return getDeclaredFieldsToSet(clazz, null);
     }
 
+    /**
+     * Returns the declared fields as a set.
+     *
+     * @param clazz The class to inspect
+     * @param filter The predicate used to filter results
+     *
+     * @return a set of declared fields, or null when there are none
+     */
     @Nullable
     public static Set<Field> getDeclaredFieldsToSet(@Nullable Class<?> clazz, @Nullable Predicate<Field> filter) {
         List<Field> fields = getDeclaredFieldsToList(clazz, filter);
         return CollectionPlainWraps.isEmpty(fields) ? null : new LinkedHashSet<>(fields);
     }
 
+    /**
+     * Returns the names of the declared fields of the given class.
+     *
+     * @param clazz The class to inspect
+     *
+     * @return an array of field names, or null when there are no fields
+     */
     @Nullable
     public static String[] getDeclaredFieldNames(@Nullable Class<?> clazz) {
         return getDeclaredFieldNames(clazz, null);
     }
 
+    /**
+     * Returns the names of the declared fields of the given class.
+     *
+     * @param clazz The class to inspect
+     * @param filter The predicate used to filter results
+     *
+     * @return an array of field names, or null when there are no fields
+     */
     @Nullable
     public static String[] getDeclaredFieldNames(@Nullable Class<?> clazz, @Nullable Predicate<Field> filter) {
         List<String> names = getDeclaredFieldNamesToList(clazz, filter);
         return CollectionPlainWraps.isEmpty(names) ? null : names.toArray(ArrayUtils.EMPTY_STRING_ARRAY);
     }
 
+    /**
+     * Returns the names of the declared fields as a list.
+     *
+     * @param clazz The class to inspect
+     *
+     * @return a list of field names, or null when there are no fields
+     */
     @Nullable
     public static List<String> getDeclaredFieldNamesToList(@Nullable Class<?> clazz) {
         return getDeclaredFieldNamesToList(clazz, null);
     }
 
+    /**
+     * Returns the names of the declared fields as a list.
+     *
+     * @param clazz The class to inspect
+     * @param filter The predicate used to filter results
+     *
+     * @return a list of field names, or null when there are no fields
+     */
     @Nullable
     public static List<String> getDeclaredFieldNamesToList(@Nullable Class<?> clazz, @Nullable Predicate<Field> filter) {
         List<String> result = new ArrayList<>();
@@ -171,33 +287,78 @@ public abstract class FieldUtilsWraps {
         return CollectionPlainWraps.isEmpty(result) ? null : result;
     }
 
+    /**
+     * Returns the names of the declared fields as a set.
+     *
+     * @param clazz The class to inspect
+     *
+     * @return a set of field names, or null when there are no fields
+     */
     @Nullable
     public static Set<String> getDeclaredFieldNamesToSet(@Nullable Class<?> clazz) {
         return getDeclaredFieldNamesToSet(clazz, null);
     }
 
+    /**
+     * Returns the names of the declared fields as a set.
+     *
+     * @param clazz The class to inspect
+     * @param filter The predicate used to filter results
+     *
+     * @return a set of field names, or null when there are no fields
+     */
     @Nullable
     public static Set<String> getDeclaredFieldNamesToSet(@Nullable Class<?> clazz, @Nullable Predicate<Field> filter) {
         List<String> names = getDeclaredFieldNamesToList(clazz, filter);
         return CollectionPlainWraps.isEmpty(names) ? null : new LinkedHashSet<>(names);
     }
 
+    /**
+     * Returns the fields declared in the class hierarchy.
+     *
+     * @param clazz The class to inspect
+     *
+     * @return an array of fields, or null when there are none
+     */
     @Nullable
     public static Field[] getNestedFields(@Nullable Class<?> clazz) {
         return getNestedFields(clazz, null);
     }
 
+    /**
+     * Returns the fields declared in the class hierarchy.
+     *
+     * @param clazz The class to inspect
+     * @param filter The predicate used to filter results
+     *
+     * @return an array of fields, or null when there are none
+     */
     @Nullable
     public static Field[] getNestedFields(@Nullable Class<?> clazz, @Nullable Predicate<Field> filter) {
         List<Field> fields = getNestedFieldsToList(clazz, filter);
         return CollectionPlainWraps.isEmpty(fields) ? null : fields.toArray(ArrayUtils.EMPTY_FIELD_ARRAY);
     }
 
+    /**
+     * Returns the fields in the class hierarchy as a list.
+     *
+     * @param clazz The class to inspect
+     *
+     * @return a list of fields, or null when there are none
+     */
     @Nullable
     public static List<Field> getNestedFieldsToList(@Nullable Class<?> clazz) {
         return getNestedFieldsToList(clazz, null);
     }
 
+    /**
+     * Returns the fields in the class hierarchy as a list.
+     *
+     * @param clazz The class to inspect
+     * @param filter The predicate used to filter results
+     *
+     * @return a list of fields, or null when there are none
+     */
     @Nullable
     public static List<Field> getNestedFieldsToList(@Nullable Class<?> clazz, @Nullable Predicate<Field> filter) {
         List<Field> result = new ArrayList<>();
@@ -205,6 +366,14 @@ public abstract class FieldUtilsWraps {
         return CollectionPlainWraps.isEmpty(result) ? null : result;
     }
 
+    /**
+     * Returns the field values of the class hierarchy as a map.
+     *
+     * @param object The target object
+     * @param filter The predicate used to filter results
+     *
+     * @return a map of field values, or null when there are no fields
+     */
     @Nullable
     public static Map<String, ?> getNestedFieldsToMap(@Nullable Object object, @Nullable Predicate<Field> filter) {
         if (object == null || ClassUtils.isPrimitiveOrWrapper(object.getClass())) {
@@ -215,33 +384,78 @@ public abstract class FieldUtilsWraps {
         return result.isEmpty() ? null : result;
     }
 
+    /**
+     * Returns the fields in the class hierarchy as a set.
+     *
+     * @param clazz The class to inspect
+     *
+     * @return a set of fields, or null when there are none
+     */
     @Nullable
     public static Set<Field> getNestedFieldsToSet(@Nullable Class<?> clazz) {
         return getNestedFieldsToSet(clazz, null);
     }
 
+    /**
+     * Returns the fields in the class hierarchy as a set.
+     *
+     * @param clazz The class to inspect
+     * @param filter The predicate used to filter results
+     *
+     * @return a set of fields, or null when there are none
+     */
     @Nullable
     public static Set<Field> getNestedFieldsToSet(@Nullable Class<?> clazz, @Nullable Predicate<Field> filter) {
         List<Field> fields = getNestedFieldsToList(clazz, filter);
         return CollectionPlainWraps.isEmpty(fields) ? null : new LinkedHashSet<>(fields);
     }
 
+    /**
+     * Returns the names of fields declared in the class hierarchy.
+     *
+     * @param clazz The class to inspect
+     *
+     * @return an array of field names, or null when there are no fields
+     */
     @Nullable
     public static String[] getNestedFieldNames(@Nullable Class<?> clazz) {
         return getNestedFieldNames(clazz, null);
     }
 
+    /**
+     * Returns the names of fields declared in the class hierarchy.
+     *
+     * @param clazz The class to inspect
+     * @param filter The predicate used to filter results
+     *
+     * @return an array of field names, or null when there are no fields
+     */
     @Nullable
     public static String[] getNestedFieldNames(@Nullable Class<?> clazz, @Nullable Predicate<Field> filter) {
         List<String> names = getNestedFieldNamesToList(clazz, filter);
         return CollectionPlainWraps.isEmpty(names) ? null : names.toArray(ArrayUtils.EMPTY_STRING_ARRAY);
     }
 
+    /**
+     * Returns the names of fields in the class hierarchy as a list.
+     *
+     * @param clazz The class to inspect
+     *
+     * @return a list of field names, or null when there are no fields
+     */
     @Nullable
     public static List<String> getNestedFieldNamesToList(@Nullable Class<?> clazz) {
         return getNestedFieldNamesToList(clazz, null);
     }
 
+    /**
+     * Returns the names of fields in the class hierarchy as a list.
+     *
+     * @param clazz The class to inspect
+     * @param filter The predicate used to filter results
+     *
+     * @return a list of field names, or null when there are no fields
+     */
     @Nullable
     public static List<String> getNestedFieldNamesToList(@Nullable Class<?> clazz, @Nullable Predicate<Field> filter) {
         List<String> result = new ArrayList<>();
@@ -249,29 +463,68 @@ public abstract class FieldUtilsWraps {
         return CollectionPlainWraps.isEmpty(result) ? null : result;
     }
 
+    /**
+     * Returns the names of fields in the class hierarchy as a set.
+     *
+     * @param clazz The class to inspect
+     *
+     * @return a set of field names, or null when there are no fields
+     */
     @Nullable
     public static Set<String> getNestedFieldNamesToSet(@Nullable Class<?> clazz) {
         return getNestedFieldNamesToSet(clazz, null);
     }
 
+    /**
+     * Returns the names of fields in the class hierarchy as a set.
+     *
+     * @param clazz The class to inspect
+     * @param filter The predicate used to filter results
+     *
+     * @return a set of field names, or null when there are no fields
+     */
     @Nullable
     public static Set<String> getNestedFieldNamesToSet(@Nullable Class<?> clazz, @Nullable Predicate<Field> filter) {
         List<String> names = getNestedFieldNamesToList(clazz, filter);
         return CollectionPlainWraps.isEmpty(names) ? null : new LinkedHashSet<>(names);
     }
 
+    /**
+     * Returns fields annotated with all the given annotations.
+     *
+     * @param clazz The class to inspect
+     * @param annotations The annotation types
+     *
+     * @return an array of fields, or null when there is no match
+     */
     @Nullable
     @SafeVarargs
     public static Field[] getFieldsWithAllAnnotations(@Nullable Class<?> clazz, @Nullable Class<? extends Annotation>... annotations) {
         return getFieldsWithAllAnnotations(clazz, ArrayUtilsWraps.asList(annotations));
     }
 
+    /**
+     * Returns fields annotated with all the given annotations.
+     *
+     * @param clazz The class to inspect
+     * @param annotations The annotation types
+     *
+     * @return an array of fields, or null when there is no match
+     */
     @Nullable
     public static Field[] getFieldsWithAllAnnotations(@Nullable Class<?> clazz, @Nullable Collection<Class<? extends Annotation>> annotations) {
         List<Field> fields = getFieldsWithAllAnnotationsToList(clazz, annotations);
         return CollectionPlainWraps.isEmpty(fields) ? null : fields.toArray(ArrayUtils.EMPTY_FIELD_ARRAY);
     }
 
+    /**
+     * Returns fields annotated with all the given annotations as a list.
+     *
+     * @param clazz The class to inspect
+     * @param annotations The annotation types
+     *
+     * @return a list of fields, or null when there is no match
+     */
     @Nullable
     @SafeVarargs
     public static List<Field> getFieldsWithAllAnnotationsToList(@Nullable Class<?> clazz, @Nullable Class<? extends Annotation>... annotations) {
@@ -290,30 +543,70 @@ public abstract class FieldUtilsWraps {
         return CollectionPlainWraps.isEmpty(fields) ? null : fields.stream().filter(item -> AnnotationUtilsWraps.allPresent(item, annotations)).collect(Collectors.toList());
     }
 
+    /**
+     * Returns fields annotated with all the given annotations as a set.
+     *
+     * @param clazz The class to inspect
+     * @param annotations The annotation types
+     *
+     * @return a set of fields, or null when there is no match
+     */
     @Nullable
     @SafeVarargs
     public static Set<Field> getFieldsWithAllAnnotationsToSet(@Nullable Class<?> clazz, @Nullable Class<? extends Annotation>... annotations) {
         return getFieldsWithAllAnnotationsToSet(clazz, ArrayUtilsWraps.asList(annotations));
     }
 
+    /**
+     * Returns fields annotated with all the given annotations as a set.
+     *
+     * @param clazz The class to inspect
+     * @param annotations The annotation types
+     *
+     * @return a set of fields, or null when there is no match
+     */
     @Nullable
     public static Set<Field> getFieldsWithAllAnnotationsToSet(@Nullable Class<?> clazz, @Nullable Collection<Class<? extends Annotation>> annotations) {
         List<Field> fields = getFieldsWithAllAnnotationsToList(clazz, annotations);
         return CollectionPlainWraps.isEmpty(fields) ? null : new LinkedHashSet<>(fields);
     }
 
+    /**
+     * Returns fields annotated with any of the given annotations.
+     *
+     * @param clazz The class to inspect
+     * @param annotations The annotation types
+     *
+     * @return an array of fields, or null when there is no match
+     */
     @Nullable
     @SafeVarargs
     public static Field[] getFieldsWithAnyAnnotations(@Nullable Class<?> clazz, @Nullable Class<? extends Annotation>... annotations) {
         return getFieldsWithAnyAnnotations(clazz, ArrayUtilsWraps.asList(annotations));
     }
 
+    /**
+     * Returns fields annotated with any of the given annotations.
+     *
+     * @param clazz The class to inspect
+     * @param annotations The annotation types
+     *
+     * @return an array of fields, or null when there is no match
+     */
     @Nullable
     public static Field[] getFieldsWithAnyAnnotations(@Nullable Class<?> clazz, @Nullable Collection<Class<? extends Annotation>> annotations) {
         List<Field> fields = getFieldsWithAnyAnnotationsToList(clazz, annotations);
         return CollectionPlainWraps.isEmpty(fields) ? null : fields.toArray(ArrayUtils.EMPTY_FIELD_ARRAY);
     }
 
+    /**
+     * Returns fields annotated with any of the given annotations as a list.
+     *
+     * @param clazz The class to inspect
+     * @param annotations The annotation types
+     *
+     * @return a list of fields, or null when there is no match
+     */
     @Nullable
     @SafeVarargs
     public static List<Field> getFieldsWithAnyAnnotationsToList(@Nullable Class<?> clazz, @Nullable Class<? extends Annotation>... annotations) {
@@ -332,106 +625,253 @@ public abstract class FieldUtilsWraps {
         return CollectionPlainWraps.isEmpty(fields) ? null : fields.stream().filter(item -> AnnotationUtilsWraps.anyPresent(item, annotations)).collect(Collectors.toList());
     }
 
+    /**
+     * Returns fields annotated with any of the given annotations as a set.
+     *
+     * @param clazz The class to inspect
+     * @param annotations The annotation types
+     *
+     * @return a set of fields, or null when there is no match
+     */
     @Nullable
     @SafeVarargs
     public static Set<Field> getFieldsWithAnyAnnotationsToSet(@Nullable Class<?> clazz, @Nullable Class<? extends Annotation>... annotations) {
         return getFieldsWithAnyAnnotationsToSet(clazz, ArrayUtilsWraps.asList(annotations));
     }
 
+    /**
+     * Returns fields annotated with any of the given annotations as a set.
+     *
+     * @param clazz The class to inspect
+     * @param annotations The annotation types
+     *
+     * @return a set of fields, or null when there is no match
+     */
     @Nullable
     public static Set<Field> getFieldsWithAnyAnnotationsToSet(@Nullable Class<?> clazz, @Nullable Collection<Class<? extends Annotation>> annotations) {
         List<Field> fields = getFieldsWithAnyAnnotationsToList(clazz, annotations);
         return CollectionPlainWraps.isEmpty(fields) ? null : new LinkedHashSet<>(fields);
     }
 
+    /**
+     * Returns field names annotated with all the given annotations.
+     *
+     * @param clazz The class to inspect
+     * @param annotations The annotation types
+     *
+     * @return an array of field names, or null when there is no match
+     */
     @Nullable
     @SafeVarargs
     public static String[] getFieldNamesWithAllAnnotations(@Nullable Class<?> clazz, @Nullable Class<? extends Annotation>... annotations) {
         return getFieldNamesWithAllAnnotations(clazz, ArrayUtilsWraps.asList(annotations));
     }
 
+    /**
+     * Returns field names annotated with all the given annotations.
+     *
+     * @param clazz The class to inspect
+     * @param annotations The annotation types
+     *
+     * @return an array of field names, or null when there is no match
+     */
     @Nullable
     public static String[] getFieldNamesWithAllAnnotations(@Nullable Class<?> clazz, @Nullable Collection<Class<? extends Annotation>> annotations) {
         List<String> names = getFieldNamesWithAllAnnotationsToList(clazz, annotations);
         return CollectionPlainWraps.isEmpty(names) ? null : names.toArray(ArrayUtils.EMPTY_STRING_ARRAY);
     }
 
+    /**
+     * Returns field names annotated with all the given annotations as a list.
+     *
+     * @param clazz The class to inspect
+     * @param annotations The annotation types
+     *
+     * @return a list of field names, or null when there is no match
+     */
     @Nullable
     @SafeVarargs
     public static List<String> getFieldNamesWithAllAnnotationsToList(@Nullable Class<?> clazz, @Nullable Class<? extends Annotation>... annotations) {
         return getFieldNamesWithAllAnnotationsToList(clazz, ArrayUtilsWraps.asList(annotations));
     }
 
+    /**
+     * Returns field names annotated with all the given annotations as a list.
+     *
+     * @param clazz The class to inspect
+     * @param annotations The annotation types
+     *
+     * @return a list of field names, or null when there is no match
+     */
     @Nullable
     public static List<String> getFieldNamesWithAllAnnotationsToList(@Nullable Class<?> clazz, @Nullable Collection<Class<? extends Annotation>> annotations) {
         List<Field> fields = getFieldsWithAllAnnotationsToList(clazz, annotations);
         return CollectionPlainWraps.isEmpty(fields) ? null : fields.stream().map(Field::getName).collect(Collectors.toList());
     }
 
+    /**
+     * Returns field names annotated with all the given annotations as a set.
+     *
+     * @param clazz The class to inspect
+     * @param annotations The annotation types
+     *
+     * @return a set of field names, or null when there is no match
+     */
     @Nullable
     @SafeVarargs
     public static Set<String> getFieldNamesWithAllAnnotationsToSet(@Nullable Class<?> clazz, @Nullable Class<? extends Annotation>... annotations) {
         return getFieldNamesWithAllAnnotationsToSet(clazz, ArrayUtilsWraps.asList(annotations));
     }
 
+    /**
+     * Returns field names annotated with all the given annotations as a set.
+     *
+     * @param clazz The class to inspect
+     * @param annotations The annotation types
+     *
+     * @return a set of field names, or null when there is no match
+     */
     @Nullable
     public static Set<String> getFieldNamesWithAllAnnotationsToSet(@Nullable Class<?> clazz, @Nullable Collection<Class<? extends Annotation>> annotations) {
         List<String> names = getFieldNamesWithAllAnnotationsToList(clazz, annotations);
         return CollectionPlainWraps.isEmpty(names) ? null : new LinkedHashSet<>(names);
     }
 
+    /**
+     * Returns field names annotated with any of the given annotations.
+     *
+     * @param clazz The class to inspect
+     * @param annotations The annotation types
+     *
+     * @return an array of field names, or null when there is no match
+     */
     @Nullable
     @SafeVarargs
     public static String[] getFieldNamesWithAnyAnnotations(@Nullable Class<?> clazz, @Nullable Class<? extends Annotation>... annotations) {
         return getFieldNamesWithAnyAnnotations(clazz, ArrayUtilsWraps.asList(annotations));
     }
 
+    /**
+     * Returns field names annotated with any of the given annotations.
+     *
+     * @param clazz The class to inspect
+     * @param annotations The annotation types
+     *
+     * @return an array of field names, or null when there is no match
+     */
     @Nullable
     public static String[] getFieldNamesWithAnyAnnotations(@Nullable Class<?> clazz, @Nullable Collection<Class<? extends Annotation>> annotations) {
         List<String> names = getFieldNamesWithAnyAnnotationsToList(clazz, annotations);
         return CollectionPlainWraps.isEmpty(names) ? null : names.toArray(ArrayUtils.EMPTY_STRING_ARRAY);
     }
 
+    /**
+     * Returns field names annotated with any of the given annotations as a list.
+     *
+     * @param clazz The class to inspect
+     * @param annotations The annotation types
+     *
+     * @return a list of field names, or null when there is no match
+     */
     @Nullable
     @SafeVarargs
     public static List<String> getFieldNamesWithAnyAnnotationsToList(@Nullable Class<?> clazz, @Nullable Class<? extends Annotation>... annotations) {
         return getFieldNamesWithAnyAnnotationsToList(clazz, ArrayUtilsWraps.asList(annotations));
     }
 
+    /**
+     * Returns field names annotated with any of the given annotations as a list.
+     *
+     * @param clazz The class to inspect
+     * @param annotations The annotation types
+     *
+     * @return a list of field names, or null when there is no match
+     */
     @Nullable
     public static List<String> getFieldNamesWithAnyAnnotationsToList(@Nullable Class<?> clazz, @Nullable Collection<Class<? extends Annotation>> annotations) {
         List<Field> fields = getFieldsWithAnyAnnotationsToList(clazz, annotations);
         return CollectionPlainWraps.isEmpty(fields) ? null : fields.stream().map(Field::getName).collect(Collectors.toList());
     }
 
+    /**
+     * Returns field names annotated with any of the given annotations as a set.
+     *
+     * @param clazz The class to inspect
+     * @param annotations The annotation types
+     *
+     * @return a set of field names, or null when there is no match
+     */
     @Nullable
     @SafeVarargs
     public static Set<String> getFieldNamesWithAnyAnnotationsToSet(@Nullable Class<?> clazz, @Nullable Class<? extends Annotation>... annotations) {
         return getFieldNamesWithAnyAnnotationsToSet(clazz, ArrayUtilsWraps.asList(annotations));
     }
 
+    /**
+     * Returns field names annotated with any of the given annotations as a set.
+     *
+     * @param clazz The class to inspect
+     * @param annotations The annotation types
+     *
+     * @return a set of field names, or null when there is no match
+     */
     @Nullable
     public static Set<String> getFieldNamesWithAnyAnnotationsToSet(@Nullable Class<?> clazz, @Nullable Collection<Class<? extends Annotation>> annotations) {
         List<String> names = getFieldNamesWithAnyAnnotationsToList(clazz, annotations);
         return CollectionPlainWraps.isEmpty(names) ? null : new LinkedHashSet<>(names);
     }
 
+    /**
+     * Checks whether the field is public.
+     *
+     * @param field The field
+     *
+     * @return true when the field is public; false otherwise
+     */
     public static boolean isPublic(@Nullable Field field) {
         return field != null && Modifier.isPublic(field.getModifiers());
     }
 
+    /**
+     * Checks whether the field is static.
+     *
+     * @param field The field
+     *
+     * @return true when the field is static; false otherwise
+     */
     public static boolean isStatic(@Nullable Field field) {
         return field != null && Modifier.isStatic(field.getModifiers());
     }
 
+    /**
+     * Checks whether the field is final.
+     *
+     * @param field The field
+     *
+     * @return true when the field is final; false otherwise
+     */
     public static boolean isFinal(@Nullable Field field) {
         return field != null && Modifier.isFinal(field.getModifiers());
     }
 
+    /**
+     * Checks whether the field is public and static.
+     *
+     * @param field The field
+     *
+     * @return true when the field is public and static; false otherwise
+     */
     public static boolean isPublicStatic(@Nullable Field field) {
         return isPublic(field) && isStatic(field);
     }
 
+    /**
+     * Checks whether the field is public, static and final.
+     *
+     * @param field The field
+     *
+     * @return true when all three modifiers are present; false otherwise
+     */
     public static boolean isPublicStaticFinal(@Nullable Field field) {
         return isPublic(field) && isStatic(field) && isFinal(field);
     }
@@ -450,6 +890,14 @@ public abstract class FieldUtilsWraps {
         }
     }
 
+    /**
+     * Reads the value of a field from the target object.
+     *
+     * @param field The field
+     * @param target The target path
+     *
+     * @return the field value, or null when it cannot be read
+     */
     @Nullable
     public static Object readField(@Nullable Field field, @Nullable Object target) {
         return readField(field, target, false);
@@ -476,11 +924,28 @@ public abstract class FieldUtilsWraps {
         return null;
     }
 
+    /**
+     * Reads the value of a field from the target object.
+     *
+     * @param target The target path
+     * @param fieldName The field name
+     *
+     * @return the field value, or null when it cannot be read
+     */
     @Nullable
     public static Object readField(@Nullable Object target, @Nullable String fieldName) {
         return readField(target, fieldName, false);
     }
 
+    /**
+     * Reads the value of a field from the target object.
+     *
+     * @param target The target path
+     * @param fieldName The field name
+     * @param forceAccess Whether scope restrictions should be bypassed
+     *
+     * @return the field value, or null when it cannot be read
+     */
     @Nullable
     public static Object readField(@Nullable Object target, @Nullable String fieldName, boolean forceAccess) {
         if (target == null || StringUtils.isBlank(fieldName)) {
@@ -493,6 +958,15 @@ public abstract class FieldUtilsWraps {
         return null;
     }
 
+    /**
+     * Reads a field and casts the value to the expected type.
+     *
+     * @param field The field
+     * @param target The target path
+     * @param expectType The expected type
+     *
+     * @return the typed field value, or null when it cannot be read or cast
+     */
     @Nullable
     public static <T> T readFieldAs(@Nullable Field field, @Nullable Object target, @Nullable Class<T> expectType) {
         return readFieldAs(field, target, false, expectType);
@@ -516,11 +990,30 @@ public abstract class FieldUtilsWraps {
         return ObjectUtilsWraps.castAs(readField(field, target, forceAccess), expectType);
     }
 
+    /**
+     * Reads a field and casts the value to the expected type.
+     *
+     * @param target The target path
+     * @param fieldName The field name
+     * @param expectType The expected type
+     *
+     * @return the typed field value, or null when it cannot be read or cast
+     */
     @Nullable
     public static <T> T readFieldAs(@Nullable Object target, @Nullable String fieldName, @Nullable Class<T> expectType) {
         return readFieldAs(target, fieldName, false, expectType);
     }
 
+    /**
+     * Reads a field and casts the value to the expected type.
+     *
+     * @param target The target path
+     * @param fieldName The field name
+     * @param forceAccess Whether scope restrictions should be bypassed
+     * @param expectType The expected type
+     *
+     * @return the typed field value, or null when it cannot be read or cast
+     */
     @Nullable
     public static <T> T readFieldAs(@Nullable Object target, @Nullable String fieldName, boolean forceAccess, @Nullable Class<T> expectType) {
         if (ObjectUtils.anyNull(target, expectType) || StringUtils.isBlank(fieldName)) {
@@ -529,11 +1022,28 @@ public abstract class FieldUtilsWraps {
         return ObjectUtilsWraps.castAs(readField(target, fieldName, forceAccess), expectType);
     }
 
+    /**
+     * Reads the value of a declared field from the target object.
+     *
+     * @param target The target path
+     * @param fieldName The field name
+     *
+     * @return the field value, or null when it cannot be read
+     */
     @Nullable
     public static Object readDeclaredField(@Nullable Object target, @Nullable String fieldName) {
         return readDeclaredField(target, fieldName, false);
     }
 
+    /**
+     * Reads the value of a declared field from the target object.
+     *
+     * @param target The target path
+     * @param fieldName The field name
+     * @param forceAccess Whether scope restrictions should be bypassed
+     *
+     * @return the field value, or null when it cannot be read
+     */
     @Nullable
     public static Object readDeclaredField(@Nullable Object target, @Nullable String fieldName, boolean forceAccess) {
         if (target == null || StringUtils.isBlank(fieldName)) {
@@ -546,11 +1056,30 @@ public abstract class FieldUtilsWraps {
         return null;
     }
 
+    /**
+     * Reads a declared field and casts the value to the expected type.
+     *
+     * @param target The target path
+     * @param fieldName The field name
+     * @param expectType The expected type
+     *
+     * @return the typed field value, or null when it cannot be read or cast
+     */
     @Nullable
     public static <T> T readDeclaredFieldAs(@Nullable Object target, @Nullable String fieldName, @Nullable Class<T> expectType) {
         return readDeclaredFieldAs(target, fieldName, false, expectType);
     }
 
+    /**
+     * Reads a declared field and casts the value to the expected type.
+     *
+     * @param target The target path
+     * @param fieldName The field name
+     * @param forceAccess Whether scope restrictions should be bypassed
+     * @param expectType The expected type
+     *
+     * @return the typed field value, or null when it cannot be read or cast
+     */
     @Nullable
     public static <T> T readDeclaredFieldAs(@Nullable Object target, @Nullable String fieldName, boolean forceAccess, @Nullable Class<T> expectType) {
         if (ObjectUtils.anyNull(target, expectType) || StringUtils.isBlank(fieldName)) {
@@ -559,11 +1088,28 @@ public abstract class FieldUtilsWraps {
         return ObjectUtilsWraps.castAs(readDeclaredField(target, fieldName, forceAccess), expectType);
     }
 
+    /**
+     * Reads the value of a declared static field.
+     *
+     * @param clazz The class to inspect
+     * @param fieldName The field name
+     *
+     * @return the field value, or null when it cannot be read
+     */
     @Nullable
     public static Object readDeclaredStaticField(@Nullable Class<?> clazz, @Nullable String fieldName) {
         return readDeclaredStaticField(clazz, fieldName, false);
     }
 
+    /**
+     * Reads the value of a declared static field.
+     *
+     * @param clazz The class to inspect
+     * @param fieldName The field name
+     * @param forceAccess Whether scope restrictions should be bypassed
+     *
+     * @return the field value, or null when it cannot be read
+     */
     @Nullable
     public static Object readDeclaredStaticField(@Nullable Class<?> clazz, @Nullable String fieldName, boolean forceAccess) {
         if (clazz == null || StringUtils.isBlank(fieldName)) {
@@ -576,11 +1122,30 @@ public abstract class FieldUtilsWraps {
         return null;
     }
 
+    /**
+     * Reads a declared static field and casts the value to the expected type.
+     *
+     * @param clazz The class to inspect
+     * @param fieldName The field name
+     * @param expectType The expected type
+     *
+     * @return the typed field value, or null when it cannot be read or cast
+     */
     @Nullable
     public static <T> T readDeclaredStaticFieldAs(@Nullable Class<?> clazz, @Nullable String fieldName, @Nullable Class<T> expectType) {
         return readDeclaredStaticFieldAs(clazz, fieldName, false, expectType);
     }
 
+    /**
+     * Reads a declared static field and casts the value to the expected type.
+     *
+     * @param clazz The class to inspect
+     * @param fieldName The field name
+     * @param forceAccess Whether scope restrictions should be bypassed
+     * @param expectType The expected type
+     *
+     * @return the typed field value, or null when it cannot be read or cast
+     */
     @Nullable
     public static <T> T readDeclaredStaticFieldAs(@Nullable Class<?> clazz, @Nullable String fieldName, boolean forceAccess, @Nullable Class<T> expectType) {
         if (ObjectUtils.anyNull(clazz, expectType) || StringUtils.isBlank(fieldName)) {
@@ -589,11 +1154,28 @@ public abstract class FieldUtilsWraps {
         return ObjectUtilsWraps.castAs(readDeclaredStaticField(clazz, fieldName, forceAccess), expectType);
     }
 
+    /**
+     * Reads the value of a static field.
+     *
+     * @param clazz The class to inspect
+     * @param fieldName The field name
+     *
+     * @return the field value, or null when it cannot be read
+     */
     @Nullable
     public static Object readStaticField(@Nullable Class<?> clazz, @Nullable String fieldName) {
         return readStaticField(clazz, fieldName, false);
     }
 
+    /**
+     * Reads the value of a static field.
+     *
+     * @param clazz The class to inspect
+     * @param fieldName The field name
+     * @param forceAccess Whether scope restrictions should be bypassed
+     *
+     * @return the field value, or null when it cannot be read
+     */
     @Nullable
     public static Object readStaticField(@Nullable Class<?> clazz, @Nullable String fieldName, boolean forceAccess) {
         if (clazz == null || StringUtils.isBlank(fieldName)) {
@@ -606,11 +1188,26 @@ public abstract class FieldUtilsWraps {
         return null;
     }
 
+    /**
+     * Reads the value of a static field.
+     *
+     * @param field The field
+     *
+     * @return the field value, or null when it cannot be read
+     */
     @Nullable
     public static Object readStaticField(@Nullable Field field) {
         return readStaticField(field, false);
     }
 
+    /**
+     * Reads the value of a static field.
+     *
+     * @param field The field
+     * @param forceAccess Whether scope restrictions should be bypassed
+     *
+     * @return the field value, or null when it cannot be read
+     */
     @Nullable
     public static Object readStaticField(@Nullable Field field, boolean forceAccess) {
         if (field == null) {
@@ -623,11 +1220,30 @@ public abstract class FieldUtilsWraps {
         return null;
     }
 
+    /**
+     * Reads a static field and casts the value to the expected type.
+     *
+     * @param clazz The class to inspect
+     * @param fieldName The field name
+     * @param expectType The expected type
+     *
+     * @return the typed field value, or null when it cannot be read or cast
+     */
     @Nullable
     public static <T> T readStaticFieldAs(@Nullable Class<?> clazz, @Nullable String fieldName, @Nullable Class<T> expectType) {
         return readStaticFieldAs(clazz, fieldName, false, expectType);
     }
 
+    /**
+     * Reads a static field and casts the value to the expected type.
+     *
+     * @param clazz The class to inspect
+     * @param fieldName The field name
+     * @param forceAccess Whether scope restrictions should be bypassed
+     * @param expectType The expected type
+     *
+     * @return the typed field value, or null when it cannot be read or cast
+     */
     @Nullable
     public static <T> T readStaticFieldAs(@Nullable Class<?> clazz, @Nullable String fieldName, boolean forceAccess, @Nullable Class<T> expectType) {
         if (ObjectUtils.anyNull(clazz, expectType) || StringUtils.isBlank(fieldName)) {
@@ -636,11 +1252,28 @@ public abstract class FieldUtilsWraps {
         return ObjectUtilsWraps.castAs(readStaticField(clazz, fieldName, forceAccess), expectType);
     }
 
+    /**
+     * Reads a static field and casts the value to the expected type.
+     *
+     * @param field The field
+     * @param expectType The expected type
+     *
+     * @return the typed field value, or null when it cannot be read or cast
+     */
     @Nullable
     public static <T> T readStaticFieldAs(@Nullable Field field, @Nullable Class<T> expectType) {
         return readStaticFieldAs(field, false, expectType);
     }
 
+    /**
+     * Reads a static field and casts the value to the expected type.
+     *
+     * @param field The field
+     * @param forceAccess Whether scope restrictions should be bypassed
+     * @param expectType The expected type
+     *
+     * @return the typed field value, or null when it cannot be read or cast
+     */
     @Nullable
     public static <T> T readStaticFieldAs(@Nullable Field field, boolean forceAccess, @Nullable Class<T> expectType) {
         if (ObjectUtils.anyNull(field, expectType)) {
@@ -649,6 +1282,13 @@ public abstract class FieldUtilsWraps {
         return ObjectUtilsWraps.castAs(readStaticField(field, forceAccess), expectType);
     }
 
+    /**
+     * Writes a value to a field of the target object.
+     *
+     * @param field The field
+     * @param target The target path
+     * @param value The value
+     */
     public static void writeField(@Nullable Field field, @Nullable Object target, @Nullable Object value) {
         writeField(field, target, value, false);
     }
@@ -671,6 +1311,13 @@ public abstract class FieldUtilsWraps {
         }
     }
 
+    /**
+     * Writes a value to a field of the target object.
+     *
+     * @param target The target path
+     * @param fieldName The field name
+     * @param value The value
+     */
     public static void writeField(@Nullable Object target, @Nullable String fieldName, @Nullable Object value) {
         writeField(target, fieldName, value, false);
     }
@@ -693,6 +1340,12 @@ public abstract class FieldUtilsWraps {
         }
     }
 
+    /**
+     * Writes a value to a static field.
+     *
+     * @param field The field
+     * @param value The value
+     */
     public static void writeStaticField(@Nullable Field field, @Nullable Object value) {
         writeStaticField(field, value, false);
     }
@@ -714,6 +1367,13 @@ public abstract class FieldUtilsWraps {
         }
     }
 
+    /**
+     * Writes a value to a static field.
+     *
+     * @param clazz The class to inspect
+     * @param fieldName The field name
+     * @param value The value
+     */
     public static void writeStaticField(@Nullable Class<?> clazz, @Nullable String fieldName, @Nullable Object value) {
         writeStaticField(clazz, fieldName, value, false);
     }

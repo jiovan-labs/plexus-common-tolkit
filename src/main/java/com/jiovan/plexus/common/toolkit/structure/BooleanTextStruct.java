@@ -41,51 +41,111 @@ import lombok.NoArgsConstructor;
 public class BooleanTextStruct extends TextStampStruct {
     private boolean success = false;
 
+    /**
+     * Creates a structure with the given success flag and text messages.
+     *
+     * @param success the success flag
+     * @param texts the text messages, or null when absent
+     */
     public BooleanTextStruct(boolean success, @Nullable String... texts) {
         this.success = success;
         super.addText(texts);
     }
 
+    /**
+     * Creates a structure with the given success flag and text messages.
+     *
+     * @param success the success flag
+     * @param texts the text messages, or null when absent
+     */
     public BooleanTextStruct(boolean success, @Nullable Collection<String> texts) {
         this.success = success;
         super.addText(texts);
     }
 
+    /**
+     * Creates a structure with the given success flag and text messages.
+     *
+     * @param success the success flag
+     * @param texts the text messages, or null when absent
+     * @return a structure with the given success flag and text messages
+     */
     @Nonnull
     public static BooleanTextStruct of(boolean success, @Nullable String... texts) {
         return new BooleanTextStruct(success, texts);
     }
 
+    /**
+     * Creates a structure with the given success flag and text messages.
+     *
+     * @param success the success flag
+     * @param texts the text messages, or null when absent
+     * @return a structure with the given success flag and text messages
+     */
     @Nonnull
     public static BooleanTextStruct of(boolean success, @Nullable Collection<String> texts) {
         return new BooleanTextStruct(success, texts);
     }
 
+    /**
+     * Creates a successful structure without text messages.
+     *
+     * @return a successful structure
+     */
     @Nonnull
     public static BooleanTextStruct ofSuccess() {
         return new BooleanTextStruct(true);
     }
 
+    /**
+     * Creates a successful structure with the given text messages.
+     *
+     * @param texts the text messages, or null when absent
+     * @return a successful structure with the given text messages
+     */
     @Nonnull
     public static BooleanTextStruct ofSuccess(@Nullable String... texts) {
         return new BooleanTextStruct(true, texts);
     }
 
+    /**
+     * Creates a successful structure with the given text messages.
+     *
+     * @param texts the text messages, or null when absent
+     * @return a successful structure with the given text messages
+     */
     @Nonnull
     public static BooleanTextStruct ofSuccess(@Nullable Collection<String> texts) {
         return new BooleanTextStruct(true, texts);
     }
 
+    /**
+     * Creates a failed structure without text messages.
+     *
+     * @return a failed structure
+     */
     @Nonnull
     public static BooleanTextStruct ofFailure() {
         return new BooleanTextStruct(false);
     }
 
+    /**
+     * Creates a failed structure with the given text messages.
+     *
+     * @param texts the text messages, or null when absent
+     * @return a failed structure with the given text messages
+     */
     @Nonnull
     public static BooleanTextStruct ofFailure(@Nullable String... texts) {
         return new BooleanTextStruct(false, texts);
     }
 
+    /**
+     * Creates a failed structure with the given text messages.
+     *
+     * @param texts the text messages, or null when absent
+     * @return a failed structure with the given text messages
+     */
     @Nonnull
     public static BooleanTextStruct ofFailure(@Nullable Collection<String> texts) {
         return new BooleanTextStruct(false, texts);

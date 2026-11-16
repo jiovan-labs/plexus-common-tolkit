@@ -31,11 +31,19 @@ import jakarta.annotation.Nullable;
 public class HtmlStyleStruct extends HtmlTagStruct {
     public static final String DEFAULT_TYPE = "text/css";    // $NON-NLS-1$
 
+    /**
+     * Creates a style structure with the default type.
+     */
     public HtmlStyleStruct() {
         super.setTag(HTML.Tag.STYLE);
         super.addAttribute(HTML.Attribute.TYPE, DEFAULT_TYPE);
     }
 
+    /**
+     * Creates a style structure with the given style contents.
+     *
+     * @param contents the script or style lines, or null when absent
+     */
     public HtmlStyleStruct(@Nullable List<String> contents) {
         this();
         super.setSubNodes(contents);

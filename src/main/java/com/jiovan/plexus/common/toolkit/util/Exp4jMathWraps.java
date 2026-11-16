@@ -24,17 +24,40 @@ import net.objecthunter.exp4j.ExpressionBuilder;
 
 
 /**
- * Utilities for exp4j math
+ * Utilities for `exp4j` math
  *
  * @author David Hsing
  */
 @SuppressWarnings({"unused", "BooleanMethodIsAlwaysInverted", "UnusedReturnValue"})
 public abstract class Exp4jMathWraps {
+    /**
+     * Evaluates the given mathematical expression.
+     *
+     * Variables are replaced from the given map before evaluation.
+     *
+     * @param math The mathematical expression
+     *
+     * @return the evaluation result, or null when the expression is blank
+     *
+     * @throws java.lang.IllegalArgumentException if the expression is invalid
+     */
     @Nullable
     public static Double evalMathExpress(@Nullable String math) throws IllegalArgumentException {
         return evalMathExpress(math, null);
     }
 
+    /**
+     * Evaluates the given mathematical expression.
+     *
+     * Variables are replaced from the given map before evaluation.
+     *
+     * @param math The mathematical expression
+     * @param variables The variables used in the expression
+     *
+     * @return the evaluation result, or null when the expression is blank
+     *
+     * @throws java.lang.IllegalArgumentException if the expression is invalid
+     */
     @Nullable
     public static Double evalMathExpress(@Nullable String math, @Nullable Map<String, Object> variables) throws IllegalArgumentException {
         if (StringUtils.isBlank(math)) {
@@ -52,11 +75,30 @@ public abstract class Exp4jMathWraps {
         return new ExpressionBuilder(alias).build().evaluate();
     }
 
+    /**
+     * Evaluates the given mathematical expression without throwing exceptions.
+     *
+     * Any evaluation error results in null.
+     *
+     * @param math The mathematical expression
+     *
+     * @return the evaluation result, or null when the expression cannot be evaluated
+     */
     @Nullable
     public static Double evalMathExpressQuietly(@Nullable String math) {
         return evalMathExpressQuietly(math, null);
     }
 
+    /**
+     * Evaluates the given mathematical expression without throwing exceptions.
+     *
+     * Any evaluation error results in null.
+     *
+     * @param math The mathematical expression
+     * @param variables The variables used in the expression
+     *
+     * @return the evaluation result, or null when the expression cannot be evaluated
+     */
     @Nullable
     public static Double evalMathExpressQuietly(@Nullable String math, @Nullable Map<String, Object> variables) {
         try {
@@ -66,10 +108,25 @@ public abstract class Exp4jMathWraps {
         return null;
     }
 
+    /**
+     * Checks whether the given mathematical expression can be evaluated.
+     *
+     * @param math The mathematical expression
+     *
+     * @return true when the expression is valid; false otherwise
+     */
     public static boolean testMathExpress(@Nullable String math) {
         return testMathExpress(math, null);
     }
 
+    /**
+     * Checks whether the given mathematical expression can be evaluated.
+     *
+     * @param math The mathematical expression
+     * @param variables The variables used in the expression
+     *
+     * @return true when the expression is valid; false otherwise
+     */
     public static boolean testMathExpress(@Nullable String math, @Nullable Map<String, Object> variables) {
         try {
             return evalMathExpress(math, variables) != null;

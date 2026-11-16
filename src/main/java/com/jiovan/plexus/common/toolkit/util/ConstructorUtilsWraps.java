@@ -540,6 +540,13 @@ public abstract class ConstructorUtilsWraps {
         return null;
     }
 
+    /**
+     * Creates a new instance using the given constructor.
+     *
+     * @param constructor The constructor to invoke
+     *
+     * @return a new instance of the constructor's declaring class
+     */
     public static <T> T newInstance(@Nullable Constructor<T> constructor) {
         return newInstance(constructor, ArrayUtils.EMPTY_OBJECT_ARRAY);
     }

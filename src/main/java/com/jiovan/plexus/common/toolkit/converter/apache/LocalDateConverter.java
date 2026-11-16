@@ -30,7 +30,7 @@ import lombok.Setter;
 
 
 /**
- * Converters an object to {@link java.time.LocalDate}
+ * Converts an object to {@link java.time.LocalDate}
  *
  * @author David Hsing
  *
@@ -45,10 +45,23 @@ public class LocalDateConverter extends DateTimeConverter<LocalDate> {
     private String[] formats = TemporalFormatCombo.DATE_FORMATS;
     private String[] spares = TemporalFormatCombo.DATETIME_FORMATS;
 
+    /**
+     * Creates a converter with the given default value.
+     *
+     * @param defaultValue the value returned when conversion fails, or null when absent
+     */
     public LocalDateConverter(@Nullable LocalDate defaultValue) {
         super(defaultValue);
     }
 
+    /**
+     * Converts the given value to the requested date type. Tries the configured date patterns, then the date-time patterns, and keeps the date part.
+     *
+     * @param type the target type, which must be assignable from LocalDate
+     * @param value the value to convert, or null when absent
+     * @return the converted value, or null when the value is null
+     * @throws Exception when the value cannot be converted
+     */
     @Override
     protected <T> T convertToType(@Nonnull Class<T> type, @Nullable Object value) throws Exception {
         if (value == null) {
@@ -71,6 +84,11 @@ public class LocalDateConverter extends DateTimeConverter<LocalDate> {
         return super.convertToType(type, value);
     }
 
+    /**
+     * Returns the default target type of this converter.
+     *
+     * @return the LocalDate class
+     */
     @Override
     protected Class<LocalDate> getDefaultType() {
         return LocalDate.class;

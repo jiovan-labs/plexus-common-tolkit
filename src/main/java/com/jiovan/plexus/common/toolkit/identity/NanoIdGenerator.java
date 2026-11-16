@@ -43,96 +43,212 @@ public abstract class NanoIdGenerator {
     private static final char[] ALPHANUMERIC_LOWERS = (ALPHABETIC.toLowerCase() + NUMERIC).toCharArray();
     private static final char[] ALPHANUMERIC_MIXINS = (ALPHABETIC + ALPHABETIC.toLowerCase() + NUMERIC).toCharArray();
 
+    /**
+     * Returns a random Nano ID using the popular alphabet.
+     *
+     * @return a randomly generated ID
+     */
     @Nonnull
     public static String getPopularId() {
         return getPopularId(-1);
     }
 
+    /**
+     * Returns a random Nano ID using the popular alphabet.
+     *
+     * @param size The requested ID length
+     *
+     * @return a randomly generated ID
+     */
     @Nonnull
     public static String getPopularId(int size) {
         return NanoIdUtils.randomNanoId(NanoIdUtils.DEFAULT_NUMBER_GENERATOR, POPULAR_CHARS, (size > 0) ? size : NanoIdUtils.DEFAULT_SIZE);
     }
 
+    /**
+     * Returns a random Nano ID using alphabetic characters.
+     *
+     * @return a randomly generated ID
+     */
     @Nonnull
     public static String getAlphabeticId() {
         return getAlphabeticId(-1);
     }
 
+    /**
+     * Returns a random Nano ID using alphabetic characters.
+     *
+     * @param size The requested ID length
+     *
+     * @return a randomly generated ID
+     */
     @Nonnull
     public static String getAlphabeticId(int size) {
         return NanoIdUtils.randomNanoId(NanoIdUtils.DEFAULT_NUMBER_GENERATOR, ALPHABETIC_MIXINS, (size > 0) ? size : NanoIdUtils.DEFAULT_SIZE);
     }
 
+    /**
+     * Returns a random Nano ID using lowercase alphabetic characters.
+     *
+     * @return a randomly generated ID
+     */
     @Nonnull
     public static String getAlphabeticLowerId() {
         return getAlphabeticLowerId(-1);
     }
 
+    /**
+     * Returns a random Nano ID using lowercase alphabetic characters.
+     *
+     * @param size The requested ID length
+     *
+     * @return a randomly generated ID
+     */
     @Nonnull
     public static String getAlphabeticLowerId(int size) {
         return NanoIdUtils.randomNanoId(NanoIdUtils.DEFAULT_NUMBER_GENERATOR, ALPHABETIC_LOWERS, (size > 0) ? size : NanoIdUtils.DEFAULT_SIZE);
     }
 
+    /**
+     * Returns a random Nano ID using uppercase alphabetic characters.
+     *
+     * @return a randomly generated ID
+     */
     @Nonnull
     public static String getAlphabeticUpperId() {
         return getAlphabeticUpperId(-1);
     }
 
+    /**
+     * Returns a random Nano ID using uppercase alphabetic characters.
+     *
+     * @param size The requested ID length
+     *
+     * @return a randomly generated ID
+     */
     @Nonnull
     public static String getAlphabeticUpperId(int size) {
         return NanoIdUtils.randomNanoId(NanoIdUtils.DEFAULT_NUMBER_GENERATOR, ALPHABETIC_UPPERS, (size > 0) ? size : NanoIdUtils.DEFAULT_SIZE);
     }
 
+    /**
+     * Returns a random Nano ID using mixed-case alphanumeric characters.
+     *
+     * @return a randomly generated ID
+     */
     @Nonnull
     public static String getAlphanumericId() {
         return getAlphanumericId(-1);
     }
 
+    /**
+     * Returns a random Nano ID using mixed-case alphanumeric characters.
+     *
+     * @param size The requested ID length
+     *
+     * @return a randomly generated ID
+     */
     @Nonnull
     public static String getAlphanumericId(int size) {
         return NanoIdUtils.randomNanoId(NanoIdUtils.DEFAULT_NUMBER_GENERATOR, ALPHANUMERIC_MIXINS, (size > 0) ? size : NanoIdUtils.DEFAULT_SIZE);
     }
 
+    /**
+     * Returns a random Nano ID using lowercase alphanumeric characters.
+     *
+     * @return a randomly generated ID
+     */
     @Nonnull
     public static String getAlphanumericLowerId() {
         return getAlphanumericLowerId(-1);
     }
 
+    /**
+     * Returns a random Nano ID using lowercase alphanumeric characters.
+     *
+     * @param size The requested ID length
+     *
+     * @return a randomly generated ID
+     */
     @Nonnull
     public static String getAlphanumericLowerId(int size) {
         return NanoIdUtils.randomNanoId(NanoIdUtils.DEFAULT_NUMBER_GENERATOR, ALPHANUMERIC_LOWERS, (size > 0) ? size : NanoIdUtils.DEFAULT_SIZE);
     }
 
+    /**
+     * Returns a random Nano ID using uppercase alphanumeric characters.
+     *
+     * @return a randomly generated ID
+     */
     @Nonnull
     public static String getAlphanumericUpperId() {
         return getAlphanumericUpperId(-1);
     }
 
+    /**
+     * Returns a random Nano ID using uppercase alphanumeric characters.
+     *
+     * @param size The requested ID length
+     *
+     * @return a randomly generated ID
+     */
     @Nonnull
     public static String getAlphanumericUpperId(int size) {
         return NanoIdUtils.randomNanoId(NanoIdUtils.DEFAULT_NUMBER_GENERATOR, ALPHANUMERIC_UPPERS, (size > 0) ? size : NanoIdUtils.DEFAULT_SIZE);
     }
 
+    /**
+     * Returns a random Nano ID using numeric characters.
+     *
+     * @return a randomly generated ID
+     */
     @Nonnull
     public static String getNumericId() {
         return getNumericId(-1);
     }
 
+    /**
+     * Returns a random Nano ID using numeric characters.
+     *
+     * @param size The requested ID length
+     *
+     * @return a randomly generated ID
+     */
     @Nonnull
     public static String getNumericId(int size) {
         return NanoIdUtils.randomNanoId(NanoIdUtils.DEFAULT_NUMBER_GENERATOR, NUMERIC_CHARS, (size > 0) ? size : NanoIdUtils.DEFAULT_SIZE);
     }
 
+    /**
+     * Returns a random Nano ID.
+     *
+     * @return a randomly generated ID
+     */
     @Nonnull
     public static String getRandomId() {
         return NanoIdUtils.randomNanoId();
     }
 
+    /**
+     * Returns a random Nano ID.
+     *
+     * @param size The requested ID length
+     *
+     * @return a randomly generated ID
+     */
     @Nonnull
     public static String getRandomId(int size) {
         return getRandomId(size, null);
     }
 
+    /**
+     * Returns a random Nano ID.
+     *
+     * @param size The requested ID length
+     * @param alphabets The characters allowed in the generated ID
+     *
+     * @return a randomly generated ID
+     */
     @Nonnull
     public static String getRandomId(int size, @Nullable char[] alphabets) {
         return NanoIdUtils.randomNanoId(NanoIdUtils.DEFAULT_NUMBER_GENERATOR, ((alphabets == null || alphabets.length == 0) ? NanoIdUtils.DEFAULT_ALPHABET : alphabets), (size > 0) ? size : NanoIdUtils.DEFAULT_SIZE);

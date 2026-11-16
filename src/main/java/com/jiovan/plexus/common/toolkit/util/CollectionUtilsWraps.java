@@ -37,12 +37,27 @@ import org.apache.commons.lang3.ArrayUtils;
  */
 @SuppressWarnings({"unused", "BooleanMethodIsAlwaysInverted", "UnusedReturnValue"})
 public abstract class CollectionUtilsWraps {
+    /**
+     * Checks whether the collection contains all the given items.
+     *
+     * @param collection The source collection
+     * @param items The items to add or check
+     *
+     * @return true when all items are present; false otherwise
+     */
     @SafeVarargs
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static <E> boolean containsAll(@Nullable Collection<?> collection, @Nullable E... items) {
         return CollectionUtils.isNotEmpty(collection) && ArrayUtils.isNotEmpty(items) && CollectionUtils.containsAll(collection, ArrayUtilsWraps.asList(items));
     }
 
+    /**
+     * Returns the intersection of all the given iterables.
+     *
+     * @param iterables The iterables to combine
+     *
+     * @return a collection containing the common elements, or null when there is no intersection
+     */
     @Nullable
     @SafeVarargs
     public static <E> Collection<E> intersectionAll(@Nullable Iterable<E>... iterables) {
@@ -76,6 +91,13 @@ public abstract class CollectionUtilsWraps {
         return CollectionUtils.isEmpty(result) ? null : result;
     }
 
+    /**
+     * Returns the union of all the given iterables.
+     *
+     * @param iterables The iterables to combine
+     *
+     * @return a collection containing all distinct elements, or null when there are no elements
+     */
     @Nullable
     @SafeVarargs
     public static <E> Collection<E> unionAll(@Nullable Iterable<E>... iterables) {

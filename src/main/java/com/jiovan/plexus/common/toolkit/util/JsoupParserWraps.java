@@ -36,10 +36,25 @@ import com.jiovan.plexus.common.toolkit.enumeration.JsoupWhitelistType;
  */
 @SuppressWarnings({"unused", "BooleanMethodIsAlwaysInverted", "UnusedReturnValue"})
 public abstract class JsoupParserWraps {
+    /**
+     * Cleans the HTML using the safelist of the requested type.
+     *
+     * @param text The text to clean
+     * @param type The requested safelist type
+     *
+     * @return the cleaned HTML
+     */
     public static String cleanWith(@Nullable String text, @Nullable JsoupWhitelistType type) {
         return (StringUtils.isBlank(text) || type == null) ? text : Jsoup.clean(text, getSafelist(type));
     }
 
+    /**
+     * Returns the safelist for the requested type.
+     *
+     * @param type The requested safelist type
+     *
+     * @return the safelist, or null when the type is unsupported
+     */
     public static Safelist getSafelist(@Nullable JsoupWhitelistType type) {
         if (type == null) {
             return null;
@@ -109,6 +124,14 @@ public abstract class JsoupParserWraps {
         return mergeSafelist(Safelist.relaxed(), html5Safelist());
     }
 
+    /**
+     * Merges the source safelist into the target safelist.
+     *
+     * @param target The target safelist
+     * @param source The source object
+     *
+     * @return the merged safelist, or null when both inputs are null
+     */
     @SuppressWarnings({"unchecked", "DuplicatedCode"})
     public static Safelist mergeSafelist(@Nullable Safelist target, @Nullable Safelist source) {
         if (source == null) {

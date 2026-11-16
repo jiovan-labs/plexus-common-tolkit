@@ -17,6 +17,7 @@
 package com.jiovan.plexus.common.toolkit.identity;
 
 
+import com.jiovan.plexus.common.toolkit.util.StringUtilsWraps;
 import java.util.UUID;
 import jakarta.annotation.Nonnull;
 import org.apache.commons.lang3.StringUtils;
@@ -52,20 +53,40 @@ public abstract class JdkUuidGenerator {
         return getRandomId(false, false);
     }
 
+    /**
+     * Returns a random UUID string.
+     *
+     * @return a randomly generated UUID string
+     */
     @Nonnull
     public static String getRandomId() {
         return getRandomId(false, true);
     }
 
+    /**
+     * Returns a random UUID string.
+     *
+     * @param uppercase Whether the UUID should use uppercase letters
+     *
+     * @return a randomly generated UUID string
+     */
     @Nonnull
     public static String getRandomId(boolean uppercase) {
         return getRandomId(uppercase, true);
     }
 
+    /**
+     * Returns a random UUID string.
+     *
+     * @param uppercase Whether the UUID should use uppercase letters
+     * @param hyphen Whether the UUID should contain hyphens
+     *
+     * @return a randomly generated UUID string
+     */
     @Nonnull
     public static String getRandomId(boolean uppercase, boolean hyphen) {
         String result = UUID.randomUUID().toString();
         result = uppercase ? StringUtils.upperCase(result) : StringUtils.lowerCase(result);
-        return hyphen ? result : StringUtils.remove(result, CharVariantConst.HYPHEN);
+        return hyphen ? result : StringUtilsWraps.remove(result, CharVariantConst.HYPHEN);
     }
 }

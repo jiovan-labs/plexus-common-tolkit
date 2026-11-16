@@ -108,7 +108,7 @@ public abstract class UuidUtilsWraps {
      */
     @Nullable
     public static String toPlainUuid(@Nullable String uuid) {
-        return !isHyphenUuid(uuid) ? uuid : StringUtils.remove(uuid, CharVariantConst.HYPHEN);
+        return !isHyphenUuid(uuid) ? uuid : StringUtilsWraps.remove(uuid, CharVariantConst.HYPHEN);
     }
 
     /**

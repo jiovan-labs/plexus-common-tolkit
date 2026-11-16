@@ -71,6 +71,13 @@ public abstract class BeanUtilsWraps {
         initPropertyIntrospectors(BEAN_UTILS_INSTANCE);
     }
 
+    /**
+     * Registers the fluent property bean introspector.
+     *
+     * The introspector is registered on the given BeanUtilsBean, or globally when no bean is provided.
+     *
+     * @param bean The BeanUtilsBean instance, or null for the global instance
+     */
     public static void initPropertyIntrospectors(@Nullable BeanUtilsBean bean) {
         if (bean == null) {
             PropertyUtils.addBeanIntrospector(new FluentPropertyBeanIntrospector());
@@ -94,6 +101,14 @@ public abstract class BeanUtilsWraps {
         return CollectionPlainWraps.isNotEmpty(introspectors) && introspectors.stream().filter(Objects::nonNull).anyMatch(item -> ClassUtilsWraps.isAssignableValue(clazz, item));
     }
 
+    /**
+     * Copies properties from the source bean to the target bean.
+     *
+     * @param target The target bean
+     * @param source The source bean
+     *
+     * @throws com.jiovan.plexus.common.toolkit.exception.BeanInvocationException if a property cannot be accessed or set
+     */
     public static void copyProperties(@Nullable Object target, @Nullable Object source) throws BeanInvocationException {
         if (ObjectUtils.anyNull(target, source)) {
             return;
@@ -101,6 +116,15 @@ public abstract class BeanUtilsWraps {
         mapToBean(target, new BeanMap(source));
     }
 
+    /**
+     * Copies properties from the source bean to the target bean.
+     *
+     * @param target The target bean
+     * @param source The source bean
+     * @param filter The predicate used to select entries
+     *
+     * @throws com.jiovan.plexus.common.toolkit.exception.BeanInvocationException if a property cannot be accessed or set
+     */
     public static void copyProperties(@Nullable Object target, @Nullable Object source, BiPredicate<String, Object> filter) throws BeanInvocationException {
         if (ObjectUtils.anyNull(target, source)) {
             return;
@@ -108,6 +132,15 @@ public abstract class BeanUtilsWraps {
         mapToBean(target, new BeanMap(source), filter);
     }
 
+    /**
+     * Copies properties from the source bean to the target bean.
+     *
+     * @param target The target bean
+     * @param source The source bean
+     * @param action The function used to transform entries
+     *
+     * @throws com.jiovan.plexus.common.toolkit.exception.BeanInvocationException if a property cannot be accessed or set
+     */
     public static void copyProperties(@Nullable Object target, @Nullable Object source, BiFunction<String, Object, BooleanDataStruct<Object>> action) throws BeanInvocationException {
         if (ObjectUtils.anyNull(target, source)) {
             return;
@@ -115,14 +148,42 @@ public abstract class BeanUtilsWraps {
         mapToBean(target, new BeanMap(source), action);
     }
 
+    /**
+     * Copies properties from the source bean to the target bean, excluding the specified fields.
+     *
+     * @param target The target bean
+     * @param source The source bean
+     * @param fields The field names
+     *
+     * @throws com.jiovan.plexus.common.toolkit.exception.BeanInvocationException if a property cannot be accessed or set
+     */
     public static void copyPropertiesExclusive(@Nullable Object target, @Nullable Object source, @Nullable String... fields) throws BeanInvocationException {
         copyPropertiesExclusive(target, source, ArrayUtilsWraps.asList(fields), false);
     }
 
+    /**
+     * Copies properties from the source bean to the target bean, excluding the specified fields.
+     *
+     * @param target The target bean
+     * @param source The source bean
+     * @param fields The field names
+     *
+     * @throws com.jiovan.plexus.common.toolkit.exception.BeanInvocationException if a property cannot be accessed or set
+     */
     public static void copyPropertiesExclusive(@Nullable Object target, @Nullable Object source, @Nullable Collection<String> fields) throws BeanInvocationException {
         copyPropertiesExclusive(target, source, fields, false);
     }
 
+    /**
+     * Copies properties from the source bean to the target bean, excluding the specified fields.
+     *
+     * @param target The target bean
+     * @param source The source bean
+     * @param fields The field names
+     * @param allowEmptyValue Whether empty values are allowed
+     *
+     * @throws com.jiovan.plexus.common.toolkit.exception.BeanInvocationException if a property cannot be accessed or set
+     */
     public static void copyPropertiesExclusive(@Nullable Object target, @Nullable Object source, @Nullable Collection<String> fields, boolean allowEmptyValue) throws BeanInvocationException {
         if (ObjectUtils.anyNull(target, source)) {
             return;
@@ -130,14 +191,42 @@ public abstract class BeanUtilsWraps {
         mapToBeanExclusive(target, new BeanMap(source), fields, allowEmptyValue);
     }
 
+    /**
+     * Copies only the specified fields from the source bean to the target bean.
+     *
+     * @param target The target bean
+     * @param source The source bean
+     * @param fields The field names
+     *
+     * @throws com.jiovan.plexus.common.toolkit.exception.BeanInvocationException if a property cannot be accessed or set
+     */
     public static void copyPropertiesInclusive(@Nullable Object target, @Nullable Object source, @Nullable String... fields) throws BeanInvocationException {
         copyPropertiesInclusive(target, source, ArrayUtilsWraps.asList(fields), false);
     }
 
+    /**
+     * Copies only the specified fields from the source bean to the target bean.
+     *
+     * @param target The target bean
+     * @param source The source bean
+     * @param fields The field names
+     *
+     * @throws com.jiovan.plexus.common.toolkit.exception.BeanInvocationException if a property cannot be accessed or set
+     */
     public static void copyPropertiesInclusive(@Nullable Object target, @Nullable Object source, @Nullable Collection<String> fields) throws BeanInvocationException {
         copyPropertiesInclusive(target, source, fields, false);
     }
 
+    /**
+     * Copies only the specified fields from the source bean to the target bean.
+     *
+     * @param target The target bean
+     * @param source The source bean
+     * @param fields The field names
+     * @param allowEmptyValue Whether empty values are allowed
+     *
+     * @throws com.jiovan.plexus.common.toolkit.exception.BeanInvocationException if a property cannot be accessed or set
+     */
     public static void copyPropertiesInclusive(@Nullable Object target, @Nullable Object source, @Nullable Collection<String> fields, boolean allowEmptyValue) throws BeanInvocationException {
         if (ObjectUtils.anyNull(target, source) || CollectionPlainWraps.isEmpty(fields)) {
             return;
@@ -145,6 +234,14 @@ public abstract class BeanUtilsWraps {
         mapToBeanInclusive(target, new BeanMap(source), fields, allowEmptyValue);
     }
 
+    /**
+     * Copies properties from the source bean to the target bean without throwing exceptions.
+     *
+     * Any exception raised while copying properties is ignored.
+     *
+     * @param target The target bean
+     * @param source The source bean
+     */
     public static void copyPropertiesQuietly(@Nullable Object target, @Nullable Object source) {
         try {
             copyProperties(target, source);
@@ -152,6 +249,15 @@ public abstract class BeanUtilsWraps {
         }
     }
 
+    /**
+     * Copies properties from the source bean to the target bean without throwing exceptions.
+     *
+     * Any exception raised while copying properties is ignored.
+     *
+     * @param target The target bean
+     * @param source The source bean
+     * @param filter The predicate used to select entries
+     */
     public static void copyPropertiesQuietly(@Nullable Object target, @Nullable Object source, BiPredicate<String, Object> filter) {
         try {
             copyProperties(target, source, filter);
@@ -159,6 +265,15 @@ public abstract class BeanUtilsWraps {
         }
     }
 
+    /**
+     * Copies properties from the source bean to the target bean without throwing exceptions.
+     *
+     * Any exception raised while copying properties is ignored.
+     *
+     * @param target The target bean
+     * @param source The source bean
+     * @param action The function used to transform entries
+     */
     public static void copyPropertiesQuietly(@Nullable Object target, @Nullable Object source, BiFunction<String, Object, BooleanDataStruct<Object>> action) {
         try {
             copyProperties(target, source, action);
@@ -166,6 +281,15 @@ public abstract class BeanUtilsWraps {
         }
     }
 
+    /**
+     * Copies properties excluding the specified fields without throwing exceptions.
+     *
+     * Any exception raised while copying properties is ignored.
+     *
+     * @param target The target bean
+     * @param source The source bean
+     * @param fields The field names
+     */
     public static void copyPropertiesExclusiveQuietly(@Nullable Object target, @Nullable Object source, @Nullable String... fields) {
         try {
             copyPropertiesExclusive(target, source, fields);
@@ -173,6 +297,15 @@ public abstract class BeanUtilsWraps {
         }
     }
 
+    /**
+     * Copies properties excluding the specified fields without throwing exceptions.
+     *
+     * Any exception raised while copying properties is ignored.
+     *
+     * @param target The target bean
+     * @param source The source bean
+     * @param fields The field names
+     */
     public static void copyPropertiesExclusiveQuietly(@Nullable Object target, @Nullable Object source, @Nullable Collection<String> fields) {
         try {
             copyPropertiesExclusive(target, source, fields);
@@ -180,6 +313,16 @@ public abstract class BeanUtilsWraps {
         }
     }
 
+    /**
+     * Copies properties excluding the specified fields without throwing exceptions.
+     *
+     * Any exception raised while copying properties is ignored.
+     *
+     * @param target The target bean
+     * @param source The source bean
+     * @param fields The field names
+     * @param allowEmptyValue Whether empty values are allowed
+     */
     public static void copyPropertiesExclusiveQuietly(@Nullable Object target, @Nullable Object source, @Nullable Collection<String> fields, boolean allowEmptyValue) {
         try {
             copyPropertiesExclusive(target, source, fields, allowEmptyValue);
@@ -187,6 +330,15 @@ public abstract class BeanUtilsWraps {
         }
     }
 
+    /**
+     * Copies only the specified fields without throwing exceptions.
+     *
+     * Any exception raised while copying properties is ignored.
+     *
+     * @param target The target bean
+     * @param source The source bean
+     * @param fields The field names
+     */
     public static void copyPropertiesInclusiveQuietly(@Nullable Object target, @Nullable Object source, @Nullable String... fields) {
         try {
             copyPropertiesInclusive(target, source, fields);
@@ -194,6 +346,15 @@ public abstract class BeanUtilsWraps {
         }
     }
 
+    /**
+     * Copies only the specified fields without throwing exceptions.
+     *
+     * Any exception raised while copying properties is ignored.
+     *
+     * @param target The target bean
+     * @param source The source bean
+     * @param fields The field names
+     */
     public static void copyPropertiesInclusiveQuietly(@Nullable Object target, @Nullable Object source, @Nullable Collection<String> fields) {
         try {
             copyPropertiesInclusive(target, source, fields);
@@ -201,6 +362,16 @@ public abstract class BeanUtilsWraps {
         }
     }
 
+    /**
+     * Copies only the specified fields without throwing exceptions.
+     *
+     * Any exception raised while copying properties is ignored.
+     *
+     * @param target The target bean
+     * @param source The source bean
+     * @param fields The field names
+     * @param allowEmptyValue Whether empty values are allowed
+     */
     public static void copyPropertiesInclusiveQuietly(@Nullable Object target, @Nullable Object source, @Nullable Collection<String> fields, boolean allowEmptyValue) {
         try {
             copyPropertiesInclusive(target, source, fields, allowEmptyValue);
@@ -208,80 +379,220 @@ public abstract class BeanUtilsWraps {
         }
     }
 
+    /**
+     * Converts the properties of the bean to a map.
+     *
+     * @param bean The bean instance
+     *
+     * @return a map containing the bean properties, or null when there are no properties
+     */
     public static Map<String, Object> beanToMap(@Nullable Object bean) {
         return beanToMapExclusive(bean, (Collection<String>) null);
     }
 
+    /**
+     * Converts the properties of the bean to a map.
+     *
+     * @param bean The bean instance
+     * @param keyPrefix The prefix added to property names
+     * @param keySuffix The suffix added to property names
+     *
+     * @return a map containing the bean properties, or null when there are no properties
+     */
     @Nullable
     public static Map<String, Object> beanToMap(@Nullable Object bean, @Nullable String keyPrefix, @Nullable String keySuffix) {
         return beanToMap(bean, keyPrefix, keySuffix, true, true);
     }
 
+    /**
+     * Converts the properties of the bean to a map.
+     *
+     * @param bean The bean instance
+     * @param keyPrefix The prefix added to property names
+     * @param keySuffix The suffix added to property names
+     * @param allowClassKey Whether the class key is allowed
+     * @param allowEmptyValue Whether empty values are allowed
+     *
+     * @return a map containing the bean properties, or null when there are no properties
+     */
     @Nullable
     public static Map<String, Object> beanToMap(@Nullable Object bean, @Nullable String keyPrefix, @Nullable String keySuffix, boolean allowClassKey, boolean allowEmptyValue) {
         return PropertyPlainWraps.toStringObjectMap(beanToProperties(bean, keyPrefix, keySuffix, allowClassKey, allowEmptyValue));
     }
 
+    /**
+     * Converts the properties of the bean to a map.
+     *
+     * @param bean The bean instance
+     * @param keyMapping The property name mapping
+     * @param valueMapping The property value mapping
+     *
+     * @return a map containing the bean properties, or null when there are no properties
+     */
     @Nullable
     public static Map<String, Object> beanToMap(@Nullable Object bean, @Nullable Map<String, String> keyMapping, @Nullable Map<Object, Object> valueMapping) {
         return beanToMap(bean, keyMapping, valueMapping, null);
     }
 
+    /**
+     * Converts the properties of the bean to a map.
+     *
+     * @param bean The bean instance
+     * @param filer The predicate used to select entries
+     *
+     * @return a map containing the bean properties, or null when there are no properties
+     */
     @Nullable
     public static Map<String, Object> beanToMap(@Nullable Object bean, @Nullable BiPredicate<String, Object> filer) {
         return beanToMap(bean, null, null, filer);
     }
 
+    /**
+     * Converts the properties of the bean to a map.
+     *
+     * @param bean The bean instance
+     * @param keyMapping The property name mapping
+     * @param valueMapping The property value mapping
+     * @param filer The predicate used to select entries
+     *
+     * @return a map containing the bean properties, or null when there are no properties
+     */
     @Nullable
     public static Map<String, Object> beanToMap(@Nullable Object bean, @Nullable Map<String, String> keyMapping, @Nullable Map<Object, Object> valueMapping, @Nullable BiPredicate<String, Object> filer) {
         return PropertyPlainWraps.toStringObjectMap(beanToProperties(bean, keyMapping, valueMapping, filer));
     }
 
+    /**
+     * Converts the properties of the bean to a map, excluding the specified fields.
+     *
+     * @param bean The bean instance
+     * @param fields The field names
+     *
+     * @return a map containing the selected properties, or null when there are no properties
+     */
     @Nullable
     public static Map<String, Object> beanToMapExclusive(@Nullable Object bean, @Nullable String... fields) {
         return beanToMapExclusive(bean, ArrayUtilsWraps.asList(fields), true, true);
     }
 
+    /**
+     * Converts the properties of the bean to a map, excluding the specified fields.
+     *
+     * @param bean The bean instance
+     * @param fields The field names
+     *
+     * @return a map containing the selected properties, or null when there are no properties
+     */
     @Nullable
     public static Map<String, Object> beanToMapExclusive(@Nullable Object bean, @Nullable Collection<String> fields) {
         return beanToMapExclusive(bean, fields, true, true);
     }
 
+    /**
+     * Converts the properties of the bean to a map, excluding the specified fields.
+     *
+     * @param bean The bean instance
+     * @param fields The field names
+     * @param allowClassKey Whether the class key is allowed
+     * @param allowEmptyValue Whether empty values are allowed
+     *
+     * @return a map containing the selected properties, or null when there are no properties
+     */
     @Nullable
     public static Map<String, Object> beanToMapExclusive(@Nullable Object bean, @Nullable Collection<String> fields, boolean allowClassKey, boolean allowEmptyValue) {
         return PropertyPlainWraps.toStringObjectMap(beanToPropertiesExclusive(bean, fields, allowClassKey, allowEmptyValue));
     }
 
+    /**
+     * Converts only the specified properties of the bean to a map.
+     *
+     * @param bean The bean instance
+     * @param fields The field names
+     *
+     * @return a map containing the selected properties, or null when there are no properties
+     */
     @Nullable
     public static Map<String, Object> beanToMapInclusive(@Nullable Object bean, @Nullable String... fields) {
         return beanToMapInclusive(bean, ArrayUtilsWraps.asList(fields), true, true);
     }
 
+    /**
+     * Converts only the specified properties of the bean to a map.
+     *
+     * @param bean The bean instance
+     * @param fields The field names
+     *
+     * @return a map containing the selected properties, or null when there are no properties
+     */
     @Nullable
     public static Map<String, Object> beanToMapInclusive(@Nullable Object bean, @Nullable Collection<String> fields) {
         return beanToMapInclusive(bean, fields, true, true);
     }
 
+    /**
+     * Converts only the specified properties of the bean to a map.
+     *
+     * @param bean The bean instance
+     * @param fields The field names
+     * @param allowClassKey Whether the class key is allowed
+     * @param allowEmptyValue Whether empty values are allowed
+     *
+     * @return a map containing the selected properties, or null when there are no properties
+     */
     @Nullable
     public static Map<String, Object> beanToMapInclusive(@Nullable Object bean, @Nullable Collection<String> fields, boolean allowClassKey, boolean allowEmptyValue) {
         return PropertyPlainWraps.toStringObjectMap(beanToPropertiesInclusive(bean, fields, allowClassKey, allowEmptyValue));
     }
 
+    /**
+     * Converts the properties of the bean to a Properties object.
+     *
+     * @param bean The bean instance
+     *
+     * @return a Properties object containing the bean properties, or null when there are no properties
+     */
     @Nullable
     public static Properties beanToProperties(@Nullable Object bean) {
         return beanToPropertiesExclusive(bean, (Collection<String>) null);
     }
 
+    /**
+     * Converts the properties of the bean to a Properties object.
+     *
+     * @param bean The bean instance
+     * @param keyMapping The property name mapping
+     * @param valueMapping The property value mapping
+     *
+     * @return a Properties object containing the bean properties, or null when there are no properties
+     */
     @Nullable
     public static Properties beanToProperties(@Nullable Object bean, @Nullable Map<String, String> keyMapping, @Nullable Map<Object, Object> valueMapping) {
         return beanToProperties(bean, keyMapping, valueMapping, null);
     }
 
+    /**
+     * Converts the properties of the bean to a Properties object.
+     *
+     * @param bean The bean instance
+     * @param filer The predicate used to select entries
+     *
+     * @return a Properties object containing the bean properties, or null when there are no properties
+     */
     @Nullable
     public static Properties beanToProperties(@Nullable Object bean, @Nullable BiPredicate<String, Object> filer) {
         return beanToProperties(bean, null, null, filer);
     }
 
+    /**
+     * Converts the properties of the bean to a Properties object.
+     *
+     * @param bean The bean instance
+     * @param keyMapping The property name mapping
+     * @param valueMapping The property value mapping
+     * @param filer The predicate used to select entries
+     *
+     * @return a Properties object containing the bean properties, or null when there are no properties
+     */
     @Nullable
     @SuppressWarnings("MismatchedQueryAndUpdateOfCollection")
     public static Properties beanToProperties(@Nullable Object bean, @Nullable Map<String, String> keyMapping, @Nullable Map<Object, Object> valueMapping, @Nullable BiPredicate<String, Object> filer) {
@@ -301,11 +612,31 @@ public abstract class BeanUtilsWraps {
         return MapPlainWraps.isEmpty(properties) ? null : properties;
     }
 
+    /**
+     * Converts the properties of the bean to a Properties object.
+     *
+     * @param bean The bean instance
+     * @param keyPrefix The prefix added to property names
+     * @param keySuffix The suffix added to property names
+     *
+     * @return a Properties object containing the bean properties, or null when there are no properties
+     */
     @Nullable
     public static Properties beanToProperties(@Nullable Object bean, @Nullable CharSequence keyPrefix, @Nullable CharSequence keySuffix) {
         return beanToProperties(bean, keyPrefix, keySuffix, true, true);
     }
 
+    /**
+     * Converts the properties of the bean to a Properties object.
+     *
+     * @param bean The bean instance
+     * @param keyPrefix The prefix added to property names
+     * @param keySuffix The suffix added to property names
+     * @param allowClassKey Whether the class key is allowed
+     * @param allowEmptyValue Whether empty values are allowed
+     *
+     * @return a Properties object containing the bean properties, or null when there are no properties
+     */
     @Nullable
     @SuppressWarnings("MismatchedQueryAndUpdateOfCollection")
     public static Properties beanToProperties(@Nullable Object bean, @Nullable CharSequence keyPrefix, @Nullable CharSequence keySuffix, boolean allowClassKey, boolean allowEmptyValue) {
@@ -321,7 +652,7 @@ public abstract class BeanUtilsWraps {
             if (entry.getKey() == null || (!allowEmptyValue && ObjectUtils.isEmpty(entry.getValue()))) {
                 continue;
             }
-            if (StringUtils.equals(entry.getKey(), JavaKeywordConst.CLASS)) {
+            if (StringUtilsWraps.equals(entry.getKey(), JavaKeywordConst.CLASS)) {
                 if (allowClassKey) {
                     properties.put(entry.getKey(), entry.getValue());
                 }
@@ -332,16 +663,42 @@ public abstract class BeanUtilsWraps {
         return MapPlainWraps.isEmpty(properties) ? null : properties;
     }
 
+    /**
+     * Converts the properties of the bean to a Properties object, excluding the specified fields.
+     *
+     * @param bean The bean instance
+     * @param fields The field names
+     *
+     * @return a Properties object containing the selected properties, or null when there are no properties
+     */
     @Nullable
     public static Properties beanToPropertiesExclusive(@Nullable Object bean, @Nullable String... fields) {
         return beanToPropertiesExclusive(bean, ArrayUtilsWraps.asList(fields), true, true);
     }
 
+    /**
+     * Converts the properties of the bean to a Properties object, excluding the specified fields.
+     *
+     * @param bean The bean instance
+     * @param fields The field names
+     *
+     * @return a Properties object containing the selected properties, or null when there are no properties
+     */
     @Nullable
     public static Properties beanToPropertiesExclusive(@Nullable Object bean, @Nullable Collection<String> fields) {
         return beanToPropertiesExclusive(bean, fields, true, true);
     }
 
+    /**
+     * Converts the properties of the bean to a Properties object, excluding the specified fields.
+     *
+     * @param bean The bean instance
+     * @param fields The field names
+     * @param allowClassKey Whether the class key is allowed
+     * @param allowEmptyValue Whether empty values are allowed
+     *
+     * @return a Properties object containing the selected properties, or null when there are no properties
+     */
     @Nullable
     @SuppressWarnings("MismatchedQueryAndUpdateOfCollection")
     public static Properties beanToPropertiesExclusive(@Nullable Object bean, @Nullable Collection<String> fields, boolean allowClassKey, boolean allowEmptyValue) {
@@ -354,7 +711,7 @@ public abstract class BeanUtilsWraps {
         }
         Properties properties = new Properties();
         for (Map.Entry<String, Object> entry : map.entrySet()) {
-            if (entry.getKey() == null || (!allowClassKey && StringUtils.equals(entry.getKey(), JavaKeywordConst.CLASS)) || (!allowEmptyValue && ObjectUtils.isEmpty(entry.getValue()))) {
+            if (entry.getKey() == null || (!allowClassKey && StringUtilsWraps.equals(entry.getKey(), JavaKeywordConst.CLASS)) || (!allowEmptyValue && ObjectUtils.isEmpty(entry.getValue()))) {
                 continue;
             }
             if (!StringUtilsWraps.equalsAny(entry.getKey(), fields)) {
@@ -364,16 +721,42 @@ public abstract class BeanUtilsWraps {
         return MapPlainWraps.isEmpty(properties) ? null : properties;
     }
 
+    /**
+     * Converts only the specified properties of the bean to a Properties object.
+     *
+     * @param bean The bean instance
+     * @param fields The field names
+     *
+     * @return a Properties object containing the selected properties, or null when there are no properties
+     */
     @Nullable
     public static Properties beanToPropertiesInclusive(@Nullable Object bean, @Nullable String... fields) {
         return beanToPropertiesInclusive(bean, ArrayUtilsWraps.asList(fields), true, true);
     }
 
+    /**
+     * Converts only the specified properties of the bean to a Properties object.
+     *
+     * @param bean The bean instance
+     * @param fields The field names
+     *
+     * @return a Properties object containing the selected properties, or null when there are no properties
+     */
     @Nullable
     public static Properties beanToPropertiesInclusive(@Nullable Object bean, @Nullable Collection<String> fields) {
         return beanToPropertiesInclusive(bean, fields, true, true);
     }
 
+    /**
+     * Converts only the specified properties of the bean to a Properties object.
+     *
+     * @param bean The bean instance
+     * @param fields The field names
+     * @param allowClassKey Whether the class key is allowed
+     * @param allowEmptyValue Whether empty values are allowed
+     *
+     * @return a Properties object containing the selected properties, or null when there are no properties
+     */
     @Nullable
     @SuppressWarnings("MismatchedQueryAndUpdateOfCollection")
     public static Properties beanToPropertiesInclusive(@Nullable Object bean, @Nullable Collection<String> fields, boolean allowClassKey, boolean allowEmptyValue) {
@@ -386,7 +769,7 @@ public abstract class BeanUtilsWraps {
         }
         Properties properties = new Properties();
         for (Map.Entry<String, Object> entry : map.entrySet()) {
-            if (entry.getKey() == null || (!allowClassKey && StringUtils.equals(entry.getKey(), JavaKeywordConst.CLASS)) || (!allowEmptyValue && ObjectUtils.isEmpty(entry.getValue()))) {
+            if (entry.getKey() == null || (!allowClassKey && StringUtilsWraps.equals(entry.getKey(), JavaKeywordConst.CLASS)) || (!allowEmptyValue && ObjectUtils.isEmpty(entry.getValue()))) {
                 continue;
             }
             if (StringUtilsWraps.equalsAny(entry.getKey(), fields)) {
@@ -396,6 +779,14 @@ public abstract class BeanUtilsWraps {
         return MapPlainWraps.isEmpty(properties) ? null : properties;
     }
 
+    /**
+     * Sets bean properties from the given map.
+     *
+     * @param bean The bean instance
+     * @param map The source map
+     *
+     * @throws com.jiovan.plexus.common.toolkit.exception.BeanInvocationException if a property cannot be accessed or set
+     */
     public static void mapToBean(@Nullable Object bean, @Nullable Map<String, ?> map) throws BeanInvocationException {
         if (bean == null || MapPlainWraps.isEmpty(map)) {
             return;
@@ -405,6 +796,15 @@ public abstract class BeanUtilsWraps {
         }
     }
 
+    /**
+     * Sets bean properties from the given map.
+     *
+     * @param bean The bean instance
+     * @param map The source map
+     * @param filter The predicate used to select entries
+     *
+     * @throws com.jiovan.plexus.common.toolkit.exception.BeanInvocationException if a property cannot be accessed or set
+     */
     public static void mapToBean(@Nullable Object bean, @Nullable Map<String, ?> map, BiPredicate<String, Object> filter) throws BeanInvocationException {
         if (ObjectUtils.anyNull(bean, filter) || MapPlainWraps.isEmpty(map)) {
             return;
@@ -417,6 +817,15 @@ public abstract class BeanUtilsWraps {
         }
     }
 
+    /**
+     * Sets bean properties from the given map.
+     *
+     * @param bean The bean instance
+     * @param map The source map
+     * @param action The function used to transform entries
+     *
+     * @throws com.jiovan.plexus.common.toolkit.exception.BeanInvocationException if a property cannot be accessed or set
+     */
     public static void mapToBean(@Nullable Object bean, @Nullable Map<String, ?> map, BiFunction<String, Object, BooleanDataStruct<Object>> action) throws BeanInvocationException {
         if (ObjectUtils.anyNull(bean, action) || MapPlainWraps.isEmpty(map)) {
             return;
@@ -429,6 +838,14 @@ public abstract class BeanUtilsWraps {
         }
     }
 
+    /**
+     * Sets bean properties from the map, excluding fields marked with BeanCopyIgnore or ViewTransferIgnore.
+     *
+     * @param bean The bean instance
+     * @param map The source map
+     *
+     * @throws com.jiovan.plexus.common.toolkit.exception.BeanInvocationException if a property cannot be accessed or set
+     */
     public static void mapToBeanSheared(@Nullable Object bean, @Nullable Map<String, ?> map) throws BeanInvocationException {
         if (bean == null || MapPlainWraps.isEmpty(map)) {
             return;
@@ -438,10 +855,28 @@ public abstract class BeanUtilsWraps {
         mapToBeanExclusive(bean, map, excludes);
     }
 
+    /**
+     * Sets bean properties from the map, excluding the specified fields.
+     *
+     * @param bean The bean instance
+     * @param map The source map
+     * @param fields The field names
+     *
+     * @throws com.jiovan.plexus.common.toolkit.exception.BeanInvocationException if a property cannot be accessed or set
+     */
     public static void mapToBeanExclusive(@Nullable Object bean, @Nullable Map<String, ?> map, @Nullable String... fields) throws BeanInvocationException {
         mapToBeanExclusive(bean, map, ArrayUtilsWraps.asList(fields), false);
     }
 
+    /**
+     * Sets bean properties from the map, excluding the specified fields.
+     *
+     * @param bean The bean instance
+     * @param map The source map
+     * @param fields The field names
+     *
+     * @throws com.jiovan.plexus.common.toolkit.exception.BeanInvocationException if a property cannot be accessed or set
+     */
     public static void mapToBeanExclusive(@Nullable Object bean, @Nullable Map<String, ?> map, @Nullable Collection<String> fields) throws BeanInvocationException {
         mapToBeanExclusive(bean, map, fields, false);
     }
@@ -454,7 +889,7 @@ public abstract class BeanUtilsWraps {
             return;
         }
         for (Map.Entry<String, ?> entry : map.entrySet()) {
-            if (StringUtils.isBlank(entry.getKey()) || StringUtils.equals(entry.getKey(), JavaKeywordConst.CLASS) || (!allowEmptyValue && ObjectUtils.isEmpty(entry.getValue()))) {
+            if (StringUtils.isBlank(entry.getKey()) || StringUtilsWraps.equals(entry.getKey(), JavaKeywordConst.CLASS) || (!allowEmptyValue && ObjectUtils.isEmpty(entry.getValue()))) {
                 continue;
             }
             if (!StringUtilsWraps.equalsAny(entry.getKey(), fields)) {
@@ -463,10 +898,28 @@ public abstract class BeanUtilsWraps {
         }
     }
 
+    /**
+     * Sets only the specified properties of the bean from the map.
+     *
+     * @param bean The bean instance
+     * @param map The source map
+     * @param fields The field names
+     *
+     * @throws com.jiovan.plexus.common.toolkit.exception.BeanInvocationException if a property cannot be accessed or set
+     */
     public static void mapToBeanInclusive(@Nullable Object bean, @Nullable Map<String, ?> map, @Nullable String... fields) throws BeanInvocationException {
         mapToBeanInclusive(bean, map, ArrayUtilsWraps.asList(fields), false);
     }
 
+    /**
+     * Sets only the specified properties of the bean from the map.
+     *
+     * @param bean The bean instance
+     * @param map The source map
+     * @param fields The field names
+     *
+     * @throws com.jiovan.plexus.common.toolkit.exception.BeanInvocationException if a property cannot be accessed or set
+     */
     public static void mapToBeanInclusive(@Nullable Object bean, @Nullable Map<String, ?> map, @Nullable Collection<String> fields) throws BeanInvocationException {
         mapToBeanInclusive(bean, map, fields, false);
     }
@@ -479,7 +932,7 @@ public abstract class BeanUtilsWraps {
             return;
         }
         for (Map.Entry<String, ?> entry : map.entrySet()) {
-            if (StringUtils.isBlank(entry.getKey()) || StringUtils.equals(entry.getKey(), JavaKeywordConst.CLASS) || (!allowEmptyValue && ObjectUtils.isEmpty(entry.getValue()))) {
+            if (StringUtils.isBlank(entry.getKey()) || StringUtilsWraps.equals(entry.getKey(), JavaKeywordConst.CLASS) || (!allowEmptyValue && ObjectUtils.isEmpty(entry.getValue()))) {
                 continue;
             }
             if (StringUtilsWraps.equalsAny(entry.getKey(), fields)) {
@@ -488,6 +941,14 @@ public abstract class BeanUtilsWraps {
         }
     }
 
+    /**
+     * Sets bean properties from the given map without throwing exceptions.
+     *
+     * Any exception raised while setting properties is ignored.
+     *
+     * @param bean The bean instance
+     * @param map The source map
+     */
     public static void mapToBeanQuietly(@Nullable Object bean, @Nullable Map<String, ?> map) {
         try {
             mapToBean(bean, map);
@@ -495,6 +956,15 @@ public abstract class BeanUtilsWraps {
         }
     }
 
+    /**
+     * Sets bean properties from the given map without throwing exceptions.
+     *
+     * Any exception raised while setting properties is ignored.
+     *
+     * @param bean The bean instance
+     * @param map The source map
+     * @param filter The predicate used to select entries
+     */
     public static void mapToBeanQuietly(@Nullable Object bean, @Nullable Map<String, ?> map, BiPredicate<String, Object> filter) {
         try {
             mapToBean(bean, map, filter);
@@ -502,6 +972,15 @@ public abstract class BeanUtilsWraps {
         }
     }
 
+    /**
+     * Sets bean properties from the given map without throwing exceptions.
+     *
+     * Any exception raised while setting properties is ignored.
+     *
+     * @param bean The bean instance
+     * @param map The source map
+     * @param action The function used to transform entries
+     */
     public static void mapToBeanQuietly(@Nullable Object bean, @Nullable Map<String, ?> map, BiFunction<String, Object, BooleanDataStruct<Object>> action) {
         try {
             mapToBean(bean, map, action);
@@ -509,6 +988,15 @@ public abstract class BeanUtilsWraps {
         }
     }
 
+    /**
+     * Sets bean properties from the map, excluding the specified fields, without throwing exceptions.
+     *
+     * Any exception raised while setting properties is ignored.
+     *
+     * @param bean The bean instance
+     * @param map The source map
+     * @param fields The field names
+     */
     public static void mapToBeanExclusiveQuietly(@Nullable Object bean, @Nullable Map<String, ?> map, @Nullable String... fields) {
         try {
             mapToBeanExclusive(bean, map, fields);
@@ -516,6 +1004,15 @@ public abstract class BeanUtilsWraps {
         }
     }
 
+    /**
+     * Sets bean properties from the map, excluding the specified fields, without throwing exceptions.
+     *
+     * Any exception raised while setting properties is ignored.
+     *
+     * @param bean The bean instance
+     * @param map The source map
+     * @param fields The field names
+     */
     public static void mapToBeanExclusiveQuietly(@Nullable Object bean, @Nullable Map<String, ?> map, @Nullable Collection<String> fields) {
         try {
             mapToBeanExclusive(bean, map, fields);
@@ -523,6 +1020,16 @@ public abstract class BeanUtilsWraps {
         }
     }
 
+    /**
+     * Sets bean properties from the map, excluding the specified fields, without throwing exceptions.
+     *
+     * Any exception raised while setting properties is ignored.
+     *
+     * @param bean The bean instance
+     * @param map The source map
+     * @param fields The field names
+     * @param allowEmptyValue Whether empty values are allowed
+     */
     public static void mapToBeanExclusiveQuietly(@Nullable Object bean, @Nullable Map<String, ?> map, @Nullable Collection<String> fields, boolean allowEmptyValue) {
         try {
             mapToBeanExclusive(bean, map, fields, allowEmptyValue);
@@ -530,6 +1037,15 @@ public abstract class BeanUtilsWraps {
         }
     }
 
+    /**
+     * Sets only the specified properties of the bean from the map without throwing exceptions.
+     *
+     * Any exception raised while setting properties is ignored.
+     *
+     * @param bean The bean instance
+     * @param map The source map
+     * @param fields The field names
+     */
     public static void mapToBeanInclusiveQuietly(@Nullable Object bean, @Nullable Map<String, ?> map, @Nullable String... fields) {
         try {
             mapToBeanInclusive(bean, map, fields);
@@ -537,6 +1053,15 @@ public abstract class BeanUtilsWraps {
         }
     }
 
+    /**
+     * Sets only the specified properties of the bean from the map without throwing exceptions.
+     *
+     * Any exception raised while setting properties is ignored.
+     *
+     * @param bean The bean instance
+     * @param map The source map
+     * @param fields The field names
+     */
     public static void mapToBeanInclusiveQuietly(@Nullable Object bean, @Nullable Map<String, ?> map, @Nullable Collection<String> fields) {
         try {
             mapToBeanInclusive(bean, map, fields);
@@ -544,6 +1069,16 @@ public abstract class BeanUtilsWraps {
         }
     }
 
+    /**
+     * Sets only the specified properties of the bean from the map without throwing exceptions.
+     *
+     * Any exception raised while setting properties is ignored.
+     *
+     * @param bean The bean instance
+     * @param map The source map
+     * @param fields The field names
+     * @param allowEmptyValue Whether empty values are allowed
+     */
     public static void mapToBeanInclusiveQuietly(@Nullable Object bean, @Nullable Map<String, ?> map, @Nullable Collection<String> fields, boolean allowEmptyValue) {
         try {
             mapToBeanInclusive(bean, map, fields, allowEmptyValue);
@@ -572,6 +1107,17 @@ public abstract class BeanUtilsWraps {
         }
     }
 
+    /**
+     * Sets a bean property without throwing exceptions.
+     *
+     * Any exception raised while setting the property is ignored.
+     *
+     * @param bean The bean instance
+     * @param property The property name
+     * @param value The property value
+     *
+     * @return true when the property was set; false otherwise
+     */
     public static boolean setPropertyQuietly(@Nullable Object bean, @Nullable String property, @Nullable Object value) {
         try {
             return setProperty(bean, property, value);
@@ -597,6 +1143,15 @@ public abstract class BeanUtilsWraps {
         }
     }
 
+    /**
+     * Registers a converter for the given class.
+     *
+     * The converter is registered globally when no BeanUtilsBean is provided.
+     *
+     * @param clazz The target class
+     * @param converter The converter to register
+     * @param bean The BeanUtilsBean instance, or null for the global instance
+     */
     public static <T> void registerClassConverter(@Nullable Class<T> clazz, @Nullable Converter<T> converter, @Nullable BeanUtilsBean bean) {
         if (clazz == null || converter == null) {
             return;
@@ -608,6 +1163,13 @@ public abstract class BeanUtilsWraps {
         }
     }
 
+    /**
+     * Registers converters for common date and time types.
+     *
+     * The converters are registered globally when no BeanUtilsBean is provided.
+     *
+     * @param bean The BeanUtilsBean instance, or null for the global instance
+     */
     public static void registerTemporalConverters(@Nullable BeanUtilsBean bean) {
         registerClassConverter(java.util.Date.class, new JdkDateConverter(), bean);
         registerClassConverter(java.sql.Date.class, new SqlDateConverter(), bean);

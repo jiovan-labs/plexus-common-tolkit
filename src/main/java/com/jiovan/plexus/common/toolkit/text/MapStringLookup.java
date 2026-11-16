@@ -26,6 +26,8 @@ import org.apache.commons.text.lookup.StringLookup;
 /**
  * Lookup for {@link org.apache.commons.text.lookup.StringLookup}
  *
+ * @param <V> the type of the values in the map
+ *
  * @author David Hsing
  *
  * @see org.apache.commons.text.StringSubstitutor#StringSubstitutor(org.apache.commons.text.lookup.StringLookup)
@@ -38,14 +40,34 @@ public class MapStringLookup<V> implements StringLookup {
     private final boolean nullValueAsPlaceholder;
     private final String placeholder;
 
+    /**
+     * Creates a lookup over the given map with an empty placeholder for null values.
+     *
+     * @param map the map to look up values in, or null when absent
+     */
     public MapStringLookup(@Nullable Map<String, V> map) {
         this(map, false, true, StringUtils.EMPTY);
     }
 
+    /**
+     * Creates a lookup over the given map with an empty placeholder for missing keys and null values.
+     *
+     * @param map the map to look up values in, or null when absent
+     * @param nullKeyAsPlaceholder whether to return the placeholder for keys absent from the map
+     * @param nullValueAsPlaceholder whether to return the placeholder for keys mapped to null
+     */
     public MapStringLookup(@Nullable Map<String, V> map, boolean nullKeyAsPlaceholder, boolean nullValueAsPlaceholder) {
         this(map, nullKeyAsPlaceholder, nullValueAsPlaceholder, StringUtils.EMPTY);
     }
 
+    /**
+     * Creates a lookup over the given map with the given placeholder behavior.
+     *
+     * @param map the map to look up values in, or null when absent
+     * @param nullKeyAsPlaceholder whether to return the placeholder for keys absent from the map
+     * @param nullValueAsPlaceholder whether to return the placeholder for keys mapped to null
+     * @param placeholder the value returned in place of missing keys or null values, or null when absent
+     */
     public MapStringLookup(@Nullable Map<String, V> map, boolean nullKeyAsPlaceholder, boolean nullValueAsPlaceholder, @Nullable String placeholder) {
         this.map = map;
         this.nullKeyAsPlaceholder = nullKeyAsPlaceholder;
@@ -53,6 +75,12 @@ public class MapStringLookup<V> implements StringLookup {
         this.placeholder = placeholder;
     }
 
+    /**
+     * Returns the value associated with the given key.
+     *
+     * @param key the key to look up, or null when absent
+     * @return the string representation of the mapped value, the placeholder when configured for a missing key or null value, or null otherwise
+     */
     @Override
     public String apply(@Nullable String key) {
         if (map == null) {
@@ -71,7 +99,9 @@ public class MapStringLookup<V> implements StringLookup {
     /**
      * Looks up a String key to provide a String value.
      *
-     * @return The matching value, null if no match.
+     * @param key the key to look up, or null when absent
+     *
+     * @return the matching value, or null when there is no match
      *
      * @deprecated Use {@link #apply(String)}.
      */

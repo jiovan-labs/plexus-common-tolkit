@@ -43,10 +43,23 @@ import lombok.Setter;
 public class LocalTimeConverter extends AbstractConverter<LocalTime> {
     private String[] formats = TemporalFormatCombo.TIME_FORMATS;
 
+    /**
+     * Creates a converter with the given default value.
+     *
+     * @param defaultValue the value returned when conversion fails, or null when absent
+     */
     public LocalTimeConverter(@Nullable LocalTime defaultValue) {
         super(defaultValue);
     }
 
+    /**
+     * Converts the given value to the requested time type. Tries the configured time patterns before falling back to {@code LocalTime.parse}.
+     *
+     * @param type the target type, which must be assignable from LocalTime
+     * @param value the value to convert, or null when absent
+     * @return the converted value, or null when the value is null
+     * @throws Exception when the value cannot be converted
+     */
     @Override
     @SuppressWarnings("RedundantThrows")
     protected <T> T convertToType(@Nonnull Class<T> type, @Nullable Object value) throws Exception {
@@ -67,6 +80,11 @@ public class LocalTimeConverter extends AbstractConverter<LocalTime> {
         throw super.conversionException(type, value);
     }
 
+    /**
+     * Returns the default target type of this converter.
+     *
+     * @return the LocalTime class
+     */
     @Override
     protected Class<LocalTime> getDefaultType() {
         return LocalTime.class;

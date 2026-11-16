@@ -63,6 +63,13 @@ public abstract class AssertMessageWraps {
     private static final String NOT_POSITIVE = "The argument '%s' must not be positive.";    // $NON-NLS-1$
     private static final String NOT_NEGATIVE = "The argument '%s' must not be negative.";    // $NON-NLS-1$
 
+    /**
+     * Generate assertion message for text with length requirement.
+     *
+     * @param argument The argument name
+     *
+     * @return formatted assertion message
+     */
     @Nonnull
     public static String hasLength(@Nullable String argument) {
         return String.format(HAS_LENGTH, argument);

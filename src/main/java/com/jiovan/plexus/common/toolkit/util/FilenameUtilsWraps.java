@@ -35,10 +35,25 @@ import com.jiovan.plexus.common.toolkit.constant.CharVariantConst;
  */
 @SuppressWarnings({"unused", "BooleanMethodIsAlwaysInverted", "UnusedReturnValue"})
 public abstract class FilenameUtilsWraps {
+    /**
+     * Checks whether the file name has no extension.
+     *
+     * @param fileName The file name
+     *
+     * @return true when the extension is empty; false otherwise
+     */
     public static boolean isExtensionEmpty(@Nullable String fileName) {
         return StringUtils.isEmpty(FilenameUtils.getExtension(fileName));
     }
 
+    /**
+     * Checks whether the file extension matches any of the given extensions, ignoring case.
+     *
+     * @param fileName The file name
+     * @param extensions The extensions to check
+     *
+     * @return true when an extension matches; false otherwise
+     */
     public static boolean isExtensionIgnoreCase(@Nullable String fileName, @Nullable String... extensions) {
         return isExtensionIgnoreCase(fileName, ArrayUtilsWraps.asList(extensions));
     }
@@ -61,30 +76,54 @@ public abstract class FilenameUtilsWraps {
         return (StringUtils.isEmpty(extension) && CollectionPlainWraps.isEmpty(extensions)) || StringUtilsWraps.equalsAnyIgnoreCase(extension, extensions);
     }
 
+    /**
+     * Creates a temporary file in the java.io.tmpdir directory.
+     *
+     * @param fileName The file name
+     * @param extension The extension to check
+     *
+     * @return the generated file, or null when it cannot be created
+     */
     @Nullable
     public static String generateFileOfJavaIoTmp(@Nullable String fileName, @Nullable String extension) {
-        String extensionAlias = StringUtils.removeStart(extension, CharVariantConst.DOT);
-        String fullName = StringUtils.isBlank(extensionAlias) ? StringUtils.defaultString(fileName) : StringUtils.join(fileName, CharVariantConst.DOT, extensionAlias);
+        String extensionAlias = StringUtilsWraps.removeStart(extension, CharVariantConst.DOT);
+        String fullName = StringUtils.isBlank(extensionAlias) ? StringUtilsWraps.defaultString(fileName) : StringUtils.join(fileName, CharVariantConst.DOT, extensionAlias);
         if (StringUtils.isBlank(fullName)) {
             return null;
         }
         return Path.of(SystemProperties.getJavaIoTmpdir(), fullName).toString();
     }
 
+    /**
+     * Creates a temporary file in the user directory.
+     *
+     * @param fileName The file name
+     * @param extension The extension to check
+     *
+     * @return the generated file, or null when it cannot be created
+     */
     @Nullable
     public static String generateFileOfUserDir(@Nullable String fileName, @Nullable String extension) {
-        String extensionAlias = StringUtils.removeStart(extension, CharVariantConst.DOT);
-        String fullName = StringUtils.isBlank(extensionAlias) ? StringUtils.defaultString(fileName) : StringUtils.join(fileName, CharVariantConst.DOT, extensionAlias);
+        String extensionAlias = StringUtilsWraps.removeStart(extension, CharVariantConst.DOT);
+        String fullName = StringUtils.isBlank(extensionAlias) ? StringUtilsWraps.defaultString(fileName) : StringUtils.join(fileName, CharVariantConst.DOT, extensionAlias);
         if (StringUtils.isBlank(fullName)) {
             return null;
         }
         return Path.of(SystemProperties.getUserDir(), fullName).toString();
     }
 
+    /**
+     * Creates a temporary file in the user home directory.
+     *
+     * @param fileName The file name
+     * @param extension The extension to check
+     *
+     * @return the generated file, or null when it cannot be created
+     */
     @Nullable
     public static String generateFileOfUserHome(@Nullable String fileName, @Nullable String extension) {
-        String extensionAlias = StringUtils.removeStart(extension, CharVariantConst.DOT);
-        String fullName = StringUtils.isBlank(extensionAlias) ? StringUtils.defaultString(fileName) : StringUtils.join(fileName, CharVariantConst.DOT, extensionAlias);
+        String extensionAlias = StringUtilsWraps.removeStart(extension, CharVariantConst.DOT);
+        String fullName = StringUtils.isBlank(extensionAlias) ? StringUtilsWraps.defaultString(fileName) : StringUtils.join(fileName, CharVariantConst.DOT, extensionAlias);
         if (StringUtils.isBlank(fullName)) {
             return null;
         }

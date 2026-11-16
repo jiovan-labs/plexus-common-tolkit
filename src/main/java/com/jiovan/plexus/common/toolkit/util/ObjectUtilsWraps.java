@@ -473,6 +473,16 @@ public abstract class ObjectUtilsWraps {
         return castAsIterable(source, expectType, componentType, null);
     }
 
+    /**
+     * Casts the source to an Iterable.
+     *
+     * @param source The source value
+     * @param expectType The expected type
+     * @param componentType The expected component type
+     * @param defaultValue The fallback value
+     *
+     * @return the result, or null when it is unavailable
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static <T extends Iterable<E>, E> T castAsIterable(@Nullable Object source, @Nullable Class<T> expectType, @Nullable Class<E> componentType, @Nullable T defaultValue) {
         if (ObjectUtils.anyNull(source, expectType, componentType) || !expectType.isInstance(source)) {
@@ -502,6 +512,16 @@ public abstract class ObjectUtilsWraps {
         return castAsIterator(source, expectType, componentType, null);
     }
 
+    /**
+     * Casts the source to an Iterator.
+     *
+     * @param source The source value
+     * @param expectType The expected type
+     * @param componentType The expected component type
+     * @param defaultValue The fallback value
+     *
+     * @return the result, or null when it is unavailable
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static <T extends Iterator<E>, E> T castAsIterator(@Nullable Object source, @Nullable Class<T> expectType, @Nullable Class<E> componentType, @Nullable T defaultValue) {
         if (ObjectUtils.anyNull(source, expectType, componentType) || !expectType.isInstance(source)) {
@@ -554,7 +574,7 @@ public abstract class ObjectUtilsWraps {
      *
      * @return {@code true} if the given objects are equal
      *
-     * @see java.util.Objects#equals(Object a, Object b)
+     * @see java.util.Objects#equals(Object target, Object comparison)
      * @see "org.springframework.util.ObjectUtils#nullSafeEquals"
      */
     public static boolean equals(@Nullable Object target, @Nullable Object comparison) {
@@ -673,7 +693,7 @@ public abstract class ObjectUtilsWraps {
      *
      * @return defaultValue if target equals comparison, otherwise target
      */
-    public static <T> T defaultIfEquals(@Nullable T target, @Nullable T comparison, @Nullable T defaultValue) {
+    public static <T> T getIfEquals(@Nullable T target, @Nullable T comparison, @Nullable T defaultValue) {
         return Objects.equals(target, comparison) ? defaultValue : target;
     }
 
@@ -892,10 +912,24 @@ public abstract class ObjectUtilsWraps {
         return object != null && object.getClass().isRecord();
     }
 
+    /**
+     * Checks whether the object is a primitive value or wrapper.
+     *
+     * @param object The object to inspect
+     *
+     * @return {@code true} when the condition is satisfied; {@code false} otherwise
+     */
     public static boolean isPrimitive(@Nullable Object object) {
         return object != null && object.getClass().isPrimitive();
     }
 
+    /**
+     * Checks whether all the given values have the same size.
+     *
+     * @param objects The values to inspect
+     *
+     * @return {@code true} when the condition is satisfied; {@code false} otherwise
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static boolean isSameSize(@Nullable Object... objects) {
         if (ArrayUtils.getLength(objects) < 2) {

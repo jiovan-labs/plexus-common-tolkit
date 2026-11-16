@@ -22,12 +22,12 @@ import jakarta.annotation.Nullable;
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.text.WordUtils;
-import net.sourceforge.pinyin4j.PinyinHelper;
-import net.sourceforge.pinyin4j.format.HanyuPinyinCaseType;
-import net.sourceforge.pinyin4j.format.HanyuPinyinOutputFormat;
-import net.sourceforge.pinyin4j.format.HanyuPinyinToneType;
-import net.sourceforge.pinyin4j.format.HanyuPinyinVCharType;
-import net.sourceforge.pinyin4j.format.exception.BadHanyuPinyinOutputFormatCombination;
+import com.jiovan.revival.pinyin4j.PinyinHelper;
+import com.jiovan.revival.pinyin4j.format.HanyuPinyinCaseType;
+import com.jiovan.revival.pinyin4j.format.HanyuPinyinOutputFormat;
+import com.jiovan.revival.pinyin4j.format.HanyuPinyinToneType;
+import com.jiovan.revival.pinyin4j.format.HanyuPinyinVCharType;
+import com.jiovan.revival.pinyin4j.format.exception.BadHanyuPinyinOutputFormatCombination;
 
 
 /**
@@ -41,16 +41,46 @@ import net.sourceforge.pinyin4j.format.exception.BadHanyuPinyinOutputFormatCombi
  */
 @SuppressWarnings({"unused", "BooleanMethodIsAlwaysInverted", "UnusedReturnValue"})
 public abstract class ChinesePinyinUtils {
+    /**
+     * Returns the first syllable of each Chinese character.
+     *
+     * @param text The Chinese text
+     *
+     * @return the result of the operation, or null when the input is null
+     *
+     * @throws com.jiovan.revival.pinyin4j.format.exception.BadHanyuPinyinOutputFormatCombination if the pinyin output format is invalid
+     */
     @Nullable
     public static String getFirstSyllables(@Nullable String text) throws BadHanyuPinyinOutputFormatCombination {
         return getFirstSyllables(text, true, null);
     }
 
+    /**
+     * Returns the first syllable of each Chinese character.
+     *
+     * @param text The Chinese text
+     * @param uppercase Whether the result should be uppercase
+     *
+     * @return the result of the operation, or null when the input is null
+     *
+     * @throws com.jiovan.revival.pinyin4j.format.exception.BadHanyuPinyinOutputFormatCombination if the pinyin output format is invalid
+     */
     @Nullable
     public static String getFirstSyllables(@Nullable String text, boolean uppercase) throws BadHanyuPinyinOutputFormatCombination {
         return getFirstSyllables(text, uppercase, null);
     }
 
+    /**
+     * Returns the first syllable of each Chinese character.
+     *
+     * @param text The Chinese text
+     * @param uppercase Whether the result should be uppercase
+     * @param callback The callback used to process each syllable
+     *
+     * @return the result of the operation, or null when the input is null
+     *
+     * @throws com.jiovan.revival.pinyin4j.format.exception.BadHanyuPinyinOutputFormatCombination if the pinyin output format is invalid
+     */
     @Nullable
     public static String getFirstSyllables(@Nullable String text, boolean uppercase, @Nullable PinyinCallback callback) throws BadHanyuPinyinOutputFormatCombination {
         if (StringUtils.isEmpty(text)) {
@@ -70,16 +100,40 @@ public abstract class ChinesePinyinUtils {
         });
     }
 
+    /**
+     * Returns the first syllable of each Chinese character without throwing exceptions.
+     *
+     * @param text The Chinese text
+     *
+     * @return the result of the operation, or null when the input is null
+     */
     @Nullable
     public static String getFirstSyllablesQuietly(@Nullable String text) {
         return getFirstSyllablesQuietly(text, true, null);
     }
 
+    /**
+     * Returns the first syllable of each Chinese character without throwing exceptions.
+     *
+     * @param text The Chinese text
+     * @param uppercase Whether the result should be uppercase
+     *
+     * @return the result of the operation, or null when the input is null
+     */
     @Nullable
     public static String getFirstSyllablesQuietly(@Nullable String text, boolean uppercase) {
         return getFirstSyllablesQuietly(text, uppercase, null);
     }
 
+    /**
+     * Returns the first syllable of each Chinese character without throwing exceptions.
+     *
+     * @param text The Chinese text
+     * @param uppercase Whether the result should be uppercase
+     * @param callback The callback used to process each syllable
+     *
+     * @return the result of the operation, or null when the input is null
+     */
     @Nullable
     public static String getFirstSyllablesQuietly(@Nullable String text, boolean uppercase, @Nullable PinyinCallback callback) {
         try {
@@ -89,16 +143,46 @@ public abstract class ChinesePinyinUtils {
         return null;
     }
 
+    /**
+     * Returns the full pinyin syllables of the Chinese text.
+     *
+     * @param text The Chinese text
+     *
+     * @return the result of the operation, or null when the input is null
+     *
+     * @throws com.jiovan.revival.pinyin4j.format.exception.BadHanyuPinyinOutputFormatCombination if the pinyin output format is invalid
+     */
     @Nullable
     public static String getFullSyllables(@Nullable String text) throws BadHanyuPinyinOutputFormatCombination {
         return getFullSyllables(text, null, null);
     }
 
+    /**
+     * Returns the full pinyin syllables of the Chinese text.
+     *
+     * @param text The Chinese text
+     * @param format The pinyin output format
+     *
+     * @return the result of the operation, or null when the input is null
+     *
+     * @throws com.jiovan.revival.pinyin4j.format.exception.BadHanyuPinyinOutputFormatCombination if the pinyin output format is invalid
+     */
     @Nullable
     public static String getFullSyllables(@Nullable String text, @Nullable HanyuPinyinOutputFormat format) throws BadHanyuPinyinOutputFormatCombination {
         return getFullSyllables(text, format, null);
     }
 
+    /**
+     * Returns the full pinyin syllables of the Chinese text.
+     *
+     * @param text The Chinese text
+     * @param format The pinyin output format
+     * @param callback The callback used to process each syllable
+     *
+     * @return the result of the operation, or null when the input is null
+     *
+     * @throws com.jiovan.revival.pinyin4j.format.exception.BadHanyuPinyinOutputFormatCombination if the pinyin output format is invalid
+     */
     @Nullable
     public static String getFullSyllables(@Nullable String text, @Nullable HanyuPinyinOutputFormat format, @Nullable PinyinCallback callback) throws BadHanyuPinyinOutputFormatCombination {
         if (StringUtils.isEmpty(text)) {
@@ -116,16 +200,40 @@ public abstract class ChinesePinyinUtils {
         });
     }
 
+    /**
+     * Returns the full pinyin syllables without throwing exceptions.
+     *
+     * @param text The Chinese text
+     *
+     * @return the result of the operation, or null when the input is null
+     */
     @Nullable
     public static String getFullSyllablesQuietly(@Nullable String text) {
         return getFullSyllablesQuietly(text, null, null);
     }
 
+    /**
+     * Returns the full pinyin syllables without throwing exceptions.
+     *
+     * @param text The Chinese text
+     * @param format The pinyin output format
+     *
+     * @return the result of the operation, or null when the input is null
+     */
     @Nullable
     public static String getFullSyllablesQuietly(@Nullable String text, HanyuPinyinOutputFormat format) {
         return getFullSyllablesQuietly(text, format, null);
     }
 
+    /**
+     * Returns the full pinyin syllables without throwing exceptions.
+     *
+     * @param text The Chinese text
+     * @param format The pinyin output format
+     * @param callback The callback used to process each syllable
+     *
+     * @return the result of the operation, or null when the input is null
+     */
     @Nullable
     public static String getFullSyllablesQuietly(@Nullable String text, HanyuPinyinOutputFormat format, @Nullable PinyinCallback callback) {
         try {
@@ -135,6 +243,17 @@ public abstract class ChinesePinyinUtils {
         return null;
     }
 
+    /**
+     * Returns additional pinyin syllables of the Chinese text.
+     *
+     * @param text The Chinese text
+     * @param format The pinyin output format
+     * @param callback The callback used to process each syllable
+     *
+     * @return the result of the operation, or null when the input is null
+     *
+     * @throws com.jiovan.revival.pinyin4j.format.exception.BadHanyuPinyinOutputFormatCombination if the pinyin output format is invalid
+     */
     @Nullable
     public static String getExtraSyllables(@Nullable String text, @Nullable HanyuPinyinOutputFormat format, @Nullable PinyinCallback callback) throws BadHanyuPinyinOutputFormatCombination {
         if (StringUtils.isEmpty(text)) {
@@ -174,6 +293,15 @@ public abstract class ChinesePinyinUtils {
         return (result.length() <= 0) ? null : result.toString();
     }
 
+    /**
+     * Returns additional pinyin syllables without throwing exceptions.
+     *
+     * @param text The Chinese text
+     * @param format The pinyin output format
+     * @param callback The callback used to process each syllable
+     *
+     * @return the result of the operation, or null when the input is null
+     */
     @Nullable
     public static String getExtraSyllablesQuietly(@Nullable String text, HanyuPinyinOutputFormat format, @Nullable PinyinCallback callback) {
         try {

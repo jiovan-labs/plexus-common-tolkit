@@ -52,16 +52,38 @@ import org.apache.commons.lang3.StringUtils;
  */
 @SuppressWarnings({"unused", "BooleanMethodIsAlwaysInverted", "UnusedReturnValue"})
 public abstract class JakartaJsonWraps {
+    /**
+     * Parses JSON content into a JsonStructure.
+     *
+     * @param content The JSON content
+     *
+     * @return the parsed structure, or null when parsing fails
+     */
     @Nullable
     public static JsonStructure ofJson(@Nullable String content) {
         return StringUtils.isBlank(content) ? null : ofJson(new StringReader(content));
     }
 
+    /**
+     * Parses JSON content into a JsonStructure.
+     *
+     * @param file The source file
+     *
+     * @return the parsed structure, or null when parsing fails
+     */
     @Nullable
     public static JsonStructure ofJson(@Nullable File file) {
         return ofJson(file, null);
     }
 
+    /**
+     * Parses JSON content into a JsonStructure.
+     *
+     * @param file The source file
+     * @param charset The charset
+     *
+     * @return the parsed structure, or null when parsing fails
+     */
     @Nullable
     public static JsonStructure ofJson(@Nullable File file, @Nullable Charset charset) {
         try {
@@ -71,11 +93,26 @@ public abstract class JakartaJsonWraps {
         return null;
     }
 
+    /**
+     * Parses JSON content into a JsonStructure.
+     *
+     * @param stream The input stream
+     *
+     * @return the parsed structure, or null when parsing fails
+     */
     @Nullable
     public static JsonStructure ofJson(@Nullable InputStream stream) {
         return ofJson(stream, null);
     }
 
+    /**
+     * Parses JSON content into a JsonStructure.
+     *
+     * @param stream The input stream
+     * @param charset The charset
+     *
+     * @return the parsed structure, or null when parsing fails
+     */
     @Nullable
     public static JsonStructure ofJson(@Nullable InputStream stream, @Nullable Charset charset) {
         try {
@@ -85,6 +122,13 @@ public abstract class JakartaJsonWraps {
         return null;
     }
 
+    /**
+     * Parses JSON content into a JsonStructure.
+     *
+     * @param reader The source reader
+     *
+     * @return the parsed structure, or null when parsing fails
+     */
     @Nullable
     public static JsonStructure ofJson(@Nullable Reader reader) {
         if (reader == null) {
@@ -97,11 +141,28 @@ public abstract class JakartaJsonWraps {
         return null;
     }
 
+    /**
+     * Parses JSON content into an object of the expected type.
+     *
+     * @param content The JSON content
+     * @param expectType The expected result type
+     *
+     * @return the parsed object, or null when parsing fails
+     */
     @Nullable
     public static <T> T ofJsonAs(@Nullable String content, @Nullable Class<T> expectType) {
         return ofJsonAs(content, expectType, null);
     }
 
+    /**
+     * Parses JSON content into an object of the expected type.
+     *
+     * @param content The JSON content
+     * @param expectType The expected result type
+     * @param config The JSON-B configuration
+     *
+     * @return the parsed object, or null when parsing fails
+     */
     @Nullable
     public static <T> T ofJsonAs(@Nullable String content, @Nullable Class<T> expectType, @Nullable JsonbConfig config) {
         if (StringUtils.isBlank(content) || expectType == null) {
@@ -114,16 +175,43 @@ public abstract class JakartaJsonWraps {
         return null;
     }
 
+    /**
+     * Parses JSON content into an object of the expected type.
+     *
+     * @param file The source file
+     * @param expectType The expected result type
+     *
+     * @return the parsed object, or null when parsing fails
+     */
     @Nullable
     public static <T> T ofJsonAs(@Nullable File file, @Nullable Class<T> expectType) {
         return ofJsonAs(file, expectType, null, null);
     }
 
+    /**
+     * Parses JSON content into an object of the expected type.
+     *
+     * @param file The source file
+     * @param expectType The expected result type
+     * @param charset The charset
+     *
+     * @return the parsed object, or null when parsing fails
+     */
     @Nullable
     public static <T> T ofJsonAs(@Nullable File file, @Nullable Class<T> expectType, @Nullable Charset charset) {
         return ofJsonAs(file, expectType, null, charset);
     }
 
+    /**
+     * Parses JSON content into an object of the expected type.
+     *
+     * @param file The source file
+     * @param expectType The expected result type
+     * @param config The JSON-B configuration
+     * @param charset The charset
+     *
+     * @return the parsed object, or null when parsing fails
+     */
     @Nullable
     public static <T> T ofJsonAs(@Nullable File file, @Nullable Class<T> expectType, @Nullable JsonbConfig config, @Nullable Charset charset) {
         if (ObjectUtils.anyNull(file, expectType)) {
@@ -140,11 +228,28 @@ public abstract class JakartaJsonWraps {
         return null;
     }
 
+    /**
+     * Parses JSON content into an object of the expected type.
+     *
+     * @param stream The input stream
+     * @param expectType The expected result type
+     *
+     * @return the parsed object, or null when parsing fails
+     */
     @Nullable
     public static <T> T ofJsonAs(@Nullable InputStream stream, @Nullable Class<T> expectType) {
         return ofJsonAs(stream, expectType, null);
     }
 
+    /**
+     * Parses JSON content into an object of the expected type.
+     *
+     * @param stream The input stream
+     * @param expectType The expected result type
+     * @param config The JSON-B configuration
+     *
+     * @return the parsed object, or null when parsing fails
+     */
     @Nullable
     public static <T> T ofJsonAs(@Nullable InputStream stream, @Nullable Class<T> expectType, @Nullable JsonbConfig config) {
         if (ObjectUtils.anyNull(stream, expectType)) {
@@ -157,11 +262,28 @@ public abstract class JakartaJsonWraps {
         return null;
     }
 
+    /**
+     * Parses JSON content into an object of the expected type.
+     *
+     * @param reader The source reader
+     * @param expectType The expected result type
+     *
+     * @return the parsed object, or null when parsing fails
+     */
     @Nullable
     public static <T> T ofJsonAs(@Nullable Reader reader, @Nullable Class<T> expectType) {
         return ofJsonAs(reader, expectType, null);
     }
 
+    /**
+     * Parses JSON content into an object of the expected type.
+     *
+     * @param reader The source reader
+     * @param expectType The expected result type
+     * @param config The JSON-B configuration
+     *
+     * @return the parsed object, or null when parsing fails
+     */
     @Nullable
     public static <T> T ofJsonAs(@Nullable Reader reader, @Nullable Class<T> expectType, @Nullable JsonbConfig config) {
         if (ObjectUtils.anyNull(reader, expectType)) {
@@ -174,11 +296,26 @@ public abstract class JakartaJsonWraps {
         return null;
     }
 
+    /**
+     * Serializes the object to JSON.
+     *
+     * @param source The source object
+     *
+     * @return the JSON string, or null when serialization fails
+     */
     @Nullable
     public static String toJson(@Nullable Object source) {
         return toJson(source, null);
     }
 
+    /**
+     * Serializes the object to JSON.
+     *
+     * @param source The source object
+     * @param config The JSON-B configuration
+     *
+     * @return the JSON string, or null when serialization fails
+     */
     @Nullable
     public static String toJson(@Nullable Object source, @Nullable JsonbConfig config) {
         if (source == null) {
@@ -191,6 +328,13 @@ public abstract class JakartaJsonWraps {
         return null;
     }
 
+    /**
+     * Reads a JSON structure from the reader.
+     *
+     * @param reader The source reader
+     *
+     * @return the structure, or null when reading fails
+     */
     @Nullable
     public static JsonStructure readStructure(@Nullable JsonReader reader) {
         if (reader == null) {
@@ -203,6 +347,13 @@ public abstract class JakartaJsonWraps {
         return null;
     }
 
+    /**
+     * Reads a JSON array from the reader.
+     *
+     * @param reader The source reader
+     *
+     * @return the array, or null when reading fails
+     */
     @Nullable
     public static JsonArray readArray(@Nullable JsonReader reader) {
         if (reader == null) {
@@ -215,6 +366,13 @@ public abstract class JakartaJsonWraps {
         return null;
     }
 
+    /**
+     * Reads a JSON object from the reader.
+     *
+     * @param reader The source reader
+     *
+     * @return the object, or null when reading fails
+     */
     @Nullable
     public static JsonObject readObject(@Nullable JsonReader reader) {
         if (reader == null) {
@@ -227,6 +385,13 @@ public abstract class JakartaJsonWraps {
         return null;
     }
 
+    /**
+     * Reads a JSON value from the reader.
+     *
+     * @param reader The source reader
+     *
+     * @return the value, or null when reading fails
+     */
     @Nullable
     public static JsonValue readValue(@Nullable JsonReader reader) {
         if (reader == null) {
@@ -239,10 +404,27 @@ public abstract class JakartaJsonWraps {
         return null;
     }
 
+    /**
+     * Returns a boolean value from the JSON instance.
+     *
+     * @param instance The JSON instance
+     * @param index The array index
+     *
+     * @return the boolean value, or the default value when it is absent
+     */
     public static Boolean getBoolean(@Nullable JsonArray instance, int index) {
         return getBoolean(instance, index, null);
     }
 
+    /**
+     * Returns a boolean value from the JSON instance.
+     *
+     * @param instance The JSON instance
+     * @param index The array index
+     * @param defaultValue The value returned when the element is absent
+     *
+     * @return the boolean value, or the default value when it is absent
+     */
     public static Boolean getBoolean(@Nullable JsonArray instance, int index, Boolean defaultValue) {
         if (instance == null || index < 0) {
             return null;
@@ -254,10 +436,27 @@ public abstract class JakartaJsonWraps {
         return null;
     }
 
+    /**
+     * Returns a boolean value from the JSON instance.
+     *
+     * @param instance The JSON instance
+     * @param name The property name
+     *
+     * @return the boolean value, or the default value when it is absent
+     */
     public static Boolean getBoolean(@Nullable JsonObject instance, @Nullable String name) {
         return getBoolean(instance, name, null);
     }
 
+    /**
+     * Returns a boolean value from the JSON instance.
+     *
+     * @param instance The JSON instance
+     * @param name The property name
+     * @param defaultValue The value returned when the element is absent
+     *
+     * @return the boolean value, or the default value when it is absent
+     */
     public static Boolean getBoolean(@Nullable JsonObject instance, @Nullable String name, Boolean defaultValue) {
         if (instance == null || StringUtils.isBlank(name)) {
             return null;
@@ -269,10 +468,27 @@ public abstract class JakartaJsonWraps {
         return null;
     }
 
+    /**
+     * Returns an integer value from the JSON instance.
+     *
+     * @param instance The JSON instance
+     * @param index The array index
+     *
+     * @return the integer value, or the default value when it is absent
+     */
     public static Integer getInteger(@Nullable JsonArray instance, int index) {
         return getInteger(instance, index, null);
     }
 
+    /**
+     * Returns an integer value from the JSON instance.
+     *
+     * @param instance The JSON instance
+     * @param index The array index
+     * @param defaultValue The value returned when the element is absent
+     *
+     * @return the integer value, or the default value when it is absent
+     */
     public static Integer getInteger(@Nullable JsonArray instance, int index, Integer defaultValue) {
         if (instance == null || index < 0) {
             return null;
@@ -284,10 +500,27 @@ public abstract class JakartaJsonWraps {
         return null;
     }
 
+    /**
+     * Returns an integer value from the JSON instance.
+     *
+     * @param instance The JSON instance
+     * @param name The property name
+     *
+     * @return the integer value, or the default value when it is absent
+     */
     public static Integer getInteger(@Nullable JsonObject instance, @Nullable String name) {
         return getInteger(instance, name, null);
     }
 
+    /**
+     * Returns an integer value from the JSON instance.
+     *
+     * @param instance The JSON instance
+     * @param name The property name
+     * @param defaultValue The value returned when the element is absent
+     *
+     * @return the integer value, or the default value when it is absent
+     */
     public static Integer getInteger(@Nullable JsonObject instance, @Nullable String name, Integer defaultValue) {
         if (instance == null || StringUtils.isBlank(name)) {
             return null;
@@ -299,11 +532,28 @@ public abstract class JakartaJsonWraps {
         return null;
     }
 
+    /**
+     * Returns a string value from the JSON instance.
+     *
+     * @param instance The JSON instance
+     * @param index The array index
+     *
+     * @return the string value, or the default value when it is absent
+     */
     @Nullable
     public static String getString(@Nullable JsonArray instance, int index) {
         return getString(instance, index, null);
     }
 
+    /**
+     * Returns a string value from the JSON instance.
+     *
+     * @param instance The JSON instance
+     * @param index The array index
+     * @param defaultValue The value returned when the element is absent
+     *
+     * @return the string value, or the default value when it is absent
+     */
     @Nullable
     public static String getString(@Nullable JsonArray instance, int index, @Nullable String defaultValue) {
         if (instance == null || index < 0) {
@@ -316,11 +566,28 @@ public abstract class JakartaJsonWraps {
         return null;
     }
 
+    /**
+     * Returns a string value from the JSON instance.
+     *
+     * @param instance The JSON instance
+     * @param name The property name
+     *
+     * @return the string value, or the default value when it is absent
+     */
     @Nullable
     public static String getString(@Nullable JsonObject instance, @Nullable String name) {
         return getString(instance, name, null);
     }
 
+    /**
+     * Returns a string value from the JSON instance.
+     *
+     * @param instance The JSON instance
+     * @param name The property name
+     * @param defaultValue The value returned when the element is absent
+     *
+     * @return the string value, or the default value when it is absent
+     */
     @Nullable
     public static String getString(@Nullable JsonObject instance, @Nullable String name, @Nullable String defaultValue) {
         if (instance == null || StringUtils.isBlank(name)) {
@@ -333,6 +600,14 @@ public abstract class JakartaJsonWraps {
         return null;
     }
 
+    /**
+     * Returns a JsonArray from the JSON instance.
+     *
+     * @param instance The JSON instance
+     * @param index The array index
+     *
+     * @return the array, or null when it is absent
+     */
     @Nullable
     public static JsonArray getJsonArray(@Nullable JsonArray instance, int index) {
         if (instance == null || index < 0) {
@@ -345,6 +620,14 @@ public abstract class JakartaJsonWraps {
         return null;
     }
 
+    /**
+     * Returns a JsonArray from the JSON instance.
+     *
+     * @param instance The JSON instance
+     * @param name The property name
+     *
+     * @return the array, or null when it is absent
+     */
     @Nullable
     public static JsonArray getJsonArray(@Nullable JsonObject instance, @Nullable String name) {
         if (instance == null || StringUtils.isBlank(name)) {
@@ -357,6 +640,14 @@ public abstract class JakartaJsonWraps {
         return null;
     }
 
+    /**
+     * Returns a JsonNumber from the JSON instance.
+     *
+     * @param instance The JSON instance
+     * @param index The array index
+     *
+     * @return the number, or null when it is absent
+     */
     @Nullable
     public static JsonNumber getJsonNumber(@Nullable JsonArray instance, int index) {
         if (instance == null || index < 0) {
@@ -369,6 +660,14 @@ public abstract class JakartaJsonWraps {
         return null;
     }
 
+    /**
+     * Returns a JsonNumber from the JSON instance.
+     *
+     * @param instance The JSON instance
+     * @param name The property name
+     *
+     * @return the number, or null when it is absent
+     */
     @Nullable
     public static JsonNumber getJsonNumber(@Nullable JsonObject instance, @Nullable String name) {
         if (instance == null || StringUtils.isBlank(name)) {
@@ -381,6 +680,14 @@ public abstract class JakartaJsonWraps {
         return null;
     }
 
+    /**
+     * Returns a JsonObject from the JSON instance.
+     *
+     * @param instance The JSON instance
+     * @param index The array index
+     *
+     * @return the object, or null when it is absent
+     */
     @Nullable
     public static JsonObject getJsonObject(@Nullable JsonArray instance, int index) {
         if (instance == null || index < 0) {
@@ -393,6 +700,14 @@ public abstract class JakartaJsonWraps {
         return null;
     }
 
+    /**
+     * Returns a JsonObject from the JSON instance.
+     *
+     * @param instance The JSON instance
+     * @param name The property name
+     *
+     * @return the object, or null when it is absent
+     */
     @Nullable
     public static JsonObject getJsonObject(@Nullable JsonObject instance, @Nullable String name) {
         if (instance == null || StringUtils.isBlank(name)) {
@@ -405,6 +720,14 @@ public abstract class JakartaJsonWraps {
         return null;
     }
 
+    /**
+     * Returns a JsonString from the JSON instance.
+     *
+     * @param instance The JSON instance
+     * @param index The array index
+     *
+     * @return the JSON string, or null when it is absent
+     */
     @Nullable
     public static JsonString getJsonString(@Nullable JsonArray instance, int index) {
         if (instance == null || index < 0) {
@@ -417,6 +740,14 @@ public abstract class JakartaJsonWraps {
         return null;
     }
 
+    /**
+     * Returns a JsonString from the JSON instance.
+     *
+     * @param instance The JSON instance
+     * @param name The property name
+     *
+     * @return the JSON string, or null when it is absent
+     */
     @Nullable
     public static JsonString getJsonString(@Nullable JsonObject instance, @Nullable String name) {
         if (instance == null || StringUtils.isBlank(name)) {
@@ -429,36 +760,89 @@ public abstract class JakartaJsonWraps {
         return null;
     }
 
+    /**
+     * Returns a named value from the JSON structure.
+     *
+     * @param structure The JSON structure
+     * @param name The property name
+     *
+     * @return the value, or null when it is absent
+     */
     @Nullable
     public static JsonValue getJsonValue(@Nullable JsonStructure structure, @Nullable String name) {
         return (structure == null || StringUtils.isBlank(name)) ? null : structure.getValue(name);
     }
 
+    /**
+     * Returns all values of the JSON array.
+     *
+     * @param instance The JSON instance
+     *
+     * @return a list of values, or null when the array is null
+     */
     @Nullable
     public static List<JsonValue> getValues(@Nullable JsonArray instance) {
         return (instance == null) ? null : instance.getValuesAs(JsonValue.class);
     }
 
+    /**
+     * Returns the JSON array values converted to the requested type.
+     *
+     * @param instance The JSON instance
+     * @param clazz The expected value type
+     *
+     * @return a list of converted values, or null when the array is null
+     */
     @Nullable
     public static <T extends JsonValue> List<T> getValuesAs(@Nullable JsonArray instance, @Nullable Class<T> clazz) {
         return ObjectUtils.anyNull(instance, clazz) ? null : instance.getValuesAs(clazz);
     }
 
+    /**
+     * Returns the JSON array values converted to the requested type.
+     *
+     * @param instance The JSON instance
+     * @param func The function used to convert values
+     *
+     * @return a list of converted values, or null when the array is null
+     */
     @Nullable
     public static <T, K extends JsonValue> List<T> getValuesAs(@Nullable JsonArray instance, @Nullable Function<K, T> func) {
         return ObjectUtils.anyNull(instance, func) ? null : instance.getValuesAs(func);
     }
 
+    /**
+     * Returns the JSON array values as strings.
+     *
+     * @param instance The JSON instance
+     *
+     * @return a list of strings, or null when the array is null
+     */
     @Nullable
     public static List<String> getValuesAsString(@Nullable JsonArray instance) {
         return (instance == null) ? null : instance.getValuesAs(JsonString::getString);
     }
 
+    /**
+     * Returns the JSON array values as integers.
+     *
+     * @param instance The JSON instance
+     *
+     * @return a list of integers, or null when the array is null
+     */
     @Nullable
     public static List<Integer> getValuesAsInteger(@Nullable JsonArray instance) {
         return (instance == null) ? null : instance.getValuesAs(JsonNumber::intValue);
     }
 
+    /**
+     * Checks whether the JSON value represents null.
+     *
+     * @param instance The JSON instance
+     * @param index The array index
+     *
+     * @return true when the value is null; false otherwise
+     */
     public static Boolean isNull(@Nullable JsonArray instance, int index) {
         if (instance == null || index < 0) {
             return null;
@@ -470,6 +854,14 @@ public abstract class JakartaJsonWraps {
         return null;
     }
 
+    /**
+     * Checks whether the JSON value represents null.
+     *
+     * @param instance The JSON instance
+     * @param name The property name
+     *
+     * @return true when the value is null; false otherwise
+     */
     public static Boolean isNull(@Nullable JsonObject instance, @Nullable String name) {
         if (instance == null || StringUtils.isBlank(name)) {
             return null;
@@ -481,14 +873,35 @@ public abstract class JakartaJsonWraps {
         return null;
     }
 
+    /**
+     * Checks whether the JSON structure is an array.
+     *
+     * @param value The JSON value
+     *
+     * @return true when the structure is an array; false otherwise
+     */
     public static boolean isArrayType(@Nullable JsonValue value) {
         return value != null && value.getValueType() == JsonValue.ValueType.ARRAY;
     }
 
+    /**
+     * Checks whether the JSON structure is an object.
+     *
+     * @param value The JSON value
+     *
+     * @return true when the structure is an object; false otherwise
+     */
     public static boolean isObjectType(@Nullable JsonValue value) {
         return value != null && value.getValueType() == JsonValue.ValueType.OBJECT;
     }
 
+    /**
+     * Checks whether the value type is JSON null.
+     *
+     * @param value The JSON value
+     *
+     * @return true when the value type is null; false otherwise
+     */
     public static boolean isNullType(@Nullable JsonValue value) {
         return value != null && value.getValueType() == JsonValue.ValueType.NULL;
     }

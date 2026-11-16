@@ -69,6 +69,13 @@ public abstract class IteratorPlainWraps {
         return false;
     }
 
+    /**
+     * Returns the first non-null element of the source.
+     *
+     * @param iterator The source iterator
+     *
+     * @return the first non-null element, or null when there is none
+     */
     @Nullable
     public static <E> E firstNonNull(@Nullable Iterator<E> iterator) {
         if (iterator == null) {
@@ -83,6 +90,13 @@ public abstract class IteratorPlainWraps {
         return null;
     }
 
+    /**
+     * Returns the first non-empty element of the source.
+     *
+     * @param iterator The source iterator
+     *
+     * @return the first non-empty element, or null when there is none
+     */
     @Nullable
     public static <E> E firstNonEmpty(@Nullable Iterator<E> iterator) {
         if (iterator == null) {
@@ -97,10 +111,23 @@ public abstract class IteratorPlainWraps {
         return null;
     }
 
+    /**
+     * Performs an action for each element of the source.
+     *
+     * @param iterator The source iterator
+     * @param action The action to perform
+     */
     public static <E> void forEach(@Nullable Iterator<E> iterator, @Nullable Consumer<? super E> action) {
         forEach(iterator, action, null);
     }
 
+    /**
+     * Performs an action for each element of the source.
+     *
+     * @param iterator The source iterator
+     * @param action The action to perform
+     * @param filter The predicate used to select elements
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static <E> void forEach(@Nullable Iterator<E> iterator, @Nullable Consumer<? super E> action, @Nullable Predicate<? super E> filter) {
         if (ObjectUtils.anyNull(iterator, action)) {
@@ -114,6 +141,12 @@ public abstract class IteratorPlainWraps {
         }
     }
 
+    /**
+     * Performs an action for each element until the action returns false.
+     *
+     * @param iterator The source iterator
+     * @param action The action to perform
+     */
     public static <E> void forEachBreakable(@Nullable Iterator<E> iterator, @Nullable Function<? super E, Boolean> action) {
         forEachBreakable(iterator, action, null);
     }
@@ -138,6 +171,16 @@ public abstract class IteratorPlainWraps {
         }
     }
 
+    /**
+     * Performs an action for all elements except the last one.
+     *
+     * The last element is returned after the action has been applied.
+     *
+     * @param iterator The source iterator
+     * @param action The action to perform
+     *
+     * @return the last element, or null when unavailable
+     */
     @Nullable
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static <E> E forEachTailing(@Nullable Iterator<E> iterator, @Nullable Consumer<? super E> action) {
@@ -155,10 +198,23 @@ public abstract class IteratorPlainWraps {
         return null;
     }
 
+    /**
+     * Performs an action for each element together with its index.
+     *
+     * @param iterator The source iterator
+     * @param action The action to perform
+     */
     public static <E> void forEachIndexing(@Nullable Iterator<E> iterator, @Nullable BiConsumer<Integer, ? super E> action) {
         forEachIndexing(iterator, action, null);
     }
 
+    /**
+     * Performs an action for each element together with its index.
+     *
+     * @param iterator The source iterator
+     * @param action The action to perform
+     * @param filter The predicate used to select elements
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static <E> void forEachIndexing(@Nullable Iterator<E> iterator, @Nullable BiConsumer<Integer, ? super E> action, @Nullable BiPredicate<Integer, ? super E> filter) {
         if (ObjectUtils.anyNull(iterator, action)) {
@@ -174,6 +230,12 @@ public abstract class IteratorPlainWraps {
         }
     }
 
+    /**
+     * Performs an indexed action for each element until the action returns false.
+     *
+     * @param iterator The source iterator
+     * @param action The action to perform
+     */
     public static <E> void forEachIndexingBreakable(@Nullable Iterator<E> iterator, @Nullable BiFunction<Integer, ? super E, Boolean> action) {
         forEachIndexingBreakable(iterator, action, null);
     }
@@ -200,6 +262,16 @@ public abstract class IteratorPlainWraps {
         }
     }
 
+    /**
+     * Performs an indexed action for all elements except the last one.
+     *
+     * The last element is returned after the action has been applied.
+     *
+     * @param iterator The source iterator
+     * @param action The action to perform
+     *
+     * @return the last element, or null when unavailable
+     */
     @Nullable
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static <E> E forEachIndexingTailing(@Nullable Iterator<E> iterator, @Nullable BiConsumer<Integer, ? super E> action) {
@@ -243,6 +315,15 @@ public abstract class IteratorPlainWraps {
         return null;
     }
 
+    /**
+     * Returns the component type inferred from the elements.
+     *
+     * When deepScan is false, only the first non-null element is checked.
+     *
+     * @param iterator The source iterator
+     *
+     * @return the component type, or null when it cannot be determined
+     */
     @Nullable
     public static Class<?> getComponentType(@Nullable Iterator<?> iterator) {
         return getComponentType(iterator, false);
@@ -290,12 +371,25 @@ public abstract class IteratorPlainWraps {
         return candidate;
     }
 
+    /**
+     * Runs an action when the source is empty.
+     *
+     * @param iterator The source iterator
+     * @param action The action to perform
+     */
     public static void ifEmpty(@Nullable Iterator<?> iterator, @Nullable Runnable action) {
         if (isEmpty(iterator) && action != null) {
             action.run();
         }
     }
 
+    /**
+     * Runs one of two actions depending on whether the source is empty.
+     *
+     * @param iterator The source iterator
+     * @param absentAction The action to run when the condition is not satisfied
+     * @param presentAction The action to run when the condition is satisfied
+     */
     public static <E, T extends Iterator<E>> void ifEmptyOrElse(@Nullable T iterator, @Nullable Runnable absentAction, @Nullable Consumer<? super T> presentAction) {
         if (isEmpty(iterator)) {
             if (absentAction != null) {
@@ -308,30 +402,68 @@ public abstract class IteratorPlainWraps {
         }
     }
 
+    /**
+     * Runs an action when the source is not empty.
+     *
+     * @param iterator The source iterator
+     * @param action The action to perform
+     */
     public static <E, T extends Iterator<E>> void ifNotEmpty(@Nullable T iterator, @Nullable Consumer<? super T> action) {
         ifNotEmpty(iterator, action, null);
     }
 
+    /**
+     * Runs an action when the source is not empty.
+     *
+     * @param iterator The source iterator
+     * @param action The action to perform
+     * @param filter The predicate used to select elements
+     */
     public static <E, T extends Iterator<E>> void ifNotEmpty(@Nullable T iterator, @Nullable Consumer<? super T> action, @Nullable Predicate<? super T> filter) {
         if (isNotEmpty(iterator) && action != null && (filter == null || filter.test(iterator))) {
             action.accept(iterator);
         }
     }
 
+    /**
+     * Runs an action when the source is not empty.
+     *
+     * @param iterator The source iterator
+     * @param action The action to perform
+     */
     public static <E, T extends Iterator<E>> void ifNotEmpty(@Nullable T iterator, @Nullable Runnable action) {
         if (isNotEmpty(iterator) && action != null) {
             action.run();
         }
     }
 
+    /**
+     * Runs an action when the source contains exactly one element.
+     *
+     * @param iterator The source iterator
+     * @param action The action to perform
+     */
     public static <T extends Iterator<?>> void ifSingleton(@Nullable T iterator, @Nullable Consumer<? super T> action) {
         ifSingletonOrElse(iterator, action, null);
     }
 
+    /**
+     * Runs an action when the source contains exactly one element.
+     *
+     * @param iterator The source iterator
+     * @param action The action to perform
+     */
     public static <T extends Iterator<?>> void ifSingleton(@Nullable T iterator, @Nullable Runnable action) {
         ifSingletonOrElse(iterator, action, null);
     }
 
+    /**
+     * Runs one of two actions depending on whether the source is a singleton.
+     *
+     * @param iterator The source iterator
+     * @param presentAction The action to run when the condition is satisfied
+     * @param absentAction The action to run when the condition is not satisfied
+     */
     public static <T extends Iterator<?>> void ifSingletonOrElse(@Nullable T iterator, @Nullable Consumer<? super T> presentAction, @Nullable Consumer<? super T> absentAction) {
         if (isSingleton(iterator)) {
             if (presentAction != null) {
@@ -344,6 +476,13 @@ public abstract class IteratorPlainWraps {
         }
     }
 
+    /**
+     * Runs one of two actions depending on whether the source is a singleton.
+     *
+     * @param iterator The source iterator
+     * @param presentAction The action to run when the condition is satisfied
+     * @param absentAction The action to run when the condition is not satisfied
+     */
     public static <T extends Iterator<?>> void ifSingletonOrElse(@Nullable T iterator, @Nullable Runnable presentAction, @Nullable Runnable absentAction) {
         if (isSingleton(iterator)) {
             if (presentAction != null) {
@@ -356,30 +495,73 @@ public abstract class IteratorPlainWraps {
         }
     }
 
+    /**
+     * Runs an action when the source contains more than one element.
+     *
+     * @param iterator The source iterator
+     * @param action The action to perform
+     */
     public static <T extends Iterator<?>> void ifMultitude(@Nullable T iterator, @Nullable Consumer<? super T> action) {
         if (isMultitude(iterator) && action != null) {
             action.accept(iterator);
         }
     }
 
+    /**
+     * Runs an action when the source contains more than one element.
+     *
+     * @param iterator The source iterator
+     * @param action The action to perform
+     */
     public static <T extends Iterator<?>> void ifMultitude(@Nullable T iterator, @Nullable Runnable action) {
         if (isMultitude(iterator) && action != null) {
             action.run();
         }
     }
 
+    /**
+     * Checks whether the source is null or empty.
+     *
+     * @param iterator The source iterator
+     *
+     * @return true when the source is empty; false otherwise
+     */
     public static boolean isEmpty(@Nullable Iterator<?> iterator) {
         return iterator == null || !iterator.hasNext();
     }
 
+    /**
+     * Checks whether the source contains at least one element.
+     *
+     * @param iterator The source iterator
+     *
+     * @return true when the source is not empty; false otherwise
+     */
     public static boolean isNotEmpty(@Nullable Iterator<?> iterator) {
         return !isEmpty(iterator);
     }
 
+    /**
+     * Checks whether the index is within the bounds of the source.
+     *
+     * @param iterator The source iterator
+     * @param index The index to check
+     *
+     * @return true when the index is valid; false otherwise
+     */
     public static boolean isIndexBound(@Nullable Iterator<?> iterator, int index) {
         return index >= 0 && index < size(iterator);
     }
 
+    /**
+     * Checks whether all the given sources have the same size.
+     *
+     * At least two sources are required.
+     *
+     * @param iterators The source iterators
+     *
+     * @return true when all sizes are equal; false otherwise
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static boolean isSameSize(@Nullable Iterator<?>... iterators) {
         if (ArrayUtils.getLength(iterators) < 2) {
@@ -389,14 +571,35 @@ public abstract class IteratorPlainWraps {
         return Arrays.stream(iterators).skip(1L).allMatch(item -> size(item) == size);
     }
 
+    /**
+     * Checks whether the source contains exactly one element.
+     *
+     * @param iterator The source iterator
+     *
+     * @return true when the source contains exactly one element; false otherwise
+     */
     public static boolean isSingleton(@Nullable Iterator<?> iterator) {
         return size(iterator) == 1;
     }
 
+    /**
+     * Checks whether the source contains more than one element.
+     *
+     * @param iterator The source iterator
+     *
+     * @return true when the source contains more than one element; false otherwise
+     */
     public static boolean isMultitude(@Nullable Iterator<?> iterator) {
         return size(iterator) > 1;
     }
 
+    /**
+     * Returns null when the source is empty.
+     *
+     * @param iterator The source iterator
+     *
+     * @return the source, or null when it is empty
+     */
     @Nullable
     public static <T extends Iterator<?>> T nullIfEmpty(@Nullable T iterator) {
         return isEmpty(iterator) ? null : iterator;
@@ -420,6 +623,14 @@ public abstract class IteratorPlainWraps {
         return removed;
     }
 
+    /**
+     * Removes all elements whose index and value match the given predicate.
+     *
+     * @param iterator The source iterator
+     * @param filter The predicate used to select elements
+     *
+     * @return true when at least one element was removed
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static <E> boolean removeIfIndexing(@Nullable Iterator<E> iterator, @Nullable BiPredicate<Integer, ? super E> filter) {
         if (ObjectUtils.anyNull(iterator, filter)) {
@@ -437,6 +648,13 @@ public abstract class IteratorPlainWraps {
         return removed;
     }
 
+    /**
+     * Returns the number of elements in the source.
+     *
+     * @param iterator The source iterator
+     *
+     * @return the number of elements, or zero when the source is null
+     */
     public static int size(@Nullable Iterator<?> iterator) {
         if (iterator == null) {
             return 0;
@@ -449,16 +667,37 @@ public abstract class IteratorPlainWraps {
         return result;
     }
 
+    /**
+     * Returns the greatest size among the given sources.
+     *
+     * @param iterators The source iterators
+     *
+     * @return the greatest size, or zero when no sources are provided
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static int maxSize(@Nullable Iterator<?>... iterators) {
         return ArrayUtils.isEmpty(iterators) ? 0 : Arrays.stream(iterators).mapToInt(IteratorPlainWraps::size).max().orElse(0);
     }
 
+    /**
+     * Returns the total size of the given sources.
+     *
+     * @param iterators The source iterators
+     *
+     * @return the combined size of all sources
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static int sumSize(@Nullable Iterator<?>... iterators) {
         return ArrayUtils.isEmpty(iterators) ? 0 : Arrays.stream(iterators).mapToInt(IteratorPlainWraps::size).sum();
     }
 
+    /**
+     * Converts the source to an array of the expected element type.
+     *
+     * @param iterator The source iterator
+     *
+     * @return an array containing the elements, or null when the type is unavailable
+     */
     @Nullable
     @SuppressWarnings("unchecked")
     public static <E> E[] toElementArray(@Nullable Iterator<E> iterator) {
@@ -466,6 +705,14 @@ public abstract class IteratorPlainWraps {
         return toElementArray(iterator, clazz);
     }
 
+    /**
+     * Converts the source to an array of the expected element type.
+     *
+     * @param iterator The source iterator
+     * @param elementType The expected element type
+     *
+     * @return an array containing the elements, or null when the type is unavailable
+     */
     @Nullable
     @SuppressWarnings({"unchecked", "SuspiciousToArrayCall"})
     public static <E> E[] toElementArray(@Nullable Iterator<E> iterator, @Nullable Class<? super E> elementType) {
@@ -512,6 +759,14 @@ public abstract class IteratorPlainWraps {
         }
     }
 
+    /**
+     * Converts the source to an array of the expected element type.
+     *
+     * @param iterator The source iterator
+     * @param target The source to check
+     *
+     * @return an array containing the elements, or null when the type is unavailable
+     */
     @Nullable
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static <E> E[] toElementArray(@Nullable Iterator<E> iterator, @Nullable E[] target) {
@@ -522,11 +777,25 @@ public abstract class IteratorPlainWraps {
         return CollectionPlainWraps.isEmpty(result) ? null : result.toArray(target);
     }
 
+    /**
+     * Converts the source to an enumeration.
+     *
+     * @param iterator The source iterator
+     *
+     * @return an enumeration over the elements, or null when the source is empty
+     */
     @Nullable
     public static <E> Enumeration<E> toElementEnumeration(@Nullable Iterator<E> iterator) {
         return CollectionPlainWraps.toElementEnumeration(toElementList(iterator));
     }
 
+    /**
+     * Converts the source to a list.
+     *
+     * @param iterator The source iterator
+     *
+     * @return a list containing the elements, or null when the source is null
+     */
     @Nullable
     public static <E> List<E> toElementList(@Nullable Iterator<E> iterator) {
         if (iterator == null) {
@@ -537,6 +806,13 @@ public abstract class IteratorPlainWraps {
         return result.isEmpty() ? null : result;
     }
 
+    /**
+     * Converts the source to a set.
+     *
+     * @param iterator The source iterator
+     *
+     * @return a set containing the elements, or null when the source is null
+     */
     @Nullable
     public static <E> Set<E> toElementSet(@Nullable Iterator<E> iterator) {
         if (iterator == null) {
@@ -547,12 +823,26 @@ public abstract class IteratorPlainWraps {
         return result.isEmpty() ? null : result;
     }
 
+    /**
+     * Converts the source to an object array.
+     *
+     * @param iterator The source iterator
+     *
+     * @return an array containing the elements, or null when the source is null
+     */
     @Nullable
     public static Object[] toObjectArray(@Nullable Iterator<?> iterator) {
         List<?> result = toObjectList(iterator);
         return CollectionPlainWraps.isEmpty(result) ? null : result.toArray(ArrayUtils.EMPTY_OBJECT_ARRAY);
     }
 
+    /**
+     * Converts the source to a list of objects.
+     *
+     * @param iterator The source iterator
+     *
+     * @return a list containing the elements, or null when the source is null
+     */
     @Nullable
     public static List<?> toObjectList(@Nullable Iterator<?> iterator) {
         if (iterator == null) {

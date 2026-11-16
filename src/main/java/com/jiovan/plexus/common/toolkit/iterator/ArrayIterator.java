@@ -35,10 +35,20 @@ public class ArrayIterator<E> implements Iterator<E> {
     private final E[] array;
     private int index = 0;
 
+    /**
+     * Checks whether the iteration has more elements.
+     *
+     * @return {@code true} when another element is available; {@code false} otherwise
+     */
     public boolean hasNext() {
         return index < array.length;
     }
 
+    /**
+     * Returns the next element of the iteration.
+     *
+     * @return the next element
+     */
     public E next() {
         if (index < 0 || index >= array.length) {
             throw new NoSuchElementException("Array contains no more elements");    // $NON-NLS-1$
@@ -46,6 +56,9 @@ public class ArrayIterator<E> implements Iterator<E> {
         return array[index++];
     }
 
+    /**
+     * Removes the last element returned by the iterator.
+     */
     public void remove() {
         throw new UnsupportedOperationException();
     }

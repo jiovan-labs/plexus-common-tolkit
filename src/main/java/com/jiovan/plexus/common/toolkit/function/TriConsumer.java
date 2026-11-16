@@ -45,13 +45,13 @@ public interface TriConsumer<T, U, V> {
     void accept(T t, U u, V v);
 
     /**
-     * Returns a composed {@code TriConsumer} that perform in sequence, this operation followed by the {@code after} operation
-     * If performing either operation throws an exception, it is relayed to the caller of the composed operation
-     * If performing this operation throws an exception, the {@code after} operation will not be performed
+     * Returns a composed {@code TriConsumer} that runs this, then {@code after}.
+     * Exceptions from either operation are relayed to the caller.
+     * If this throws, {@code after} is skipped.
      *
      * @param after The operation to perform after this operation
      *
-     * @return a composed {@code TriConsumer} that perform in sequence, this operation followed by the {@code after} operation
+     * @return a composed {@code TriConsumer} that runs this, then {@code after}
      *
      * @throws NullPointerException if the {@code after} operation is null
      */

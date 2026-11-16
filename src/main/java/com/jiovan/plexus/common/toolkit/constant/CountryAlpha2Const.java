@@ -102,7 +102,7 @@ public abstract class CountryAlpha2Const {
     public static final String AW = "AW";    // $NON-NLS-1$
 
     /**
-     * Aaland Island
+     * Åland Islands
      */
     public static final String AX = "AX";    // $NON-NLS-1$
 
@@ -302,7 +302,7 @@ public abstract class CountryAlpha2Const {
     public static final String CY = "CY";    // $NON-NLS-1$
 
     /**
-     * Czech Repoublic
+     * Czech Republic
      */
     public static final String CZ = "CZ";    // $NON-NLS-1$
 
@@ -502,7 +502,7 @@ public abstract class CountryAlpha2Const {
     public static final String HK = "HK";    // $NON-NLS-1$
 
     /**
-     * Heard islands and Mc Donald Islands
+     * Heard islands and McDonald Islands
      */
     public static final String HM = "HM";    // $NON-NLS-1$
 
@@ -767,7 +767,7 @@ public abstract class CountryAlpha2Const {
     public static final String MO = "MO";    // $NON-NLS-1$
 
     /**
-     * Northern Marianas
+     * Northern Asians
      */
     public static final String MP = "MP";    // $NON-NLS-1$
 
@@ -1027,7 +1027,7 @@ public abstract class CountryAlpha2Const {
     public static final String SI = "SI";    // $NON-NLS-1$
 
     /**
-     * Svalbard and jan Mayen Islands
+     * Svalbard and jan Mayer Islands
      */
     public static final String SJ = "SJ";    // $NON-NLS-1$
 
@@ -1037,12 +1037,12 @@ public abstract class CountryAlpha2Const {
     public static final String SK = "SK";    // $NON-NLS-1$
 
     /**
-     * Sierra leone
+     * Sierra Leone
      */
     public static final String SL = "SL";    // $NON-NLS-1$
 
     /**
-     * San Marion
+     * San Marino
      */
     public static final String SM = "SM";    // $NON-NLS-1$
 
@@ -1067,7 +1067,7 @@ public abstract class CountryAlpha2Const {
     public static final String SS = "SS";    // $NON-NLS-1$
 
     /**
-     * Sao Tome and Principe
+     * São Tomé and Príncipe
      */
     public static final String ST = "ST";    // $NON-NLS-1$
 
@@ -1222,7 +1222,7 @@ public abstract class CountryAlpha2Const {
     public static final String VI = "VI";    // $NON-NLS-1$
 
     /**
-     * Viet Nam
+     * Vietnam
      */
     public static final String VN = "VN";    // $NON-NLS-1$
 

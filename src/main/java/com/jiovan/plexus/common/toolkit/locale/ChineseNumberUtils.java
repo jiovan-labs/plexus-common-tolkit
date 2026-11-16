@@ -42,16 +42,40 @@ import com.jiovan.plexus.common.toolkit.util.StringUtilsWraps;
  */
 @SuppressWarnings({"unused", "BooleanMethodIsAlwaysInverted", "UnusedReturnValue"})
 public abstract class ChineseNumberUtils {
+    /**
+     * Converts the amount to a Chinese number string.
+     *
+     * @param amount The amount to convert
+     *
+     * @return the result of the operation, or null when the input is null
+     */
     @Nonnull
     public static String toNumberString(double amount) {
         return toNumberString(amount, 2);
     }
 
+    /**
+     * Converts the amount to a Chinese number string.
+     *
+     * @param amount The amount to convert
+     * @param fraction The number of fraction digits
+     *
+     * @return the result of the operation, or null when the input is null
+     */
     @Nonnull
     public static String toNumberString(double amount, int fraction) {
         return toNumberString(amount, fraction, null);
     }
 
+    /**
+     * Converts the amount to a Chinese number string.
+     *
+     * @param amount The amount to convert
+     * @param fraction The number of fraction digits
+     * @param type The Chinese number style
+     *
+     * @return the result of the operation, or null when the input is null
+     */
     @Nonnull
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static String toNumberString(double amount, int fraction, @Nullable ChineseNumberType type) {
@@ -59,7 +83,7 @@ public abstract class ChineseNumberUtils {
     }
 
     /**
-     * @warning Since the float loss accuracy, this method is not guaranteed, use double/BigDecimal instead
+     * Since the float loss accuracy, this method is not guaranteed, use double/BigDecimal instead
      */
     @Nonnull
     public static String toNumberString(float amount) {
@@ -67,7 +91,7 @@ public abstract class ChineseNumberUtils {
     }
 
     /**
-     * @warning Since the float loss accuracy, this method is not guaranteed, use double/BigDecimal instead
+     * Since the float loss accuracy, this method is not guaranteed, use double/BigDecimal instead
      */
     @Nonnull
     public static String toNumberString(float amount, int fraction) {
@@ -75,7 +99,7 @@ public abstract class ChineseNumberUtils {
     }
 
     /**
-     * @warning Since the float loss accuracy, this method is not guaranteed, use double/BigDecimal instead
+     * Since the float loss accuracy, this method is not guaranteed, use double/BigDecimal instead
      */
     @Nonnull
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
@@ -83,56 +107,125 @@ public abstract class ChineseNumberUtils {
         return toNumberString(BigDecimal.valueOf(amount), fraction, type);
     }
 
+    /**
+     * Converts the amount to a Chinese number string.
+     *
+     * @param amount The amount to convert
+     *
+     * @return the result of the operation, or null when the input is null
+     */
     @Nonnull
     public static String toNumberString(int amount) {
         return toNumberString(amount, null);
     }
 
+    /**
+     * Converts the amount to a Chinese number string.
+     *
+     * @param amount The amount to convert
+     * @param type The Chinese number style
+     *
+     * @return the result of the operation, or null when the input is null
+     */
     @Nonnull
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static String toNumberString(int amount, @Nullable ChineseNumberType type) {
         return toNumberString(new BigDecimal(amount), 0, type);
     }
 
+    /**
+     * Converts the amount to a Chinese number string.
+     *
+     * @param amount The amount to convert
+     *
+     * @return the result of the operation, or null when the input is null
+     */
     @Nonnull
     public static String toNumberString(long amount) {
         return toNumberString(amount, null);
     }
 
+    /**
+     * Converts the amount to a Chinese number string.
+     *
+     * @param amount The amount to convert
+     * @param type The Chinese number style
+     *
+     * @return the result of the operation, or null when the input is null
+     */
     @Nonnull
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static String toNumberString(long amount, @Nullable ChineseNumberType type) {
         return toNumberString(BigDecimal.valueOf(amount), 0, type);
     }
 
+    /**
+     * Converts the amount to a Chinese number string.
+     *
+     * @param amount The amount to convert
+     *
+     * @return the result of the operation, or null when the input is null
+     */
     @Nonnull
     public static String toNumberString(short amount) {
         return toNumberString(amount, null);
     }
 
+    /**
+     * Converts the amount to a Chinese number string.
+     *
+     * @param amount The amount to convert
+     * @param type The Chinese number style
+     *
+     * @return the result of the operation, or null when the input is null
+     */
     @Nonnull
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static String toNumberString(short amount, @Nullable ChineseNumberType type) {
         return toNumberString(new BigDecimal(amount), 0, type);
     }
 
+    /**
+     * Converts the amount to a Chinese number string.
+     *
+     * @param amount The amount to convert
+     *
+     * @return the result of the operation, or null when the input is null
+     */
     @Nullable
     public static String toNumberString(@Nullable Double amount) {
         return toNumberString(amount, 2);
     }
 
+    /**
+     * Converts the amount to a Chinese number string.
+     *
+     * @param amount The amount to convert
+     * @param fraction The number of fraction digits
+     *
+     * @return the result of the operation, or null when the input is null
+     */
     @Nullable
     public static String toNumberString(@Nullable Double amount, int fraction) {
         return toNumberString(amount, fraction, null);
     }
 
+    /**
+     * Converts the amount to a Chinese number string.
+     *
+     * @param amount The amount to convert
+     * @param fraction The number of fraction digits
+     * @param type The Chinese number style
+     *
+     * @return the result of the operation, or null when the input is null
+     */
     @Nullable
     public static String toNumberString(@Nullable Double amount, int fraction, @Nullable ChineseNumberType type) {
         return (amount == null) ? null : toNumberString(new BigDecimal(amount), fraction, type);
     }
 
     /**
-     * @warning Since the Float loss accuracy, this method is not guaranteed, use Double/BigDecimal instead
+     * Since the Float loss accuracy, this method is not guaranteed, use Double/BigDecimal instead
      */
     @Nullable
     public static String toNumberString(@Nullable Float amount) {
@@ -140,7 +233,7 @@ public abstract class ChineseNumberUtils {
     }
 
     /**
-     * @warning Since the Float loss accuracy, this method is not guaranteed, use Double/BigDecimal instead
+     * Since the Float loss accuracy, this method is not guaranteed, use Double/BigDecimal instead
      */
     @Nullable
     public static String toNumberString(@Nullable Float amount, int fraction) {
@@ -148,53 +241,122 @@ public abstract class ChineseNumberUtils {
     }
 
     /**
-     * @warning Since the Float loss accuracy, this method is not guaranteed, use Double/BigDecimal instead
+     * Since the Float loss accuracy, this method is not guaranteed, use Double/BigDecimal instead
      */
     @Nullable
     public static String toNumberString(@Nullable Float amount, int fraction, @Nullable ChineseNumberType type) {
         return (amount == null) ? null : toNumberString(new BigDecimal(amount), fraction, type);
     }
 
+    /**
+     * Converts the amount to a Chinese number string.
+     *
+     * @param amount The amount to convert
+     *
+     * @return the result of the operation, or null when the input is null
+     */
     @Nullable
     public static String toNumberString(@Nullable Integer amount) {
         return toNumberString(amount, null);
     }
 
+    /**
+     * Converts the amount to a Chinese number string.
+     *
+     * @param amount The amount to convert
+     * @param type The Chinese number style
+     *
+     * @return the result of the operation, or null when the input is null
+     */
     @Nullable
     public static String toNumberString(@Nullable Integer amount, @Nullable ChineseNumberType type) {
         return (amount == null) ? null : toNumberString(new BigDecimal(amount), 0, type);
     }
 
+    /**
+     * Converts the amount to a Chinese number string.
+     *
+     * @param amount The amount to convert
+     *
+     * @return the result of the operation, or null when the input is null
+     */
     @Nullable
     public static String toNumberString(@Nullable Long amount) {
         return toNumberString(amount, null);
     }
 
+    /**
+     * Converts the amount to a Chinese number string.
+     *
+     * @param amount The amount to convert
+     * @param type The Chinese number style
+     *
+     * @return the result of the operation, or null when the input is null
+     */
     @Nullable
     public static String toNumberString(@Nullable Long amount, @Nullable ChineseNumberType type) {
         return (amount == null) ? null : toNumberString(new BigDecimal(amount), 0, type);
     }
 
+    /**
+     * Converts the amount to a Chinese number string.
+     *
+     * @param amount The amount to convert
+     *
+     * @return the result of the operation, or null when the input is null
+     */
     @Nullable
     public static String toNumberString(@Nullable Short amount) {
         return toNumberString(amount, null);
     }
 
+    /**
+     * Converts the amount to a Chinese number string.
+     *
+     * @param amount The amount to convert
+     * @param type The Chinese number style
+     *
+     * @return the result of the operation, or null when the input is null
+     */
     @Nullable
     public static String toNumberString(@Nullable Short amount, @Nullable ChineseNumberType type) {
         return (amount == null) ? null : toNumberString(new BigDecimal(amount), 0, type);
     }
 
+    /**
+     * Converts the amount to a Chinese number string.
+     *
+     * @param amount The amount to convert
+     *
+     * @return the result of the operation, or null when the input is null
+     */
     @Nullable
     public static String toNumberString(@Nullable BigDecimal amount) {
         return toNumberString(amount, 2);
     }
 
+    /**
+     * Converts the amount to a Chinese number string.
+     *
+     * @param amount The amount to convert
+     * @param fraction The number of fraction digits
+     *
+     * @return the result of the operation, or null when the input is null
+     */
     @Nullable
     public static String toNumberString(@Nullable BigDecimal amount, int fraction) {
         return toNumberString(amount, fraction, null);
     }
 
+    /**
+     * Converts the amount to a Chinese number string.
+     *
+     * @param amount The amount to convert
+     * @param fraction The number of fraction digits
+     * @param type The Chinese number style
+     *
+     * @return the result of the operation, or null when the input is null
+     */
     @Nullable
     @SuppressWarnings("DuplicatedCode")
     public static String toNumberString(@Nullable BigDecimal amount, int fraction, @Nullable ChineseNumberType type) {
@@ -234,57 +396,135 @@ public abstract class ChineseNumberUtils {
         return StringUtilsWraps.appendIfSuffixNotBlank(integerPart, decimalBuilder, (numberType.isZhCN() ? ChineseVariantConst.DOT_CN : ChineseVariantConst.DOT_TW));
     }
 
+    /**
+     * Converts the amount to a Chinese number string.
+     *
+     * @param amount The amount to convert
+     *
+     * @return the result of the operation, or null when the input is null
+     */
     @Nullable
     public static String toNumberString(@Nullable BigInteger amount) {
         return toNumberString(amount, null);
     }
 
+    /**
+     * Converts the amount to a Chinese number string.
+     *
+     * @param amount The amount to convert
+     * @param type The Chinese number style
+     *
+     * @return the result of the operation, or null when the input is null
+     */
     @Nullable
     public static String toNumberString(@Nullable BigInteger amount, @Nullable ChineseNumberType type) {
         return (amount == null) ? null : toNumberString(new BigDecimal(amount), 0, type);
     }
 
+    /**
+     * Converts the amount to a Chinese number string.
+     *
+     * @param amount The amount to convert
+     *
+     * @return the result of the operation, or null when the input is null
+     */
     @Nullable
     public static String toNumberString(@Nullable Byte amount) {
         return toNumberString(amount, null);
     }
 
+    /**
+     * Converts the amount to a Chinese number string.
+     *
+     * @param amount The amount to convert
+     * @param type The Chinese number style
+     *
+     * @return the result of the operation, or null when the input is null
+     */
     @Nullable
     public static String toNumberString(@Nullable Byte amount, @Nullable ChineseNumberType type) {
         return (amount == null) ? null : toNumberString(new BigDecimal(amount), 0, type);
     }
 
+    /**
+     * Converts the amount to a Chinese number string.
+     *
+     * @param amount The amount to convert
+     *
+     * @return the result of the operation, or null when the input is null
+     */
     @Nullable
     public static String toNumberString(@Nullable Number amount) {
         return toNumberString(amount, null);
     }
 
+    /**
+     * Converts the amount to a Chinese number string.
+     *
+     * @param amount The amount to convert
+     * @param type The Chinese number style
+     *
+     * @return the result of the operation, or null when the input is null
+     */
     @Nullable
     public static String toNumberString(@Nullable Number amount, @Nullable ChineseNumberType type) {
         return toNumberString(amount, 2, type);
     }
 
+    /**
+     * Converts the amount to a Chinese number string.
+     *
+     * @param amount The amount to convert
+     * @param fraction The number of fraction digits
+     * @param type The Chinese number style
+     *
+     * @return the result of the operation, or null when the input is null
+     */
     @Nullable
     public static String toNumberString(@Nullable Number amount, int fraction, @Nullable ChineseNumberType type) {
         return (amount == null) ? null : toNumberString(BigDecimal.valueOf(amount.doubleValue()), fraction, type);
     }
 
+    /**
+     * Converts the amount to a Chinese number string.
+     *
+     * @param amount The amount to convert
+     *
+     * @return the result of the operation, or null when the input is null
+     */
     @Nullable
     public static String toNumberString(@Nullable String amount) {
         return toNumberString(amount, 2);
     }
 
+    /**
+     * Converts the amount to a Chinese number string.
+     *
+     * @param amount The amount to convert
+     * @param fraction The number of fraction digits
+     *
+     * @return the result of the operation, or null when the input is null
+     */
     @Nullable
     public static String toNumberString(@Nullable String amount, int fraction) {
         return toNumberString(amount, fraction, null);
     }
 
+    /**
+     * Converts the amount to a Chinese number string.
+     *
+     * @param amount The amount to convert
+     * @param fraction The number of fraction digits
+     * @param type The Chinese number style
+     *
+     * @return the result of the operation, or null when the input is null
+     */
     @Nullable
     public static String toNumberString(@Nullable String amount, int fraction, @Nullable ChineseNumberType type) {
         if (StringUtils.isBlank(amount)) {
             return null;
         }
-        String value = StringUtils.remove(amount, CharVariantConst.COMMA);
+        String value = StringUtilsWraps.remove(amount, CharVariantConst.COMMA);
         if (StringUtils.isBlank(value) || !NumberUtils.isCreatable(value)) {
             return null;
         }

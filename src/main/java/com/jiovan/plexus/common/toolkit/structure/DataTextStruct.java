@@ -42,11 +42,23 @@ import lombok.NoArgsConstructor;
 public class DataTextStruct<T> extends TextStampStruct {
     private T data;
 
+    /**
+     * Creates a structure with the given data and text messages.
+     *
+     * @param data the data payload, or null when absent
+     * @param texts the text messages, or null when absent
+     */
     public DataTextStruct(@Nullable T data, @Nullable String... texts) {
         this.data = data;
         super.addText(texts);
     }
 
+    /**
+     * Creates a structure with the given data and text messages.
+     *
+     * @param data the data payload, or null when absent
+     * @param texts the text messages, or null when absent
+     */
     public DataTextStruct(@Nullable T data, @Nullable Collection<String> texts) {
         this.data = data;
         super.addText(texts);

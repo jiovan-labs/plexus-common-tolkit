@@ -54,7 +54,7 @@ public abstract class LocalePlainWraps {
         if (ObjectUtils.anyNull(target, comparison)) {
             return false;
         }
-        return StringUtils.equals(target.getLanguage(), comparison.getLanguage());
+        return StringUtilsWraps.equals(target.getLanguage(), comparison.getLanguage());
     }
 
     /**
@@ -72,7 +72,7 @@ public abstract class LocalePlainWraps {
         if (locale == null || StringUtils.isBlank(language)) {
             return false;
         }
-        return StringUtils.equals(locale.getLanguage(), language);
+        return StringUtilsWraps.equals(locale.getLanguage(), language);
     }
 
     /**
@@ -91,7 +91,7 @@ public abstract class LocalePlainWraps {
         if (ObjectUtils.anyNull(target, comparison)) {
             return false;
         }
-        return StringUtils.equals(target.toLanguageTag(), comparison.toLanguageTag());
+        return StringUtilsWraps.equals(target.toLanguageTag(), comparison.toLanguageTag());
     }
 
     /**
@@ -109,7 +109,7 @@ public abstract class LocalePlainWraps {
         if (locale == null || StringUtils.isBlank(languageTag)) {
             return false;
         }
-        return StringUtils.equals(locale.toLanguageTag(), languageTag);
+        return StringUtilsWraps.equals(locale.toLanguageTag(), languageTag);
     }
 
     /**
@@ -241,9 +241,11 @@ public abstract class LocalePlainWraps {
     /**
      * Returns an IETF BCP47 language tag representing the locale
      *
-     * <p>Examples: <ul>
-     * <li><tt>en-US</tt></li>
-     * <li><tt>zh-CN</tt></li>
+     * <p>Examples:</p>
+     * <ul>
+     * <li>{@code en-US}</li>
+     * <li>{@code zh-CN}</li>
+     * </ul>
      *
      * @param locale The source locale to convert
      *
@@ -284,9 +286,11 @@ public abstract class LocalePlainWraps {
      * <p>
      * To represent a Locale as a String for interchange purposes, use {@link #toLanguageTag}
      *
-     * <p>Examples: <ul>
-     * <li><tt>en_US_WIN</tt></li>
-     * <li><tt>zh_CN_#Hans</tt></li>
+     * <p>Examples:</p>
+     * <ul>
+     * <li>{@code en_US_WIN}</li>
+     * <li>{@code zh_CN_#Hans}</li>
+     * </ul>
      *
      * @param locale The source locale to convert
      *

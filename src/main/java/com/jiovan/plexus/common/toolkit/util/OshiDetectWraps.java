@@ -236,7 +236,7 @@ public abstract class OshiDetectWraps {
         List<String> macAddresses = new ArrayList<>();
         for (File ifaceDir : interfaceDirs) {
             String ifaceName = ifaceDir.getName();
-            if (StringUtils.equalsIgnoreCase(ifaceName, LOOPBACK_IFACE)) {
+            if (StringUtilsWraps.equalsIgnoreCase(ifaceName, LOOPBACK_IFACE)) {
                 continue;
             }
             File addressFile = new File(ifaceDir, "address");    // $NON-NLS-1$
@@ -261,8 +261,8 @@ public abstract class OshiDetectWraps {
             }
             List<String> macAddresses = new ArrayList<>();
             for (NetworkIF networkIF : networkIFs) {
-                NetworkInterface iface = networkIF.queryNetworkInterface();
-                if (iface == null || iface.isLoopback() || iface.isVirtual()) {
+                NetworkInterface face = networkIF.queryNetworkInterface();
+                if (face.isLoopback() || face.isVirtual()) {
                     continue;
                 }
                 String mac = networkIF.getMacaddr();
@@ -325,7 +325,7 @@ public abstract class OshiDetectWraps {
         List<String> serials = new ArrayList<>();
         for (File devDir : deviceDirs) {
             String devName = devDir.getName();
-            if (StringUtils.startsWithAny(devName, "loop", "ram", "dm-")) {    // $NON-NLS-1$ // $NON-NLS-2$ // $NON-NLS-3$
+            if (StringUtilsWraps.startsWithAny(devName, "loop", "ram", "dm-")) {    // $NON-NLS-1$ // $NON-NLS-2$ // $NON-NLS-3$
                 continue;
             }
             File serialFile = new File(devDir, "device/serial");    // $NON-NLS-1$
@@ -375,7 +375,7 @@ public abstract class OshiDetectWraps {
                 String line;
                 while ((line = reader.readLine()) != null) {
                     String trimmed = line.trim();
-                    if (StringUtils.startsWithIgnoreCase(trimmed, prefix)) {
+                    if (StringUtilsWraps.startsWithIgnoreCase(trimmed, prefix)) {
                         String serial = StringUtilsWraps.substringAfterIgnoreCase(trimmed, prefix);
                         if (StringUtils.isNotBlank(serial)) {
                             serials.add(serial);

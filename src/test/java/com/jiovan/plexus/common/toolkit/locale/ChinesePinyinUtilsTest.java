@@ -18,9 +18,8 @@ package com.jiovan.plexus.common.toolkit.locale;
 
 
 import org.junit.jupiter.api.Test;
-import com.jiovan.plexus.common.toolkit.locale.ChinesePinyinUtils;
 import com.jiovan.plexus.common.toolkit.util.StackTraceWraps;
-import net.sourceforge.pinyin4j.ChineseHelper;
+import com.jiovan.revival.pinyin4j.ChineseHelper;
 import lombok.extern.slf4j.Slf4j;
 
 

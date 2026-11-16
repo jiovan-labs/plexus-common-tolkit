@@ -282,6 +282,13 @@ public abstract class EnumerationPlainWraps {
         return null;
     }
 
+    /**
+     * Returns the component type of the elements in the enumeration.
+     *
+     * @param enumeration The enumeration to inspect
+     *
+     * @return the component type, or null when it cannot be determined
+     */
     @Nullable
     public static Class<?> getComponentType(@Nullable Enumeration<?> enumeration) {
         return getComponentType(enumeration, false);

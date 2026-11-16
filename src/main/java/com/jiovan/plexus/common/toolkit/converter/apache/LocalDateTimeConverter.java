@@ -45,10 +45,23 @@ public class LocalDateTimeConverter extends DateTimeConverter<LocalDateTime> {
     private String[] formats = TemporalFormatCombo.DATETIME_FORMATS;
     private String[] spares = TemporalFormatCombo.DATE_FORMATS;
 
+    /**
+     * Creates a converter with the given default value.
+     *
+     * @param defaultValue the value returned when conversion fails, or null when absent
+     */
     public LocalDateTimeConverter(@Nullable LocalDateTime defaultValue) {
         super(defaultValue);
     }
 
+    /**
+     * Converts the given value to the requested date-time type. Tries the configured date-time patterns, then the date patterns, and extends the date to midnight.
+     *
+     * @param type the target type, which must be assignable from LocalDateTime
+     * @param value the value to convert, or null when absent
+     * @return the converted value, or null when the value is null
+     * @throws Exception when the value cannot be converted
+     */
     @Override
     protected <T> T convertToType(@Nonnull Class<T> type, @Nullable Object value) throws Exception {
         if (value == null) {
@@ -71,6 +84,11 @@ public class LocalDateTimeConverter extends DateTimeConverter<LocalDateTime> {
         return super.convertToType(type, value);
     }
 
+    /**
+     * Returns the default target type of this converter.
+     *
+     * @return the LocalDateTime class
+     */
     @Override
     protected Class<LocalDateTime> getDefaultType() {
         return LocalDateTime.class;

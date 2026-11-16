@@ -203,7 +203,7 @@ public abstract class InetAddressWraps {
      * @return true if the address is a LAN address, false otherwise
      */
     public static boolean isLanAddress(@Nullable String address) {
-        return StringUtils.isNotBlank(address) && (StringUtils.equalsIgnoreCase(address, InetAddressConst.LOCALHOST_NAME) || Pattern.matches(RegexVariantConst.LAN_ADDRESS_IPV4, address));
+        return StringUtils.isNotBlank(address) && (StringUtilsWraps.equalsIgnoreCase(address, InetAddressConst.LOCALHOST_NAME) || Pattern.matches(RegexVariantConst.LAN_ADDRESS_IPV4, address));
     }
 
     /**

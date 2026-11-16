@@ -32,22 +32,51 @@ import org.apache.commons.lang3.ObjectUtils;
  */
 @SuppressWarnings({"unused", "BooleanMethodIsAlwaysInverted", "UnusedReturnValue"})
 public abstract class IterableUtilsWraps {
+    /**
+     * Converts the source to an array of the expected element type.
+     *
+     * @param iterable The source iterable
+     * @param elementType The expected element type
+     *
+     * @return an array containing the elements, or null when the type is unavailable
+     */
     @Nullable
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static <E> E[] toElementArray(@Nullable Iterable<? extends E> iterable, @Nullable Class<E> elementType) {
         return ObjectUtils.anyNull(iterable, elementType) ? null : IteratorUtils.toArray(iterable.iterator(), elementType);
     }
 
+    /**
+     * Converts the source to a list.
+     *
+     * @param iterable The source iterable
+     *
+     * @return a list containing the elements, or null when the source is null
+     */
     @Nullable
     public static <E> List<E> toElementList(@Nullable Iterable<? extends E> iterable) {
         return (iterable == null) ? null : IteratorUtils.toList(iterable.iterator());
     }
 
+    /**
+     * Converts the source to an object array.
+     *
+     * @param iterable The source iterable
+     *
+     * @return an array containing the elements, or null when the source is null
+     */
     @Nullable
     public static Object[] toObjectArray(@Nullable Iterable<?> iterable) {
         return (iterable == null) ? null : IteratorUtils.toArray(iterable.iterator());
     }
 
+    /**
+     * Converts the source to a list of objects.
+     *
+     * @param iterable The source iterable
+     *
+     * @return a list containing the elements, or null when the source is null
+     */
     @Nullable
     public static List<?> toObjectList(@Nullable Iterable<?> iterable) {
         return (iterable == null) ? null : IteratorUtils.toList(iterable.iterator());

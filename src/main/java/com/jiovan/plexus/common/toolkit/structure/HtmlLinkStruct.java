@@ -36,14 +36,29 @@ public class HtmlLinkStruct extends HtmlTagStruct {
     private String rel;
     private String type;
 
+    /**
+     * Creates a link structure with the default relationship and type.
+     */
     public HtmlLinkStruct() {
         this(null, DEFAULT_REL, DEFAULT_TYPE);
     }
 
+    /**
+     * Creates a link structure with the given target URL and the default relationship and type.
+     *
+     * @param href the target URL, or null when absent
+     */
     public HtmlLinkStruct(@Nullable String href) {
         this(href, DEFAULT_REL, DEFAULT_TYPE);
     }
 
+    /**
+     * Creates a link structure with the given target URL, relationship, and type.
+     *
+     * @param href the target URL, or null when absent
+     * @param rel the relationship type, or null when absent
+     * @param type the content type, or null when absent
+     */
     public HtmlLinkStruct(@Nullable String href, @Nullable String rel, @Nullable String type) {
         super.setTag(HTML.Tag.LINK);
         setHref(href);
@@ -51,16 +66,31 @@ public class HtmlLinkStruct extends HtmlTagStruct {
         setType(type);
     }
 
+    /**
+     * Sets the href attribute.
+     *
+     * @param href the target URL, or null when absent
+     */
     public void setHref(@Nullable String href) {
         this.href = href;
         super.addAttribute(HTML.Attribute.HREF, href);
     }
 
+    /**
+     * Sets the rel attribute.
+     *
+     * @param rel the relationship type, or null when absent
+     */
     public void setRel(@Nullable String rel) {
         this.rel = rel;
         super.addAttribute(HTML.Attribute.REL, rel);
     }
 
+    /**
+     * Sets the type attribute.
+     *
+     * @param type the content type, or null when absent
+     */
     public void setType(@Nullable String type) {
         this.type = type;
         super.addAttribute(HTML.Attribute.TYPE, type);

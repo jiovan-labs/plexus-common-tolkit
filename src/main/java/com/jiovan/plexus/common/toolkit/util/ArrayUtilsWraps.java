@@ -53,104 +53,285 @@ import org.apache.commons.lang3.StringUtils;
 public abstract class ArrayUtilsWraps {
     public static final CharSequence[] EMPTY_CHAR_SEQUENCE_ARRAY = new CharSequence[0];
 
+    /**
+     * Checks whether all the given arrays are empty.
+     *
+     * A missing array or a null array is treated as empty.
+     *
+     * @param arrays The source arrays
+     *
+     * @return true if all arrays are empty; false otherwise
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static boolean allEmpty(@Nullable boolean[]... arrays) {
         return ArrayUtils.isEmpty(arrays) || Arrays.stream(arrays).allMatch(ArrayUtils::isEmpty);
     }
 
+    /**
+     * Checks whether all the given arrays are empty.
+     *
+     * A missing array or a null array is treated as empty.
+     *
+     * @param arrays The source arrays
+     *
+     * @return true if all arrays are empty; false otherwise
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static boolean allEmpty(@Nullable byte[]... arrays) {
         return ArrayUtils.isEmpty(arrays) || Arrays.stream(arrays).allMatch(ArrayUtils::isEmpty);
     }
 
+    /**
+     * Checks whether all the given arrays are empty.
+     *
+     * A missing array or a null array is treated as empty.
+     *
+     * @param arrays The source arrays
+     *
+     * @return true if all arrays are empty; false otherwise
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static boolean allEmpty(@Nullable char[]... arrays) {
         return ArrayUtils.isEmpty(arrays) || Arrays.stream(arrays).allMatch(ArrayUtils::isEmpty);
     }
 
+    /**
+     * Checks whether all the given arrays are empty.
+     *
+     * A missing array or a null array is treated as empty.
+     *
+     * @param arrays The source arrays
+     *
+     * @return true if all arrays are empty; false otherwise
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static boolean allEmpty(@Nullable double[]... arrays) {
         return ArrayUtils.isEmpty(arrays) || Arrays.stream(arrays).allMatch(ArrayUtils::isEmpty);
     }
 
+    /**
+     * Checks whether all the given arrays are empty.
+     *
+     * A missing array or a null array is treated as empty.
+     *
+     * @param arrays The source arrays
+     *
+     * @return true if all arrays are empty; false otherwise
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static boolean allEmpty(@Nullable float[]... arrays) {
         return ArrayUtils.isEmpty(arrays) || Arrays.stream(arrays).allMatch(ArrayUtils::isEmpty);
     }
 
+    /**
+     * Checks whether all the given arrays are empty.
+     *
+     * A missing array or a null array is treated as empty.
+     *
+     * @param arrays The source arrays
+     *
+     * @return true if all arrays are empty; false otherwise
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static boolean allEmpty(@Nullable int[]... arrays) {
         return ArrayUtils.isEmpty(arrays) || Arrays.stream(arrays).allMatch(ArrayUtils::isEmpty);
     }
 
+    /**
+     * Checks whether all the given arrays are empty.
+     *
+     * A missing array or a null array is treated as empty.
+     *
+     * @param arrays The source arrays
+     *
+     * @return true if all arrays are empty; false otherwise
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static boolean allEmpty(@Nullable long[]... arrays) {
         return ArrayUtils.isEmpty(arrays) || Arrays.stream(arrays).allMatch(ArrayUtils::isEmpty);
     }
 
+    /**
+     * Checks whether all the given arrays are empty.
+     *
+     * A missing array or a null array is treated as empty.
+     *
+     * @param arrays The source arrays
+     *
+     * @return true if all arrays are empty; false otherwise
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static boolean allEmpty(@Nullable short[]... arrays) {
         return ArrayUtils.isEmpty(arrays) || Arrays.stream(arrays).allMatch(ArrayUtils::isEmpty);
     }
 
+    /**
+     * Checks whether all the given arrays are empty.
+     *
+     * A missing array or a null array is treated as empty.
+     *
+     * @param arrays The source arrays
+     *
+     * @return true if all arrays are empty; false otherwise
+     */
     @SafeVarargs
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static <E> boolean allEmpty(@Nullable E[]... arrays) {
         return ArrayUtils.isEmpty(arrays) || Arrays.stream(arrays).allMatch(ArrayUtils::isEmpty);
     }
 
+    /**
+     * Checks whether any of the given arrays is empty.
+     *
+     * A missing array or a null array is treated as empty.
+     *
+     * @param arrays The source arrays
+     *
+     * @return true if any array is empty; false otherwise
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static boolean anyEmpty(@Nullable boolean[]... arrays) {
         return ArrayUtils.isEmpty(arrays) || Arrays.stream(arrays).anyMatch(ArrayUtils::isEmpty);
     }
 
+    /**
+     * Checks whether any of the given arrays is empty.
+     *
+     * A missing array or a null array is treated as empty.
+     *
+     * @param arrays The source arrays
+     *
+     * @return true if any array is empty; false otherwise
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static boolean anyEmpty(@Nullable byte[]... arrays) {
         return ArrayUtils.isEmpty(arrays) || Arrays.stream(arrays).anyMatch(ArrayUtils::isEmpty);
     }
 
+    /**
+     * Checks whether any of the given arrays is empty.
+     *
+     * A missing array or a null array is treated as empty.
+     *
+     * @param arrays The source arrays
+     *
+     * @return true if any array is empty; false otherwise
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static boolean anyEmpty(@Nullable char[]... arrays) {
         return ArrayUtils.isEmpty(arrays) || Arrays.stream(arrays).anyMatch(ArrayUtils::isEmpty);
     }
 
+    /**
+     * Checks whether any of the given arrays is empty.
+     *
+     * A missing array or a null array is treated as empty.
+     *
+     * @param arrays The source arrays
+     *
+     * @return true if any array is empty; false otherwise
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static boolean anyEmpty(@Nullable double[]... arrays) {
         return ArrayUtils.isEmpty(arrays) || Arrays.stream(arrays).anyMatch(ArrayUtils::isEmpty);
     }
 
+    /**
+     * Checks whether any of the given arrays is empty.
+     *
+     * A missing array or a null array is treated as empty.
+     *
+     * @param arrays The source arrays
+     *
+     * @return true if any array is empty; false otherwise
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static boolean anyEmpty(@Nullable float[]... arrays) {
         return ArrayUtils.isEmpty(arrays) || Arrays.stream(arrays).anyMatch(ArrayUtils::isEmpty);
     }
 
+    /**
+     * Checks whether any of the given arrays is empty.
+     *
+     * A missing array or a null array is treated as empty.
+     *
+     * @param arrays The source arrays
+     *
+     * @return true if any array is empty; false otherwise
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static boolean anyEmpty(@Nullable int[]... arrays) {
         return ArrayUtils.isEmpty(arrays) || Arrays.stream(arrays).anyMatch(ArrayUtils::isEmpty);
     }
 
+    /**
+     * Checks whether any of the given arrays is empty.
+     *
+     * A missing array or a null array is treated as empty.
+     *
+     * @param arrays The source arrays
+     *
+     * @return true if any array is empty; false otherwise
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static boolean anyEmpty(@Nullable long[]... arrays) {
         return ArrayUtils.isEmpty(arrays) || Arrays.stream(arrays).anyMatch(ArrayUtils::isEmpty);
     }
 
+    /**
+     * Checks whether any of the given arrays is empty.
+     *
+     * A missing array or a null array is treated as empty.
+     *
+     * @param arrays The source arrays
+     *
+     * @return true if any array is empty; false otherwise
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static boolean anyEmpty(@Nullable short[]... arrays) {
         return ArrayUtils.isEmpty(arrays) || Arrays.stream(arrays).anyMatch(ArrayUtils::isEmpty);
     }
 
+    /**
+     * Checks whether any of the given arrays is empty.
+     *
+     * A missing array or a null array is treated as empty.
+     *
+     * @param arrays The source arrays
+     *
+     * @return true if any array is empty; false otherwise
+     */
     @SafeVarargs
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static <E> boolean anyEmpty(@Nullable E[]... arrays) {
         return ArrayUtils.isEmpty(arrays) || Arrays.stream(arrays).anyMatch(ArrayUtils::isEmpty);
     }
 
+    /**
+     * Converts the given items to a list.
+     *
+     * Returns null when no items are provided. The list is unmodifiable by default.
+     *
+     * @param items The items to include
+     *
+     * @return a list containing the items, or null when no items are provided
+     */
     @Nullable
     @SafeVarargs
     public static <E> List<E> asList(@Nullable E... items) {
         return asList(false, items);
     }
 
+    /**
+     * Converts the given items to a list.
+     *
+     * Returns null when no items are provided. The list is unmodifiable by default.
+     *
+     * @param modifiable Whether the returned collection is modifiable
+     * @param items The items to include
+     *
+     * @return a list containing the items, or null when no items are provided
+     */
     @Nullable
     @SafeVarargs
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
@@ -162,12 +343,31 @@ public abstract class ArrayUtilsWraps {
         return modifiable ? new ArrayList<>(result) : Collections.unmodifiableList(result);
     }
 
+    /**
+     * Converts the given items to a set.
+     *
+     * Returns null when no items are provided. The set is unmodifiable by default.
+     *
+     * @param items The items to include
+     *
+     * @return a set containing the items, or null when no items are provided
+     */
     @Nullable
     @SafeVarargs
     public static <E> Set<E> asSet(@Nullable E... items) {
         return asSet(false, items);
     }
 
+    /**
+     * Converts the given items to a set.
+     *
+     * Returns null when no items are provided. The set is unmodifiable by default.
+     *
+     * @param modifiable Whether the returned collection is modifiable
+     * @param items The items to include
+     *
+     * @return a set containing the items, or null when no items are provided
+     */
     @Nullable
     @SafeVarargs
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
@@ -179,6 +379,16 @@ public abstract class ArrayUtilsWraps {
         return modifiable ? result : Collections.unmodifiableSet(result);
     }
 
+    /**
+     * Casts the given source array to the expected component type.
+     *
+     * Returns null when the source array is empty or the expected type is unavailable.
+     *
+     * @param sources The source array
+     * @param expectType The expected component type
+     *
+     * @return an array of the expected component type, or null when the cast cannot be performed
+     */
     @Nullable
     @SuppressWarnings("unchecked")
     public static <E> E[] castAs(@Nullable Object[] sources, @Nullable Class<E> expectType) {
@@ -190,30 +400,87 @@ public abstract class ArrayUtilsWraps {
         return ArrayUtils.isEmpty(result) ? null : result;
     }
 
+    /**
+     * Checks whether any element contains the given sequence.
+     *
+     * An empty input array or an empty sequence always evaluates to false.
+     *
+     * @param sequences The character sequences to search
+     * @param sequence The character sequence to search for or compare
+     *
+     * @return true if an element contains the sequence; false otherwise
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static boolean containsString(@Nullable CharSequence[] sequences, @Nullable CharSequence sequence) {
-        return ArrayUtils.isNotEmpty(sequences) && StringUtils.isNotEmpty(sequence) && Arrays.stream(sequences).anyMatch(item -> StringUtils.contains(item, sequence));
+        return ArrayUtils.isNotEmpty(sequences) && StringUtils.isNotEmpty(sequence) && Arrays.stream(sequences).anyMatch(item -> StringUtilsWraps.contains(item, sequence));
     }
 
+    /**
+     * Checks whether any element contains the given sequence, ignoring case.
+     *
+     * An empty input array or an empty sequence always evaluates to false.
+     *
+     * @param sequences The character sequences to search
+     * @param sequence The character sequence to search for or compare
+     *
+     * @return true if an element contains the sequence; false otherwise
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static boolean containsStringIgnoreCase(@Nullable CharSequence[] sequences, @Nullable CharSequence sequence) {
-        return ArrayUtils.isNotEmpty(sequences) && StringUtils.isNotEmpty(sequence) && Arrays.stream(sequences).anyMatch(item -> StringUtils.containsIgnoreCase(item, sequence));
+        return ArrayUtils.isNotEmpty(sequences) && StringUtils.isNotEmpty(sequence) && Arrays.stream(sequences).anyMatch(item -> StringUtilsWraps.containsIgnoreCase(item, sequence));
     }
 
+    /**
+     * Checks whether any element equals the given sequence.
+     *
+     * An empty input array or an empty sequence always evaluates to false.
+     *
+     * @param sequences The character sequences to search
+     * @param sequence The character sequence to search for or compare
+     *
+     * @return true if an element equals the sequence; false otherwise
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static boolean equalsString(@Nullable CharSequence[] sequences, @Nullable CharSequence sequence) {
-        return ArrayUtils.isNotEmpty(sequences) && StringUtils.isNotEmpty(sequence) && Arrays.stream(sequences).anyMatch(item -> StringUtils.equals(item, sequence));
+        return ArrayUtils.isNotEmpty(sequences) && StringUtils.isNotEmpty(sequence) && Arrays.stream(sequences).anyMatch(item -> StringUtilsWraps.equals(item, sequence));
     }
 
+    /**
+     * Checks whether any element equals the given sequence, ignoring case.
+     *
+     * An empty input array or an empty sequence always evaluates to false.
+     *
+     * @param sequences The character sequences to search
+     * @param sequence The character sequence to search for or compare
+     *
+     * @return true if an element equals the sequence; false otherwise
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static boolean equalsStringIgnoreCase(@Nullable CharSequence[] sequences, @Nullable CharSequence sequence) {
-        return ArrayUtils.isNotEmpty(sequences) && StringUtils.isNotEmpty(sequence) && Arrays.stream(sequences).anyMatch(item -> StringUtils.equalsIgnoreCase(item, sequence));
+        return ArrayUtils.isNotEmpty(sequences) && StringUtils.isNotEmpty(sequence) && Arrays.stream(sequences).anyMatch(item -> StringUtilsWraps.equalsIgnoreCase(item, sequence));
     }
 
+    /**
+     * Performs an action for each element of the array.
+     *
+     * When a filter is provided, the action is applied only to matching elements.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     */
     public static void forEach(@Nullable boolean[] array, @Nullable Consumer<Boolean> action) {
         forEach(array, action, null);
     }
 
+    /**
+     * Performs an action for each element of the array.
+     *
+     * When a filter is provided, the action is applied only to matching elements.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     * @param filter The predicate used to filter elements
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static void forEach(@Nullable boolean[] array, @Nullable Consumer<Boolean> action, @Nullable Predicate<Boolean> filter) {
         if (ArrayUtils.isEmpty(array) || action == null) {
@@ -226,10 +493,27 @@ public abstract class ArrayUtilsWraps {
         }
     }
 
+    /**
+     * Performs an action for each element of the array.
+     *
+     * When a filter is provided, the action is applied only to matching elements.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     */
     public static void forEach(@Nullable byte[] array, @Nullable Consumer<Byte> action) {
         forEach(array, action, null);
     }
 
+    /**
+     * Performs an action for each element of the array.
+     *
+     * When a filter is provided, the action is applied only to matching elements.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     * @param filter The predicate used to filter elements
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static void forEach(@Nullable byte[] array, @Nullable Consumer<Byte> action, @Nullable Predicate<Byte> filter) {
         if (ArrayUtils.isEmpty(array) || action == null) {
@@ -242,10 +526,27 @@ public abstract class ArrayUtilsWraps {
         }
     }
 
+    /**
+     * Performs an action for each element of the array.
+     *
+     * When a filter is provided, the action is applied only to matching elements.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     */
     public static void forEach(@Nullable char[] array, @Nullable Consumer<Character> action) {
         forEach(array, action, null);
     }
 
+    /**
+     * Performs an action for each element of the array.
+     *
+     * When a filter is provided, the action is applied only to matching elements.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     * @param filter The predicate used to filter elements
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static void forEach(@Nullable char[] array, @Nullable Consumer<Character> action, @Nullable Predicate<Character> filter) {
         if (ArrayUtils.isEmpty(array) || action == null) {
@@ -258,10 +559,27 @@ public abstract class ArrayUtilsWraps {
         }
     }
 
+    /**
+     * Performs an action for each element of the array.
+     *
+     * When a filter is provided, the action is applied only to matching elements.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     */
     public static void forEach(@Nullable double[] array, @Nullable Consumer<Double> action) {
         forEach(array, action, null);
     }
 
+    /**
+     * Performs an action for each element of the array.
+     *
+     * When a filter is provided, the action is applied only to matching elements.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     * @param filter The predicate used to filter elements
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static void forEach(@Nullable double[] array, @Nullable Consumer<Double> action, @Nullable Predicate<Double> filter) {
         if (ArrayUtils.isEmpty(array) || action == null) {
@@ -274,10 +592,27 @@ public abstract class ArrayUtilsWraps {
         }
     }
 
+    /**
+     * Performs an action for each element of the array.
+     *
+     * When a filter is provided, the action is applied only to matching elements.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     */
     public static void forEach(@Nullable float[] array, @Nullable Consumer<Float> action) {
         forEach(array, action, null);
     }
 
+    /**
+     * Performs an action for each element of the array.
+     *
+     * When a filter is provided, the action is applied only to matching elements.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     * @param filter The predicate used to filter elements
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static void forEach(@Nullable float[] array, @Nullable Consumer<Float> action, @Nullable Predicate<Float> filter) {
         if (ArrayUtils.isEmpty(array) || action == null) {
@@ -290,10 +625,27 @@ public abstract class ArrayUtilsWraps {
         }
     }
 
+    /**
+     * Performs an action for each element of the array.
+     *
+     * When a filter is provided, the action is applied only to matching elements.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     */
     public static void forEach(@Nullable int[] array, @Nullable Consumer<Integer> action) {
         forEach(array, action, null);
     }
 
+    /**
+     * Performs an action for each element of the array.
+     *
+     * When a filter is provided, the action is applied only to matching elements.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     * @param filter The predicate used to filter elements
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static void forEach(@Nullable int[] array, @Nullable Consumer<Integer> action, @Nullable Predicate<Integer> filter) {
         if (ArrayUtils.isEmpty(array) || action == null) {
@@ -306,10 +658,27 @@ public abstract class ArrayUtilsWraps {
         }
     }
 
+    /**
+     * Performs an action for each element of the array.
+     *
+     * When a filter is provided, the action is applied only to matching elements.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     */
     public static void forEach(@Nullable long[] array, @Nullable Consumer<Long> action) {
         forEach(array, action, null);
     }
 
+    /**
+     * Performs an action for each element of the array.
+     *
+     * When a filter is provided, the action is applied only to matching elements.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     * @param filter The predicate used to filter elements
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static void forEach(@Nullable long[] array, @Nullable Consumer<Long> action, @Nullable Predicate<Long> filter) {
         if (ArrayUtils.isEmpty(array) || action == null) {
@@ -322,10 +691,27 @@ public abstract class ArrayUtilsWraps {
         }
     }
 
+    /**
+     * Performs an action for each element of the array.
+     *
+     * When a filter is provided, the action is applied only to matching elements.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     */
     public static void forEach(@Nullable short[] array, @Nullable Consumer<Short> action) {
         forEach(array, action, null);
     }
 
+    /**
+     * Performs an action for each element of the array.
+     *
+     * When a filter is provided, the action is applied only to matching elements.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     * @param filter The predicate used to filter elements
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static void forEach(@Nullable short[] array, @Nullable Consumer<Short> action, @Nullable Predicate<Short> filter) {
         if (ArrayUtils.isEmpty(array) || action == null) {
@@ -338,10 +724,27 @@ public abstract class ArrayUtilsWraps {
         }
     }
 
+    /**
+     * Performs an action for each element of the array.
+     *
+     * When a filter is provided, the action is applied only to matching elements.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     */
     public static <E> void forEach(@Nullable E[] array, @Nullable Consumer<? super E> action) {
         forEach(array, action, null);
     }
 
+    /**
+     * Performs an action for each element of the array.
+     *
+     * When a filter is provided, the action is applied only to matching elements.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     * @param filter The predicate used to filter elements
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static <E> void forEach(@Nullable E[] array, @Nullable Consumer<? super E> action, @Nullable Predicate<? super E> filter) {
         if (ArrayUtils.isEmpty(array) || action == null) {
@@ -354,10 +757,27 @@ public abstract class ArrayUtilsWraps {
         }
     }
 
+    /**
+     * Performs an action for each element until the action returns false.
+     *
+     * When a filter is provided, only matching elements are passed to the action.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     */
     public static void forEachBreakable(@Nullable boolean[] array, @Nullable Function<Boolean, Boolean> action) {
         forEachBreakable(array, action, null);
     }
 
+    /**
+     * Performs an action for each element until the action returns false.
+     *
+     * When a filter is provided, only matching elements are passed to the action.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     * @param filter The predicate used to filter elements
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static void forEachBreakable(@Nullable boolean[] array, @Nullable Function<Boolean, Boolean> action, @Nullable Predicate<Boolean> filter) {
         if (ArrayUtils.isEmpty(array) || action == null) {
@@ -370,10 +790,27 @@ public abstract class ArrayUtilsWraps {
         }
     }
 
+    /**
+     * Performs an action for each element until the action returns false.
+     *
+     * When a filter is provided, only matching elements are passed to the action.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     */
     public static void forEachBreakable(@Nullable byte[] array, @Nullable Function<Byte, Boolean> action) {
         forEachBreakable(array, action, null);
     }
 
+    /**
+     * Performs an action for each element until the action returns false.
+     *
+     * When a filter is provided, only matching elements are passed to the action.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     * @param filter The predicate used to filter elements
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static void forEachBreakable(@Nullable byte[] array, @Nullable Function<Byte, Boolean> action, @Nullable Predicate<Byte> filter) {
         if (ArrayUtils.isEmpty(array) || action == null) {
@@ -386,10 +823,27 @@ public abstract class ArrayUtilsWraps {
         }
     }
 
+    /**
+     * Performs an action for each element until the action returns false.
+     *
+     * When a filter is provided, only matching elements are passed to the action.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     */
     public static void forEachBreakable(@Nullable char[] array, @Nullable Function<Character, Boolean> action) {
         forEachBreakable(array, action, null);
     }
 
+    /**
+     * Performs an action for each element until the action returns false.
+     *
+     * When a filter is provided, only matching elements are passed to the action.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     * @param filter The predicate used to filter elements
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static void forEachBreakable(@Nullable char[] array, @Nullable Function<Character, Boolean> action, @Nullable Predicate<Character> filter) {
         if (ArrayUtils.isEmpty(array) || action == null) {
@@ -402,10 +856,27 @@ public abstract class ArrayUtilsWraps {
         }
     }
 
+    /**
+     * Performs an action for each element until the action returns false.
+     *
+     * When a filter is provided, only matching elements are passed to the action.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     */
     public static void forEachBreakable(@Nullable double[] array, @Nullable Function<Double, Boolean> action) {
         forEachBreakable(array, action, null);
     }
 
+    /**
+     * Performs an action for each element until the action returns false.
+     *
+     * When a filter is provided, only matching elements are passed to the action.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     * @param filter The predicate used to filter elements
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static void forEachBreakable(@Nullable double[] array, @Nullable Function<Double, Boolean> action, @Nullable Predicate<Double> filter) {
         if (ArrayUtils.isEmpty(array) || action == null) {
@@ -418,10 +889,27 @@ public abstract class ArrayUtilsWraps {
         }
     }
 
+    /**
+     * Performs an action for each element until the action returns false.
+     *
+     * When a filter is provided, only matching elements are passed to the action.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     */
     public static void forEachBreakable(@Nullable float[] array, @Nullable Function<Float, Boolean> action) {
         forEachBreakable(array, action, null);
     }
 
+    /**
+     * Performs an action for each element until the action returns false.
+     *
+     * When a filter is provided, only matching elements are passed to the action.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     * @param filter The predicate used to filter elements
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static void forEachBreakable(@Nullable float[] array, @Nullable Function<Float, Boolean> action, @Nullable Predicate<Float> filter) {
         if (ArrayUtils.isEmpty(array) || action == null) {
@@ -434,10 +922,27 @@ public abstract class ArrayUtilsWraps {
         }
     }
 
+    /**
+     * Performs an action for each element until the action returns false.
+     *
+     * When a filter is provided, only matching elements are passed to the action.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     */
     public static void forEachBreakable(@Nullable int[] array, @Nullable Function<Integer, Boolean> action) {
         forEachBreakable(array, action, null);
     }
 
+    /**
+     * Performs an action for each element until the action returns false.
+     *
+     * When a filter is provided, only matching elements are passed to the action.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     * @param filter The predicate used to filter elements
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static void forEachBreakable(@Nullable int[] array, @Nullable Function<Integer, Boolean> action, @Nullable Predicate<Integer> filter) {
         if (ArrayUtils.isEmpty(array) || action == null) {
@@ -450,10 +955,27 @@ public abstract class ArrayUtilsWraps {
         }
     }
 
+    /**
+     * Performs an action for each element until the action returns false.
+     *
+     * When a filter is provided, only matching elements are passed to the action.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     */
     public static void forEachBreakable(@Nullable long[] array, @Nullable Function<Long, Boolean> action) {
         forEachBreakable(array, action, null);
     }
 
+    /**
+     * Performs an action for each element until the action returns false.
+     *
+     * When a filter is provided, only matching elements are passed to the action.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     * @param filter The predicate used to filter elements
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static void forEachBreakable(@Nullable long[] array, @Nullable Function<Long, Boolean> action, @Nullable Predicate<Long> filter) {
         if (ArrayUtils.isEmpty(array) || action == null) {
@@ -466,10 +988,27 @@ public abstract class ArrayUtilsWraps {
         }
     }
 
+    /**
+     * Performs an action for each element until the action returns false.
+     *
+     * When a filter is provided, only matching elements are passed to the action.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     */
     public static void forEachBreakable(@Nullable short[] array, @Nullable Function<Short, Boolean> action) {
         forEachBreakable(array, action, null);
     }
 
+    /**
+     * Performs an action for each element until the action returns false.
+     *
+     * When a filter is provided, only matching elements are passed to the action.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     * @param filter The predicate used to filter elements
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static void forEachBreakable(@Nullable short[] array, @Nullable Function<Short, Boolean> action, @Nullable Predicate<Short> filter) {
         if (ArrayUtils.isEmpty(array) || action == null) {
@@ -482,10 +1021,27 @@ public abstract class ArrayUtilsWraps {
         }
     }
 
+    /**
+     * Performs an action for each element until the action returns false.
+     *
+     * When a filter is provided, only matching elements are passed to the action.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     */
     public static <E> void forEachBreakable(@Nullable E[] array, @Nullable Function<? super E, Boolean> action) {
         forEachBreakable(array, action, null);
     }
 
+    /**
+     * Performs an action for each element until the action returns false.
+     *
+     * When a filter is provided, only matching elements are passed to the action.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     * @param filter The predicate used to filter elements
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static <E> void forEachBreakable(@Nullable E[] array, @Nullable Function<? super E, Boolean> action, @Nullable Predicate<? super E> filter) {
         if (ArrayUtils.isEmpty(array) || action == null) {
@@ -498,6 +1054,16 @@ public abstract class ArrayUtilsWraps {
         }
     }
 
+    /**
+     * Performs an action for all elements except the last one.
+     *
+     * The last element is returned after the action has been applied to the preceding elements.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     *
+     * @return the last element, or null when unavailable
+     */
     @Nullable
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static Boolean forEachTailing(@Nullable boolean[] array, @Nullable Consumer<Boolean> action) {
@@ -511,6 +1077,16 @@ public abstract class ArrayUtilsWraps {
         return array[length - 1];
     }
 
+    /**
+     * Performs an action for all elements except the last one.
+     *
+     * The last element is returned after the action has been applied to the preceding elements.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     *
+     * @return the last element, or null when unavailable
+     */
     @Nullable
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static Byte forEachTailing(@Nullable byte[] array, @Nullable Consumer<Byte> action) {
@@ -524,6 +1100,16 @@ public abstract class ArrayUtilsWraps {
         return array[length - 1];
     }
 
+    /**
+     * Performs an action for all elements except the last one.
+     *
+     * The last element is returned after the action has been applied to the preceding elements.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     *
+     * @return the last element, or null when unavailable
+     */
     @Nullable
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static Character forEachTailing(@Nullable char[] array, @Nullable Consumer<Character> action) {
@@ -537,6 +1123,16 @@ public abstract class ArrayUtilsWraps {
         return array[length - 1];
     }
 
+    /**
+     * Performs an action for all elements except the last one.
+     *
+     * The last element is returned after the action has been applied to the preceding elements.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     *
+     * @return the last element, or null when unavailable
+     */
     @Nullable
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static Double forEachTailing(@Nullable double[] array, @Nullable Consumer<Double> action) {
@@ -550,6 +1146,16 @@ public abstract class ArrayUtilsWraps {
         return array[length - 1];
     }
 
+    /**
+     * Performs an action for all elements except the last one.
+     *
+     * The last element is returned after the action has been applied to the preceding elements.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     *
+     * @return the last element, or null when unavailable
+     */
     @Nullable
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static Float forEachTailing(@Nullable float[] array, @Nullable Consumer<Float> action) {
@@ -563,6 +1169,16 @@ public abstract class ArrayUtilsWraps {
         return array[length - 1];
     }
 
+    /**
+     * Performs an action for all elements except the last one.
+     *
+     * The last element is returned after the action has been applied to the preceding elements.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     *
+     * @return the last element, or null when unavailable
+     */
     @Nullable
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static Integer forEachTailing(@Nullable int[] array, @Nullable Consumer<Integer> action) {
@@ -576,6 +1192,16 @@ public abstract class ArrayUtilsWraps {
         return array[length - 1];
     }
 
+    /**
+     * Performs an action for all elements except the last one.
+     *
+     * The last element is returned after the action has been applied to the preceding elements.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     *
+     * @return the last element, or null when unavailable
+     */
     @Nullable
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static Long forEachTailing(@Nullable long[] array, @Nullable Consumer<Long> action) {
@@ -589,6 +1215,16 @@ public abstract class ArrayUtilsWraps {
         return array[length - 1];
     }
 
+    /**
+     * Performs an action for all elements except the last one.
+     *
+     * The last element is returned after the action has been applied to the preceding elements.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     *
+     * @return the last element, or null when unavailable
+     */
     @Nullable
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static Short forEachTailing(@Nullable short[] array, @Nullable Consumer<Short> action) {
@@ -602,6 +1238,16 @@ public abstract class ArrayUtilsWraps {
         return array[length - 1];
     }
 
+    /**
+     * Performs an action for all elements except the last one.
+     *
+     * The last element is returned after the action has been applied to the preceding elements.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     *
+     * @return the last element, or null when unavailable
+     */
     @Nullable
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static <E> E forEachTailing(@Nullable E[] array, @Nullable Consumer<? super E> action) {
@@ -615,10 +1261,27 @@ public abstract class ArrayUtilsWraps {
         return array[length - 1];
     }
 
+    /**
+     * Performs an action for each element together with its index.
+     *
+     * When a filter is provided, only matching elements are passed to the action.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     */
     public static void forEachIndexing(@Nullable boolean[] array, @Nullable BiConsumer<Integer, Boolean> action) {
         forEachIndexing(array, action, null);
     }
 
+    /**
+     * Performs an action for each element together with its index.
+     *
+     * When a filter is provided, only matching elements are passed to the action.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     * @param filter The predicate used to filter elements
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static void forEachIndexing(@Nullable boolean[] array, @Nullable BiConsumer<Integer, Boolean> action, @Nullable BiPredicate<Integer, Boolean> filter) {
         if (ArrayUtils.isEmpty(array) || action == null) {
@@ -633,10 +1296,27 @@ public abstract class ArrayUtilsWraps {
         }
     }
 
+    /**
+     * Performs an action for each element together with its index.
+     *
+     * When a filter is provided, only matching elements are passed to the action.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     */
     public static void forEachIndexing(@Nullable byte[] array, @Nullable BiConsumer<Integer, Byte> action) {
         forEachIndexing(array, action, null);
     }
 
+    /**
+     * Performs an action for each element together with its index.
+     *
+     * When a filter is provided, only matching elements are passed to the action.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     * @param filter The predicate used to filter elements
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static void forEachIndexing(@Nullable byte[] array, @Nullable BiConsumer<Integer, Byte> action, @Nullable BiPredicate<Integer, Byte> filter) {
         if (ArrayUtils.isEmpty(array) || action == null) {
@@ -651,10 +1331,27 @@ public abstract class ArrayUtilsWraps {
         }
     }
 
+    /**
+     * Performs an action for each element together with its index.
+     *
+     * When a filter is provided, only matching elements are passed to the action.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     */
     public static void forEachIndexing(@Nullable char[] array, @Nullable BiConsumer<Integer, Character> action) {
         forEachIndexing(array, action, null);
     }
 
+    /**
+     * Performs an action for each element together with its index.
+     *
+     * When a filter is provided, only matching elements are passed to the action.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     * @param filter The predicate used to filter elements
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static void forEachIndexing(@Nullable char[] array, @Nullable BiConsumer<Integer, Character> action, @Nullable BiPredicate<Integer, Character> filter) {
         if (ArrayUtils.isEmpty(array) || action == null) {
@@ -669,10 +1366,27 @@ public abstract class ArrayUtilsWraps {
         }
     }
 
+    /**
+     * Performs an action for each element together with its index.
+     *
+     * When a filter is provided, only matching elements are passed to the action.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     */
     public static void forEachIndexing(@Nullable double[] array, @Nullable BiConsumer<Integer, Double> action) {
         forEachIndexing(array, action, null);
     }
 
+    /**
+     * Performs an action for each element together with its index.
+     *
+     * When a filter is provided, only matching elements are passed to the action.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     * @param filter The predicate used to filter elements
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static void forEachIndexing(@Nullable double[] array, @Nullable BiConsumer<Integer, Double> action, @Nullable BiPredicate<Integer, Double> filter) {
         if (ArrayUtils.isEmpty(array) || action == null) {
@@ -687,10 +1401,27 @@ public abstract class ArrayUtilsWraps {
         }
     }
 
+    /**
+     * Performs an action for each element together with its index.
+     *
+     * When a filter is provided, only matching elements are passed to the action.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     */
     public static void forEachIndexing(@Nullable float[] array, @Nullable BiConsumer<Integer, Float> action) {
         forEachIndexing(array, action, null);
     }
 
+    /**
+     * Performs an action for each element together with its index.
+     *
+     * When a filter is provided, only matching elements are passed to the action.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     * @param filter The predicate used to filter elements
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static void forEachIndexing(@Nullable float[] array, @Nullable BiConsumer<Integer, Float> action, @Nullable BiPredicate<Integer, Float> filter) {
         if (ArrayUtils.isEmpty(array) || action == null) {
@@ -705,10 +1436,27 @@ public abstract class ArrayUtilsWraps {
         }
     }
 
+    /**
+     * Performs an action for each element together with its index.
+     *
+     * When a filter is provided, only matching elements are passed to the action.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     */
     public static void forEachIndexing(@Nullable int[] array, @Nullable BiConsumer<Integer, Integer> action) {
         forEachIndexing(array, action, null);
     }
 
+    /**
+     * Performs an action for each element together with its index.
+     *
+     * When a filter is provided, only matching elements are passed to the action.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     * @param filter The predicate used to filter elements
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static void forEachIndexing(@Nullable int[] array, @Nullable BiConsumer<Integer, Integer> action, @Nullable BiPredicate<Integer, Integer> filter) {
         if (ArrayUtils.isEmpty(array) || action == null) {
@@ -723,10 +1471,27 @@ public abstract class ArrayUtilsWraps {
         }
     }
 
+    /**
+     * Performs an action for each element together with its index.
+     *
+     * When a filter is provided, only matching elements are passed to the action.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     */
     public static void forEachIndexing(@Nullable long[] array, @Nullable BiConsumer<Integer, Long> action) {
         forEachIndexing(array, action, null);
     }
 
+    /**
+     * Performs an action for each element together with its index.
+     *
+     * When a filter is provided, only matching elements are passed to the action.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     * @param filter The predicate used to filter elements
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static void forEachIndexing(@Nullable long[] array, @Nullable BiConsumer<Integer, Long> action, @Nullable BiPredicate<Integer, Long> filter) {
         if (ArrayUtils.isEmpty(array) || action == null) {
@@ -741,10 +1506,27 @@ public abstract class ArrayUtilsWraps {
         }
     }
 
+    /**
+     * Performs an action for each element together with its index.
+     *
+     * When a filter is provided, only matching elements are passed to the action.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     */
     public static void forEachIndexing(@Nullable short[] array, @Nullable BiConsumer<Integer, Short> action) {
         forEachIndexing(array, action, null);
     }
 
+    /**
+     * Performs an action for each element together with its index.
+     *
+     * When a filter is provided, only matching elements are passed to the action.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     * @param filter The predicate used to filter elements
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static void forEachIndexing(@Nullable short[] array, @Nullable BiConsumer<Integer, Short> action, @Nullable BiPredicate<Integer, Short> filter) {
         if (ArrayUtils.isEmpty(array) || action == null) {
@@ -759,6 +1541,14 @@ public abstract class ArrayUtilsWraps {
         }
     }
 
+    /**
+     * Performs an action for each element together with its index.
+     *
+     * When a filter is provided, only matching elements are passed to the action.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     */
     public static <E> void forEachIndexing(@Nullable E[] array, @Nullable BiConsumer<Integer, ? super E> action) {
         forEachIndexing(array, action, null);
     }
@@ -780,10 +1570,27 @@ public abstract class ArrayUtilsWraps {
         }
     }
 
+    /**
+     * Performs an indexed action for each element until the action returns false.
+     *
+     * When a filter is provided, only matching elements are passed to the action.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     */
     public static void forEachIndexingBreakable(@Nullable boolean[] array, @Nullable BiFunction<Integer, Boolean, Boolean> action) {
         forEachIndexingBreakable(array, action, null);
     }
 
+    /**
+     * Performs an indexed action for each element until the action returns false.
+     *
+     * When a filter is provided, only matching elements are passed to the action.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     * @param filter The predicate used to filter elements
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static void forEachIndexingBreakable(@Nullable boolean[] array, @Nullable BiFunction<Integer, Boolean, Boolean> action, @Nullable BiPredicate<Integer, Boolean> filter) {
         if (ArrayUtils.isEmpty(array) || action == null) {
@@ -798,10 +1605,27 @@ public abstract class ArrayUtilsWraps {
         }
     }
 
+    /**
+     * Performs an indexed action for each element until the action returns false.
+     *
+     * When a filter is provided, only matching elements are passed to the action.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     */
     public static void forEachIndexingBreakable(@Nullable byte[] array, @Nullable BiFunction<Integer, Byte, Boolean> action) {
         forEachIndexingBreakable(array, action, null);
     }
 
+    /**
+     * Performs an indexed action for each element until the action returns false.
+     *
+     * When a filter is provided, only matching elements are passed to the action.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     * @param filter The predicate used to filter elements
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static void forEachIndexingBreakable(@Nullable byte[] array, @Nullable BiFunction<Integer, Byte, Boolean> action, @Nullable BiPredicate<Integer, Byte> filter) {
         if (ArrayUtils.isEmpty(array) || action == null) {
@@ -816,10 +1640,27 @@ public abstract class ArrayUtilsWraps {
         }
     }
 
+    /**
+     * Performs an indexed action for each element until the action returns false.
+     *
+     * When a filter is provided, only matching elements are passed to the action.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     */
     public static void forEachIndexingBreakable(@Nullable char[] array, @Nullable BiFunction<Integer, Character, Boolean> action) {
         forEachIndexingBreakable(array, action, null);
     }
 
+    /**
+     * Performs an indexed action for each element until the action returns false.
+     *
+     * When a filter is provided, only matching elements are passed to the action.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     * @param filter The predicate used to filter elements
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static void forEachIndexingBreakable(@Nullable char[] array, @Nullable BiFunction<Integer, Character, Boolean> action, @Nullable BiPredicate<Integer, Character> filter) {
         if (ArrayUtils.isEmpty(array) || action == null) {
@@ -834,10 +1675,27 @@ public abstract class ArrayUtilsWraps {
         }
     }
 
+    /**
+     * Performs an indexed action for each element until the action returns false.
+     *
+     * When a filter is provided, only matching elements are passed to the action.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     */
     public static void forEachIndexingBreakable(@Nullable double[] array, @Nullable BiFunction<Integer, Double, Boolean> action) {
         forEachIndexingBreakable(array, action, null);
     }
 
+    /**
+     * Performs an indexed action for each element until the action returns false.
+     *
+     * When a filter is provided, only matching elements are passed to the action.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     * @param filter The predicate used to filter elements
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static void forEachIndexingBreakable(@Nullable double[] array, @Nullable BiFunction<Integer, Double, Boolean> action, @Nullable BiPredicate<Integer, Double> filter) {
         if (ArrayUtils.isEmpty(array) || action == null) {
@@ -852,10 +1710,27 @@ public abstract class ArrayUtilsWraps {
         }
     }
 
+    /**
+     * Performs an indexed action for each element until the action returns false.
+     *
+     * When a filter is provided, only matching elements are passed to the action.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     */
     public static void forEachIndexingBreakable(@Nullable float[] array, @Nullable BiFunction<Integer, Float, Boolean> action) {
         forEachIndexingBreakable(array, action, null);
     }
 
+    /**
+     * Performs an indexed action for each element until the action returns false.
+     *
+     * When a filter is provided, only matching elements are passed to the action.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     * @param filter The predicate used to filter elements
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static void forEachIndexingBreakable(@Nullable float[] array, @Nullable BiFunction<Integer, Float, Boolean> action, @Nullable BiPredicate<Integer, Float> filter) {
         if (ArrayUtils.isEmpty(array) || action == null) {
@@ -870,10 +1745,27 @@ public abstract class ArrayUtilsWraps {
         }
     }
 
+    /**
+     * Performs an indexed action for each element until the action returns false.
+     *
+     * When a filter is provided, only matching elements are passed to the action.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     */
     public static void forEachIndexingBreakable(@Nullable int[] array, @Nullable BiFunction<Integer, Integer, Boolean> action) {
         forEachIndexingBreakable(array, action, null);
     }
 
+    /**
+     * Performs an indexed action for each element until the action returns false.
+     *
+     * When a filter is provided, only matching elements are passed to the action.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     * @param filter The predicate used to filter elements
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static void forEachIndexingBreakable(@Nullable int[] array, @Nullable BiFunction<Integer, Integer, Boolean> action, @Nullable BiPredicate<Integer, Integer> filter) {
         if (ArrayUtils.isEmpty(array) || action == null) {
@@ -888,10 +1780,27 @@ public abstract class ArrayUtilsWraps {
         }
     }
 
+    /**
+     * Performs an indexed action for each element until the action returns false.
+     *
+     * When a filter is provided, only matching elements are passed to the action.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     */
     public static void forEachIndexingBreakable(@Nullable long[] array, @Nullable BiFunction<Integer, Long, Boolean> action) {
         forEachIndexingBreakable(array, action, null);
     }
 
+    /**
+     * Performs an indexed action for each element until the action returns false.
+     *
+     * When a filter is provided, only matching elements are passed to the action.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     * @param filter The predicate used to filter elements
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static void forEachIndexingBreakable(@Nullable long[] array, @Nullable BiFunction<Integer, Long, Boolean> action, @Nullable BiPredicate<Integer, Long> filter) {
         if (ArrayUtils.isEmpty(array) || action == null) {
@@ -906,10 +1815,27 @@ public abstract class ArrayUtilsWraps {
         }
     }
 
+    /**
+     * Performs an indexed action for each element until the action returns false.
+     *
+     * When a filter is provided, only matching elements are passed to the action.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     */
     public static void forEachIndexingBreakable(@Nullable short[] array, @Nullable BiFunction<Integer, Short, Boolean> action) {
         forEachIndexingBreakable(array, action, null);
     }
 
+    /**
+     * Performs an indexed action for each element until the action returns false.
+     *
+     * When a filter is provided, only matching elements are passed to the action.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     * @param filter The predicate used to filter elements
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static void forEachIndexingBreakable(@Nullable short[] array, @Nullable BiFunction<Integer, Short, Boolean> action, @Nullable BiPredicate<Integer, Short> filter) {
         if (ArrayUtils.isEmpty(array) || action == null) {
@@ -924,10 +1850,27 @@ public abstract class ArrayUtilsWraps {
         }
     }
 
+    /**
+     * Performs an indexed action for each element until the action returns false.
+     *
+     * When a filter is provided, only matching elements are passed to the action.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     */
     public static <E> void forEachIndexingBreakable(@Nullable E[] array, @Nullable BiFunction<Integer, ? super E, Boolean> action) {
         forEachIndexingBreakable(array, action, null);
     }
 
+    /**
+     * Performs an indexed action for each element until the action returns false.
+     *
+     * When a filter is provided, only matching elements are passed to the action.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     * @param filter The predicate used to filter elements
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static <E> void forEachIndexingBreakable(@Nullable E[] array, @Nullable BiFunction<Integer, ? super E, Boolean> action, @Nullable BiPredicate<Integer, ? super E> filter) {
         if (ArrayUtils.isEmpty(array) || action == null) {
@@ -942,6 +1885,16 @@ public abstract class ArrayUtilsWraps {
         }
     }
 
+    /**
+     * Performs an indexed action for all elements except the last one.
+     *
+     * The last element is returned after the action has been applied to the preceding elements.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     *
+     * @return the last element, or null when unavailable
+     */
     @Nullable
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static Boolean forEachIndexingTailing(@Nullable boolean[] array, @Nullable BiConsumer<Integer, Boolean> action) {
@@ -955,6 +1908,16 @@ public abstract class ArrayUtilsWraps {
         return array[length - 1];
     }
 
+    /**
+     * Performs an indexed action for all elements except the last one.
+     *
+     * The last element is returned after the action has been applied to the preceding elements.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     *
+     * @return the last element, or null when unavailable
+     */
     @Nullable
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static Byte forEachIndexingTailing(@Nullable byte[] array, @Nullable BiConsumer<Integer, Byte> action) {
@@ -968,6 +1931,16 @@ public abstract class ArrayUtilsWraps {
         return array[length - 1];
     }
 
+    /**
+     * Performs an indexed action for all elements except the last one.
+     *
+     * The last element is returned after the action has been applied to the preceding elements.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     *
+     * @return the last element, or null when unavailable
+     */
     @Nullable
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static Character forEachIndexingTailing(@Nullable char[] array, @Nullable BiConsumer<Integer, Character> action) {
@@ -981,6 +1954,16 @@ public abstract class ArrayUtilsWraps {
         return array[length - 1];
     }
 
+    /**
+     * Performs an indexed action for all elements except the last one.
+     *
+     * The last element is returned after the action has been applied to the preceding elements.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     *
+     * @return the last element, or null when unavailable
+     */
     @Nullable
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static Double forEachIndexingTailing(@Nullable double[] array, @Nullable BiConsumer<Integer, Double> action) {
@@ -994,6 +1977,16 @@ public abstract class ArrayUtilsWraps {
         return array[length - 1];
     }
 
+    /**
+     * Performs an indexed action for all elements except the last one.
+     *
+     * The last element is returned after the action has been applied to the preceding elements.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     *
+     * @return the last element, or null when unavailable
+     */
     @Nullable
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static Float forEachIndexingTailing(@Nullable float[] array, @Nullable BiConsumer<Integer, Float> action) {
@@ -1007,6 +2000,16 @@ public abstract class ArrayUtilsWraps {
         return array[length - 1];
     }
 
+    /**
+     * Performs an indexed action for all elements except the last one.
+     *
+     * The last element is returned after the action has been applied to the preceding elements.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     *
+     * @return the last element, or null when unavailable
+     */
     @Nullable
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static Integer forEachIndexingTailing(@Nullable int[] array, @Nullable BiConsumer<Integer, Integer> action) {
@@ -1020,6 +2023,16 @@ public abstract class ArrayUtilsWraps {
         return array[length - 1];
     }
 
+    /**
+     * Performs an indexed action for all elements except the last one.
+     *
+     * The last element is returned after the action has been applied to the preceding elements.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     *
+     * @return the last element, or null when unavailable
+     */
     @Nullable
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static Long forEachIndexingTailing(@Nullable long[] array, @Nullable BiConsumer<Integer, Long> action) {
@@ -1033,6 +2046,16 @@ public abstract class ArrayUtilsWraps {
         return array[length - 1];
     }
 
+    /**
+     * Performs an indexed action for all elements except the last one.
+     *
+     * The last element is returned after the action has been applied to the preceding elements.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     *
+     * @return the last element, or null when unavailable
+     */
     @Nullable
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static Short forEachIndexingTailing(@Nullable short[] array, @Nullable BiConsumer<Integer, Short> action) {
@@ -1046,6 +2069,16 @@ public abstract class ArrayUtilsWraps {
         return array[length - 1];
     }
 
+    /**
+     * Performs an indexed action for all elements except the last one.
+     *
+     * The last element is returned after the action has been applied to the preceding elements.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     *
+     * @return the last element, or null when unavailable
+     */
     @Nullable
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static <E> E forEachIndexingTailing(@Nullable E[] array, @Nullable BiConsumer<Integer, ? super E> action) {
@@ -1059,6 +2092,15 @@ public abstract class ArrayUtilsWraps {
         return array[length - 1];
     }
 
+    /**
+     * Returns the component type of the given array.
+     *
+     * The type is inferred from the first non-null element when the value is not an object array.
+     *
+     * @param array The source array
+     *
+     * @return the component type, or null when it cannot be determined
+     */
     @Nullable
     public static Class<?> getComponentType(@Nullable Object array) {
         if (!ObjectUtilsWraps.isArray(array)) {
@@ -1074,35 +2116,91 @@ public abstract class ArrayUtilsWraps {
         return null;
     }
 
+    /**
+     * Returns the component type of the given array.
+     *
+     * The type is inferred from the first non-null element when the value is not an object array.
+     *
+     * @param array The source array
+     *
+     * @return the component type, or null when it cannot be determined
+     */
     @Nullable
     public static Class<?> getComponentType(@Nullable Object[] array) {
         return (array == null) ? null : array.getClass().getComponentType();
     }
 
+    /**
+     * Returns the first element of the array.
+     *
+     * @param array The source array
+     *
+     * @return the first element, or null when the array is empty
+     */
     @Nullable
     public static <E> E getFirst(@Nullable E[] array) {
         return ArrayUtils.isEmpty(array) ? null : ArrayUtils.get(array, 0);
     }
 
+    /**
+     * Returns the first element of the array.
+     *
+     * @param array The source array
+     * @param defaultValue The value to use when the element is unavailable
+     *
+     * @return the first element, or null when the array is empty
+     */
     @Nullable
     public static <E> E getFirst(@Nullable E[] array, @Nullable E defaultValue) {
         return ArrayUtils.isEmpty(array) ? null : ArrayUtils.get(array, 0, defaultValue);
     }
 
+    /**
+     * Returns the last element of the array.
+     *
+     * @param array The source array
+     *
+     * @return the last element, or null when the array is empty
+     */
     @Nullable
     public static <E> E getLast(@Nullable E[] array) {
         return ArrayUtils.isEmpty(array) ? null : ArrayUtils.get(array, ArrayUtils.getLength(array) - 1);
     }
 
+    /**
+     * Returns the last element of the array.
+     *
+     * @param array The source array
+     * @param defaultValue The value to use when the element is unavailable
+     *
+     * @return the last element, or null when the array is empty
+     */
     @Nullable
     public static <E> E getLast(@Nullable E[] array, @Nullable E defaultValue) {
         return ArrayUtils.isEmpty(array) ? null : ArrayUtils.get(array, ArrayUtils.getLength(array) - 1, defaultValue);
     }
 
+    /**
+     * Returns the length of the given array.
+     *
+     * A value that is not an array is treated as having length zero.
+     *
+     * @param array The source array
+     *
+     * @return the array length, or zero when the value is not an array
+     */
     public static int getLength(@Nullable Object array) {
         return ObjectUtilsWraps.isArray(array) ? Array.getLength(array) : 0;
     }
 
+    /**
+     * Returns the indexes of elements that match the given predicate.
+     *
+     * @param array The source array
+     * @param filter The predicate used to filter elements
+     *
+     * @return an array of matched indexes, or null when there is no match
+     */
     @Nullable
     public static <E> int[] getMatchedIndexes(@Nullable E[] array, @Nullable Predicate<? super E> filter) {
         List<Integer> indexes = getMatchedIndexesToList(array, filter);
@@ -1112,6 +2210,14 @@ public abstract class ArrayUtilsWraps {
         return ArrayUtils.toPrimitive(indexes.toArray(ArrayUtils.EMPTY_INTEGER_OBJECT_ARRAY));
     }
 
+    /**
+     * Returns the indexes of elements that match the given predicate.
+     *
+     * @param array The source array
+     * @param filter The predicate used to filter elements
+     *
+     * @return a list of matched indexes, or null when there is no match
+     */
     @Nullable
     public static <E> List<Integer> getMatchedIndexesToList(@Nullable E[] array, @Nullable Predicate<? super E> filter) {
         if (ArrayUtils.isEmpty(array) || filter == null) {
@@ -1126,60 +2232,141 @@ public abstract class ArrayUtilsWraps {
         return result.isEmpty() ? null : result;
     }
 
+    /**
+     * Runs an action depending on whether the array is empty.
+     *
+     * The absent action runs for an empty array; otherwise the present action runs.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     */
     public static void ifEmpty(@Nullable boolean[] array, @Nullable Runnable action) {
         if (ArrayUtils.isEmpty(array) && action != null) {
             action.run();
         }
     }
 
+    /**
+     * Runs an action depending on whether the array is empty.
+     *
+     * The absent action runs for an empty array; otherwise the present action runs.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     */
     public static void ifEmpty(@Nullable byte[] array, @Nullable Runnable action) {
         if (ArrayUtils.isEmpty(array) && action != null) {
             action.run();
         }
     }
 
+    /**
+     * Runs an action depending on whether the array is empty.
+     *
+     * The absent action runs for an empty array; otherwise the present action runs.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     */
     public static void ifEmpty(@Nullable char[] array, @Nullable Runnable action) {
         if (ArrayUtils.isEmpty(array) && action != null) {
             action.run();
         }
     }
 
+    /**
+     * Runs an action depending on whether the array is empty.
+     *
+     * The absent action runs for an empty array; otherwise the present action runs.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     */
     public static void ifEmpty(@Nullable double[] array, @Nullable Runnable action) {
         if (ArrayUtils.isEmpty(array) && action != null) {
             action.run();
         }
     }
 
+    /**
+     * Runs an action depending on whether the array is empty.
+     *
+     * The absent action runs for an empty array; otherwise the present action runs.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     */
     public static void ifEmpty(@Nullable float[] array, @Nullable Runnable action) {
         if (ArrayUtils.isEmpty(array) && action != null) {
             action.run();
         }
     }
 
+    /**
+     * Runs an action depending on whether the array is empty.
+     *
+     * The absent action runs for an empty array; otherwise the present action runs.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     */
     public static void ifEmpty(@Nullable int[] array, @Nullable Runnable action) {
         if (ArrayUtils.isEmpty(array) && action != null) {
             action.run();
         }
     }
 
+    /**
+     * Runs an action depending on whether the array is empty.
+     *
+     * The absent action runs for an empty array; otherwise the present action runs.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     */
     public static void ifEmpty(@Nullable long[] array, @Nullable Runnable action) {
         if (ArrayUtils.isEmpty(array) && action != null) {
             action.run();
         }
     }
 
+    /**
+     * Runs an action depending on whether the array is empty.
+     *
+     * The absent action runs for an empty array; otherwise the present action runs.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     */
     public static void ifEmpty(@Nullable short[] array, @Nullable Runnable action) {
         if (ArrayUtils.isEmpty(array) && action != null) {
             action.run();
         }
     }
 
+    /**
+     * Runs an action depending on whether the array is empty.
+     *
+     * The absent action runs for an empty array; otherwise the present action runs.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     */
     public static <E> void ifEmpty(@Nullable E[] array, @Nullable Runnable action) {
         if (ArrayUtils.isEmpty(array) && action != null) {
             action.run();
         }
     }
 
+    /**
+     * Runs one of two actions depending on whether the array is empty.
+     *
+     * The absent action runs for an empty array; otherwise the present action runs.
+     *
+     * @param array The source array
+     * @param absentAction The action to run when the array is empty
+     * @param presentAction The action to run when the array is not empty
+     */
     public static void ifEmptyOrElse(@Nullable boolean[] array, @Nullable Runnable absentAction, @Nullable Consumer<boolean[]> presentAction) {
         if (ArrayUtils.isEmpty(array)) {
             if (absentAction != null) {
@@ -1192,6 +2379,15 @@ public abstract class ArrayUtilsWraps {
         }
     }
 
+    /**
+     * Runs one of two actions depending on whether the array is empty.
+     *
+     * The absent action runs for an empty array; otherwise the present action runs.
+     *
+     * @param array The source array
+     * @param absentAction The action to run when the array is empty
+     * @param presentAction The action to run when the array is not empty
+     */
     public static void ifEmptyOrElse(@Nullable byte[] array, @Nullable Runnable absentAction, @Nullable Consumer<byte[]> presentAction) {
         if (ArrayUtils.isEmpty(array)) {
             if (absentAction != null) {
@@ -1204,6 +2400,15 @@ public abstract class ArrayUtilsWraps {
         }
     }
 
+    /**
+     * Runs one of two actions depending on whether the array is empty.
+     *
+     * The absent action runs for an empty array; otherwise the present action runs.
+     *
+     * @param array The source array
+     * @param absentAction The action to run when the array is empty
+     * @param presentAction The action to run when the array is not empty
+     */
     public static void ifEmptyOrElse(@Nullable char[] array, @Nullable Runnable absentAction, @Nullable Consumer<char[]> presentAction) {
         if (ArrayUtils.isEmpty(array)) {
             if (absentAction != null) {
@@ -1216,6 +2421,15 @@ public abstract class ArrayUtilsWraps {
         }
     }
 
+    /**
+     * Runs one of two actions depending on whether the array is empty.
+     *
+     * The absent action runs for an empty array; otherwise the present action runs.
+     *
+     * @param array The source array
+     * @param absentAction The action to run when the array is empty
+     * @param presentAction The action to run when the array is not empty
+     */
     public static void ifEmptyOrElse(@Nullable double[] array, @Nullable Runnable absentAction, @Nullable Consumer<double[]> presentAction) {
         if (ArrayUtils.isEmpty(array)) {
             if (absentAction != null) {
@@ -1228,6 +2442,15 @@ public abstract class ArrayUtilsWraps {
         }
     }
 
+    /**
+     * Runs one of two actions depending on whether the array is empty.
+     *
+     * The absent action runs for an empty array; otherwise the present action runs.
+     *
+     * @param array The source array
+     * @param absentAction The action to run when the array is empty
+     * @param presentAction The action to run when the array is not empty
+     */
     public static void ifEmptyOrElse(@Nullable float[] array, @Nullable Runnable absentAction, @Nullable Consumer<float[]> presentAction) {
         if (ArrayUtils.isEmpty(array)) {
             if (absentAction != null) {
@@ -1240,6 +2463,15 @@ public abstract class ArrayUtilsWraps {
         }
     }
 
+    /**
+     * Runs one of two actions depending on whether the array is empty.
+     *
+     * The absent action runs for an empty array; otherwise the present action runs.
+     *
+     * @param array The source array
+     * @param absentAction The action to run when the array is empty
+     * @param presentAction The action to run when the array is not empty
+     */
     public static void ifEmptyOrElse(@Nullable int[] array, @Nullable Runnable absentAction, @Nullable Consumer<int[]> presentAction) {
         if (ArrayUtils.isEmpty(array)) {
             if (absentAction != null) {
@@ -1252,6 +2484,15 @@ public abstract class ArrayUtilsWraps {
         }
     }
 
+    /**
+     * Runs one of two actions depending on whether the array is empty.
+     *
+     * The absent action runs for an empty array; otherwise the present action runs.
+     *
+     * @param array The source array
+     * @param absentAction The action to run when the array is empty
+     * @param presentAction The action to run when the array is not empty
+     */
     public static void ifEmptyOrElse(@Nullable long[] array, @Nullable Runnable absentAction, @Nullable Consumer<long[]> presentAction) {
         if (ArrayUtils.isEmpty(array)) {
             if (absentAction != null) {
@@ -1264,6 +2505,15 @@ public abstract class ArrayUtilsWraps {
         }
     }
 
+    /**
+     * Runs one of two actions depending on whether the array is empty.
+     *
+     * The absent action runs for an empty array; otherwise the present action runs.
+     *
+     * @param array The source array
+     * @param absentAction The action to run when the array is empty
+     * @param presentAction The action to run when the array is not empty
+     */
     public static void ifEmptyOrElse(@Nullable short[] array, @Nullable Runnable absentAction, @Nullable Consumer<short[]> presentAction) {
         if (ArrayUtils.isEmpty(array)) {
             if (absentAction != null) {
@@ -1276,6 +2526,15 @@ public abstract class ArrayUtilsWraps {
         }
     }
 
+    /**
+     * Runs one of two actions depending on whether the array is empty.
+     *
+     * The absent action runs for an empty array; otherwise the present action runs.
+     *
+     * @param array The source array
+     * @param absentAction The action to run when the array is empty
+     * @param presentAction The action to run when the array is not empty
+     */
     public static <E> void ifEmptyOrElse(@Nullable E[] array, @Nullable Runnable absentAction, @Nullable Consumer<E[]> presentAction) {
         if (ArrayUtils.isEmpty(array)) {
             if (absentAction != null) {
@@ -1288,150 +2547,349 @@ public abstract class ArrayUtilsWraps {
         }
     }
 
+    /**
+     * Runs an action when the array is not empty.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     */
     public static void ifNotEmpty(@Nullable boolean[] array, @Nullable Consumer<boolean[]> action) {
         if (ArrayUtils.isNotEmpty(array) && action != null) {
             action.accept(array);
         }
     }
 
+    /**
+     * Runs an action when the array is not empty.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     */
     public static void ifNotEmpty(@Nullable byte[] array, @Nullable Consumer<byte[]> action) {
         if (ArrayUtils.isNotEmpty(array) && action != null) {
             action.accept(array);
         }
     }
 
+    /**
+     * Runs an action when the array is not empty.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     */
     public static void ifNotEmpty(@Nullable char[] array, @Nullable Consumer<char[]> action) {
         if (ArrayUtils.isNotEmpty(array) && action != null) {
             action.accept(array);
         }
     }
 
+    /**
+     * Runs an action when the array is not empty.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     */
     public static void ifNotEmpty(@Nullable double[] array, @Nullable Consumer<double[]> action) {
         if (ArrayUtils.isNotEmpty(array) && action != null) {
             action.accept(array);
         }
     }
 
+    /**
+     * Runs an action when the array is not empty.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     */
     public static void ifNotEmpty(@Nullable float[] array, @Nullable Consumer<float[]> action) {
         if (ArrayUtils.isNotEmpty(array) && action != null) {
             action.accept(array);
         }
     }
 
+    /**
+     * Runs an action when the array is not empty.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     */
     public static void ifNotEmpty(@Nullable int[] array, @Nullable Consumer<int[]> action) {
         if (ArrayUtils.isNotEmpty(array) && action != null) {
             action.accept(array);
         }
     }
 
+    /**
+     * Runs an action when the array is not empty.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     */
     public static void ifNotEmpty(@Nullable long[] array, @Nullable Consumer<long[]> action) {
         if (ArrayUtils.isNotEmpty(array) && action != null) {
             action.accept(array);
         }
     }
 
+    /**
+     * Runs an action when the array is not empty.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     */
     public static void ifNotEmpty(@Nullable short[] array, @Nullable Consumer<short[]> action) {
         if (ArrayUtils.isNotEmpty(array) && action != null) {
             action.accept(array);
         }
     }
 
+    /**
+     * Runs an action when the array is not empty.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     */
     public static <E> void ifNotEmpty(@Nullable E[] array, @Nullable Consumer<E[]> action) {
         if (ArrayUtils.isNotEmpty(array) && action != null) {
             action.accept(array);
         }
     }
 
+    /**
+     * Runs an action when the array is not empty.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     */
     public static void ifNotEmpty(@Nullable boolean[] array, @Nullable Runnable action) {
         if (ArrayUtils.isNotEmpty(array) && action != null) {
             action.run();
         }
     }
 
+    /**
+     * Runs an action when the array is not empty.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     */
     public static void ifNotEmpty(@Nullable byte[] array, @Nullable Runnable action) {
         if (ArrayUtils.isNotEmpty(array) && action != null) {
             action.run();
         }
     }
 
+    /**
+     * Runs an action when the array is not empty.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     */
     public static void ifNotEmpty(@Nullable char[] array, @Nullable Runnable action) {
         if (ArrayUtils.isNotEmpty(array) && action != null) {
             action.run();
         }
     }
 
+    /**
+     * Runs an action when the array is not empty.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     */
     public static void ifNotEmpty(@Nullable double[] array, @Nullable Runnable action) {
         if (ArrayUtils.isNotEmpty(array) && action != null) {
             action.run();
         }
     }
 
+    /**
+     * Runs an action when the array is not empty.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     */
     public static void ifNotEmpty(@Nullable float[] array, @Nullable Runnable action) {
         if (ArrayUtils.isNotEmpty(array) && action != null) {
             action.run();
         }
     }
 
+    /**
+     * Runs an action when the array is not empty.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     */
     public static void ifNotEmpty(@Nullable int[] array, @Nullable Runnable action) {
         if (ArrayUtils.isNotEmpty(array) && action != null) {
             action.run();
         }
     }
 
+    /**
+     * Runs an action when the array is not empty.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     */
     public static void ifNotEmpty(@Nullable long[] array, @Nullable Runnable action) {
         if (ArrayUtils.isNotEmpty(array) && action != null) {
             action.run();
         }
     }
 
+    /**
+     * Runs an action when the array is not empty.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     */
     public static void ifNotEmpty(@Nullable short[] array, @Nullable Runnable action) {
         if (ArrayUtils.isNotEmpty(array) && action != null) {
             action.run();
         }
     }
 
+    /**
+     * Runs an action when the array is not empty.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     */
     public static <E> void ifNotEmpty(@Nullable E[] array, @Nullable Runnable action) {
         if (ArrayUtils.isNotEmpty(array) && action != null) {
             action.run();
         }
     }
 
+    /**
+     * Checks whether all elements of the array are distinct.
+     *
+     * Object-array overloads can ignore null elements.
+     *
+     * @param array The source array
+     *
+     * @return true when all elements are distinct; false otherwise
+     */
     public static boolean isDistinct(@Nullable boolean[] array) {
         return isDistinct(ArrayUtils.toObject(array), false);
     }
 
+    /**
+     * Checks whether all elements of the array are distinct.
+     *
+     * Object-array overloads can ignore null elements.
+     *
+     * @param array The source array
+     *
+     * @return true when all elements are distinct; false otherwise
+     */
     public static boolean isDistinct(@Nullable byte[] array) {
         return isDistinct(ArrayUtils.toObject(array), false);
     }
 
+    /**
+     * Checks whether all elements of the array are distinct.
+     *
+     * Object-array overloads can ignore null elements.
+     *
+     * @param array The source array
+     *
+     * @return true when all elements are distinct; false otherwise
+     */
     public static boolean isDistinct(@Nullable char[] array) {
         return isDistinct(ArrayUtils.toObject(array), false);
     }
 
+    /**
+     * Checks whether all elements of the array are distinct.
+     *
+     * Object-array overloads can ignore null elements.
+     *
+     * @param array The source array
+     *
+     * @return true when all elements are distinct; false otherwise
+     */
     public static boolean isDistinct(@Nullable double[] array) {
         return isDistinct(ArrayUtils.toObject(array), false);
     }
 
+    /**
+     * Checks whether all elements of the array are distinct.
+     *
+     * Object-array overloads can ignore null elements.
+     *
+     * @param array The source array
+     *
+     * @return true when all elements are distinct; false otherwise
+     */
     public static boolean isDistinct(@Nullable float[] array) {
         return isDistinct(ArrayUtils.toObject(array), false);
     }
 
+    /**
+     * Checks whether all elements of the array are distinct.
+     *
+     * Object-array overloads can ignore null elements.
+     *
+     * @param array The source array
+     *
+     * @return true when all elements are distinct; false otherwise
+     */
     public static boolean isDistinct(@Nullable int[] array) {
         return isDistinct(ArrayUtils.toObject(array), false);
     }
 
+    /**
+     * Checks whether all elements of the array are distinct.
+     *
+     * Object-array overloads can ignore null elements.
+     *
+     * @param array The source array
+     *
+     * @return true when all elements are distinct; false otherwise
+     */
     public static boolean isDistinct(@Nullable long[] array) {
         return isDistinct(ArrayUtils.toObject(array), false);
     }
 
+    /**
+     * Checks whether all elements of the array are distinct.
+     *
+     * Object-array overloads can ignore null elements.
+     *
+     * @param array The source array
+     *
+     * @return true when all elements are distinct; false otherwise
+     */
     public static boolean isDistinct(@Nullable short[] array) {
         return isDistinct(ArrayUtils.toObject(array), false);
     }
 
+    /**
+     * Checks whether all elements of the array are distinct.
+     *
+     * Object-array overloads can ignore null elements.
+     *
+     * @param array The source array
+     *
+     * @return true when all elements are distinct; false otherwise
+     */
     public static <E> boolean isDistinct(@Nullable E[] array) {
         return isDistinct(array, true);
     }
 
+    /**
+     * Checks whether all elements of the array are distinct.
+     *
+     * Object-array overloads can ignore null elements.
+     *
+     * @param array The source array
+     * @param ignoreNull Whether null elements are ignored
+     *
+     * @return true when all elements are distinct; false otherwise
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static <E> boolean isDistinct(@Nullable E[] array, boolean ignoreNull) {
         if (ArrayUtils.isEmpty(array)) {
@@ -1447,34 +2905,98 @@ public abstract class ArrayUtilsWraps {
         }
     }
 
+    /**
+     * Checks whether the index is within the bounds of the array.
+     *
+     * @param array The source array
+     * @param index The index to check
+     *
+     * @return true when the index is valid; false otherwise
+     */
     public static boolean isIndexBound(@Nullable boolean[] array, int index) {
         return index >= 0 && index < ArrayUtils.getLength(array);
     }
 
+    /**
+     * Checks whether the index is within the bounds of the array.
+     *
+     * @param array The source array
+     * @param index The index to check
+     *
+     * @return true when the index is valid; false otherwise
+     */
     public static boolean isIndexBound(@Nullable byte[] array, int index) {
         return index >= 0 && index < ArrayUtils.getLength(array);
     }
 
+    /**
+     * Checks whether the index is within the bounds of the array.
+     *
+     * @param array The source array
+     * @param index The index to check
+     *
+     * @return true when the index is valid; false otherwise
+     */
     public static boolean isIndexBound(@Nullable char[] array, int index) {
         return index >= 0 && index < ArrayUtils.getLength(array);
     }
 
+    /**
+     * Checks whether the index is within the bounds of the array.
+     *
+     * @param array The source array
+     * @param index The index to check
+     *
+     * @return true when the index is valid; false otherwise
+     */
     public static boolean isIndexBound(@Nullable double[] array, int index) {
         return index >= 0 && index < ArrayUtils.getLength(array);
     }
 
+    /**
+     * Checks whether the index is within the bounds of the array.
+     *
+     * @param array The source array
+     * @param index The index to check
+     *
+     * @return true when the index is valid; false otherwise
+     */
     public static boolean isIndexBound(@Nullable float[] array, int index) {
         return index >= 0 && index < ArrayUtils.getLength(array);
     }
 
+    /**
+     * Checks whether the index is within the bounds of the array.
+     *
+     * @param array The source array
+     * @param index The index to check
+     *
+     * @return true when the index is valid; false otherwise
+     */
     public static boolean isIndexBound(@Nullable int[] array, int index) {
         return index >= 0 && index < ArrayUtils.getLength(array);
     }
 
+    /**
+     * Checks whether the index is within the bounds of the array.
+     *
+     * @param array The source array
+     * @param index The index to check
+     *
+     * @return true when the index is valid; false otherwise
+     */
     public static boolean isIndexBound(@Nullable long[] array, int index) {
         return index >= 0 && index < ArrayUtils.getLength(array);
     }
 
+    /**
+     * Checks whether the index is within the bounds of the array.
+     *
+     * @param array The source array
+     * @param index The index to check
+     *
+     * @return true when the index is valid; false otherwise
+     */
     public static boolean isIndexBound(@Nullable short[] array, int index) {
         return index >= 0 && index < ArrayUtils.getLength(array);
     }
@@ -1486,6 +3008,15 @@ public abstract class ArrayUtilsWraps {
         return index >= 0 && index < ArrayUtils.getLength(array);
     }
 
+    /**
+     * Checks whether all the given arrays have the same length.
+     *
+     * At least two arrays are required.
+     *
+     * @param arrays The source arrays
+     *
+     * @return true when all arrays have the same length; false otherwise
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static boolean isSameLength(@Nullable boolean[]... arrays) {
         if (ArrayUtils.getLength(arrays) < 2) {
@@ -1495,6 +3026,15 @@ public abstract class ArrayUtilsWraps {
         return Arrays.stream(arrays).skip(1L).allMatch(item -> ArrayUtils.getLength(item) == length);
     }
 
+    /**
+     * Checks whether all the given arrays have the same length.
+     *
+     * At least two arrays are required.
+     *
+     * @param arrays The source arrays
+     *
+     * @return true when all arrays have the same length; false otherwise
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static boolean isSameLength(@Nullable byte[]... arrays) {
         if (ArrayUtils.getLength(arrays) < 2) {
@@ -1504,6 +3044,15 @@ public abstract class ArrayUtilsWraps {
         return Arrays.stream(arrays).skip(1L).allMatch(item -> ArrayUtils.getLength(item) == length);
     }
 
+    /**
+     * Checks whether all the given arrays have the same length.
+     *
+     * At least two arrays are required.
+     *
+     * @param arrays The source arrays
+     *
+     * @return true when all arrays have the same length; false otherwise
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static boolean isSameLength(@Nullable char[]... arrays) {
         if (ArrayUtils.getLength(arrays) < 2) {
@@ -1513,6 +3062,15 @@ public abstract class ArrayUtilsWraps {
         return Arrays.stream(arrays).skip(1L).allMatch(item -> ArrayUtils.getLength(item) == length);
     }
 
+    /**
+     * Checks whether all the given arrays have the same length.
+     *
+     * At least two arrays are required.
+     *
+     * @param arrays The source arrays
+     *
+     * @return true when all arrays have the same length; false otherwise
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static boolean isSameLength(@Nullable double[]... arrays) {
         if (ArrayUtils.getLength(arrays) < 2) {
@@ -1522,6 +3080,15 @@ public abstract class ArrayUtilsWraps {
         return Arrays.stream(arrays).skip(1L).allMatch(item -> ArrayUtils.getLength(item) == length);
     }
 
+    /**
+     * Checks whether all the given arrays have the same length.
+     *
+     * At least two arrays are required.
+     *
+     * @param arrays The source arrays
+     *
+     * @return true when all arrays have the same length; false otherwise
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static boolean isSameLength(@Nullable float[]... arrays) {
         if (ArrayUtils.getLength(arrays) < 2) {
@@ -1531,6 +3098,15 @@ public abstract class ArrayUtilsWraps {
         return Arrays.stream(arrays).skip(1L).allMatch(item -> ArrayUtils.getLength(item) == length);
     }
 
+    /**
+     * Checks whether all the given arrays have the same length.
+     *
+     * At least two arrays are required.
+     *
+     * @param arrays The source arrays
+     *
+     * @return true when all arrays have the same length; false otherwise
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static boolean isSameLength(@Nullable int[]... arrays) {
         if (ArrayUtils.getLength(arrays) < 2) {
@@ -1540,6 +3116,15 @@ public abstract class ArrayUtilsWraps {
         return Arrays.stream(arrays).skip(1L).allMatch(item -> ArrayUtils.getLength(item) == length);
     }
 
+    /**
+     * Checks whether all the given arrays have the same length.
+     *
+     * At least two arrays are required.
+     *
+     * @param arrays The source arrays
+     *
+     * @return true when all arrays have the same length; false otherwise
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static boolean isSameLength(@Nullable long[]... arrays) {
         if (ArrayUtils.getLength(arrays) < 2) {
@@ -1549,6 +3134,15 @@ public abstract class ArrayUtilsWraps {
         return Arrays.stream(arrays).skip(1L).allMatch(item -> ArrayUtils.getLength(item) == length);
     }
 
+    /**
+     * Checks whether all the given arrays have the same length.
+     *
+     * At least two arrays are required.
+     *
+     * @param arrays The source arrays
+     *
+     * @return true when all arrays have the same length; false otherwise
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static boolean isSameLength(@Nullable short[]... arrays) {
         if (ArrayUtils.getLength(arrays) < 2) {
@@ -1558,6 +3152,15 @@ public abstract class ArrayUtilsWraps {
         return Arrays.stream(arrays).skip(1L).allMatch(item -> ArrayUtils.getLength(item) == length);
     }
 
+    /**
+     * Checks whether all the given arrays have the same length.
+     *
+     * At least two arrays are required.
+     *
+     * @param arrays The source arrays
+     *
+     * @return true when all arrays have the same length; false otherwise
+     */
     @SafeVarargs
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static <E> boolean isSameLength(@Nullable E[]... arrays) {
@@ -1568,84 +3171,224 @@ public abstract class ArrayUtilsWraps {
         return Arrays.stream(arrays).skip(1L).allMatch(item -> ArrayUtils.getLength(item) == length);
     }
 
+    /**
+     * Checks whether the array contains exactly one element.
+     *
+     * @param array The source array
+     *
+     * @return true when the array contains exactly one element; false otherwise
+     */
     public static boolean isSingleton(@Nullable boolean[] array) {
         return ArrayUtils.getLength(array) == 1;
     }
 
+    /**
+     * Checks whether the array contains exactly one element.
+     *
+     * @param array The source array
+     *
+     * @return true when the array contains exactly one element; false otherwise
+     */
     public static boolean isSingleton(@Nullable byte[] array) {
         return ArrayUtils.getLength(array) == 1;
     }
 
+    /**
+     * Checks whether the array contains exactly one element.
+     *
+     * @param array The source array
+     *
+     * @return true when the array contains exactly one element; false otherwise
+     */
     public static boolean isSingleton(@Nullable char[] array) {
         return ArrayUtils.getLength(array) == 1;
     }
 
+    /**
+     * Checks whether the array contains exactly one element.
+     *
+     * @param array The source array
+     *
+     * @return true when the array contains exactly one element; false otherwise
+     */
     public static boolean isSingleton(@Nullable double[] array) {
         return ArrayUtils.getLength(array) == 1;
     }
 
+    /**
+     * Checks whether the array contains exactly one element.
+     *
+     * @param array The source array
+     *
+     * @return true when the array contains exactly one element; false otherwise
+     */
     public static boolean isSingleton(@Nullable float[] array) {
         return ArrayUtils.getLength(array) == 1;
     }
 
+    /**
+     * Checks whether the array contains exactly one element.
+     *
+     * @param array The source array
+     *
+     * @return true when the array contains exactly one element; false otherwise
+     */
     public static boolean isSingleton(@Nullable int[] array) {
         return ArrayUtils.getLength(array) == 1;
     }
 
+    /**
+     * Checks whether the array contains exactly one element.
+     *
+     * @param array The source array
+     *
+     * @return true when the array contains exactly one element; false otherwise
+     */
     public static boolean isSingleton(@Nullable long[] array) {
         return ArrayUtils.getLength(array) == 1;
     }
 
+    /**
+     * Checks whether the array contains exactly one element.
+     *
+     * @param array The source array
+     *
+     * @return true when the array contains exactly one element; false otherwise
+     */
     public static boolean isSingleton(@Nullable short[] array) {
         return ArrayUtils.getLength(array) == 1;
     }
 
+    /**
+     * Checks whether the array contains exactly one element.
+     *
+     * @param array The source array
+     *
+     * @return true when the array contains exactly one element; false otherwise
+     */
     public static <E> boolean isSingleton(@Nullable E[] array) {
         return ArrayUtils.getLength(array) == 1;
     }
 
+    /**
+     * Checks whether the array contains more than one element.
+     *
+     * @param array The source array
+     *
+     * @return true when the array contains more than one element; false otherwise
+     */
     public static boolean isMultitude(@Nullable boolean[] array) {
         return ArrayUtils.getLength(array) > 1;
     }
 
+    /**
+     * Checks whether the array contains more than one element.
+     *
+     * @param array The source array
+     *
+     * @return true when the array contains more than one element; false otherwise
+     */
     public static boolean isMultitude(@Nullable byte[] array) {
         return ArrayUtils.getLength(array) > 1;
     }
 
+    /**
+     * Checks whether the array contains more than one element.
+     *
+     * @param array The source array
+     *
+     * @return true when the array contains more than one element; false otherwise
+     */
     public static boolean isMultitude(@Nullable char[] array) {
         return ArrayUtils.getLength(array) > 1;
     }
 
+    /**
+     * Checks whether the array contains more than one element.
+     *
+     * @param array The source array
+     *
+     * @return true when the array contains more than one element; false otherwise
+     */
     public static boolean isMultitude(@Nullable double[] array) {
         return ArrayUtils.getLength(array) > 1;
     }
 
+    /**
+     * Checks whether the array contains more than one element.
+     *
+     * @param array The source array
+     *
+     * @return true when the array contains more than one element; false otherwise
+     */
     public static boolean isMultitude(@Nullable float[] array) {
         return ArrayUtils.getLength(array) > 1;
     }
 
+    /**
+     * Checks whether the array contains more than one element.
+     *
+     * @param array The source array
+     *
+     * @return true when the array contains more than one element; false otherwise
+     */
     public static boolean isMultitude(@Nullable int[] array) {
         return ArrayUtils.getLength(array) > 1;
     }
 
+    /**
+     * Checks whether the array contains more than one element.
+     *
+     * @param array The source array
+     *
+     * @return true when the array contains more than one element; false otherwise
+     */
     public static boolean isMultitude(@Nullable long[] array) {
         return ArrayUtils.getLength(array) > 1;
     }
 
+    /**
+     * Checks whether the array contains more than one element.
+     *
+     * @param array The source array
+     *
+     * @return true when the array contains more than one element; false otherwise
+     */
     public static boolean isMultitude(@Nullable short[] array) {
         return ArrayUtils.getLength(array) > 1;
     }
 
+    /**
+     * Checks whether the array contains more than one element.
+     *
+     * @param array The source array
+     *
+     * @return true when the array contains more than one element; false otherwise
+     */
     public static <E> boolean isMultitude(@Nullable E[] array) {
         return ArrayUtils.getLength(array) > 1;
     }
 
+    /**
+     * Returns the greatest length among the given arrays.
+     *
+     * @param arrays The source arrays
+     *
+     * @return the greatest array length, or zero when no arrays are provided
+     */
     @SafeVarargs
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static <E> int maxLength(@Nullable E[]... arrays) {
         return ArrayUtils.isEmpty(arrays) ? 0 : Arrays.stream(arrays).mapToInt(ArrayUtils::getLength).max().orElse(0);
     }
 
+    /**
+     * Returns the total length of the given arrays.
+     *
+     * @param arrays The source arrays
+     *
+     * @return the combined length of all arrays
+     */
     @SafeVarargs
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static <E> int sumLength(@Nullable E[]... arrays) {
@@ -1675,6 +3418,16 @@ public abstract class ArrayUtilsWraps {
         return (E[]) Array.newInstance(clazz, length);
     }
 
+    /**
+     * Creates a new array without throwing array creation errors.
+     *
+     * Returns null when the array cannot be created.
+     *
+     * @param array The source array
+     * @param length The length of the new array
+     *
+     * @return a new array of the same component type, or null when creation fails
+     */
     @Nullable
     public static <E> E[] newInstanceQuietly(@Nullable E[] array, int length) {
         try {
@@ -1684,51 +3437,140 @@ public abstract class ArrayUtilsWraps {
         return null;
     }
 
+    /**
+     * Returns null when the array is empty.
+     *
+     * The original array is returned unchanged when it is not empty.
+     *
+     * @param array The source array
+     *
+     * @return the array, or null when it is empty
+     */
     @Nullable
     public static boolean[] nullIfEmpty(@Nullable boolean[] array) {
         return ArrayUtils.isEmpty(array) ? null : array;
     }
 
+    /**
+     * Returns null when the array is empty.
+     *
+     * The original array is returned unchanged when it is not empty.
+     *
+     * @param array The source array
+     *
+     * @return the array, or null when it is empty
+     */
     @Nullable
     public static byte[] nullIfEmpty(@Nullable byte[] array) {
         return ArrayUtils.isEmpty(array) ? null : array;
     }
 
+    /**
+     * Returns null when the array is empty.
+     *
+     * The original array is returned unchanged when it is not empty.
+     *
+     * @param array The source array
+     *
+     * @return the array, or null when it is empty
+     */
     @Nullable
     public static char[] nullIfEmpty(@Nullable char[] array) {
         return ArrayUtils.isEmpty(array) ? null : array;
     }
 
+    /**
+     * Returns null when the array is empty.
+     *
+     * The original array is returned unchanged when it is not empty.
+     *
+     * @param array The source array
+     *
+     * @return the array, or null when it is empty
+     */
     @Nullable
     public static double[] nullIfEmpty(@Nullable double[] array) {
         return ArrayUtils.isEmpty(array) ? null : array;
     }
 
+    /**
+     * Returns null when the array is empty.
+     *
+     * The original array is returned unchanged when it is not empty.
+     *
+     * @param array The source array
+     *
+     * @return the array, or null when it is empty
+     */
     @Nullable
     public static float[] nullIfEmpty(@Nullable float[] array) {
         return ArrayUtils.isEmpty(array) ? null : array;
     }
 
+    /**
+     * Returns null when the array is empty.
+     *
+     * The original array is returned unchanged when it is not empty.
+     *
+     * @param array The source array
+     *
+     * @return the array, or null when it is empty
+     */
     @Nullable
     public static int[] nullIfEmpty(@Nullable int[] array) {
         return ArrayUtils.isEmpty(array) ? null : array;
     }
 
+    /**
+     * Returns null when the array is empty.
+     *
+     * The original array is returned unchanged when it is not empty.
+     *
+     * @param array The source array
+     *
+     * @return the array, or null when it is empty
+     */
     @Nullable
     public static long[] nullIfEmpty(@Nullable long[] array) {
         return ArrayUtils.isEmpty(array) ? null : array;
     }
 
+    /**
+     * Returns null when the array is empty.
+     *
+     * The original array is returned unchanged when it is not empty.
+     *
+     * @param array The source array
+     *
+     * @return the array, or null when it is empty
+     */
     @Nullable
     public static short[] nullIfEmpty(@Nullable short[] array) {
         return ArrayUtils.isEmpty(array) ? null : array;
     }
 
+    /**
+     * Returns null when the array is empty.
+     *
+     * The original array is returned unchanged when it is not empty.
+     *
+     * @param array The source array
+     *
+     * @return the array, or null when it is empty
+     */
     @Nullable
     public static <E> E[] nullIfEmpty(@Nullable E[] array) {
         return ArrayUtils.isEmpty(array) ? null : array;
     }
 
+    /**
+     * Removes all elements that match the given predicate.
+     *
+     * @param array The source array
+     * @param filter The predicate used to filter elements
+     *
+     * @return an array without matching elements, or the original array when there is no match
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static <E> E[] removeIf(@Nullable E[] array, @Nullable Predicate<? super E> filter) {
         int[] indexes = getMatchedIndexes(array, filter);
@@ -1738,10 +3580,27 @@ public abstract class ArrayUtilsWraps {
         return ArrayUtils.removeAll(array, indexes);
     }
 
+    /**
+     * Performs an action for each element in reverse order.
+     *
+     * When a filter is provided, the action is applied only to matching elements.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     */
     public static void reverseForEach(@Nullable boolean[] array, @Nullable Consumer<Boolean> action) {
         reverseForEach(array, action, null);
     }
 
+    /**
+     * Performs an action for each element in reverse order.
+     *
+     * When a filter is provided, the action is applied only to matching elements.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     * @param filter The predicate used to filter elements
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static void reverseForEach(@Nullable boolean[] array, @Nullable Consumer<Boolean> action, @Nullable Predicate<Boolean> filter) {
         if (ArrayUtils.isEmpty(array) || action == null) {
@@ -1755,10 +3614,27 @@ public abstract class ArrayUtilsWraps {
         }
     }
 
+    /**
+     * Performs an action for each element in reverse order.
+     *
+     * When a filter is provided, the action is applied only to matching elements.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     */
     public static void reverseForEach(@Nullable byte[] array, @Nullable Consumer<Byte> action) {
         reverseForEach(array, action, null);
     }
 
+    /**
+     * Performs an action for each element in reverse order.
+     *
+     * When a filter is provided, the action is applied only to matching elements.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     * @param filter The predicate used to filter elements
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static void reverseForEach(@Nullable byte[] array, @Nullable Consumer<Byte> action, @Nullable Predicate<Byte> filter) {
         if (ArrayUtils.isEmpty(array) || action == null) {
@@ -1772,10 +3648,27 @@ public abstract class ArrayUtilsWraps {
         }
     }
 
+    /**
+     * Performs an action for each element in reverse order.
+     *
+     * When a filter is provided, the action is applied only to matching elements.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     */
     public static void reverseForEach(@Nullable char[] array, @Nullable Consumer<Character> action) {
         reverseForEach(array, action, null);
     }
 
+    /**
+     * Performs an action for each element in reverse order.
+     *
+     * When a filter is provided, the action is applied only to matching elements.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     * @param filter The predicate used to filter elements
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static void reverseForEach(@Nullable char[] array, @Nullable Consumer<Character> action, @Nullable Predicate<Character> filter) {
         if (ArrayUtils.isEmpty(array) || action == null) {
@@ -1789,10 +3682,27 @@ public abstract class ArrayUtilsWraps {
         }
     }
 
+    /**
+     * Performs an action for each element in reverse order.
+     *
+     * When a filter is provided, the action is applied only to matching elements.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     */
     public static void reverseForEach(@Nullable double[] array, @Nullable Consumer<Double> action) {
         reverseForEach(array, action, null);
     }
 
+    /**
+     * Performs an action for each element in reverse order.
+     *
+     * When a filter is provided, the action is applied only to matching elements.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     * @param filter The predicate used to filter elements
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static void reverseForEach(@Nullable double[] array, @Nullable Consumer<Double> action, @Nullable Predicate<Double> filter) {
         if (ArrayUtils.isEmpty(array) || action == null) {
@@ -1806,10 +3716,27 @@ public abstract class ArrayUtilsWraps {
         }
     }
 
+    /**
+     * Performs an action for each element in reverse order.
+     *
+     * When a filter is provided, the action is applied only to matching elements.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     */
     public static void reverseForEach(@Nullable float[] array, @Nullable Consumer<Float> action) {
         reverseForEach(array, action, null);
     }
 
+    /**
+     * Performs an action for each element in reverse order.
+     *
+     * When a filter is provided, the action is applied only to matching elements.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     * @param filter The predicate used to filter elements
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static void reverseForEach(@Nullable float[] array, @Nullable Consumer<Float> action, @Nullable Predicate<Float> filter) {
         if (ArrayUtils.isEmpty(array) || action == null) {
@@ -1823,10 +3750,27 @@ public abstract class ArrayUtilsWraps {
         }
     }
 
+    /**
+     * Performs an action for each element in reverse order.
+     *
+     * When a filter is provided, the action is applied only to matching elements.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     */
     public static void reverseForEach(@Nullable int[] array, @Nullable Consumer<Integer> action) {
         reverseForEach(array, action, null);
     }
 
+    /**
+     * Performs an action for each element in reverse order.
+     *
+     * When a filter is provided, the action is applied only to matching elements.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     * @param filter The predicate used to filter elements
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static void reverseForEach(@Nullable int[] array, @Nullable Consumer<Integer> action, @Nullable Predicate<Integer> filter) {
         if (ArrayUtils.isEmpty(array) || action == null) {
@@ -1840,10 +3784,27 @@ public abstract class ArrayUtilsWraps {
         }
     }
 
+    /**
+     * Performs an action for each element in reverse order.
+     *
+     * When a filter is provided, the action is applied only to matching elements.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     */
     public static void reverseForEach(@Nullable long[] array, @Nullable Consumer<Long> action) {
         reverseForEach(array, action, null);
     }
 
+    /**
+     * Performs an action for each element in reverse order.
+     *
+     * When a filter is provided, the action is applied only to matching elements.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     * @param filter The predicate used to filter elements
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static void reverseForEach(@Nullable long[] array, @Nullable Consumer<Long> action, @Nullable Predicate<Long> filter) {
         if (ArrayUtils.isEmpty(array) || action == null) {
@@ -1857,10 +3818,27 @@ public abstract class ArrayUtilsWraps {
         }
     }
 
+    /**
+     * Performs an action for each element in reverse order.
+     *
+     * When a filter is provided, the action is applied only to matching elements.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     */
     public static void reverseForEach(@Nullable short[] array, @Nullable Consumer<Short> action) {
         reverseForEach(array, action, null);
     }
 
+    /**
+     * Performs an action for each element in reverse order.
+     *
+     * When a filter is provided, the action is applied only to matching elements.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     * @param filter The predicate used to filter elements
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static void reverseForEach(@Nullable short[] array, @Nullable Consumer<Short> action, @Nullable Predicate<Short> filter) {
         if (ArrayUtils.isEmpty(array) || action == null) {
@@ -1874,10 +3852,27 @@ public abstract class ArrayUtilsWraps {
         }
     }
 
+    /**
+     * Performs an action for each element in reverse order.
+     *
+     * When a filter is provided, the action is applied only to matching elements.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     */
     public static <E> void reverseForEach(@Nullable E[] array, @Nullable Consumer<? super E> action) {
         reverseForEach(array, action, null);
     }
 
+    /**
+     * Performs an action for each element in reverse order.
+     *
+     * When a filter is provided, the action is applied only to matching elements.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     * @param filter The predicate used to filter elements
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static <E> void reverseForEach(@Nullable E[] array, @Nullable Consumer<? super E> action, @Nullable Predicate<? super E> filter) {
         if (ArrayUtils.isEmpty(array) || action == null) {
@@ -1891,10 +3886,27 @@ public abstract class ArrayUtilsWraps {
         }
     }
 
+    /**
+     * Performs an action for each element in reverse order until the action returns false.
+     *
+     * When a filter is provided, only matching elements are passed to the action.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     */
     public static void reverseForEachBreakable(@Nullable boolean[] array, @Nullable Function<Boolean, Boolean> action) {
         reverseForEachBreakable(array, action, null);
     }
 
+    /**
+     * Performs an action for each element in reverse order until the action returns false.
+     *
+     * When a filter is provided, only matching elements are passed to the action.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     * @param filter The predicate used to filter elements
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static void reverseForEachBreakable(@Nullable boolean[] array, @Nullable Function<Boolean, Boolean> action, @Nullable Predicate<Boolean> filter) {
         if (ArrayUtils.isEmpty(array) || action == null) {
@@ -1908,10 +3920,27 @@ public abstract class ArrayUtilsWraps {
         }
     }
 
+    /**
+     * Performs an action for each element in reverse order until the action returns false.
+     *
+     * When a filter is provided, only matching elements are passed to the action.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     */
     public static void reverseForEachBreakable(@Nullable byte[] array, @Nullable Function<Byte, Boolean> action) {
         reverseForEachBreakable(array, action, null);
     }
 
+    /**
+     * Performs an action for each element in reverse order until the action returns false.
+     *
+     * When a filter is provided, only matching elements are passed to the action.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     * @param filter The predicate used to filter elements
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static void reverseForEachBreakable(@Nullable byte[] array, @Nullable Function<Byte, Boolean> action, @Nullable Predicate<Byte> filter) {
         if (ArrayUtils.isEmpty(array) || action == null) {
@@ -1925,10 +3954,27 @@ public abstract class ArrayUtilsWraps {
         }
     }
 
+    /**
+     * Performs an action for each element in reverse order until the action returns false.
+     *
+     * When a filter is provided, only matching elements are passed to the action.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     */
     public static void reverseForEachBreakable(@Nullable char[] array, @Nullable Function<Character, Boolean> action) {
         reverseForEachBreakable(array, action, null);
     }
 
+    /**
+     * Performs an action for each element in reverse order until the action returns false.
+     *
+     * When a filter is provided, only matching elements are passed to the action.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     * @param filter The predicate used to filter elements
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static void reverseForEachBreakable(@Nullable char[] array, @Nullable Function<Character, Boolean> action, @Nullable Predicate<Character> filter) {
         if (ArrayUtils.isEmpty(array) || action == null) {
@@ -1942,10 +3988,27 @@ public abstract class ArrayUtilsWraps {
         }
     }
 
+    /**
+     * Performs an action for each element in reverse order until the action returns false.
+     *
+     * When a filter is provided, only matching elements are passed to the action.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     */
     public static void reverseForEachBreakable(@Nullable double[] array, @Nullable Function<Double, Boolean> action) {
         reverseForEachBreakable(array, action, null);
     }
 
+    /**
+     * Performs an action for each element in reverse order until the action returns false.
+     *
+     * When a filter is provided, only matching elements are passed to the action.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     * @param filter The predicate used to filter elements
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static void reverseForEachBreakable(@Nullable double[] array, @Nullable Function<Double, Boolean> action, @Nullable Predicate<Double> filter) {
         if (ArrayUtils.isEmpty(array) || action == null) {
@@ -1959,10 +4022,27 @@ public abstract class ArrayUtilsWraps {
         }
     }
 
+    /**
+     * Performs an action for each element in reverse order until the action returns false.
+     *
+     * When a filter is provided, only matching elements are passed to the action.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     */
     public static void reverseForEachBreakable(@Nullable float[] array, @Nullable Function<Float, Boolean> action) {
         reverseForEachBreakable(array, action, null);
     }
 
+    /**
+     * Performs an action for each element in reverse order until the action returns false.
+     *
+     * When a filter is provided, only matching elements are passed to the action.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     * @param filter The predicate used to filter elements
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static void reverseForEachBreakable(@Nullable float[] array, @Nullable Function<Float, Boolean> action, @Nullable Predicate<Float> filter) {
         if (ArrayUtils.isEmpty(array) || action == null) {
@@ -1976,10 +4056,27 @@ public abstract class ArrayUtilsWraps {
         }
     }
 
+    /**
+     * Performs an action for each element in reverse order until the action returns false.
+     *
+     * When a filter is provided, only matching elements are passed to the action.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     */
     public static void reverseForEachBreakable(@Nullable int[] array, @Nullable Function<Integer, Boolean> action) {
         reverseForEachBreakable(array, action, null);
     }
 
+    /**
+     * Performs an action for each element in reverse order until the action returns false.
+     *
+     * When a filter is provided, only matching elements are passed to the action.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     * @param filter The predicate used to filter elements
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static void reverseForEachBreakable(@Nullable int[] array, @Nullable Function<Integer, Boolean> action, @Nullable Predicate<Integer> filter) {
         if (ArrayUtils.isEmpty(array) || action == null) {
@@ -1993,10 +4090,27 @@ public abstract class ArrayUtilsWraps {
         }
     }
 
+    /**
+     * Performs an action for each element in reverse order until the action returns false.
+     *
+     * When a filter is provided, only matching elements are passed to the action.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     */
     public static void reverseForEachBreakable(@Nullable long[] array, @Nullable Function<Long, Boolean> action) {
         reverseForEachBreakable(array, action, null);
     }
 
+    /**
+     * Performs an action for each element in reverse order until the action returns false.
+     *
+     * When a filter is provided, only matching elements are passed to the action.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     * @param filter The predicate used to filter elements
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static void reverseForEachBreakable(@Nullable long[] array, @Nullable Function<Long, Boolean> action, @Nullable Predicate<Long> filter) {
         if (ArrayUtils.isEmpty(array) || action == null) {
@@ -2010,10 +4124,27 @@ public abstract class ArrayUtilsWraps {
         }
     }
 
+    /**
+     * Performs an action for each element in reverse order until the action returns false.
+     *
+     * When a filter is provided, only matching elements are passed to the action.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     */
     public static void reverseForEachBreakable(@Nullable short[] array, @Nullable Function<Short, Boolean> action) {
         reverseForEachBreakable(array, action, null);
     }
 
+    /**
+     * Performs an action for each element in reverse order until the action returns false.
+     *
+     * When a filter is provided, only matching elements are passed to the action.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     * @param filter The predicate used to filter elements
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static void reverseForEachBreakable(@Nullable short[] array, @Nullable Function<Short, Boolean> action, @Nullable Predicate<Short> filter) {
         if (ArrayUtils.isEmpty(array) || action == null) {
@@ -2027,10 +4158,27 @@ public abstract class ArrayUtilsWraps {
         }
     }
 
+    /**
+     * Performs an action for each element in reverse order until the action returns false.
+     *
+     * When a filter is provided, only matching elements are passed to the action.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     */
     public static <E> void reverseForEachBreakable(@Nullable E[] array, @Nullable Function<? super E, Boolean> action) {
         reverseForEachBreakable(array, action, null);
     }
 
+    /**
+     * Performs an action for each element in reverse order until the action returns false.
+     *
+     * When a filter is provided, only matching elements are passed to the action.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     * @param filter The predicate used to filter elements
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static <E> void reverseForEachBreakable(@Nullable E[] array, @Nullable Function<? super E, Boolean> action, @Nullable Predicate<? super E> filter) {
         if (ArrayUtils.isEmpty(array) || action == null) {
@@ -2044,6 +4192,16 @@ public abstract class ArrayUtilsWraps {
         }
     }
 
+    /**
+     * Performs an action for all elements except the first one in reverse order.
+     *
+     * The first element is returned after the action has been applied to the remaining elements.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     *
+     * @return the first element, or null when unavailable
+     */
     @Nullable
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static Boolean reverseForEachHeading(@Nullable boolean[] array, @Nullable Consumer<Boolean> action) {
@@ -2057,6 +4215,16 @@ public abstract class ArrayUtilsWraps {
         return array[0];
     }
 
+    /**
+     * Performs an action for all elements except the first one in reverse order.
+     *
+     * The first element is returned after the action has been applied to the remaining elements.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     *
+     * @return the first element, or null when unavailable
+     */
     @Nullable
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static Byte reverseForEachHeading(@Nullable byte[] array, @Nullable Consumer<Byte> action) {
@@ -2070,6 +4238,16 @@ public abstract class ArrayUtilsWraps {
         return array[0];
     }
 
+    /**
+     * Performs an action for all elements except the first one in reverse order.
+     *
+     * The first element is returned after the action has been applied to the remaining elements.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     *
+     * @return the first element, or null when unavailable
+     */
     @Nullable
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static Character reverseForEachHeading(@Nullable char[] array, @Nullable Consumer<Character> action) {
@@ -2083,6 +4261,16 @@ public abstract class ArrayUtilsWraps {
         return array[0];
     }
 
+    /**
+     * Performs an action for all elements except the first one in reverse order.
+     *
+     * The first element is returned after the action has been applied to the remaining elements.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     *
+     * @return the first element, or null when unavailable
+     */
     @Nullable
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static Double reverseForEachHeading(@Nullable double[] array, @Nullable Consumer<Double> action) {
@@ -2096,6 +4284,16 @@ public abstract class ArrayUtilsWraps {
         return array[0];
     }
 
+    /**
+     * Performs an action for all elements except the first one in reverse order.
+     *
+     * The first element is returned after the action has been applied to the remaining elements.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     *
+     * @return the first element, or null when unavailable
+     */
     @Nullable
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static Float reverseForEachHeading(@Nullable float[] array, @Nullable Consumer<Float> action) {
@@ -2109,6 +4307,16 @@ public abstract class ArrayUtilsWraps {
         return array[0];
     }
 
+    /**
+     * Performs an action for all elements except the first one in reverse order.
+     *
+     * The first element is returned after the action has been applied to the remaining elements.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     *
+     * @return the first element, or null when unavailable
+     */
     @Nullable
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static Integer reverseForEachHeading(@Nullable int[] array, @Nullable Consumer<Integer> action) {
@@ -2122,6 +4330,16 @@ public abstract class ArrayUtilsWraps {
         return array[0];
     }
 
+    /**
+     * Performs an action for all elements except the first one in reverse order.
+     *
+     * The first element is returned after the action has been applied to the remaining elements.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     *
+     * @return the first element, or null when unavailable
+     */
     @Nullable
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static Long reverseForEachHeading(@Nullable long[] array, @Nullable Consumer<Long> action) {
@@ -2135,6 +4353,16 @@ public abstract class ArrayUtilsWraps {
         return array[0];
     }
 
+    /**
+     * Performs an action for all elements except the first one in reverse order.
+     *
+     * The first element is returned after the action has been applied to the remaining elements.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     *
+     * @return the first element, or null when unavailable
+     */
     @Nullable
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static Short reverseForEachHeading(@Nullable short[] array, @Nullable Consumer<Short> action) {
@@ -2148,6 +4376,16 @@ public abstract class ArrayUtilsWraps {
         return array[0];
     }
 
+    /**
+     * Performs an action for all elements except the first one in reverse order.
+     *
+     * The first element is returned after the action has been applied to the remaining elements.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     *
+     * @return the first element, or null when unavailable
+     */
     @Nullable
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static <E> E reverseForEachHeading(@Nullable E[] array, @Nullable Consumer<? super E> action) {
@@ -2161,10 +4399,27 @@ public abstract class ArrayUtilsWraps {
         return array[0];
     }
 
+    /**
+     * Performs an indexed action for each element in reverse order.
+     *
+     * When a filter is provided, only matching elements are passed to the action.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     */
     public static void reverseForEachIndexing(@Nullable boolean[] array, @Nullable BiConsumer<Integer, Boolean> action) {
         reverseForEachIndexing(array, action, null);
     }
 
+    /**
+     * Performs an indexed action for each element in reverse order.
+     *
+     * When a filter is provided, only matching elements are passed to the action.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     * @param filter The predicate used to filter elements
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static void reverseForEachIndexing(@Nullable boolean[] array, @Nullable BiConsumer<Integer, Boolean> action, @Nullable BiPredicate<Integer, Boolean> filter) {
         if (ArrayUtils.isEmpty(array) || action == null) {
@@ -2178,10 +4433,27 @@ public abstract class ArrayUtilsWraps {
         }
     }
 
+    /**
+     * Performs an indexed action for each element in reverse order.
+     *
+     * When a filter is provided, only matching elements are passed to the action.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     */
     public static void reverseForEachIndexing(@Nullable byte[] array, @Nullable BiConsumer<Integer, Byte> action) {
         reverseForEachIndexing(array, action, null);
     }
 
+    /**
+     * Performs an indexed action for each element in reverse order.
+     *
+     * When a filter is provided, only matching elements are passed to the action.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     * @param filter The predicate used to filter elements
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static void reverseForEachIndexing(@Nullable byte[] array, @Nullable BiConsumer<Integer, Byte> action, @Nullable BiPredicate<Integer, Byte> filter) {
         if (ArrayUtils.isEmpty(array) || action == null) {
@@ -2195,10 +4467,27 @@ public abstract class ArrayUtilsWraps {
         }
     }
 
+    /**
+     * Performs an indexed action for each element in reverse order.
+     *
+     * When a filter is provided, only matching elements are passed to the action.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     */
     public static void reverseForEachIndexing(@Nullable char[] array, @Nullable BiConsumer<Integer, Character> action) {
         reverseForEachIndexing(array, action, null);
     }
 
+    /**
+     * Performs an indexed action for each element in reverse order.
+     *
+     * When a filter is provided, only matching elements are passed to the action.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     * @param filter The predicate used to filter elements
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static void reverseForEachIndexing(@Nullable char[] array, @Nullable BiConsumer<Integer, Character> action, @Nullable BiPredicate<Integer, Character> filter) {
         if (ArrayUtils.isEmpty(array) || action == null) {
@@ -2212,10 +4501,27 @@ public abstract class ArrayUtilsWraps {
         }
     }
 
+    /**
+     * Performs an indexed action for each element in reverse order.
+     *
+     * When a filter is provided, only matching elements are passed to the action.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     */
     public static void reverseForEachIndexing(@Nullable double[] array, @Nullable BiConsumer<Integer, Double> action) {
         reverseForEachIndexing(array, action, null);
     }
 
+    /**
+     * Performs an indexed action for each element in reverse order.
+     *
+     * When a filter is provided, only matching elements are passed to the action.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     * @param filter The predicate used to filter elements
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static void reverseForEachIndexing(@Nullable double[] array, @Nullable BiConsumer<Integer, Double> action, @Nullable BiPredicate<Integer, Double> filter) {
         if (ArrayUtils.isEmpty(array) || action == null) {
@@ -2229,10 +4535,27 @@ public abstract class ArrayUtilsWraps {
         }
     }
 
+    /**
+     * Performs an indexed action for each element in reverse order.
+     *
+     * When a filter is provided, only matching elements are passed to the action.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     */
     public static void reverseForEachIndexing(@Nullable float[] array, @Nullable BiConsumer<Integer, Float> action) {
         reverseForEachIndexing(array, action, null);
     }
 
+    /**
+     * Performs an indexed action for each element in reverse order.
+     *
+     * When a filter is provided, only matching elements are passed to the action.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     * @param filter The predicate used to filter elements
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static void reverseForEachIndexing(@Nullable float[] array, @Nullable BiConsumer<Integer, Float> action, @Nullable BiPredicate<Integer, Float> filter) {
         if (ArrayUtils.isEmpty(array) || action == null) {
@@ -2246,10 +4569,27 @@ public abstract class ArrayUtilsWraps {
         }
     }
 
+    /**
+     * Performs an indexed action for each element in reverse order.
+     *
+     * When a filter is provided, only matching elements are passed to the action.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     */
     public static void reverseForEachIndexing(@Nullable int[] array, @Nullable BiConsumer<Integer, Integer> action) {
         reverseForEachIndexing(array, action, null);
     }
 
+    /**
+     * Performs an indexed action for each element in reverse order.
+     *
+     * When a filter is provided, only matching elements are passed to the action.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     * @param filter The predicate used to filter elements
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static void reverseForEachIndexing(@Nullable int[] array, @Nullable BiConsumer<Integer, Integer> action, @Nullable BiPredicate<Integer, Integer> filter) {
         if (ArrayUtils.isEmpty(array) || action == null) {
@@ -2263,10 +4603,27 @@ public abstract class ArrayUtilsWraps {
         }
     }
 
+    /**
+     * Performs an indexed action for each element in reverse order.
+     *
+     * When a filter is provided, only matching elements are passed to the action.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     */
     public static void reverseForEachIndexing(@Nullable long[] array, @Nullable BiConsumer<Integer, Long> action) {
         reverseForEachIndexing(array, action, null);
     }
 
+    /**
+     * Performs an indexed action for each element in reverse order.
+     *
+     * When a filter is provided, only matching elements are passed to the action.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     * @param filter The predicate used to filter elements
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static void reverseForEachIndexing(@Nullable long[] array, @Nullable BiConsumer<Integer, Long> action, @Nullable BiPredicate<Integer, Long> filter) {
         if (ArrayUtils.isEmpty(array) || action == null) {
@@ -2280,10 +4637,27 @@ public abstract class ArrayUtilsWraps {
         }
     }
 
+    /**
+     * Performs an indexed action for each element in reverse order.
+     *
+     * When a filter is provided, only matching elements are passed to the action.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     */
     public static void reverseForEachIndexing(@Nullable short[] array, @Nullable BiConsumer<Integer, Short> action) {
         reverseForEachIndexing(array, action, null);
     }
 
+    /**
+     * Performs an indexed action for each element in reverse order.
+     *
+     * When a filter is provided, only matching elements are passed to the action.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     * @param filter The predicate used to filter elements
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static void reverseForEachIndexing(@Nullable short[] array, @Nullable BiConsumer<Integer, Short> action, @Nullable BiPredicate<Integer, Short> filter) {
         if (ArrayUtils.isEmpty(array) || action == null) {
@@ -2297,10 +4671,27 @@ public abstract class ArrayUtilsWraps {
         }
     }
 
+    /**
+     * Performs an indexed action for each element in reverse order.
+     *
+     * When a filter is provided, only matching elements are passed to the action.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     */
     public static <E> void reverseForEachIndexing(@Nullable E[] array, @Nullable BiConsumer<Integer, ? super E> action) {
         reverseForEachIndexing(array, action, null);
     }
 
+    /**
+     * Performs an indexed action for each element in reverse order.
+     *
+     * When a filter is provided, only matching elements are passed to the action.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     * @param filter The predicate used to filter elements
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static <E> void reverseForEachIndexing(@Nullable E[] array, @Nullable BiConsumer<Integer, ? super E> action, @Nullable BiPredicate<Integer, ? super E> filter) {
         if (ArrayUtils.isEmpty(array) || action == null) {
@@ -2314,10 +4705,27 @@ public abstract class ArrayUtilsWraps {
         }
     }
 
+    /**
+     * Performs an indexed action for each element in reverse order until the action returns false.
+     *
+     * When a filter is provided, only matching elements are passed to the action.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     */
     public static void reverseForEachIndexingBreakable(@Nullable boolean[] array, @Nullable BiFunction<Integer, Boolean, Boolean> action) {
         reverseForEachIndexingBreakable(array, action, null);
     }
 
+    /**
+     * Performs an indexed action for each element in reverse order until the action returns false.
+     *
+     * When a filter is provided, only matching elements are passed to the action.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     * @param filter The predicate used to filter elements
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static void reverseForEachIndexingBreakable(@Nullable boolean[] array, @Nullable BiFunction<Integer, Boolean, Boolean> action, @Nullable BiPredicate<Integer, Boolean> filter) {
         if (ArrayUtils.isEmpty(array) || action == null) {
@@ -2331,10 +4739,27 @@ public abstract class ArrayUtilsWraps {
         }
     }
 
+    /**
+     * Performs an indexed action for each element in reverse order until the action returns false.
+     *
+     * When a filter is provided, only matching elements are passed to the action.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     */
     public static void reverseForEachIndexingBreakable(@Nullable byte[] array, @Nullable BiFunction<Integer, Byte, Boolean> action) {
         reverseForEachIndexingBreakable(array, action, null);
     }
 
+    /**
+     * Performs an indexed action for each element in reverse order until the action returns false.
+     *
+     * When a filter is provided, only matching elements are passed to the action.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     * @param filter The predicate used to filter elements
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static void reverseForEachIndexingBreakable(@Nullable byte[] array, @Nullable BiFunction<Integer, Byte, Boolean> action, @Nullable BiPredicate<Integer, Byte> filter) {
         if (ArrayUtils.isEmpty(array) || action == null) {
@@ -2348,10 +4773,27 @@ public abstract class ArrayUtilsWraps {
         }
     }
 
+    /**
+     * Performs an indexed action for each element in reverse order until the action returns false.
+     *
+     * When a filter is provided, only matching elements are passed to the action.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     */
     public static void reverseForEachIndexingBreakable(@Nullable char[] array, @Nullable BiFunction<Integer, Character, Boolean> action) {
         reverseForEachIndexingBreakable(array, action, null);
     }
 
+    /**
+     * Performs an indexed action for each element in reverse order until the action returns false.
+     *
+     * When a filter is provided, only matching elements are passed to the action.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     * @param filter The predicate used to filter elements
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static void reverseForEachIndexingBreakable(@Nullable char[] array, @Nullable BiFunction<Integer, Character, Boolean> action, @Nullable BiPredicate<Integer, Character> filter) {
         if (ArrayUtils.isEmpty(array) || action == null) {
@@ -2365,10 +4807,27 @@ public abstract class ArrayUtilsWraps {
         }
     }
 
+    /**
+     * Performs an indexed action for each element in reverse order until the action returns false.
+     *
+     * When a filter is provided, only matching elements are passed to the action.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     */
     public static void reverseForEachIndexingBreakable(@Nullable double[] array, @Nullable BiFunction<Integer, Double, Boolean> action) {
         reverseForEachIndexingBreakable(array, action, null);
     }
 
+    /**
+     * Performs an indexed action for each element in reverse order until the action returns false.
+     *
+     * When a filter is provided, only matching elements are passed to the action.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     * @param filter The predicate used to filter elements
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static void reverseForEachIndexingBreakable(@Nullable double[] array, @Nullable BiFunction<Integer, Double, Boolean> action, @Nullable BiPredicate<Integer, Double> filter) {
         if (ArrayUtils.isEmpty(array) || action == null) {
@@ -2382,10 +4841,27 @@ public abstract class ArrayUtilsWraps {
         }
     }
 
+    /**
+     * Performs an indexed action for each element in reverse order until the action returns false.
+     *
+     * When a filter is provided, only matching elements are passed to the action.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     */
     public static void reverseForEachIndexingBreakable(@Nullable float[] array, @Nullable BiFunction<Integer, Float, Boolean> action) {
         reverseForEachIndexingBreakable(array, action, null);
     }
 
+    /**
+     * Performs an indexed action for each element in reverse order until the action returns false.
+     *
+     * When a filter is provided, only matching elements are passed to the action.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     * @param filter The predicate used to filter elements
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static void reverseForEachIndexingBreakable(@Nullable float[] array, @Nullable BiFunction<Integer, Float, Boolean> action, @Nullable BiPredicate<Integer, Float> filter) {
         if (ArrayUtils.isEmpty(array) || action == null) {
@@ -2399,10 +4875,27 @@ public abstract class ArrayUtilsWraps {
         }
     }
 
+    /**
+     * Performs an indexed action for each element in reverse order until the action returns false.
+     *
+     * When a filter is provided, only matching elements are passed to the action.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     */
     public static void reverseForEachIndexingBreakable(@Nullable int[] array, @Nullable BiFunction<Integer, Integer, Boolean> action) {
         reverseForEachIndexingBreakable(array, action, null);
     }
 
+    /**
+     * Performs an indexed action for each element in reverse order until the action returns false.
+     *
+     * When a filter is provided, only matching elements are passed to the action.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     * @param filter The predicate used to filter elements
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static void reverseForEachIndexingBreakable(@Nullable int[] array, @Nullable BiFunction<Integer, Integer, Boolean> action, @Nullable BiPredicate<Integer, Integer> filter) {
         if (ArrayUtils.isEmpty(array) || action == null) {
@@ -2416,10 +4909,27 @@ public abstract class ArrayUtilsWraps {
         }
     }
 
+    /**
+     * Performs an indexed action for each element in reverse order until the action returns false.
+     *
+     * When a filter is provided, only matching elements are passed to the action.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     */
     public static void reverseForEachIndexingBreakable(@Nullable long[] array, @Nullable BiFunction<Integer, Long, Boolean> action) {
         reverseForEachIndexingBreakable(array, action, null);
     }
 
+    /**
+     * Performs an indexed action for each element in reverse order until the action returns false.
+     *
+     * When a filter is provided, only matching elements are passed to the action.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     * @param filter The predicate used to filter elements
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static void reverseForEachIndexingBreakable(@Nullable long[] array, @Nullable BiFunction<Integer, Long, Boolean> action, @Nullable BiPredicate<Integer, Long> filter) {
         if (ArrayUtils.isEmpty(array) || action == null) {
@@ -2433,10 +4943,27 @@ public abstract class ArrayUtilsWraps {
         }
     }
 
+    /**
+     * Performs an indexed action for each element in reverse order until the action returns false.
+     *
+     * When a filter is provided, only matching elements are passed to the action.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     */
     public static void reverseForEachIndexingBreakable(@Nullable short[] array, @Nullable BiFunction<Integer, Short, Boolean> action) {
         reverseForEachIndexingBreakable(array, action, null);
     }
 
+    /**
+     * Performs an indexed action for each element in reverse order until the action returns false.
+     *
+     * When a filter is provided, only matching elements are passed to the action.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     * @param filter The predicate used to filter elements
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static void reverseForEachIndexingBreakable(@Nullable short[] array, @Nullable BiFunction<Integer, Short, Boolean> action, @Nullable BiPredicate<Integer, Short> filter) {
         if (ArrayUtils.isEmpty(array) || action == null) {
@@ -2450,10 +4977,27 @@ public abstract class ArrayUtilsWraps {
         }
     }
 
+    /**
+     * Performs an indexed action for each element in reverse order until the action returns false.
+     *
+     * When a filter is provided, only matching elements are passed to the action.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     */
     public static <E> void reverseForEachIndexingBreakable(@Nullable E[] array, @Nullable BiFunction<Integer, ? super E, Boolean> action) {
         reverseForEachIndexingBreakable(array, action, null);
     }
 
+    /**
+     * Performs an indexed action for each element in reverse order until the action returns false.
+     *
+     * When a filter is provided, only matching elements are passed to the action.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     * @param filter The predicate used to filter elements
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static <E> void reverseForEachIndexingBreakable(@Nullable E[] array, @Nullable BiFunction<Integer, ? super E, Boolean> action, @Nullable BiPredicate<Integer, ? super E> filter) {
         if (ArrayUtils.isEmpty(array) || action == null) {
@@ -2467,6 +5011,16 @@ public abstract class ArrayUtilsWraps {
         }
     }
 
+    /**
+     * Performs an indexed action for all elements except the first one in reverse order.
+     *
+     * The first element is returned after the action has been applied to the remaining elements.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     *
+     * @return the first element, or null when unavailable
+     */
     @Nullable
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static Boolean reverseForEachIndexingHeading(@Nullable boolean[] array, @Nullable BiConsumer<Integer, Boolean> action) {
@@ -2480,6 +5034,16 @@ public abstract class ArrayUtilsWraps {
         return array[0];
     }
 
+    /**
+     * Performs an indexed action for all elements except the first one in reverse order.
+     *
+     * The first element is returned after the action has been applied to the remaining elements.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     *
+     * @return the first element, or null when unavailable
+     */
     @Nullable
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static Byte reverseForEachIndexingHeading(@Nullable byte[] array, @Nullable BiConsumer<Integer, Byte> action) {
@@ -2493,6 +5057,16 @@ public abstract class ArrayUtilsWraps {
         return array[0];
     }
 
+    /**
+     * Performs an indexed action for all elements except the first one in reverse order.
+     *
+     * The first element is returned after the action has been applied to the remaining elements.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     *
+     * @return the first element, or null when unavailable
+     */
     @Nullable
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static Character reverseForEachIndexingHeading(@Nullable char[] array, @Nullable BiConsumer<Integer, Character> action) {
@@ -2506,6 +5080,16 @@ public abstract class ArrayUtilsWraps {
         return array[0];
     }
 
+    /**
+     * Performs an indexed action for all elements except the first one in reverse order.
+     *
+     * The first element is returned after the action has been applied to the remaining elements.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     *
+     * @return the first element, or null when unavailable
+     */
     @Nullable
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static Double reverseForEachIndexingHeading(@Nullable double[] array, @Nullable BiConsumer<Integer, Double> action) {
@@ -2519,6 +5103,16 @@ public abstract class ArrayUtilsWraps {
         return array[0];
     }
 
+    /**
+     * Performs an indexed action for all elements except the first one in reverse order.
+     *
+     * The first element is returned after the action has been applied to the remaining elements.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     *
+     * @return the first element, or null when unavailable
+     */
     @Nullable
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static Float reverseForEachIndexingHeading(@Nullable float[] array, @Nullable BiConsumer<Integer, Float> action) {
@@ -2532,6 +5126,16 @@ public abstract class ArrayUtilsWraps {
         return array[0];
     }
 
+    /**
+     * Performs an indexed action for all elements except the first one in reverse order.
+     *
+     * The first element is returned after the action has been applied to the remaining elements.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     *
+     * @return the first element, or null when unavailable
+     */
     @Nullable
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static Integer reverseForEachIndexingHeading(@Nullable int[] array, @Nullable BiConsumer<Integer, Integer> action) {
@@ -2545,6 +5149,16 @@ public abstract class ArrayUtilsWraps {
         return array[0];
     }
 
+    /**
+     * Performs an indexed action for all elements except the first one in reverse order.
+     *
+     * The first element is returned after the action has been applied to the remaining elements.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     *
+     * @return the first element, or null when unavailable
+     */
     @Nullable
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static Long reverseForEachIndexingHeading(@Nullable long[] array, @Nullable BiConsumer<Integer, Long> action) {
@@ -2558,6 +5172,16 @@ public abstract class ArrayUtilsWraps {
         return array[0];
     }
 
+    /**
+     * Performs an indexed action for all elements except the first one in reverse order.
+     *
+     * The first element is returned after the action has been applied to the remaining elements.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     *
+     * @return the first element, or null when unavailable
+     */
     @Nullable
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static Short reverseForEachIndexingHeading(@Nullable short[] array, @Nullable BiConsumer<Integer, Short> action) {
@@ -2571,6 +5195,16 @@ public abstract class ArrayUtilsWraps {
         return array[0];
     }
 
+    /**
+     * Performs an indexed action for all elements except the first one in reverse order.
+     *
+     * The first element is returned after the action has been applied to the remaining elements.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     *
+     * @return the first element, or null when unavailable
+     */
     @Nullable
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static <E> E reverseForEachIndexingHeading(@Nullable E[] array, @Nullable BiConsumer<Integer, ? super E> action) {
@@ -2584,10 +5218,27 @@ public abstract class ArrayUtilsWraps {
         return array[0];
     }
 
+    /**
+     * Performs an action for each element of an object array.
+     *
+     * The value is ignored when it is null or does not represent an array.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     */
     public static void forEachObject(@Nullable Object array, @Nullable Consumer<Object> action) {
         forEachObject(array, action, null);
     }
 
+    /**
+     * Performs an action for each element of an object array.
+     *
+     * The value is ignored when it is null or does not represent an array.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     * @param filter The predicate used to filter elements
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static void forEachObject(@Nullable Object array, @Nullable Consumer<Object> action, @Nullable Predicate<Object> filter) {
         if (ObjectUtils.anyNull(array, action) || !array.getClass().isArray()) {
@@ -2602,10 +5253,27 @@ public abstract class ArrayUtilsWraps {
         }
     }
 
+    /**
+     * Performs an action for each element of an object array until the action returns false.
+     *
+     * The value is ignored when it is null or does not represent an array.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     */
     public static void forEachObjectBreakable(@Nullable Object array, @Nullable Function<Object, Boolean> action) {
         forEachObjectBreakable(array, action, null);
     }
 
+    /**
+     * Performs an action for each element of an object array until the action returns false.
+     *
+     * The value is ignored when it is null or does not represent an array.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     * @param filter The predicate used to filter elements
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static void forEachObjectBreakable(@Nullable Object array, @Nullable Function<Object, Boolean> action, @Nullable Predicate<Object> filter) {
         if (ObjectUtils.anyNull(array, action) || !array.getClass().isArray()) {
@@ -2620,6 +5288,16 @@ public abstract class ArrayUtilsWraps {
         }
     }
 
+    /**
+     * Performs an action for all elements except the last one of an object array.
+     *
+     * The first element is returned after the action has been applied to the preceding elements.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     *
+     * @return the first element, or null when unavailable
+     */
     @Nullable
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static Object forEachObjectTailing(@Nullable Object array, @Nullable Consumer<Object> action) {
@@ -2633,10 +5311,27 @@ public abstract class ArrayUtilsWraps {
         return (length == 0) ? null : Array.get(array, 0);
     }
 
+    /**
+     * Performs an indexed action for each element of an object array.
+     *
+     * The value is ignored when it is null or does not represent an array.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     */
     public static void forEachObjectIndexing(@Nullable Object array, @Nullable BiConsumer<Integer, Object> action) {
         forEachObjectIndexing(array, action, null);
     }
 
+    /**
+     * Performs an indexed action for each element of an object array.
+     *
+     * The value is ignored when it is null or does not represent an array.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     * @param filter The predicate used to filter elements
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static void forEachObjectIndexing(@Nullable Object array, @Nullable BiConsumer<Integer, Object> action, @Nullable BiPredicate<Integer, Object> filter) {
         if (ObjectUtils.anyNull(array, action) || !array.getClass().isArray()) {
@@ -2651,10 +5346,27 @@ public abstract class ArrayUtilsWraps {
         }
     }
 
+    /**
+     * Performs an indexed action for each element of an object array until the action returns false.
+     *
+     * The value is ignored when it is null or does not represent an array.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     */
     public static void forEachObjectIndexingBreakable(@Nullable Object array, @Nullable BiFunction<Integer, Object, Boolean> action) {
         forEachObjectIndexingBreakable(array, action, null);
     }
 
+    /**
+     * Performs an indexed action for each element of an object array until the action returns false.
+     *
+     * The value is ignored when it is null or does not represent an array.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     * @param filter The predicate used to filter elements
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static void forEachObjectIndexingBreakable(@Nullable Object array, @Nullable BiFunction<Integer, Object, Boolean> action, @Nullable BiPredicate<Integer, Object> filter) {
         if (ObjectUtils.anyNull(array, action) || !array.getClass().isArray()) {
@@ -2669,6 +5381,16 @@ public abstract class ArrayUtilsWraps {
         }
     }
 
+    /**
+     * Performs an indexed action for all elements except the last one of an object array.
+     *
+     * The first element is returned after the action has been applied to the preceding elements.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     *
+     * @return the first element, or null when unavailable
+     */
     @Nullable
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static Object forEachObjectIndexingTailing(@Nullable Object array, @Nullable BiConsumer<Integer, Object> action) {
@@ -2682,10 +5404,27 @@ public abstract class ArrayUtilsWraps {
         return (length == 0) ? null : Array.get(array, 0);
     }
 
+    /**
+     * Performs an action for each element of an object array in reverse order.
+     *
+     * The value is ignored when it is null or does not represent an array.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     */
     public static void reverseForEachObject(@Nullable Object array, @Nullable Consumer<Object> action) {
         reverseForEachObject(array, action, null);
     }
 
+    /**
+     * Performs an action for each element of an object array in reverse order.
+     *
+     * The value is ignored when it is null or does not represent an array.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     * @param filter The predicate used to filter elements
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static void reverseForEachObject(@Nullable Object array, @Nullable Consumer<Object> action, @Nullable Predicate<Object> filter) {
         if (ObjectUtils.anyNull(array, action) || !array.getClass().isArray()) {
@@ -2700,10 +5439,27 @@ public abstract class ArrayUtilsWraps {
         }
     }
 
+    /**
+     * Performs an action for each element of an object array in reverse order until the action returns false.
+     *
+     * The value is ignored when it is null or does not represent an array.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     */
     public static void reverseForEachObjectBreakable(@Nullable Object array, @Nullable Function<Object, Boolean> action) {
         reverseForEachObjectBreakable(array, action, null);
     }
 
+    /**
+     * Performs an action for each element of an object array in reverse order until the action returns false.
+     *
+     * The value is ignored when it is null or does not represent an array.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     * @param filter The predicate used to filter elements
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static void reverseForEachObjectBreakable(@Nullable Object array, @Nullable Function<Object, Boolean> action, @Nullable Predicate<Object> filter) {
         if (ObjectUtils.anyNull(array, action) || !array.getClass().isArray()) {
@@ -2718,10 +5474,27 @@ public abstract class ArrayUtilsWraps {
         }
     }
 
+    /**
+     * Performs an indexed action for each element of an object array in reverse order.
+     *
+     * The value is ignored when it is null or does not represent an array.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     */
     public static void reverseForEachObjectIndexing(@Nullable Object array, @Nullable BiConsumer<Integer, Object> action) {
         reverseForEachObjectIndexing(array, action, null);
     }
 
+    /**
+     * Performs an indexed action for each element of an object array in reverse order.
+     *
+     * The value is ignored when it is null or does not represent an array.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     * @param filter The predicate used to filter elements
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static void reverseForEachObjectIndexing(@Nullable Object array, @Nullable BiConsumer<Integer, Object> action, @Nullable BiPredicate<Integer, Object> filter) {
         if (ObjectUtils.anyNull(array, action) || !array.getClass().isArray()) {
@@ -2736,10 +5509,27 @@ public abstract class ArrayUtilsWraps {
         }
     }
 
+    /**
+     * Performs an indexed action for each element of an object array in reverse order until the action returns false.
+     *
+     * The value is ignored when it is null or does not represent an array.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     */
     public static void reverseForEachObjectIndexingBreakable(@Nullable Object array, @Nullable BiFunction<Integer, Object, Boolean> action) {
         reverseForEachObjectIndexingBreakable(array, action, null);
     }
 
+    /**
+     * Performs an indexed action for each element of an object array in reverse order until the action returns false.
+     *
+     * The value is ignored when it is null or does not represent an array.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     * @param filter The predicate used to filter elements
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static void reverseForEachObjectIndexingBreakable(@Nullable Object array, @Nullable BiFunction<Integer, Object, Boolean> action, @Nullable BiPredicate<Integer, Object> filter) {
         if (ObjectUtils.anyNull(array, action) || !array.getClass().isArray()) {
@@ -2754,103 +5544,273 @@ public abstract class ArrayUtilsWraps {
         }
     }
 
+    /**
+     * Returns an array containing the given item.
+     *
+     * @param item The source item
+     *
+     * @return a single-element array, or null when the item is null
+     */
     @Nullable
     @SuppressWarnings("unchecked")
     public static <E> E[] singletonArray(@Nullable E item) {
         return (item == null) ? null : ArrayUtils.toArray(item);
     }
 
+    /**
+     * Returns a sequential stream over the array.
+     *
+     * An empty array produces an empty stream.
+     *
+     * @param array The source array
+     *
+     * @return a stream over the array elements
+     */
     @Nonnull
     public static Stream<Boolean> stream(@Nullable boolean[] array) {
         return ArrayUtils.isEmpty(array) ? Stream.empty() : StreamPlainWraps.stream(ArrayUtils.toObject(array));
     }
 
+    /**
+     * Returns a sequential stream over the array.
+     *
+     * An empty array produces an empty stream.
+     *
+     * @param array The source array
+     *
+     * @return a stream over the array elements
+     */
     @Nonnull
     public static Stream<Byte> stream(@Nullable byte[] array) {
         return ArrayUtils.isEmpty(array) ? Stream.empty() : StreamPlainWraps.stream(ArrayUtils.toObject(array));
     }
 
+    /**
+     * Returns a sequential stream over the array.
+     *
+     * An empty array produces an empty stream.
+     *
+     * @param array The source array
+     *
+     * @return a stream over the array elements
+     */
     @Nonnull
     public static Stream<Character> stream(@Nullable char[] array) {
         return ArrayUtils.isEmpty(array) ? Stream.empty() : StreamPlainWraps.stream(ArrayUtils.toObject(array));
     }
 
+    /**
+     * Returns a sequential stream over the array.
+     *
+     * An empty array produces an empty stream.
+     *
+     * @param array The source array
+     *
+     * @return a stream over the array elements
+     */
     @Nonnull
     public static Stream<Double> stream(@Nullable double[] array) {
         return ArrayUtils.isEmpty(array) ? Stream.empty() : StreamPlainWraps.stream(ArrayUtils.toObject(array));
     }
 
+    /**
+     * Returns a sequential stream over the array.
+     *
+     * An empty array produces an empty stream.
+     *
+     * @param array The source array
+     *
+     * @return a stream over the array elements
+     */
     @Nonnull
     public static Stream<Float> stream(@Nullable float[] array) {
         return ArrayUtils.isEmpty(array) ? Stream.empty() : StreamPlainWraps.stream(ArrayUtils.toObject(array));
     }
 
+    /**
+     * Returns a sequential stream over the array.
+     *
+     * An empty array produces an empty stream.
+     *
+     * @param array The source array
+     *
+     * @return a stream over the array elements
+     */
     @Nonnull
     public static Stream<Integer> stream(@Nullable int[] array) {
         return ArrayUtils.isEmpty(array) ? Stream.empty() : StreamPlainWraps.stream(ArrayUtils.toObject(array));
     }
 
+    /**
+     * Returns a sequential stream over the array.
+     *
+     * An empty array produces an empty stream.
+     *
+     * @param array The source array
+     *
+     * @return a stream over the array elements
+     */
     @Nonnull
     public static Stream<Long> stream(@Nullable long[] array) {
         return ArrayUtils.isEmpty(array) ? Stream.empty() : StreamPlainWraps.stream(ArrayUtils.toObject(array));
     }
 
+    /**
+     * Returns a sequential stream over the array.
+     *
+     * An empty array produces an empty stream.
+     *
+     * @param array The source array
+     *
+     * @return a stream over the array elements
+     */
     @Nonnull
     public static Stream<Short> stream(@Nullable short[] array) {
         return ArrayUtils.isEmpty(array) ? Stream.empty() : StreamPlainWraps.stream(ArrayUtils.toObject(array));
     }
 
+    /**
+     * Returns a sequential stream over the array.
+     *
+     * An empty array produces an empty stream.
+     *
+     * @param array The source array
+     *
+     * @return a stream over the array elements
+     */
     @Nonnull
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static <E> Stream<E> stream(@Nullable E[] array) {
         return ArrayUtils.isEmpty(array) ? Stream.empty() : Arrays.stream(array);
     }
 
+    /**
+     * Returns a subarray of the given array.
+     *
+     * @param array The source array
+     * @param startIndexInclusive The inclusive start index
+     *
+     * @return the subarray, or null when the start index is invalid
+     */
     @Nullable
     public static boolean[] subarray(@Nullable boolean[] array, int startIndexInclusive) {
         return isIndexBound(array, startIndexInclusive) ? ArrayUtils.subarray(array, startIndexInclusive, ArrayUtils.getLength(array)) : null;
     }
 
+    /**
+     * Returns a subarray of the given array.
+     *
+     * @param array The source array
+     * @param startIndexInclusive The inclusive start index
+     *
+     * @return the subarray, or null when the start index is invalid
+     */
     @Nullable
     public static byte[] subarray(@Nullable byte[] array, int startIndexInclusive) {
         return isIndexBound(array, startIndexInclusive) ? ArrayUtils.subarray(array, startIndexInclusive, ArrayUtils.getLength(array)) : null;
     }
 
+    /**
+     * Returns a subarray of the given array.
+     *
+     * @param array The source array
+     * @param startIndexInclusive The inclusive start index
+     *
+     * @return the subarray, or null when the start index is invalid
+     */
     @Nullable
     public static char[] subarray(@Nullable char[] array, int startIndexInclusive) {
         return isIndexBound(array, startIndexInclusive) ? ArrayUtils.subarray(array, startIndexInclusive, ArrayUtils.getLength(array)) : null;
     }
 
+    /**
+     * Returns a subarray of the given array.
+     *
+     * @param array The source array
+     * @param startIndexInclusive The inclusive start index
+     *
+     * @return the subarray, or null when the start index is invalid
+     */
     @Nullable
     public static double[] subarray(@Nullable double[] array, int startIndexInclusive) {
         return isIndexBound(array, startIndexInclusive) ? ArrayUtils.subarray(array, startIndexInclusive, ArrayUtils.getLength(array)) : null;
     }
 
+    /**
+     * Returns a subarray of the given array.
+     *
+     * @param array The source array
+     * @param startIndexInclusive The inclusive start index
+     *
+     * @return the subarray, or null when the start index is invalid
+     */
     @Nullable
     public static float[] subarray(@Nullable float[] array, int startIndexInclusive) {
         return isIndexBound(array, startIndexInclusive) ? ArrayUtils.subarray(array, startIndexInclusive, ArrayUtils.getLength(array)) : null;
     }
 
+    /**
+     * Returns a subarray of the given array.
+     *
+     * @param array The source array
+     * @param startIndexInclusive The inclusive start index
+     *
+     * @return the subarray, or null when the start index is invalid
+     */
     @Nullable
     public static int[] subarray(@Nullable int[] array, int startIndexInclusive) {
         return isIndexBound(array, startIndexInclusive) ? ArrayUtils.subarray(array, startIndexInclusive, ArrayUtils.getLength(array)) : null;
     }
 
+    /**
+     * Returns a subarray of the given array.
+     *
+     * @param array The source array
+     * @param startIndexInclusive The inclusive start index
+     *
+     * @return the subarray, or null when the start index is invalid
+     */
     @Nullable
     public static long[] subarray(@Nullable long[] array, int startIndexInclusive) {
         return isIndexBound(array, startIndexInclusive) ? ArrayUtils.subarray(array, startIndexInclusive, ArrayUtils.getLength(array)) : null;
     }
 
+    /**
+     * Returns a subarray of the given array.
+     *
+     * @param array The source array
+     * @param startIndexInclusive The inclusive start index
+     *
+     * @return the subarray, or null when the start index is invalid
+     */
     @Nullable
     public static short[] subarray(@Nullable short[] array, int startIndexInclusive) {
         return isIndexBound(array, startIndexInclusive) ? ArrayUtils.subarray(array, startIndexInclusive, ArrayUtils.getLength(array)) : null;
     }
 
+    /**
+     * Returns a subarray of the given array.
+     *
+     * @param array The source array
+     * @param startIndexInclusive The inclusive start index
+     *
+     * @return the subarray, or null when the start index is invalid
+     */
     @Nullable
     public static <E> E[] subarray(@Nullable E[] array, int startIndexInclusive) {
         return isIndexBound(array, startIndexInclusive) ? ArrayUtils.subarray(array, startIndexInclusive, ArrayUtils.getLength(array)) : null;
     }
 
+    /**
+     * Performs an indexed action for all elements except the first one of an object array in reverse order.
+     *
+     * The first element is returned after the action has been applied to the remaining elements.
+     *
+     * @param array The source array
+     * @param action The action to perform
+     *
+     * @return the first element, or null when unavailable
+     */
     @Nullable
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static Object reverseForEachObjectIndexingHeading(@Nullable Object array, @Nullable BiFunction<Integer, Object, Boolean> action) {
@@ -2879,6 +5839,15 @@ public abstract class ArrayUtilsWraps {
         return array;
     }
 
+    /**
+     * Combines all the given arrays into a single array.
+     *
+     * Empty input arrays are ignored.
+     *
+     * @param arrays The source arrays
+     *
+     * @return a combined array, or null when no elements are available
+     */
     @Nullable
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static boolean[] unionAll(@Nullable boolean[]... arrays) {
@@ -2895,6 +5864,15 @@ public abstract class ArrayUtilsWraps {
         return result;
     }
 
+    /**
+     * Combines all the given arrays into a single array.
+     *
+     * Empty input arrays are ignored.
+     *
+     * @param arrays The source arrays
+     *
+     * @return a combined array, or null when no elements are available
+     */
     @Nullable
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static byte[] unionAll(@Nullable byte[]... arrays) {
@@ -2911,6 +5889,15 @@ public abstract class ArrayUtilsWraps {
         return result;
     }
 
+    /**
+     * Combines all the given arrays into a single array.
+     *
+     * Empty input arrays are ignored.
+     *
+     * @param arrays The source arrays
+     *
+     * @return a combined array, or null when no elements are available
+     */
     @Nullable
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static char[] unionAll(@Nullable char[]... arrays) {
@@ -2927,6 +5914,15 @@ public abstract class ArrayUtilsWraps {
         return result;
     }
 
+    /**
+     * Combines all the given arrays into a single array.
+     *
+     * Empty input arrays are ignored.
+     *
+     * @param arrays The source arrays
+     *
+     * @return a combined array, or null when no elements are available
+     */
     @Nullable
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static double[] unionAll(@Nullable double[]... arrays) {
@@ -2943,6 +5939,15 @@ public abstract class ArrayUtilsWraps {
         return result;
     }
 
+    /**
+     * Combines all the given arrays into a single array.
+     *
+     * Empty input arrays are ignored.
+     *
+     * @param arrays The source arrays
+     *
+     * @return a combined array, or null when no elements are available
+     */
     @Nullable
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static float[] unionAll(@Nullable float[]... arrays) {
@@ -2959,6 +5964,15 @@ public abstract class ArrayUtilsWraps {
         return result;
     }
 
+    /**
+     * Combines all the given arrays into a single array.
+     *
+     * Empty input arrays are ignored.
+     *
+     * @param arrays The source arrays
+     *
+     * @return a combined array, or null when no elements are available
+     */
     @Nullable
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static int[] unionAll(@Nullable int[]... arrays) {
@@ -2975,6 +5989,15 @@ public abstract class ArrayUtilsWraps {
         return result;
     }
 
+    /**
+     * Combines all the given arrays into a single array.
+     *
+     * Empty input arrays are ignored.
+     *
+     * @param arrays The source arrays
+     *
+     * @return a combined array, or null when no elements are available
+     */
     @Nullable
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static long[] unionAll(@Nullable long[]... arrays) {
@@ -2991,6 +6014,15 @@ public abstract class ArrayUtilsWraps {
         return result;
     }
 
+    /**
+     * Combines all the given arrays into a single array.
+     *
+     * Empty input arrays are ignored.
+     *
+     * @param arrays The source arrays
+     *
+     * @return a combined array, or null when no elements are available
+     */
     @Nullable
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static short[] unionAll(@Nullable short[]... arrays) {
@@ -3007,6 +6039,15 @@ public abstract class ArrayUtilsWraps {
         return result;
     }
 
+    /**
+     * Combines all the given arrays into a single array.
+     *
+     * Empty input arrays are ignored.
+     *
+     * @param arrays The source arrays
+     *
+     * @return a combined array, or null when no elements are available
+     */
     @Nullable
     @SafeVarargs
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})

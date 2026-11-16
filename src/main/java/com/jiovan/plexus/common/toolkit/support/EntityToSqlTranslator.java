@@ -63,6 +63,14 @@ public class EntityToSqlTranslator {
     private String timeFormat = TemporalFormatConst.ISO_HHMMSS;
     private String dateTimeFormat = TemporalFormatConst.ISO_YYYYMMDD_HHMMSS;
 
+    /**
+     * Builds an INSERT statement for the given entity.
+     *
+     * @param entity the entity to translate, or null when absent
+     * @param schema the schema name, or null to use the value from the {@code Table} annotation
+     * @param table the table name, or null to use the value from the {@code Table} annotation or the class name
+     * @return the INSERT statement, or null when the entity is null or no column values were found
+     */
     public String toInsertSql(@Nullable Object entity, @Nullable String schema, @Nullable String table) {
         SchemaTableColumns tableColumns = buildColumnStruct(entity, schema, table);
         if (tableColumns == null || MapPlainWraps.isEmpty(tableColumns.getColumnValues())) {
@@ -80,6 +88,14 @@ public class EntityToSqlTranslator {
         return builder.toString();
     }
 
+    /**
+     * Builds a DELETE statement matching all non-empty column values of the given entity.
+     *
+     * @param entity the entity to translate, or null when absent
+     * @param schema the schema name, or null to use the value from the {@code Table} annotation
+     * @param table the table name, or null to use the value from the {@code Table} annotation or the class name
+     * @return the DELETE statement, or null when the entity is null or no column values were found
+     */
     public String toDeleteSql(@Nullable Object entity, @Nullable String schema, @Nullable String table) {
         SchemaTableColumns tableColumns = buildColumnStruct(entity, schema, table);
         if (tableColumns == null || MapPlainWraps.isEmpty(tableColumns.getColumnValues())) {
@@ -102,6 +118,14 @@ public class EntityToSqlTranslator {
         return builder.toString();
     }
 
+    /**
+     * Builds the schema, table, and column values for the given entity.
+     *
+     * @param entity the entity to inspect, or null when absent
+     * @param schema the schema name, or null to use the value from the {@code Table} annotation
+     * @param table the table name, or null to use the value from the {@code Table} annotation or the class name
+     * @return the structure holding the schema, table, and column values, or null when the entity is null
+     */
     @SuppressWarnings({"deprecation", "DataFlowIssue", "RedundantSuppression"})
     protected SchemaTableColumns buildColumnStruct(@Nullable Object entity, @Nullable String schema, @Nullable String table) {
         if (entity == null) {
@@ -176,6 +200,12 @@ public class EntityToSqlTranslator {
         private String tableName;
         private Map<String, Object> columnValues = new LinkedHashMap<>();
 
+    /**
+     * Creates a structure with the given schema and table names.
+     *
+     * @param schemaName the schema name, or null when absent
+     * @param tableName the table name, or null when absent
+     */
         public SchemaTableColumns(@Nullable String schemaName, @Nullable String tableName) {
             this.schemaName = schemaName;
             this.tableName = tableName;

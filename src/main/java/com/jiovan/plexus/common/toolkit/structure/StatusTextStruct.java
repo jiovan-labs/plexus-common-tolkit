@@ -40,11 +40,23 @@ import lombok.NoArgsConstructor;
 public class StatusTextStruct extends TextStampStruct {
     private Integer status;
 
+    /**
+     * Creates a structure with the given status and text messages.
+     *
+     * @param status the status code, or null when absent
+     * @param texts the text messages, or null when absent
+     */
     public StatusTextStruct(@Nullable Integer status, @Nullable String... texts) {
         this.status = status;
         super.addText(texts);
     }
 
+    /**
+     * Creates a structure with the given status and text messages.
+     *
+     * @param status the status code, or null when absent
+     * @param texts the text messages, or null when absent
+     */
     public StatusTextStruct(@Nullable Integer status, @Nullable Collection<String> texts) {
         this.status = status;
         super.addText(texts);

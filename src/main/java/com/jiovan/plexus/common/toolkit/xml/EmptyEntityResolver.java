@@ -33,6 +33,14 @@ import org.xml.sax.InputSource;
  */
 @SuppressWarnings("unused")
 public class EmptyEntityResolver implements EntityResolver {
+    /**
+     * Resolves an entity to an empty input source.
+     *
+     * @param publicId The public identifier of the entity
+     * @param systemId The system identifier of the entity
+     *
+     * @return an empty input source
+     */
     @Override
     public InputSource resolveEntity(@Nullable String publicId, @Nullable String systemId) {
         return new InputSource(new ByteArrayInputStream(ArrayUtils.EMPTY_BYTE_ARRAY));

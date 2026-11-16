@@ -22,7 +22,7 @@
 
     <groupId>com.jiovan.plexus</groupId>
     <artifactId>plexus-common-tolkit</artifactId>
-    <version>2.5.0</version>
+    <version>4.0.0</version>
 
     <name>${project.artifactId}</name>
     <description>Jiovan Plexus Common Toolkit provides many easy-to-use utilities</description>

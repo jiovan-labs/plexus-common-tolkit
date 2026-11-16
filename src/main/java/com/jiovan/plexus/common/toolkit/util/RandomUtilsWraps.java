@@ -74,17 +74,6 @@ public abstract class RandomUtilsWraps {
      *
      * @param count The length of random string to create
      *
-     * @return a random string whose length is the number of characters specified
-     */
-    /**
-     * Returns a random string whose length is the number of characters specified
-     *
-     * <p>
-     * Characters will be chosen from the set of Latin alphabetic characters (a-z, A-Z) and the digits 0-9
-     * </p>
-     *
-     * @param count The length of random string to create
-     *
      * @return a random alphanumeric string whose length is the number of characters specified, or {@code null} if count is less than or equal to 0
      */
     @Nullable

@@ -17,13 +17,9 @@
 package com.jiovan.plexus.common.toolkit.util;
 
 
-import org.apache.commons.lang3.StringUtils;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import com.jiovan.plexus.common.toolkit.constant.CharVariantConst;
-import com.jiovan.plexus.common.toolkit.util.FilenameUtilsWraps;
-import com.jiovan.plexus.common.toolkit.util.StackTraceWraps;
-import com.jiovan.plexus.common.toolkit.util.StringUtilsWraps;
 import lombok.extern.slf4j.Slf4j;
 
 
@@ -45,13 +41,13 @@ class FilenameUtilsWrapsTest {
     void generateFileOfUserDir() {
         String result = FilenameUtilsWraps.generateFileOfUserDir("generateFileOfUserDir", null);    // $NON-NLS-1$
         log.info("{}: {}", StackTraceWraps.getExecutingMethodName(), result);
-        Assertions.assertTrue(StringUtils.contains(result, "generateFileOfUserDir") && !StringUtils.contains(result, CharVariantConst.DOT));    // $NON-NLS-1$
+        Assertions.assertTrue(StringUtilsWraps.contains(result, "generateFileOfUserDir") && !StringUtilsWraps.contains(result, CharVariantConst.DOT));    // $NON-NLS-1$
     }
 
     @Test
     void generateFileOfUserHome() {
         String result = FilenameUtilsWraps.generateFileOfUserHome(null, ".ext");    // $NON-NLS-1$
         log.info("{}: {}", StackTraceWraps.getExecutingMethodName(), result);
-        Assertions.assertTrue(StringUtils.contains(result, ".ext"));    // $NON-NLS-1$
+        Assertions.assertTrue(StringUtilsWraps.contains(result, ".ext"));    // $NON-NLS-1$
     }
 }

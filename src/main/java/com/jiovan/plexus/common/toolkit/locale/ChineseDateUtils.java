@@ -37,11 +37,26 @@ import com.jiovan.plexus.common.toolkit.util.JdkDateWraps;
  */
 @SuppressWarnings({"unused", "BooleanMethodIsAlwaysInverted", "UnusedReturnValue"})
 public abstract class ChineseDateUtils {
+    /**
+     * Converts the date to a Chinese date string.
+     *
+     * @param date The date to convert
+     *
+     * @return the result of the operation, or null when the input is null
+     */
     @Nullable
     public static String toDateString(@Nullable Date date) {
         return toDateString(date, false);
     }
 
+    /**
+     * Converts the date to a Chinese date string.
+     *
+     * @param date The date to convert
+     * @param prefixIfAd Whether to prefix the year with AD
+     *
+     * @return the result of the operation, or null when the input is null
+     */
     @Nullable
     public static String toDateString(@Nullable Date date, boolean prefixIfAd) {
         return toDateString(date, prefixIfAd, null);
@@ -62,11 +77,26 @@ public abstract class ChineseDateUtils {
         return (date == null) ? null : toDateString(JdkDateWraps.getYear(date), JdkDateWraps.getMonth(date), JdkDateWraps.getDayOfMonth(date), prefixIfAd, type);
     }
 
+    /**
+     * Converts the date to a Chinese date string.
+     *
+     * @param date The date to convert
+     *
+     * @return the result of the operation, or null when the input is null
+     */
     @Nullable
     public static String toDateString(@Nullable LocalDate date) {
         return toDateString(date, false);
     }
 
+    /**
+     * Converts the date to a Chinese date string.
+     *
+     * @param date The date to convert
+     * @param prefixIfAd Whether to prefix the year with AD
+     *
+     * @return the result of the operation, or null when the input is null
+     */
     @Nullable
     public static String toDateString(@Nullable LocalDate date, boolean prefixIfAd) {
         return toDateString(date, prefixIfAd, null);
@@ -86,11 +116,26 @@ public abstract class ChineseDateUtils {
         return (date == null) ? null : toDateString(date.getYear(), date.getMonthValue(), date.getDayOfMonth(), prefixIfAd, type);
     }
 
+    /**
+     * Converts the date to a Chinese date string.
+     *
+     * @param date The date to convert
+     *
+     * @return the result of the operation, or null when the input is null
+     */
     @Nullable
     public static String toDateString(@Nullable LocalDateTime date) {
         return toDateString(date, false);
     }
 
+    /**
+     * Converts the date to a Chinese date string.
+     *
+     * @param date The date to convert
+     * @param prefixIfAd Whether to prefix the year with AD
+     *
+     * @return the result of the operation, or null when the input is null
+     */
     @Nullable
     public static String toDateString(@Nullable LocalDateTime date, boolean prefixIfAd) {
         return toDateString(date, prefixIfAd, null);

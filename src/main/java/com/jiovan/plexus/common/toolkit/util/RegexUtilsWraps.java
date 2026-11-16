@@ -42,7 +42,7 @@ import com.jiovan.plexus.common.toolkit.constant.SymbolVariantConst;
  *
  * @author David Hsing
  *
- * @see "org.apache.commons.lang3.RegExUtils"
+ * @see org.apache.commons.lang3.RegExUtils
  *
  * @see "https://www3.ntu.edu.sg/home/ehchua/programming/howto/Regexe.html"
  * @see "https://regexr.com/"
@@ -50,274 +50,732 @@ import com.jiovan.plexus.common.toolkit.constant.SymbolVariantConst;
  */
 @SuppressWarnings({"unused", "BooleanMethodIsAlwaysInverted", "UnusedReturnValue"})
 public abstract class RegexUtilsWraps {
+    /**
+     * Checks whether all the given sequences contain alphabetic characters.
+     *
+     * @param sequences The source char sequences
+     *
+     * @return {@code true} when the condition is satisfied; {@code false} otherwise
+     */
     @SafeVarargs
     public static <T extends CharSequence> boolean allAlphabetic(@Nullable T... sequences) {
         return allAlphabetic(ArrayUtilsWraps.asList(sequences));
     }
 
+    /**
+     * Checks whether all the given sequences contain alphabetic characters.
+     *
+     * @param sequences The source char sequences
+     *
+     * @return {@code true} when the condition is satisfied; {@code false} otherwise
+     */
     public static <T extends CharSequence> boolean allAlphabetic(@Nullable Collection<T> sequences) {
         return CollectionPlainWraps.isNotEmpty(sequences) && sequences.stream().allMatch(RegexUtilsWraps::isAlphabetic);
     }
 
+    /**
+     * Checks whether any of the given sequences contain alphabetic characters.
+     *
+     * @param sequences The source char sequences
+     *
+     * @return {@code true} when the condition is satisfied; {@code false} otherwise
+     */
     @SafeVarargs
     public static <T extends CharSequence> boolean anyAlphabetic(@Nullable T... sequences) {
         return anyAlphabetic(ArrayUtilsWraps.asList(sequences));
     }
 
+    /**
+     * Checks whether any of the given sequences contain alphabetic characters.
+     *
+     * @param sequences The source char sequences
+     *
+     * @return {@code true} when the condition is satisfied; {@code false} otherwise
+     */
     public static <T extends CharSequence> boolean anyAlphabetic(@Nullable Collection<T> sequences) {
         return CollectionPlainWraps.isNotEmpty(sequences) && sequences.stream().anyMatch(RegexUtilsWraps::isAlphabetic);
     }
 
+    /**
+     * Checks whether all the given sequences contain alphanumeric characters.
+     *
+     * @param sequences The source char sequences
+     *
+     * @return {@code true} when the condition is satisfied; {@code false} otherwise
+     */
     @SafeVarargs
     public static <T extends CharSequence> boolean allAlphanumeric(@Nullable T... sequences) {
         return allAlphanumeric(ArrayUtilsWraps.asList(sequences));
     }
 
+    /**
+     * Checks whether all the given sequences contain alphanumeric characters.
+     *
+     * @param sequences The source char sequences
+     *
+     * @return {@code true} when the condition is satisfied; {@code false} otherwise
+     */
     public static <T extends CharSequence> boolean allAlphanumeric(@Nullable Collection<T> sequences) {
         return CollectionPlainWraps.isNotEmpty(sequences) && sequences.stream().allMatch(RegexUtilsWraps::isAlphanumeric);
     }
 
+    /**
+     * Checks whether any of the given sequences contain alphanumeric characters.
+     *
+     * @param sequences The source char sequences
+     *
+     * @return {@code true} when the condition is satisfied; {@code false} otherwise
+     */
     @SafeVarargs
     public static <T extends CharSequence> boolean anyAlphanumeric(@Nullable T... sequences) {
         return anyAlphanumeric(ArrayUtilsWraps.asList(sequences));
     }
 
+    /**
+     * Checks whether any of the given sequences contain alphanumeric characters.
+     *
+     * @param sequences The source char sequences
+     *
+     * @return {@code true} when the condition is satisfied; {@code false} otherwise
+     */
     public static <T extends CharSequence> boolean anyAlphanumeric(@Nullable Collection<T> sequences) {
         return CollectionPlainWraps.isNotEmpty(sequences) && sequences.stream().anyMatch(RegexUtilsWraps::isAlphanumeric);
     }
 
+    /**
+     * Checks whether all the given sequences contain numeric characters.
+     *
+     * @param sequences The source char sequences
+     *
+     * @return {@code true} when the condition is satisfied; {@code false} otherwise
+     */
     @SafeVarargs
     public static <T extends CharSequence> boolean allNumeric(@Nullable T... sequences) {
         return allNumeric(ArrayUtilsWraps.asList(sequences));
     }
 
+    /**
+     * Checks whether all the given sequences contain numeric characters.
+     *
+     * @param sequences The source char sequences
+     *
+     * @return {@code true} when the condition is satisfied; {@code false} otherwise
+     */
     public static <T extends CharSequence> boolean allNumeric(@Nullable Collection<T> sequences) {
         return CollectionPlainWraps.isNotEmpty(sequences) && sequences.stream().allMatch(RegexUtilsWraps::isNumeric);
     }
 
+    /**
+     * Checks whether any of the given sequences contain numeric characters.
+     *
+     * @param sequences The source char sequences
+     *
+     * @return {@code true} when the condition is satisfied; {@code false} otherwise
+     */
     @SafeVarargs
     public static <T extends CharSequence> boolean anyNumeric(@Nullable T... sequences) {
         return anyNumeric(ArrayUtilsWraps.asList(sequences));
     }
 
+    /**
+     * Checks whether any of the given sequences contain numeric characters.
+     *
+     * @param sequences The source char sequences
+     *
+     * @return {@code true} when the condition is satisfied; {@code false} otherwise
+     */
     public static <T extends CharSequence> boolean anyNumeric(@Nullable Collection<T> sequences) {
         return CollectionPlainWraps.isNotEmpty(sequences) && sequences.stream().anyMatch(RegexUtilsWraps::isNumeric);
     }
 
+    /**
+     * Checks whether all the given sequences contain word characters.
+     *
+     * @param sequences The source char sequences
+     *
+     * @return {@code true} when the condition is satisfied; {@code false} otherwise
+     */
     @SafeVarargs
     public static <T extends CharSequence> boolean allWord(@Nullable T... sequences) {
         return allWord(ArrayUtilsWraps.asList(sequences));
     }
 
+    /**
+     * Checks whether all the given sequences contain word characters.
+     *
+     * @param sequences The source char sequences
+     *
+     * @return {@code true} when the condition is satisfied; {@code false} otherwise
+     */
     public static <T extends CharSequence> boolean allWord(@Nullable Collection<T> sequences) {
         return CollectionPlainWraps.isNotEmpty(sequences) && sequences.stream().allMatch(RegexUtilsWraps::isWord);
     }
 
+    /**
+     * Checks whether any of the given sequences contain word characters.
+     *
+     * @param sequences The source char sequences
+     *
+     * @return {@code true} when the condition is satisfied; {@code false} otherwise
+     */
     @SafeVarargs
     public static <T extends CharSequence> boolean anyWord(@Nullable T... sequences) {
         return anyWord(ArrayUtilsWraps.asList(sequences));
     }
 
+    /**
+     * Checks whether any of the given sequences contain word characters.
+     *
+     * @param sequences The source char sequences
+     *
+     * @return {@code true} when the condition is satisfied; {@code false} otherwise
+     */
     public static <T extends CharSequence> boolean anyWord(@Nullable Collection<T> sequences) {
         return CollectionPlainWraps.isNotEmpty(sequences) && sequences.stream().anyMatch(RegexUtilsWraps::isWord);
     }
 
+    /**
+     * Checks whether all the given sequences contain word characters hyphen.
+     *
+     * @param sequences The source char sequences
+     *
+     * @return {@code true} when the condition is satisfied; {@code false} otherwise
+     */
     @SafeVarargs
     public static <T extends CharSequence> boolean allWordHyphen(@Nullable T... sequences) {
         return allWordHyphen(ArrayUtilsWraps.asList(sequences));
     }
 
+    /**
+     * Checks whether all the given sequences contain word characters hyphen.
+     *
+     * @param sequences The source char sequences
+     *
+     * @return {@code true} when the condition is satisfied; {@code false} otherwise
+     */
     public static <T extends CharSequence> boolean allWordHyphen(@Nullable Collection<T> sequences) {
         return CollectionPlainWraps.isNotEmpty(sequences) && sequences.stream().allMatch(RegexUtilsWraps::isWordHyphen);
     }
 
+    /**
+     * Checks whether any of the given sequences contain word characters hyphen.
+     *
+     * @param sequences The source char sequences
+     *
+     * @return {@code true} when the condition is satisfied; {@code false} otherwise
+     */
     @SafeVarargs
     public static <T extends CharSequence> boolean anyWordHyphen(@Nullable T... sequences) {
         return anyWordHyphen(ArrayUtilsWraps.asList(sequences));
     }
 
+    /**
+     * Checks whether any of the given sequences contain word characters hyphen.
+     *
+     * @param sequences The source char sequences
+     *
+     * @return {@code true} when the condition is satisfied; {@code false} otherwise
+     */
     public static <T extends CharSequence> boolean anyWordHyphen(@Nullable Collection<T> sequences) {
         return CollectionPlainWraps.isNotEmpty(sequences) && sequences.stream().anyMatch(RegexUtilsWraps::isWordHyphen);
     }
 
+    /**
+     * Checks whether all the given sequences contain starts with alphabetic characters.
+     *
+     * @param sequences The source char sequences
+     *
+     * @return {@code true} when the condition is satisfied; {@code false} otherwise
+     */
     @SafeVarargs
     public static <T extends CharSequence> boolean allStartsWithAlphabetic(@Nullable T... sequences) {
         return allStartsWithAlphabetic(ArrayUtilsWraps.asList(sequences));
     }
 
+    /**
+     * Checks whether all the given sequences contain starts with alphabetic characters.
+     *
+     * @param sequences The source char sequences
+     *
+     * @return {@code true} when the condition is satisfied; {@code false} otherwise
+     */
     public static <T extends CharSequence> boolean allStartsWithAlphabetic(@Nullable Collection<T> sequences) {
         return CollectionPlainWraps.isNotEmpty(sequences) && sequences.stream().allMatch(RegexUtilsWraps::startsWithAlphabetic);
     }
 
+    /**
+     * Checks whether any of the given sequences contain starts with alphabetic characters.
+     *
+     * @param sequences The source char sequences
+     *
+     * @return {@code true} when the condition is satisfied; {@code false} otherwise
+     */
     @SafeVarargs
     public static <T extends CharSequence> boolean anyStartsWithAlphabetic(@Nullable T... sequences) {
         return anyStartsWithAlphabetic(ArrayUtilsWraps.asList(sequences));
     }
 
+    /**
+     * Checks whether any of the given sequences contain starts with alphabetic characters.
+     *
+     * @param sequences The source char sequences
+     *
+     * @return {@code true} when the condition is satisfied; {@code false} otherwise
+     */
     public static <T extends CharSequence> boolean anyStartsWithAlphabetic(@Nullable Collection<T> sequences) {
         return CollectionPlainWraps.isNotEmpty(sequences) && sequences.stream().anyMatch(RegexUtilsWraps::startsWithAlphabetic);
     }
 
+    /**
+     * Checks whether all the given sequences contain starts with alphanumeric characters.
+     *
+     * @param sequences The source char sequences
+     *
+     * @return {@code true} when the condition is satisfied; {@code false} otherwise
+     */
     @SafeVarargs
     public static <T extends CharSequence> boolean allStartsWithAlphanumeric(@Nullable T... sequences) {
         return allStartsWithAlphanumeric(ArrayUtilsWraps.asList(sequences));
     }
 
+    /**
+     * Checks whether all the given sequences contain starts with alphanumeric characters.
+     *
+     * @param sequences The source char sequences
+     *
+     * @return {@code true} when the condition is satisfied; {@code false} otherwise
+     */
     public static <T extends CharSequence> boolean allStartsWithAlphanumeric(@Nullable Collection<T> sequences) {
         return CollectionPlainWraps.isNotEmpty(sequences) && sequences.stream().allMatch(RegexUtilsWraps::startsWithAlphanumeric);
     }
 
+    /**
+     * Checks whether any of the given sequences contain starts with alphanumeric characters.
+     *
+     * @param sequences The source char sequences
+     *
+     * @return {@code true} when the condition is satisfied; {@code false} otherwise
+     */
     @SafeVarargs
     public static <T extends CharSequence> boolean anyStartsWithAlphanumeric(@Nullable T... sequences) {
         return anyStartsWithAlphanumeric(ArrayUtilsWraps.asList(sequences));
     }
 
+    /**
+     * Checks whether any of the given sequences contain starts with alphanumeric characters.
+     *
+     * @param sequences The source char sequences
+     *
+     * @return {@code true} when the condition is satisfied; {@code false} otherwise
+     */
     public static <T extends CharSequence> boolean anyStartsWithAlphanumeric(@Nullable Collection<T> sequences) {
         return CollectionPlainWraps.isNotEmpty(sequences) && sequences.stream().anyMatch(RegexUtilsWraps::startsWithAlphanumeric);
     }
 
+    /**
+     * Checks whether all the given sequences contain starts with numeric characters.
+     *
+     * @param sequences The source char sequences
+     *
+     * @return {@code true} when the condition is satisfied; {@code false} otherwise
+     */
     @SafeVarargs
     public static <T extends CharSequence> boolean allStartsWithNumeric(@Nullable T... sequences) {
         return allStartsWithNumeric(ArrayUtilsWraps.asList(sequences));
     }
 
+    /**
+     * Checks whether all the given sequences contain starts with numeric characters.
+     *
+     * @param sequences The source char sequences
+     *
+     * @return {@code true} when the condition is satisfied; {@code false} otherwise
+     */
     public static <T extends CharSequence> boolean allStartsWithNumeric(@Nullable Collection<T> sequences) {
         return CollectionPlainWraps.isNotEmpty(sequences) && sequences.stream().allMatch(RegexUtilsWraps::startsWithNumeric);
     }
 
+    /**
+     * Checks whether any of the given sequences contain starts with numeric characters.
+     *
+     * @param sequences The source char sequences
+     *
+     * @return {@code true} when the condition is satisfied; {@code false} otherwise
+     */
     @SafeVarargs
     public static <T extends CharSequence> boolean anyStartsWithNumeric(@Nullable T... sequences) {
         return anyStartsWithNumeric(ArrayUtilsWraps.asList(sequences));
     }
 
+    /**
+     * Checks whether any of the given sequences contain starts with numeric characters.
+     *
+     * @param sequences The source char sequences
+     *
+     * @return {@code true} when the condition is satisfied; {@code false} otherwise
+     */
     public static <T extends CharSequence> boolean anyStartsWithNumeric(@Nullable Collection<T> sequences) {
         return CollectionPlainWraps.isNotEmpty(sequences) && sequences.stream().anyMatch(RegexUtilsWraps::startsWithNumeric);
     }
 
+    /**
+     * Checks whether all the given sequences contain ends with alphabetic characters.
+     *
+     * @param sequences The source char sequences
+     *
+     * @return {@code true} when the condition is satisfied; {@code false} otherwise
+     */
     @SafeVarargs
     public static <T extends CharSequence> boolean allEndsWithAlphabetic(@Nullable T... sequences) {
         return allEndsWithAlphabetic(ArrayUtilsWraps.asList(sequences));
     }
 
+    /**
+     * Checks whether all the given sequences contain ends with alphabetic characters.
+     *
+     * @param sequences The source char sequences
+     *
+     * @return {@code true} when the condition is satisfied; {@code false} otherwise
+     */
     public static <T extends CharSequence> boolean allEndsWithAlphabetic(@Nullable Collection<T> sequences) {
         return CollectionPlainWraps.isNotEmpty(sequences) && sequences.stream().allMatch(RegexUtilsWraps::endsWithAlphabetic);
     }
 
+    /**
+     * Checks whether any of the given sequences contain ends with alphabetic characters.
+     *
+     * @param sequences The source char sequences
+     *
+     * @return {@code true} when the condition is satisfied; {@code false} otherwise
+     */
     @SafeVarargs
     public static <T extends CharSequence> boolean anyEndsWithAlphabetic(@Nullable T... sequences) {
         return anyEndsWithAlphabetic(ArrayUtilsWraps.asList(sequences));
     }
 
+    /**
+     * Checks whether any of the given sequences contain ends with alphabetic characters.
+     *
+     * @param sequences The source char sequences
+     *
+     * @return {@code true} when the condition is satisfied; {@code false} otherwise
+     */
     public static <T extends CharSequence> boolean anyEndsWithAlphabetic(@Nullable Collection<T> sequences) {
         return CollectionPlainWraps.isNotEmpty(sequences) && sequences.stream().anyMatch(RegexUtilsWraps::endsWithAlphabetic);
     }
 
+    /**
+     * Checks whether all the given sequences contain ends with alphanumeric characters.
+     *
+     * @param sequences The source char sequences
+     *
+     * @return {@code true} when the condition is satisfied; {@code false} otherwise
+     */
     @SafeVarargs
     public static <T extends CharSequence> boolean allEndsWithAlphanumeric(@Nullable T... sequences) {
         return allEndsWithAlphanumeric(ArrayUtilsWraps.asList(sequences));
     }
 
+    /**
+     * Checks whether all the given sequences contain ends with alphanumeric characters.
+     *
+     * @param sequences The source char sequences
+     *
+     * @return {@code true} when the condition is satisfied; {@code false} otherwise
+     */
     public static <T extends CharSequence> boolean allEndsWithAlphanumeric(@Nullable Collection<T> sequences) {
         return CollectionPlainWraps.isNotEmpty(sequences) && sequences.stream().allMatch(RegexUtilsWraps::endsWithAlphanumeric);
     }
 
+    /**
+     * Checks whether any of the given sequences contain ends with alphanumeric characters.
+     *
+     * @param sequences The source char sequences
+     *
+     * @return {@code true} when the condition is satisfied; {@code false} otherwise
+     */
     @SafeVarargs
     public static <T extends CharSequence> boolean anyEndsWithAlphanumeric(@Nullable T... sequences) {
         return anyEndsWithAlphanumeric(ArrayUtilsWraps.asList(sequences));
     }
 
+    /**
+     * Checks whether any of the given sequences contain ends with alphanumeric characters.
+     *
+     * @param sequences The source char sequences
+     *
+     * @return {@code true} when the condition is satisfied; {@code false} otherwise
+     */
     public static <T extends CharSequence> boolean anyEndsWithAlphanumeric(@Nullable Collection<T> sequences) {
         return CollectionPlainWraps.isNotEmpty(sequences) && sequences.stream().anyMatch(RegexUtilsWraps::endsWithAlphanumeric);
     }
 
+    /**
+     * Checks whether all the given sequences contain ends with numeric characters.
+     *
+     * @param sequences The source char sequences
+     *
+     * @return {@code true} when the condition is satisfied; {@code false} otherwise
+     */
     @SafeVarargs
     public static <T extends CharSequence> boolean allEndsWithNumeric(@Nullable T... sequences) {
         return allEndsWithNumeric(ArrayUtilsWraps.asList(sequences));
     }
 
+    /**
+     * Checks whether all the given sequences contain ends with numeric characters.
+     *
+     * @param sequences The source char sequences
+     *
+     * @return {@code true} when the condition is satisfied; {@code false} otherwise
+     */
     public static <T extends CharSequence> boolean allEndsWithNumeric(@Nullable Collection<T> sequences) {
         return CollectionPlainWraps.isNotEmpty(sequences) && sequences.stream().allMatch(RegexUtilsWraps::endsWithNumeric);
     }
 
+    /**
+     * Checks whether any of the given sequences contain ends with numeric characters.
+     *
+     * @param sequences The source char sequences
+     *
+     * @return {@code true} when the condition is satisfied; {@code false} otherwise
+     */
     @SafeVarargs
     public static <T extends CharSequence> boolean anyEndsWithNumeric(@Nullable T... sequences) {
         return anyEndsWithNumeric(ArrayUtilsWraps.asList(sequences));
     }
 
+    /**
+     * Checks whether any of the given sequences contain ends with numeric characters.
+     *
+     * @param sequences The source char sequences
+     *
+     * @return {@code true} when the condition is satisfied; {@code false} otherwise
+     */
     public static <T extends CharSequence> boolean anyEndsWithNumeric(@Nullable Collection<T> sequences) {
         return CollectionPlainWraps.isNotEmpty(sequences) && sequences.stream().anyMatch(RegexUtilsWraps::endsWithNumeric);
     }
 
+    /**
+     * Checks whether the sequence satisfies match all patterns.
+     *
+     * @param sequence The source char sequence
+     * @param regexes The regular expressions
+     *
+     * @return {@code true} when the condition is satisfied; {@code false} otherwise
+     */
     public static boolean matchAllPatterns(@Nullable CharSequence sequence, @Nullable String... regexes) {
         return matchAllPatternsWithFlags(sequence, 0, regexes);
     }
 
+    /**
+     * Checks whether the sequence satisfies match all patterns.
+     *
+     * @param sequence The source char sequence
+     * @param regexes The regular expressions
+     *
+     * @return {@code true} when the condition is satisfied; {@code false} otherwise
+     */
     public static boolean matchAllPatterns(@Nullable CharSequence sequence, @Nullable Collection<String> regexes) {
         return matchAllPatternsWithFlags(sequence, 0, regexes);
     }
 
+    /**
+     * Checks whether the sequence satisfies match all patterns ignore case.
+     *
+     * @param sequence The source char sequence
+     * @param regexes The regular expressions
+     *
+     * @return {@code true} when the condition is satisfied; {@code false} otherwise
+     */
     public static boolean matchAllPatternsIgnoreCase(@Nullable CharSequence sequence, @Nullable String... regexes) {
         return matchAllPatternsWithFlags(sequence, Pattern.CASE_INSENSITIVE, regexes);
     }
 
+    /**
+     * Checks whether the sequence satisfies match all patterns ignore case.
+     *
+     * @param sequence The source char sequence
+     * @param regexes The regular expressions
+     *
+     * @return {@code true} when the condition is satisfied; {@code false} otherwise
+     */
     public static boolean matchAllPatternsIgnoreCase(@Nullable CharSequence sequence, @Nullable Collection<String> regexes) {
         return matchAllPatternsWithFlags(sequence, Pattern.CASE_INSENSITIVE, regexes);
     }
 
+    /**
+     * Checks whether the sequence satisfies match all patterns with flags.
+     *
+     * @param sequence The source char sequence
+     * @param flags The regular expression flags
+     * @param regexes The regular expressions
+     *
+     * @return {@code true} when the condition is satisfied; {@code false} otherwise
+     */
     public static boolean matchAllPatternsWithFlags(@Nullable CharSequence sequence, int flags, @Nullable String... regexes) {
         return matchAllPatternsWithFlags(sequence, flags, ArrayUtilsWraps.asList(regexes));
     }
 
+    /**
+     * Checks whether the sequence satisfies match all patterns with flags.
+     *
+     * @param sequence The source char sequence
+     * @param flags The regular expression flags
+     * @param regexes The regular expressions
+     *
+     * @return {@code true} when the condition is satisfied; {@code false} otherwise
+     */
     @SuppressWarnings("MagicConstant")
     public static boolean matchAllPatternsWithFlags(@Nullable CharSequence sequence, int flags, @Nullable Collection<String> regexes) {
         return StringUtils.isNotEmpty(sequence) && CollectionPlainWraps.isNotEmpty(regexes) && regexes.stream().allMatch(regex -> StringUtils.isNotEmpty(regex) && Pattern.compile(regex, flags).matcher(sequence).matches());
     }
 
+    /**
+     * Checks whether the sequence satisfies match any patterns.
+     *
+     * @param sequence The source char sequence
+     * @param regexes The regular expressions
+     *
+     * @return {@code true} when the condition is satisfied; {@code false} otherwise
+     */
     public static boolean matchAnyPatterns(@Nullable CharSequence sequence, @Nullable String... regexes) {
         return matchAnyPatternsWithFlags(sequence, 0, regexes);
     }
 
+    /**
+     * Checks whether the sequence satisfies match any patterns.
+     *
+     * @param sequence The source char sequence
+     * @param regexes The regular expressions
+     *
+     * @return {@code true} when the condition is satisfied; {@code false} otherwise
+     */
     public static boolean matchAnyPatterns(@Nullable CharSequence sequence, @Nullable Collection<String> regexes) {
         return matchAnyPatternsWithFlags(sequence, 0, regexes);
     }
 
+    /**
+     * Checks whether the sequence satisfies match any patterns ignore case.
+     *
+     * @param sequence The source char sequence
+     * @param regexes The regular expressions
+     *
+     * @return {@code true} when the condition is satisfied; {@code false} otherwise
+     */
     public static boolean matchAnyPatternsIgnoreCase(@Nullable CharSequence sequence, @Nullable String... regexes) {
         return matchAnyPatternsWithFlags(sequence, Pattern.CASE_INSENSITIVE, regexes);
     }
 
+    /**
+     * Checks whether the sequence satisfies match any patterns ignore case.
+     *
+     * @param sequence The source char sequence
+     * @param regexes The regular expressions
+     *
+     * @return {@code true} when the condition is satisfied; {@code false} otherwise
+     */
     public static boolean matchAnyPatternsIgnoreCase(@Nullable CharSequence sequence, @Nullable Collection<String> regexes) {
         return matchAnyPatternsWithFlags(sequence, Pattern.CASE_INSENSITIVE, regexes);
     }
 
+    /**
+     * Checks whether the sequence satisfies match any patterns with flags.
+     *
+     * @param sequence The source char sequence
+     * @param flags The regular expression flags
+     * @param regexes The regular expressions
+     *
+     * @return {@code true} when the condition is satisfied; {@code false} otherwise
+     */
     public static boolean matchAnyPatternsWithFlags(@Nullable CharSequence sequence, int flags, @Nullable String... regexes) {
         return matchAnyPatternsWithFlags(sequence, flags, ArrayUtilsWraps.asList(regexes));
     }
 
+    /**
+     * Checks whether the sequence satisfies match any patterns with flags.
+     *
+     * @param sequence The source char sequence
+     * @param flags The regular expression flags
+     * @param regexes The regular expressions
+     *
+     * @return {@code true} when the condition is satisfied; {@code false} otherwise
+     */
     @SuppressWarnings("MagicConstant")
     public static boolean matchAnyPatternsWithFlags(@Nullable CharSequence sequence, int flags, @Nullable Collection<String> regexes) {
         return StringUtils.isNotEmpty(sequence) && CollectionPlainWraps.isNotEmpty(regexes) && regexes.stream().filter(StringUtils::isNotEmpty).anyMatch(regex -> Pattern.compile(regex, flags).matcher(sequence).matches());
     }
 
+    /**
+     * Checks whether the sequence satisfies match all sequences.
+     *
+     * @param regex The regular expression
+     * @param sequences The source char sequences
+     *
+     * @return {@code true} when the condition is satisfied; {@code false} otherwise
+     */
     public static boolean matchAllSequences(@Nullable String regex, @Nullable CharSequence... sequences) {
         return matchAllSequencesWithFlags(regex, 0, sequences);
     }
 
+    /**
+     * Checks whether the sequence satisfies match all sequences.
+     *
+     * @param regex The regular expression
+     * @param sequences The source char sequences
+     *
+     * @return {@code true} when the condition is satisfied; {@code false} otherwise
+     */
     public static boolean matchAllSequences(@Nullable String regex, @Nullable Collection<? extends CharSequence> sequences) {
         return matchAllSequencesWithFlags(regex, 0, sequences);
     }
 
+    /**
+     * Checks whether the sequence satisfies match all sequences ignore case.
+     *
+     * @param regex The regular expression
+     * @param sequences The source char sequences
+     *
+     * @return {@code true} when the condition is satisfied; {@code false} otherwise
+     */
     public static boolean matchAllSequencesIgnoreCase(@Nullable String regex, @Nullable CharSequence... sequences) {
         return matchAllSequencesWithFlags(regex, Pattern.CASE_INSENSITIVE, sequences);
     }
 
+    /**
+     * Checks whether the sequence satisfies match all sequences ignore case.
+     *
+     * @param regex The regular expression
+     * @param sequences The source char sequences
+     *
+     * @return {@code true} when the condition is satisfied; {@code false} otherwise
+     */
     public static boolean matchAllSequencesIgnoreCase(@Nullable String regex, @Nullable Collection<? extends CharSequence> sequences) {
         return matchAllSequencesWithFlags(regex, Pattern.CASE_INSENSITIVE, sequences);
     }
 
+    /**
+     * Checks whether the sequence satisfies match all sequences with flags.
+     *
+     * @param regex The regular expression
+     * @param flags The regular expression flags
+     * @param sequences The source char sequences
+     *
+     * @return {@code true} when the condition is satisfied; {@code false} otherwise
+     */
     public static boolean matchAllSequencesWithFlags(@Nullable String regex, int flags, @Nullable CharSequence... sequences) {
         return matchAllSequencesWithFlags(regex, flags, ArrayUtilsWraps.asList(sequences));
     }
 
+    /**
+     * Checks whether the sequence satisfies match all sequences with flags.
+     *
+     * @param regex The regular expression
+     * @param flags The regular expression flags
+     * @param sequences The source char sequences
+     *
+     * @return {@code true} when the condition is satisfied; {@code false} otherwise
+     */
     @SuppressWarnings("MagicConstant")
     public static boolean matchAllSequencesWithFlags(@Nullable String regex, int flags, @Nullable Collection<? extends CharSequence> sequences) {
         if (StringUtils.isEmpty(regex) || CollectionPlainWraps.isEmpty(sequences)) {
@@ -327,26 +785,76 @@ public abstract class RegexUtilsWraps {
         return sequences.stream().allMatch(item -> pattern.matcher(item).matches());
     }
 
+    /**
+     * Checks whether the sequence satisfies match any sequences.
+     *
+     * @param regex The regular expression
+     * @param sequences The source char sequences
+     *
+     * @return {@code true} when the condition is satisfied; {@code false} otherwise
+     */
     public static boolean matchAnySequences(@Nullable String regex, @Nullable CharSequence... sequences) {
         return matchAnySequencesWithFlags(regex, 0, sequences);
     }
 
+    /**
+     * Checks whether the sequence satisfies match any sequences.
+     *
+     * @param regex The regular expression
+     * @param sequences The source char sequences
+     *
+     * @return {@code true} when the condition is satisfied; {@code false} otherwise
+     */
     public static boolean matchAnySequences(@Nullable String regex, @Nullable Collection<? extends CharSequence> sequences) {
         return matchAnySequencesWithFlags(regex, 0, sequences);
     }
 
+    /**
+     * Checks whether the sequence satisfies match any sequences ignore case.
+     *
+     * @param regex The regular expression
+     * @param sequences The source char sequences
+     *
+     * @return {@code true} when the condition is satisfied; {@code false} otherwise
+     */
     public static boolean matchAnySequencesIgnoreCase(@Nullable String regex, @Nullable CharSequence... sequences) {
         return matchAnySequencesWithFlags(regex, Pattern.CASE_INSENSITIVE, sequences);
     }
 
+    /**
+     * Checks whether the sequence satisfies match any sequences ignore case.
+     *
+     * @param regex The regular expression
+     * @param sequences The source char sequences
+     *
+     * @return {@code true} when the condition is satisfied; {@code false} otherwise
+     */
     public static boolean matchAnySequencesIgnoreCase(@Nullable String regex, @Nullable Collection<? extends CharSequence> sequences) {
         return matchAnySequencesWithFlags(regex, Pattern.CASE_INSENSITIVE, sequences);
     }
 
+    /**
+     * Checks whether the sequence satisfies match any sequences with flags.
+     *
+     * @param regex The regular expression
+     * @param flags The regular expression flags
+     * @param sequences The source char sequences
+     *
+     * @return {@code true} when the condition is satisfied; {@code false} otherwise
+     */
     public static boolean matchAnySequencesWithFlags(@Nullable String regex, int flags, @Nullable CharSequence... sequences) {
         return matchAnySequencesWithFlags(regex, flags, ArrayUtilsWraps.asList(sequences));
     }
 
+    /**
+     * Checks whether the sequence satisfies match any sequences with flags.
+     *
+     * @param regex The regular expression
+     * @param flags The regular expression flags
+     * @param sequences The source char sequences
+     *
+     * @return {@code true} when the condition is satisfied; {@code false} otherwise
+     */
     @SuppressWarnings("MagicConstant")
     public static boolean matchAnySequencesWithFlags(@Nullable String regex, int flags, @Nullable Collection<? extends CharSequence> sequences) {
         if (StringUtils.isEmpty(regex) || CollectionPlainWraps.isEmpty(sequences)) {
@@ -356,6 +864,13 @@ public abstract class RegexUtilsWraps {
         return sequences.stream().anyMatch(item -> pattern.matcher(item).matches());
     }
 
+    /**
+     * Compiles the regular expression into a pattern.
+     *
+     * @param regex The regular expression
+     *
+     * @return the result, or null when it is unavailable
+     */
     @Nullable
     public static Pattern compilePattern(@Nullable String regex) {
         return compilePattern(regex, 0);
@@ -384,22 +899,63 @@ public abstract class RegexUtilsWraps {
         return null;
     }
 
+    /**
+     * Extracts the values matched by matched.
+     *
+     * @param sequence The source char sequence
+     * @param regexes The regular expressions
+     *
+     * @return the result, or null when it is unavailable
+     */
     public static List<String> extractMatched(@Nullable CharSequence sequence, @Nullable String... regexes) {
         return extractMatchedWithFlags(sequence, 0, regexes);
     }
 
+    /**
+     * Extracts the values matched by matched.
+     *
+     * @param sequence The source char sequence
+     * @param regexes The regular expressions
+     *
+     * @return the result, or null when it is unavailable
+     */
     public static List<String> extractMatched(@Nullable CharSequence sequence, @Nullable Collection<String> regexes) {
         return extractMatchedWithFlags(sequence, 0, regexes);
     }
 
+    /**
+     * Extracts the values matched by matched ignore case.
+     *
+     * @param sequence The source char sequence
+     * @param regexes The regular expressions
+     *
+     * @return the result, or null when it is unavailable
+     */
     public static List<String> extractMatchedIgnoreCase(@Nullable CharSequence sequence, @Nullable String... regexes) {
         return extractMatchedWithFlags(sequence, Pattern.CASE_INSENSITIVE, regexes);
     }
 
+    /**
+     * Extracts the values matched by matched ignore case.
+     *
+     * @param sequence The source char sequence
+     * @param regexes The regular expressions
+     *
+     * @return the result, or null when it is unavailable
+     */
     public static List<String> extractMatchedIgnoreCase(@Nullable CharSequence sequence, Collection<String> regexes) {
         return extractMatchedWithFlags(sequence, Pattern.CASE_INSENSITIVE, regexes);
     }
 
+    /**
+     * Extracts the values matched by matched with flags.
+     *
+     * @param sequence The source char sequence
+     * @param flags The regular expression flags
+     * @param regexes The regular expressions
+     *
+     * @return the result, or null when it is unavailable
+     */
     public static List<String> extractMatchedWithFlags(@Nullable CharSequence sequence, int flags, @Nullable String... regexes) {
         return extractMatchedWithFlags(sequence, flags, ArrayUtilsWraps.asList(regexes));
     }
@@ -433,76 +989,174 @@ public abstract class RegexUtilsWraps {
         return result.isEmpty() ? null : result;
     }
 
+    /**
+     * Returns the first sequence that starts with alphabetic characters.
+     *
+     * @param sequences The source char sequences
+     *
+     * @return the first matching sequence, or null when there is no match
+     */
     @Nullable
     @SafeVarargs
     public static <T extends CharSequence> T firstStartsWithAlphabetic(@Nullable T... sequences) {
         return firstStartsWithAlphabetic(ArrayUtilsWraps.asList(sequences));
     }
 
+    /**
+     * Returns the first sequence that starts with alphabetic characters.
+     *
+     * @param sequences The source char sequences
+     *
+     * @return the first matching sequence, or null when there is no match
+     */
     @Nullable
     public static <T extends CharSequence> T firstStartsWithAlphabetic(@Nullable Collection<T> sequences) {
         return CollectionPlainWraps.isNotEmpty(sequences) ? sequences.stream().filter(RegexUtilsWraps::startsWithAlphabetic).findFirst().orElse(null) : null;
     }
 
+    /**
+     * Returns the first sequence that starts with alphanumeric characters.
+     *
+     * @param sequences The source char sequences
+     *
+     * @return the first matching sequence, or null when there is no match
+     */
     @Nullable
     @SafeVarargs
     public static <T extends CharSequence> T firstStartsWithAlphanumeric(@Nullable T... sequences) {
         return firstStartsWithAlphanumeric(ArrayUtilsWraps.asList(sequences));
     }
 
+    /**
+     * Returns the first sequence that starts with alphanumeric characters.
+     *
+     * @param sequences The source char sequences
+     *
+     * @return the first matching sequence, or null when there is no match
+     */
     @Nullable
     public static <T extends CharSequence> T firstStartsWithAlphanumeric(@Nullable Collection<T> sequences) {
         return CollectionPlainWraps.isNotEmpty(sequences) ? sequences.stream().filter(RegexUtilsWraps::startsWithAlphanumeric).findFirst().orElse(null) : null;
     }
 
+    /**
+     * Returns the first sequence that starts with numeric characters.
+     *
+     * @param sequences The source char sequences
+     *
+     * @return the first matching sequence, or null when there is no match
+     */
     @Nullable
     @SafeVarargs
     public static <T extends CharSequence> T firstStartsWithNumeric(@Nullable T... sequences) {
         return firstStartsWithNumeric(ArrayUtilsWraps.asList(sequences));
     }
 
+    /**
+     * Returns the first sequence that starts with numeric characters.
+     *
+     * @param sequences The source char sequences
+     *
+     * @return the first matching sequence, or null when there is no match
+     */
     @Nullable
     public static <T extends CharSequence> T firstStartsWithNumeric(@Nullable Collection<T> sequences) {
         return CollectionPlainWraps.isNotEmpty(sequences) ? sequences.stream().filter(RegexUtilsWraps::startsWithNumeric).findFirst().orElse(null) : null;
     }
 
+    /**
+     * Returns the first sequence that ends with alphabetic characters.
+     *
+     * @param sequences The source char sequences
+     *
+     * @return the first matching sequence, or null when there is no match
+     */
     @Nullable
     @SafeVarargs
     public static <T extends CharSequence> T firstEndsWithAlphabetic(@Nullable T... sequences) {
         return firstEndsWithAlphabetic(ArrayUtilsWraps.asList(sequences));
     }
 
+    /**
+     * Returns the first sequence that ends with alphabetic characters.
+     *
+     * @param sequences The source char sequences
+     *
+     * @return the first matching sequence, or null when there is no match
+     */
     @Nullable
     public static <T extends CharSequence> T firstEndsWithAlphabetic(@Nullable Collection<T> sequences) {
         return CollectionPlainWraps.isNotEmpty(sequences) ? sequences.stream().filter(RegexUtilsWraps::endsWithAlphabetic).findFirst().orElse(null) : null;
     }
 
+    /**
+     * Returns the first sequence that ends with alphanumeric characters.
+     *
+     * @param sequences The source char sequences
+     *
+     * @return the first matching sequence, or null when there is no match
+     */
     @Nullable
     @SafeVarargs
     public static <T extends CharSequence> T firstEndsWithAlphanumeric(@Nullable T... sequences) {
         return firstEndsWithAlphanumeric(ArrayUtilsWraps.asList(sequences));
     }
 
+    /**
+     * Returns the first sequence that ends with alphanumeric characters.
+     *
+     * @param sequences The source char sequences
+     *
+     * @return the first matching sequence, or null when there is no match
+     */
     @Nullable
     public static <T extends CharSequence> T firstEndsWithAlphanumeric(@Nullable Collection<T> sequences) {
         return CollectionPlainWraps.isNotEmpty(sequences) ? sequences.stream().filter(RegexUtilsWraps::endsWithAlphanumeric).findFirst().orElse(null) : null;
     }
 
+    /**
+     * Returns the first sequence that ends with numeric characters.
+     *
+     * @param sequences The source char sequences
+     *
+     * @return the first matching sequence, or null when there is no match
+     */
     @Nullable
     @SafeVarargs
     public static <T extends CharSequence> T firstEndsWithNumeric(@Nullable T... sequences) {
         return firstEndsWithNumeric(ArrayUtilsWraps.asList(sequences));
     }
 
+    /**
+     * Returns the first sequence that ends with numeric characters.
+     *
+     * @param sequences The source char sequences
+     *
+     * @return the first matching sequence, or null when there is no match
+     */
     @Nullable
     public static <T extends CharSequence> T firstEndsWithNumeric(@Nullable Collection<T> sequences) {
         return CollectionPlainWraps.isNotEmpty(sequences) ? sequences.stream().filter(RegexUtilsWraps::endsWithNumeric).findFirst().orElse(null) : null;
     }
 
+    /**
+     * Checks whether the value satisfies escape char.
+     *
+     * @param character The character
+     *
+     * @return {@code true} when the condition is satisfied; {@code false} otherwise
+     */
     public static boolean isEscapeChar(char character) {
         return ArrayUtils.contains(RegexVariantCombo.ESCAPE_CHARS, character);
     }
 
+    /**
+     * Checks whether the value satisfies compilable.
+     *
+     * @param regex The regular expression
+     *
+     * @return {@code true} when the condition is satisfied; {@code false} otherwise
+     */
     public static boolean isCompilable(@Nullable String regex) {
         return compilePattern(regex) != null;
     }
@@ -518,26 +1172,34 @@ public abstract class RegexUtilsWraps {
      * <p>A {@code null} reference passed to this method is a no-op.</p>
      *
      * <pre>{@code
-     * RegExUtilsWraps.removeAll(null, *)      = null
-     * RegExUtilsWraps.removeAll("any", (Pattern) null)  = "any"
-     * RegExUtilsWraps.removeAll("any", Pattern.compile(""))    = "any"
-     * RegExUtilsWraps.removeAll("any", Pattern.compile(".*"))  = ""
-     * RegExUtilsWraps.removeAll("any", Pattern.compile(".+"))  = ""
-     * RegExUtilsWraps.removeAll("abc", Pattern.compile(".?"))  = ""
-     * RegExUtilsWraps.removeAll("A<__>\n<__>B", Pattern.compile("<.*>"))      = "A\nB"
-     * RegExUtilsWraps.removeAll("A<__>\n<__>B", Pattern.compile("(?s)<.*>"))  = "AB"
-     * RegExUtilsWraps.removeAll("A<__>\n<__>B", Pattern.compile("<.*>", Pattern.DOTALL))  = "AB"
-     * RegExUtilsWraps.removeAll("ABCabc123abc", Pattern.compile("[a-z]"))     = "ABC123"
+     * RegexUtilsWraps.removeAll(null, *)      = null
+     * RegexUtilsWraps.removeAll("any", (Pattern) null)  = "any"
+     * RegexUtilsWraps.removeAll("any", Pattern.compile(""))    = "any"
+     * RegexUtilsWraps.removeAll("any", Pattern.compile(".*"))  = ""
+     * RegexUtilsWraps.removeAll("any", Pattern.compile(".+"))  = ""
+     * RegexUtilsWraps.removeAll("abc", Pattern.compile(".?"))  = ""
+     * RegexUtilsWraps.removeAll("A<__>\n<__>B", Pattern.compile("<.*>"))      = "A\nB"
+     * RegexUtilsWraps.removeAll("A<__>\n<__>B", Pattern.compile("(?s)<.*>"))  = "AB"
+     * RegexUtilsWraps.removeAll("A<__>\n<__>B", Pattern.compile("<.*>", Pattern.DOTALL))  = "AB"
+     * RegexUtilsWraps.removeAll("ABCabc123abc", Pattern.compile("[a-z]"))     = "ABC123"
      * }</pre>
      *
      * @param text  text to remove from, may be null
-     * @param regex  the regular expression to which this string is to be matched
-     * @return the text with any removes processed, {@code null} if null String input
+     * @param regex  the regular expression to which this sequence is to be matched
+     * @return the text with any removes processed, {@code null} if null input
      */
-    public static String removeAll(@Nullable String text, @Nullable Pattern regex) {
-        return (StringUtils.isEmpty(text) || regex == null) ? text : RegExUtils.removeAll(text, regex);
+    public static String removeAll(@Nullable CharSequence text, @Nullable Pattern regex) {
+        return (StringUtils.isEmpty(text) || regex == null) ? CharSequenceWraps.toStringIgnoreNull(text) : RegExUtils.removeAll(text, regex);
     }
 
+    /**
+     * Removes the matches of all from the text.
+     *
+     * @param text The source text
+     * @param character The character
+     *
+     * @return the result, or null when it is unavailable
+     */
     public static String removeAll(@Nullable String text, char character) {
         if (StringUtils.isEmpty(text)) {
             return text;
@@ -546,6 +1208,14 @@ public abstract class RegexUtilsWraps {
         return RegExUtils.removeAll(text, regex);
     }
 
+    /**
+     * Removes the matches of all from the text.
+     *
+     * @param text The source text
+     * @param characters The characters
+     *
+     * @return the result, or null when it is unavailable
+     */
     public static String removeAll(@Nullable String text, char... characters) {
         if (StringUtils.isEmpty(text) || ArrayUtils.isEmpty(characters)) {
             return text;
@@ -557,6 +1227,14 @@ public abstract class RegexUtilsWraps {
         return removeAll(text, regexes);
     }
 
+    /**
+     * Removes the matches of all from the text.
+     *
+     * @param text The source text
+     * @param regexes The regular expressions
+     *
+     * @return the result, or null when it is unavailable
+     */
     public static String removeAll(@Nullable String text, @Nullable String... regexes) {
         return removeAll(text, ArrayUtilsWraps.asList(regexes));
     }
@@ -573,10 +1251,26 @@ public abstract class RegexUtilsWraps {
         return result.get();
     }
 
+    /**
+     * Removes the matches of all ignore case from the text.
+     *
+     * @param text The source text
+     * @param regexes The regular expressions
+     *
+     * @return the result, or null when it is unavailable
+     */
     public static String removeAllIgnoreCase(@Nullable String text, @Nullable String... regexes) {
         return removeAllIgnoreCase(text, ArrayUtilsWraps.asList(regexes));
     }
 
+    /**
+     * Removes the matches of all ignore case from the text.
+     *
+     * @param text The source text
+     * @param regexes The regular expressions
+     *
+     * @return the result, or null when it is unavailable
+     */
     public static String removeAllIgnoreCase(@Nullable String text, @Nullable Collection<String> regexes) {
         if (StringUtils.isEmpty(text) || CollectionPlainWraps.isEmpty(regexes)) {
             return text;
@@ -586,10 +1280,25 @@ public abstract class RegexUtilsWraps {
         return result.get();
     }
 
+    /**
+     * Removes the matches of line separator from the text.
+     *
+     * @param text The source text
+     *
+     * @return the result, or null when it is unavailable
+     */
     public static String removeLineSeparator(@Nullable String text) {
         return StringUtils.isEmpty(text) ? text : RegExUtils.removeAll(text, RegexVariantConst.LINE_SEPARATOR);
     }
 
+    /**
+     * Removes the matches of start from the text.
+     *
+     * @param text The source text
+     * @param character The character
+     *
+     * @return the result, or null when it is unavailable
+     */
     public static String removeStart(@Nullable String text, char character) {
         if (StringUtils.isEmpty(text)) {
             return text;
@@ -598,10 +1307,26 @@ public abstract class RegexUtilsWraps {
         return RegExUtils.removeAll(text, regex);
     }
 
+    /**
+     * Removes the matches of start from the text.
+     *
+     * @param text The source text
+     * @param regexes The regular expressions
+     *
+     * @return the result, or null when it is unavailable
+     */
     public static String removeStart(@Nullable String text, @Nullable String... regexes) {
         return removeStart(text, ArrayUtilsWraps.asList(regexes));
     }
 
+    /**
+     * Removes the matches of start from the text.
+     *
+     * @param text The source text
+     * @param regexes The regular expressions
+     *
+     * @return the result, or null when it is unavailable
+     */
     public static String removeStart(@Nullable String text, @Nullable Collection<String> regexes) {
         if (StringUtils.isEmpty(text) || CollectionPlainWraps.isEmpty(regexes)) {
             return text;
@@ -611,15 +1336,39 @@ public abstract class RegexUtilsWraps {
         return result.get();
     }
 
+    /**
+     * Removes the matches of start ignore case from the text.
+     *
+     * @param text The source text
+     * @param character The character
+     *
+     * @return the result, or null when it is unavailable
+     */
     public static String removeStartIgnoreCase(@Nullable String text, char character) {
         String regex = StringUtils.join(CharVariantConst.CARET, (isEscapeChar(character) ? SymbolVariantConst.BACKSLASHES : null), character, CharVariantConst.CROSS);
         return removeStartIgnoreCase(text, Collections.singleton(regex));
     }
 
+    /**
+     * Removes the matches of start ignore case from the text.
+     *
+     * @param text The source text
+     * @param regexes The regular expressions
+     *
+     * @return the result, or null when it is unavailable
+     */
     public static String removeStartIgnoreCase(@Nullable String text, @Nullable String... regexes) {
         return removeStartIgnoreCase(text, ArrayUtilsWraps.asList(regexes));
     }
 
+    /**
+     * Removes the matches of start ignore case from the text.
+     *
+     * @param text The source text
+     * @param regexes The regular expressions
+     *
+     * @return the result, or null when it is unavailable
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static String removeStartIgnoreCase(@Nullable String text, @Nullable Collection<String> regexes) {
         if (StringUtils.isEmpty(text) || CollectionPlainWraps.isEmpty(regexes)) {
@@ -630,6 +1379,14 @@ public abstract class RegexUtilsWraps {
         return result.get();
     }
 
+    /**
+     * Removes the matches of end from the text.
+     *
+     * @param text The source text
+     * @param character The character
+     *
+     * @return the result, or null when it is unavailable
+     */
     public static String removeEnd(@Nullable String text, char character) {
         if (StringUtils.isEmpty(text)) {
             return text;
@@ -638,10 +1395,26 @@ public abstract class RegexUtilsWraps {
         return RegExUtils.removeAll(text, regex);
     }
 
+    /**
+     * Removes the matches of end from the text.
+     *
+     * @param text The source text
+     * @param regexes The regular expressions
+     *
+     * @return the result, or null when it is unavailable
+     */
     public static String removeEnd(@Nullable String text, @Nullable String... regexes) {
         return removeEnd(text, ArrayUtilsWraps.asList(regexes));
     }
 
+    /**
+     * Removes the matches of end from the text.
+     *
+     * @param text The source text
+     * @param regexes The regular expressions
+     *
+     * @return the result, or null when it is unavailable
+     */
     public static String removeEnd(@Nullable String text, @Nullable Collection<String> regexes) {
         if (StringUtils.isEmpty(text) || CollectionPlainWraps.isEmpty(regexes)) {
             return text;
@@ -651,15 +1424,39 @@ public abstract class RegexUtilsWraps {
         return result.get();
     }
 
+    /**
+     * Removes the matches of end ignore case from the text.
+     *
+     * @param text The source text
+     * @param character The character
+     *
+     * @return the result, or null when it is unavailable
+     */
     public static String removeEndIgnoreCase(@Nullable String text, char character) {
         String regex = StringUtils.join((isEscapeChar(character) ? SymbolVariantConst.BACKSLASHES : null), character, CharVariantConst.CROSS, CharVariantConst.DOLLAR);
         return removeEndIgnoreCase(text, Collections.singleton(regex));
     }
 
+    /**
+     * Removes the matches of end ignore case from the text.
+     *
+     * @param text The source text
+     * @param regexes The regular expressions
+     *
+     * @return the result, or null when it is unavailable
+     */
     public static String removeEndIgnoreCase(@Nullable String text, @Nullable String... regexes) {
         return removeEndIgnoreCase(text, ArrayUtilsWraps.asList(regexes));
     }
 
+    /**
+     * Removes the matches of end ignore case from the text.
+     *
+     * @param text The source text
+     * @param regexes The regular expressions
+     *
+     * @return the result, or null when it is unavailable
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static String removeEndIgnoreCase(@Nullable String text, @Nullable Collection<String> regexes) {
         if (StringUtils.isEmpty(text) || CollectionPlainWraps.isEmpty(regexes)) {
@@ -670,10 +1467,30 @@ public abstract class RegexUtilsWraps {
         return result.get();
     }
 
-    public static String replaceAll(@Nullable String text, @Nullable Pattern regex, @Nullable String replacement) {
-        return (StringUtilsWraps.anyEmpty(text, replacement) || regex == null) ? text : RegExUtils.replaceAll(text, regex, replacement);
+    /**
+     * Replaces each substring of the text that matches the given pattern with the replacement
+     *
+     * @param text The source char sequence, may be null
+     * @param regex The pattern to match, may be null
+     * @param replacement The replacement string, may be null
+     *
+     * @return the text with matches replaced, or the original text when no replacement is needed
+     *
+     * @see org.apache.commons.lang3.RegExUtils#replaceAll(CharSequence, Pattern, String)
+     */
+    public static String replaceAll(@Nullable CharSequence text, @Nullable Pattern regex, @Nullable String replacement) {
+        return (StringUtilsWraps.anyEmpty(text, replacement) || regex == null) ? CharSequenceWraps.toStringIgnoreNull(text) : RegExUtils.replaceAll(text, regex, replacement);
     }
 
+    /**
+     * Replaces the matches of all ignore case in the text.
+     *
+     * @param text The source text
+     * @param regex The regular expression
+     * @param replacement The replacement text
+     *
+     * @return the result, or null when it is unavailable
+     */
     public static String replaceAllIgnoreCase(@Nullable String text, @Nullable String regex, char replacement) {
         return replaceAllIgnoreCase(text, regex, CharUtils.toString(replacement));
     }
@@ -686,13 +1503,33 @@ public abstract class RegexUtilsWraps {
             return text;
         }
         Pattern pattern = Pattern.compile(regex, Pattern.CASE_INSENSITIVE);
-        return replaceAll(text, pattern, StringUtils.defaultString(replacement));
+        return replaceAll(text, pattern, StringUtilsWraps.defaultString(replacement));
     }
 
-    public static String replaceFirst(@Nullable String text, @Nullable Pattern regex, @Nullable String replacement) {
-        return (StringUtilsWraps.anyEmpty(text, replacement) || regex == null) ? text : RegExUtils.replaceFirst(text, regex, replacement);
+    /**
+     * Replaces the first substring of the text that matches the given pattern with the replacement
+     *
+     * @param text The source char sequence, may be null
+     * @param regex The pattern to match, may be null
+     * @param replacement The replacement string, may be null
+     *
+     * @return the text with the first match replaced, or the original text when no replacement is needed
+     *
+     * @see org.apache.commons.lang3.RegExUtils#replaceFirst(CharSequence, Pattern, String)
+     */
+    public static String replaceFirst(@Nullable CharSequence text, @Nullable Pattern regex, @Nullable String replacement) {
+        return (StringUtilsWraps.anyEmpty(text, replacement) || regex == null) ? CharSequenceWraps.toStringIgnoreNull(text) : RegExUtils.replaceFirst(text, regex, replacement);
     }
 
+    /**
+     * Replaces the matches of first ignore case in the text.
+     *
+     * @param text The source text
+     * @param regex The regular expression
+     * @param replacement The replacement text
+     *
+     * @return the result, or null when it is unavailable
+     */
     public static String replaceFirstIgnoreCase(@Nullable String text, @Nullable String regex, char replacement) {
         return replaceFirstIgnoreCase(text, regex, CharUtils.toString(replacement));
     }
@@ -705,21 +1542,49 @@ public abstract class RegexUtilsWraps {
             return text;
         }
         Pattern pattern = Pattern.compile(regex, Pattern.CASE_INSENSITIVE);
-        return replaceFirst(text, pattern, StringUtils.defaultString(replacement));
+        return replaceFirst(text, pattern, StringUtilsWraps.defaultString(replacement));
     }
 
+    /**
+     * Reserves only alphabetic characters in the text.
+     *
+     * @param text The source text
+     *
+     * @return the result, or null when it is unavailable
+     */
     public static String reserveAlphabetic(@Nullable String text) {
         return StringUtils.isEmpty(text) ? text : RegExUtils.removeAll(text, "[^A-Za-z]");    // $NON-NLS-1$
     }
 
+    /**
+     * Reserves only alphanumeric characters in the text.
+     *
+     * @param text The source text
+     *
+     * @return the result, or null when it is unavailable
+     */
     public static String reserveAlphanumeric(@Nullable String text) {
         return StringUtils.isEmpty(text) ? text : RegExUtils.removeAll(text, "[^A-Za-z0-9]");    // $NON-NLS-1$
     }
 
+    /**
+     * Reserves only word characters in the text.
+     *
+     * @param text The source text
+     *
+     * @return the result, or null when it is unavailable
+     */
     public static String reserveWord(@Nullable String text) {
         return StringUtils.isEmpty(text) ? text : RegExUtils.removeAll(text, "\\W");    // $NON-NLS-1$
     }
 
+    /**
+     * Reserves only word characters hyphen in the text.
+     *
+     * @param text The source text
+     *
+     * @return the result, or null when it is unavailable
+     */
     public static String reserveWordHyphen(@Nullable String text) {
         return StringUtils.isEmpty(text) ? text : RegExUtils.removeAll(text, "[^A-Za-z0-9_\\-]");    // $NON-NLS-1$
     }
@@ -731,38 +1596,102 @@ public abstract class RegexUtilsWraps {
         return StringUtils.isEmpty(text) ? text : RegExUtils.removeAll(text, "\\D");    // $NON-NLS-1$
     }
 
+    /**
+     * Reserves only numeric characters hyphen in the text.
+     *
+     * @param text The source text
+     *
+     * @return the result, or null when it is unavailable
+     */
     public static String reserveNumericHyphen(@Nullable String text) {
         return StringUtils.isEmpty(text) ? text : RegExUtils.removeAll(text, "[^0-9\\-]");    // $NON-NLS-1$
     }
 
+    /**
+     * Checks whether the value satisfies alphabetic characters.
+     *
+     * @param sequence The source char sequence
+     *
+     * @return {@code true} when the condition is satisfied; {@code false} otherwise
+     */
     public static boolean isAlphabetic(@Nullable CharSequence sequence) {
         return matches(sequence, "^[A-Za-z]+$");    // $NON-NLS-1$
     }
 
+    /**
+     * Checks whether the value satisfies alphanumeric characters.
+     *
+     * @param sequence The source char sequence
+     *
+     * @return {@code true} when the condition is satisfied; {@code false} otherwise
+     */
     public static boolean isAlphanumeric(@Nullable CharSequence sequence) {
         return matches(sequence, "^[A-Za-z\\d]+$");    // $NON-NLS-1$
     }
 
+    /**
+     * Checks whether the value satisfies numeric characters.
+     *
+     * @param sequence The source char sequence
+     *
+     * @return {@code true} when the condition is satisfied; {@code false} otherwise
+     */
     public static boolean isNumeric(@Nullable CharSequence sequence) {
         return matches(sequence, "^\\d+$");    // $NON-NLS-1$
     }
 
+    /**
+     * Checks whether the value satisfies negate numeric characters.
+     *
+     * @param sequence The source char sequence
+     *
+     * @return {@code true} when the condition is satisfied; {@code false} otherwise
+     */
     public static boolean isNegateNumeric(@Nullable CharSequence sequence) {
         return matches(sequence, "^-\\d+$");    // $NON-NLS-1$
     }
 
+    /**
+     * Checks whether the value satisfies positive numeric characters.
+     *
+     * @param sequence The source char sequence
+     *
+     * @return {@code true} when the condition is satisfied; {@code false} otherwise
+     */
     public static boolean isPositiveNumeric(@Nullable CharSequence sequence) {
         return matches(sequence, "^\\+?[1-9]+$");    // $NON-NLS-1$
     }
 
+    /**
+     * Checks whether the value satisfies word characters.
+     *
+     * @param sequence The source char sequence
+     *
+     * @return {@code true} when the condition is satisfied; {@code false} otherwise
+     */
     public static boolean isWord(@Nullable CharSequence sequence) {
         return matches(sequence, "^\\w+$");    // $NON-NLS-1$
     }
 
+    /**
+     * Checks whether the value satisfies word characters hyphen.
+     *
+     * @param sequence The source char sequence
+     *
+     * @return {@code true} when the condition is satisfied; {@code false} otherwise
+     */
     public static boolean isWordHyphen(@Nullable CharSequence sequence) {
         return matches(sequence, "^[\\w\\-]+$");    // $NON-NLS-1$
     }
 
+    /**
+     * Checks whether the sequence satisfies find.
+     *
+     * @param sequence The source char sequence
+     * @param pattern The compiled pattern
+     *
+     * @return {@code true} when the condition is satisfied; {@code false} otherwise
+     */
     public static boolean find(@Nullable CharSequence sequence, @Nullable Pattern pattern) {
         return StringUtils.isNotEmpty(sequence) && pattern != null && pattern.matcher(sequence).find();
     }
@@ -775,17 +1704,33 @@ public abstract class RegexUtilsWraps {
      *
      * @return true if a subsequence of the input sequence matches this matcher's pattern
      *
-     * @throws {@link java.util.regex.PatternSyntaxException} if the expression's syntax is invalid
+     * @throws java.util.regex.PatternSyntaxException if the expression's syntax is invalid
      */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static boolean find(@Nullable CharSequence sequence, @Nullable String regex) {
         return StringUtils.isNoneEmpty(sequence, regex) && Pattern.compile(regex).matcher(sequence).find();
     }
 
+    /**
+     * Checks whether the sequence satisfies find any.
+     *
+     * @param sequence The source char sequence
+     * @param regexes The regular expressions
+     *
+     * @return {@code true} when the condition is satisfied; {@code false} otherwise
+     */
     public static boolean findAny(@Nullable CharSequence sequence, @Nullable String... regexes) {
         return findAny(sequence, ArrayUtilsWraps.asList(regexes));
     }
 
+    /**
+     * Checks whether the sequence satisfies find any.
+     *
+     * @param sequence The source char sequence
+     * @param regexes The regular expressions
+     *
+     * @return {@code true} when the condition is satisfied; {@code false} otherwise
+     */
     public static boolean findAny(@Nullable CharSequence sequence, @Nullable Collection<String> regexes) {
         return StringUtils.isNotEmpty(sequence) && CollectionPlainWraps.isNotEmpty(regexes) && regexes.stream().filter(StringUtils::isNotEmpty).anyMatch(item -> find(sequence, item));
     }
@@ -798,17 +1743,33 @@ public abstract class RegexUtilsWraps {
      *
      * @return true if a subsequence of the input sequence matches this matcher's pattern
      *
-     * @throws {@link java.util.regex.PatternSyntaxException} if the expression's syntax is invalid
+     * @throws java.util.regex.PatternSyntaxException if the expression's syntax is invalid
      */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static boolean findIgnoreCase(@Nullable CharSequence sequence, @Nullable String regex) {
         return StringUtils.isNoneEmpty(sequence, regex) && Pattern.compile(regex, Pattern.CASE_INSENSITIVE).matcher(sequence).find();
     }
 
+    /**
+     * Checks whether the sequence satisfies find any ignore case.
+     *
+     * @param sequence The source char sequence
+     * @param regexes The regular expressions
+     *
+     * @return {@code true} when the condition is satisfied; {@code false} otherwise
+     */
     public static boolean findAnyIgnoreCase(@Nullable CharSequence sequence, @Nullable String... regexes) {
         return findAnyIgnoreCase(sequence, ArrayUtilsWraps.asList(regexes));
     }
 
+    /**
+     * Checks whether the sequence satisfies find any ignore case.
+     *
+     * @param sequence The source char sequence
+     * @param regexes The regular expressions
+     *
+     * @return {@code true} when the condition is satisfied; {@code false} otherwise
+     */
     public static boolean findAnyIgnoreCase(@Nullable CharSequence sequence, @Nullable Collection<String> regexes) {
         return StringUtils.isNotEmpty(sequence) && CollectionPlainWraps.isNotEmpty(regexes) && regexes.stream().filter(StringUtils::isNotEmpty).anyMatch(item -> findIgnoreCase(sequence, item));
     }
@@ -821,21 +1782,47 @@ public abstract class RegexUtilsWraps {
      *
      * @return true if a subsequence of the input sequence matches this matcher's pattern
      *
-     * @throws {@link java.util.regex.PatternSyntaxException} if the expression's syntax is invalid
+     * @throws java.util.regex.PatternSyntaxException if the expression's syntax is invalid
      */
     @SuppressWarnings({"DataFlowIssue", "MagicConstant"})
     public static boolean findWithFlags(@Nullable CharSequence sequence, @Nullable String regex, int flags) {
         return StringUtils.isNoneEmpty(sequence, regex) && Pattern.compile(regex, flags).matcher(sequence).find();
     }
 
+    /**
+     * Checks whether the sequence satisfies find any with flags.
+     *
+     * @param sequence The source char sequence
+     * @param flags The regular expression flags
+     * @param regexes The regular expressions
+     *
+     * @return {@code true} when the condition is satisfied; {@code false} otherwise
+     */
     public static boolean findAnyWithFlags(@Nullable CharSequence sequence, int flags, @Nullable String... regexes) {
         return findAnyWithFlags(sequence, flags, ArrayUtilsWraps.asList(regexes));
     }
 
+    /**
+     * Checks whether the sequence satisfies find any with flags.
+     *
+     * @param sequence The source char sequence
+     * @param flags The regular expression flags
+     * @param regexes The regular expressions
+     *
+     * @return {@code true} when the condition is satisfied; {@code false} otherwise
+     */
     public static boolean findAnyWithFlags(@Nullable CharSequence sequence, int flags, @Nullable Collection<String> regexes) {
         return StringUtils.isNotEmpty(sequence) && CollectionPlainWraps.isNotEmpty(regexes) && regexes.stream().filter(StringUtils::isNotEmpty).anyMatch(item -> findWithFlags(sequence, item, flags));
     }
 
+    /**
+     * Checks whether the sequence satisfies matches.
+     *
+     * @param sequence The source char sequence
+     * @param pattern The compiled pattern
+     *
+     * @return {@code true} when the condition is satisfied; {@code false} otherwise
+     */
     public static boolean matches(@Nullable CharSequence sequence, @Nullable Pattern pattern) {
         return StringUtils.isNotEmpty(sequence) && pattern != null && pattern.matcher(sequence).matches();
     }
@@ -848,7 +1835,7 @@ public abstract class RegexUtilsWraps {
      *
      * @return true if the input sequence matches this matcher's pattern
      *
-     * @throws {@link java.util.regex.PatternSyntaxException} if the expression's syntax is invalid
+     * @throws java.util.regex.PatternSyntaxException if the expression's syntax is invalid
      */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static boolean matches(@Nullable CharSequence sequence, @Nullable String regex) {
@@ -863,7 +1850,7 @@ public abstract class RegexUtilsWraps {
      *
      * @return true if the input sequence matches this matcher's pattern
      *
-     * @throws {@link java.util.regex.PatternSyntaxException} if the expression's syntax is invalid
+     * @throws java.util.regex.PatternSyntaxException if the expression's syntax is invalid
      */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static boolean matchesIgnoreCase(@Nullable CharSequence sequence, @Nullable String regex) {
@@ -878,49 +1865,119 @@ public abstract class RegexUtilsWraps {
      *
      * @return true if the input sequence matches this matcher's pattern
      *
-     * @throws {@link java.util.regex.PatternSyntaxException} if the expression's syntax is invalid
+     * @throws java.util.regex.PatternSyntaxException if the expression's syntax is invalid
      */
     @SuppressWarnings({"DataFlowIssue", "MagicConstant"})
     public static boolean matchesWithFlags(@Nullable CharSequence sequence, @Nullable String regex, int flags) {
         return StringUtils.isNoneEmpty(sequence, regex) && Pattern.compile(regex, flags).matcher(sequence).matches();
     }
 
+    /**
+     * Checks whether the sequence satisfies starts with alphabetic characters.
+     *
+     * @param sequence The source char sequence
+     *
+     * @return {@code true} when the condition is satisfied; {@code false} otherwise
+     */
     public static boolean startsWithAlphabetic(@Nullable CharSequence sequence) {
         return matches(sequence, "^[A-Za-z]+");    // $NON-NLS-1$
     }
 
+    /**
+     * Checks whether the sequence satisfies starts with alphanumeric characters.
+     *
+     * @param sequence The source char sequence
+     *
+     * @return {@code true} when the condition is satisfied; {@code false} otherwise
+     */
     public static boolean startsWithAlphanumeric(@Nullable CharSequence sequence) {
         return matches(sequence, "^[A-Za-z\\d]+");    // $NON-NLS-1$
     }
 
+    /**
+     * Checks whether the sequence satisfies starts with numeric characters.
+     *
+     * @param sequence The source char sequence
+     *
+     * @return {@code true} when the condition is satisfied; {@code false} otherwise
+     */
     public static boolean startsWithNumeric(@Nullable CharSequence sequence) {
         return matches(sequence, "^\\d+");    // $NON-NLS-1$
     }
 
+    /**
+     * Checks whether the sequence satisfies starts with word characters.
+     *
+     * @param sequence The source char sequence
+     *
+     * @return {@code true} when the condition is satisfied; {@code false} otherwise
+     */
     public static boolean startsWithWord(@Nullable CharSequence sequence) {
         return matches(sequence, "^\\w+");    // $NON-NLS-1$
     }
 
+    /**
+     * Checks whether the sequence satisfies starts with word characters hyphen.
+     *
+     * @param sequence The source char sequence
+     *
+     * @return {@code true} when the condition is satisfied; {@code false} otherwise
+     */
     public static boolean startsWithWordHyphen(@Nullable CharSequence sequence) {
         return matches(sequence, "^[\\w\\-]+");    // $NON-NLS-1$
     }
 
+    /**
+     * Checks whether the sequence satisfies ends with alphabetic characters.
+     *
+     * @param sequence The source char sequence
+     *
+     * @return {@code true} when the condition is satisfied; {@code false} otherwise
+     */
     public static boolean endsWithAlphabetic(@Nullable CharSequence sequence) {
         return StringUtils.isNotBlank(sequence) && Pattern.matches("[A-Za-z]+$", sequence);    // $NON-NLS-1$
     }
 
+    /**
+     * Checks whether the sequence satisfies ends with alphanumeric characters.
+     *
+     * @param sequence The source char sequence
+     *
+     * @return {@code true} when the condition is satisfied; {@code false} otherwise
+     */
     public static boolean endsWithAlphanumeric(@Nullable CharSequence sequence) {
         return StringUtils.isNotBlank(sequence) && Pattern.matches("[A-Za-z\\d]+$", sequence);    // $NON-NLS-1$
     }
 
+    /**
+     * Checks whether the sequence satisfies ends with numeric characters.
+     *
+     * @param sequence The source char sequence
+     *
+     * @return {@code true} when the condition is satisfied; {@code false} otherwise
+     */
     public static boolean endsWithNumeric(@Nullable CharSequence sequence) {
         return StringUtils.isNotBlank(sequence) && Pattern.matches("\\d+$", sequence);    // $NON-NLS-1$
     }
 
+    /**
+     * Checks whether the sequence satisfies ends with word characters.
+     *
+     * @param sequence The source char sequence
+     *
+     * @return {@code true} when the condition is satisfied; {@code false} otherwise
+     */
     public static boolean endsWithWord(@Nullable CharSequence sequence) {
         return matches(sequence, "\\w+$");    // $NON-NLS-1$
     }
 
+    /**
+     * Checks whether the sequence satisfies ends with word characters hyphen.
+     *
+     * @param sequence The source char sequence
+     *
+     * @return {@code true} when the condition is satisfied; {@code false} otherwise
+     */
     public static boolean endsWithWordHyphen(@Nullable CharSequence sequence) {
         return matches(sequence, "[\\w\\-]+$");    // $NON-NLS-1$
     }

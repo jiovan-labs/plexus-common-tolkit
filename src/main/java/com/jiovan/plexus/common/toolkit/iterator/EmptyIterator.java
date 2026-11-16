@@ -28,16 +28,29 @@ import java.util.NoSuchElementException;
  */
 @SuppressWarnings("unused")
 public class EmptyIterator<E> implements Iterator<E> {
+    /**
+     * Checks whether the iteration has more elements.
+     *
+     * @return {@code true} when another element is available; {@code false} otherwise
+     */
     @Override
     public boolean hasNext() {
         return false;
     }
 
+    /**
+     * Returns the next element of the iteration.
+     *
+     * @return the next element
+     */
     @Override
     public E next() {
         throw new NoSuchElementException("Iterator contains no elements");    // $NON-NLS-1$
     }
 
+    /**
+     * Removes the last element returned by the iterator.
+     */
     @Override
     public void remove() {
         throw new IllegalStateException("Iterator contains no elements");    // $NON-NLS-1$

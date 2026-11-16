@@ -50,6 +50,13 @@ import org.apache.commons.lang3.StringUtils;
  */
 @SuppressWarnings({"unused", "BooleanMethodIsAlwaysInverted", "UnusedReturnValue"})
 public abstract class IoUtilsWraps {
+    /**
+     * Closes the given closeable without throwing exceptions.
+     *
+     * Any exception raised while closing is ignored.
+     *
+     * @param closeable The closeable to close
+     */
     public static void close(@Nullable Closeable closeable) {
         try {
             IOUtils.close(closeable);
@@ -57,6 +64,13 @@ public abstract class IoUtilsWraps {
         }
     }
 
+    /**
+     * Closes the given closeable without throwing exceptions.
+     *
+     * Any exception raised while closing is ignored.
+     *
+     * @param closeables The closeables to close
+     */
     public static void close(@Nullable Closeable... closeables) {
         if (ArrayUtils.isEmpty(closeables)) {
             return;
@@ -67,6 +81,14 @@ public abstract class IoUtilsWraps {
         }
     }
 
+    /**
+     * Closes the given closeable without throwing exceptions.
+     *
+     * Any exception raised while closing is ignored.
+     *
+     * @param closeable The closeable to close
+     * @param action The action invoked when a closeable is closed
+     */
     public static void close(@Nullable Closeable closeable, @Nullable IOConsumer<IOException> action) {
         if (closeable == null) {
             return;
@@ -77,6 +99,14 @@ public abstract class IoUtilsWraps {
         }
     }
 
+    /**
+     * Copies content from the input to the output.
+     *
+     * @param input The input source
+     * @param output The output target
+     *
+     * @return the number of bytes or characters copied, or zero when the copy fails
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static int copy(@Nullable InputStream input, @Nullable OutputStream output) {
         if (ObjectUtils.anyNull(input, output)) {
@@ -89,6 +119,15 @@ public abstract class IoUtilsWraps {
         return 0;
     }
 
+    /**
+     * Copies content from the input to the output.
+     *
+     * @param input The input source
+     * @param output The output target
+     * @param bufferSize The buffer size
+     *
+     * @return the number of bytes or characters copied, or zero when the copy fails
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static long copy(@Nullable InputStream input, @Nullable OutputStream output, int bufferSize) {
         if (ObjectUtils.anyNull(input, output) || bufferSize <= 0) {
@@ -101,6 +140,13 @@ public abstract class IoUtilsWraps {
         return 0L;
     }
 
+    /**
+     * Copies content from the input to the output.
+     *
+     * @param input The input source
+     * @param output The output target
+     * @param charset The charset
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static void copy(@Nullable InputStream input, @Nullable Writer output, @Nullable Charset charset) {
         if (ObjectUtils.anyNull(input, output)) {
@@ -112,6 +158,13 @@ public abstract class IoUtilsWraps {
         }
     }
 
+    /**
+     * Copies content from the input to the output.
+     *
+     * @param input The input source
+     * @param output The output target
+     * @param charset The charset
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static void copy(@Nullable InputStream input, @Nullable Writer output, @Nullable String charset) {
         if (ObjectUtils.anyNull(input, output)) {
@@ -123,6 +176,14 @@ public abstract class IoUtilsWraps {
         }
     }
 
+    /**
+     * Copies content from the input to the output.
+     *
+     * @param input The input source
+     * @param output The output target
+     *
+     * @return the number of bytes or characters copied, or zero when the copy fails
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static long copy(@Nullable Reader input, @Nullable Appendable output) {
         if (ObjectUtils.anyNull(input, output)) {
@@ -135,6 +196,15 @@ public abstract class IoUtilsWraps {
         return 0L;
     }
 
+    /**
+     * Copies content from the input to the output.
+     *
+     * @param input The input source
+     * @param output The output target
+     * @param buffer The buffer
+     *
+     * @return the number of bytes or characters copied, or zero when the copy fails
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static long copy(@Nullable Reader input, @Nullable Appendable output, @Nullable CharBuffer buffer) {
         if (ObjectUtils.anyNull(input, output, buffer)) {
@@ -147,6 +217,13 @@ public abstract class IoUtilsWraps {
         return 0L;
     }
 
+    /**
+     * Copies content from the input to the output.
+     *
+     * @param input The input source
+     * @param output The output target
+     * @param charset The charset
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static void copy(@Nullable Reader input, @Nullable OutputStream output, @Nullable Charset charset) {
         if (ObjectUtils.anyNull(input, output)) {
@@ -158,6 +235,13 @@ public abstract class IoUtilsWraps {
         }
     }
 
+    /**
+     * Copies content from the input to the output.
+     *
+     * @param input The input source
+     * @param output The output target
+     * @param charset The charset
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static void copy(@Nullable Reader input, @Nullable OutputStream output, @Nullable String charset) {
         if (ObjectUtils.anyNull(input, output)) {
@@ -169,6 +253,14 @@ public abstract class IoUtilsWraps {
         }
     }
 
+    /**
+     * Copies content from the input to the output.
+     *
+     * @param input The input source
+     * @param output The output target
+     *
+     * @return the number of bytes or characters copied, or zero when the copy fails
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static int copy(@Nullable Reader input, @Nullable Writer output) {
         if (ObjectUtils.anyNull(input, output)) {
@@ -181,6 +273,14 @@ public abstract class IoUtilsWraps {
         return 0;
     }
 
+    /**
+     * Copies content from the input to the output.
+     *
+     * @param input The input source
+     * @param output The output target
+     *
+     * @return the number of bytes or characters copied, or zero when the copy fails
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static long copy(@Nullable URL input, @Nullable File output) {
         if (ObjectUtils.anyNull(input, output)) {
@@ -193,6 +293,14 @@ public abstract class IoUtilsWraps {
         return 0L;
     }
 
+    /**
+     * Copies content from the input to the output.
+     *
+     * @param input The input source
+     * @param output The output target
+     *
+     * @return the number of bytes or characters copied, or zero when the copy fails
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static long copy(@Nullable URL input, @Nullable OutputStream output) {
         if (ObjectUtils.anyNull(input, output)) {
@@ -205,6 +313,14 @@ public abstract class IoUtilsWraps {
         return 0L;
     }
 
+    /**
+     * Copies a large amount of content from the input to the output.
+     *
+     * @param input The input source
+     * @param output The output target
+     *
+     * @return the number of bytes or characters copied, or zero when the copy fails
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static long copyLarge(@Nullable InputStream input, @Nullable OutputStream output) {
         if (ObjectUtils.anyNull(input, output)) {
@@ -217,6 +333,15 @@ public abstract class IoUtilsWraps {
         return 0L;
     }
 
+    /**
+     * Copies a large amount of content from the input to the output.
+     *
+     * @param input The input source
+     * @param output The output target
+     * @param buffer The buffer
+     *
+     * @return the number of bytes or characters copied, or zero when the copy fails
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static long copyLarge(@Nullable InputStream input, @Nullable OutputStream output, @Nullable byte[] buffer) {
         if (ObjectUtils.anyNull(input, output, buffer)) {
@@ -229,6 +354,16 @@ public abstract class IoUtilsWraps {
         return 0L;
     }
 
+    /**
+     * Copies a large amount of content from the input to the output.
+     *
+     * @param input The input source
+     * @param output The output target
+     * @param offset The starting offset
+     * @param length The length to read or copy
+     *
+     * @return the number of bytes or characters copied, or zero when the copy fails
+     */
     public static long copyLarge(@Nullable InputStream input, @Nullable OutputStream output, long offset, long length) {
         if (ObjectUtils.anyNull(input, output) || offset < 0 || length <= 0) {
             return 0L;
@@ -240,6 +375,17 @@ public abstract class IoUtilsWraps {
         return 0L;
     }
 
+    /**
+     * Copies a large amount of content from the input to the output.
+     *
+     * @param input The input source
+     * @param output The output target
+     * @param offset The starting offset
+     * @param length The length to read or copy
+     * @param buffer The buffer
+     *
+     * @return the number of bytes or characters copied, or zero when the copy fails
+     */
     @SuppressWarnings("DuplicatedCode")
     public static long copyLarge(@Nullable InputStream input, @Nullable OutputStream output, long offset, long length, @Nullable byte[] buffer) {
         if (ObjectUtils.anyNull(input, output, buffer) || offset < 0 || length <= 0) {
@@ -252,6 +398,14 @@ public abstract class IoUtilsWraps {
         return 0L;
     }
 
+    /**
+     * Copies a large amount of content from the input to the output.
+     *
+     * @param input The input source
+     * @param output The output target
+     *
+     * @return the number of bytes or characters copied, or zero when the copy fails
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static long copyLarge(@Nullable Reader input, @Nullable Writer output) {
         if (ObjectUtils.anyNull(input, output)) {
@@ -264,6 +418,15 @@ public abstract class IoUtilsWraps {
         return 0L;
     }
 
+    /**
+     * Copies a large amount of content from the input to the output.
+     *
+     * @param input The input source
+     * @param output The output target
+     * @param buffer The buffer
+     *
+     * @return the number of bytes or characters copied, or zero when the copy fails
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static long copyLarge(@Nullable Reader input, @Nullable Writer output, @Nullable char[] buffer) {
         if (ObjectUtils.anyNull(input, output, buffer)) {
@@ -276,6 +439,16 @@ public abstract class IoUtilsWraps {
         return 0L;
     }
 
+    /**
+     * Copies a large amount of content from the input to the output.
+     *
+     * @param input The input source
+     * @param output The output target
+     * @param offset The starting offset
+     * @param length The length to read or copy
+     *
+     * @return the number of bytes or characters copied, or zero when the copy fails
+     */
     public static long copyLarge(@Nullable Reader input, @Nullable Writer output, long offset, long length) {
         if (ObjectUtils.anyNull(input, output) || offset < 0 || length <= 0) {
             return 0L;
@@ -287,6 +460,17 @@ public abstract class IoUtilsWraps {
         return 0L;
     }
 
+    /**
+     * Copies a large amount of content from the input to the output.
+     *
+     * @param input The input source
+     * @param output The output target
+     * @param offset The starting offset
+     * @param length The length to read or copy
+     * @param buffer The buffer
+     *
+     * @return the number of bytes or characters copied, or zero when the copy fails
+     */
     @SuppressWarnings("DuplicatedCode")
     public static long copyLarge(@Nullable Reader input, @Nullable Writer output, long offset, long length, @Nullable char[] buffer) {
         if (ObjectUtils.anyNull(input, output, buffer) || offset < 0 || length <= 0) {
@@ -299,6 +483,14 @@ public abstract class IoUtilsWraps {
         return 0L;
     }
 
+    /**
+     * Reads content from the input into the buffer.
+     *
+     * @param input The input source
+     * @param buffer The buffer
+     *
+     * @return the number of bytes or characters read, or zero when the input is unavailable
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static int read(@Nullable InputStream input, @Nullable byte[] buffer) {
         if (ObjectUtils.anyNull(input, buffer)) {
@@ -311,6 +503,16 @@ public abstract class IoUtilsWraps {
         return 0;
     }
 
+    /**
+     * Reads content from the input into the buffer.
+     *
+     * @param input The input source
+     * @param buffer The buffer
+     * @param offset The starting offset
+     * @param length The length to read or copy
+     *
+     * @return the number of bytes or characters read, or zero when the input is unavailable
+     */
     public static int read(@Nullable InputStream input, @Nullable byte[] buffer, int offset, int length) {
         if (ObjectUtils.anyNull(input, buffer) || offset < 0 || length <= 0) {
             return 0;
@@ -322,6 +524,14 @@ public abstract class IoUtilsWraps {
         return 0;
     }
 
+    /**
+     * Reads content from the input into the buffer.
+     *
+     * @param input The input source
+     * @param buffer The buffer
+     *
+     * @return the number of bytes or characters read, or zero when the input is unavailable
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static int read(@Nullable ReadableByteChannel input, @Nullable ByteBuffer buffer) {
         if (ObjectUtils.anyNull(input, buffer)) {
@@ -334,6 +544,14 @@ public abstract class IoUtilsWraps {
         return 0;
     }
 
+    /**
+     * Reads content from the input into the buffer.
+     *
+     * @param input The input source
+     * @param buffer The buffer
+     *
+     * @return the number of bytes or characters read, or zero when the input is unavailable
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static int read(@Nullable Reader input, @Nullable char[] buffer) {
         if (ObjectUtils.anyNull(input, buffer)) {
@@ -346,6 +564,16 @@ public abstract class IoUtilsWraps {
         return 0;
     }
 
+    /**
+     * Reads content from the input into the buffer.
+     *
+     * @param input The input source
+     * @param buffer The buffer
+     * @param offset The starting offset
+     * @param length The length to read or copy
+     *
+     * @return the number of bytes or characters read, or zero when the input is unavailable
+     */
     public static int read(@Nullable Reader input, @Nullable char[] buffer, int offset, int length) {
         if (ObjectUtils.anyNull(input, buffer) || offset < 0 || length <= 0) {
             return 0;
@@ -357,6 +585,12 @@ public abstract class IoUtilsWraps {
         return 0;
     }
 
+    /**
+     * Reads content from the input until the buffer is filled.
+     *
+     * @param input The input source
+     * @param buffer The buffer
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static void readFully(@Nullable InputStream input, @Nullable byte[] buffer) {
         if (ObjectUtils.anyNull(input, buffer)) {
@@ -368,6 +602,14 @@ public abstract class IoUtilsWraps {
         }
     }
 
+    /**
+     * Reads content from the input until the buffer is filled.
+     *
+     * @param input The input source
+     * @param buffer The buffer
+     * @param offset The starting offset
+     * @param length The length to read or copy
+     */
     public static void readFully(@Nullable InputStream input, @Nullable byte[] buffer, int offset, int length) {
         if (ObjectUtils.anyNull(input, buffer) || offset < 0 || length <= 0) {
             return;
@@ -378,6 +620,12 @@ public abstract class IoUtilsWraps {
         }
     }
 
+    /**
+     * Reads content from the input until the buffer is filled.
+     *
+     * @param input The input source
+     * @param buffer The buffer
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static void readFully(@Nullable ReadableByteChannel input, @Nullable ByteBuffer buffer) {
         if (ObjectUtils.anyNull(input, buffer)) {
@@ -389,6 +637,12 @@ public abstract class IoUtilsWraps {
         }
     }
 
+    /**
+     * Reads content from the input until the buffer is filled.
+     *
+     * @param input The input source
+     * @param buffer The buffer
+     */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static void readFully(@Nullable Reader input, @Nullable char[] buffer) {
         if (ObjectUtils.anyNull(input, buffer)) {
@@ -400,6 +654,14 @@ public abstract class IoUtilsWraps {
         }
     }
 
+    /**
+     * Reads content from the input until the buffer is filled.
+     *
+     * @param input The input source
+     * @param buffer The buffer
+     * @param offset The starting offset
+     * @param length The length to read or copy
+     */
     public static void readFully(@Nullable Reader input, @Nullable char[] buffer, int offset, int length) {
         if (ObjectUtils.anyNull(input, buffer) || offset < 0 || length <= 0) {
             return;
@@ -410,6 +672,14 @@ public abstract class IoUtilsWraps {
         }
     }
 
+    /**
+     * Reads all lines from the input.
+     *
+     * @param input The input source
+     * @param charset The charset
+     *
+     * @return a list of lines, or null when the input cannot be read
+     */
     @Nullable
     public static List<String> readLines(@Nullable InputStream input, @Nullable Charset charset) {
         if (input == null) {
@@ -422,6 +692,14 @@ public abstract class IoUtilsWraps {
         return null;
     }
 
+    /**
+     * Reads all lines from the input.
+     *
+     * @param input The input source
+     * @param charset The charset
+     *
+     * @return a list of lines, or null when the input cannot be read
+     */
     @Nullable
     public static List<String> readLines(@Nullable InputStream input, @Nullable String charset) {
         if (input == null) {
@@ -434,6 +712,13 @@ public abstract class IoUtilsWraps {
         return null;
     }
 
+    /**
+     * Reads all lines from the input.
+     *
+     * @param input The input source
+     *
+     * @return a list of lines, or null when the input cannot be read
+     */
     @Nullable
     public static List<String> readLines(@Nullable Reader input) {
         if (input == null) {
@@ -446,11 +731,26 @@ public abstract class IoUtilsWraps {
         return null;
     }
 
+    /**
+     * Reads the classpath resource into a byte array.
+     *
+     * @param name The resource name
+     *
+     * @return the resource content, or null when it cannot be read
+     */
     @Nullable
     public static byte[] resourceToByteArray(@Nullable String name) {
         return resourceToByteArray(name, null);
     }
 
+    /**
+     * Reads the classpath resource into a byte array.
+     *
+     * @param name The resource name
+     * @param loader The class loader used to locate the resource
+     *
+     * @return the resource content, or null when it cannot be read
+     */
     @Nullable
     public static byte[] resourceToByteArray(@Nullable String name, @Nullable ClassLoader loader) {
         if (StringUtils.isBlank(name)) {
@@ -463,11 +763,28 @@ public abstract class IoUtilsWraps {
         return null;
     }
 
+    /**
+     * Reads the classpath resource into a string.
+     *
+     * @param name The resource name
+     * @param charset The charset
+     *
+     * @return the resource content, or null when it cannot be read
+     */
     @Nullable
     public static String resourceToString(@Nullable String name, @Nullable Charset charset) {
         return resourceToString(name, charset, null);
     }
 
+    /**
+     * Reads the classpath resource into a string.
+     *
+     * @param name The resource name
+     * @param charset The charset
+     * @param loader The class loader used to locate the resource
+     *
+     * @return the resource content, or null when it cannot be read
+     */
     @Nullable
     public static String resourceToString(@Nullable String name, @Nullable Charset charset, @Nullable ClassLoader loader) {
         if (StringUtils.isBlank(name)) {
@@ -480,11 +797,26 @@ public abstract class IoUtilsWraps {
         return null;
     }
 
+    /**
+     * Returns the URL of the classpath resource.
+     *
+     * @param name The resource name
+     *
+     * @return the resource URL, or null when it cannot be found
+     */
     @Nullable
     public static URL resourceToUrl(@Nullable String name) {
         return resourceToUrl(name, null);
     }
 
+    /**
+     * Returns the URL of the classpath resource.
+     *
+     * @param name The resource name
+     * @param loader The class loader used to locate the resource
+     *
+     * @return the resource URL, or null when it cannot be found
+     */
     @Nullable
     public static URL resourceToUrl(@Nullable String name, @Nullable ClassLoader loader) {
         if (StringUtils.isBlank(name)) {
@@ -497,6 +829,14 @@ public abstract class IoUtilsWraps {
         return null;
     }
 
+    /**
+     * Skips the requested number of bytes or characters.
+     *
+     * @param input The input source
+     * @param toSkip The number of bytes or characters to skip
+     *
+     * @return the number of units actually skipped
+     */
     public static long skip(@Nullable InputStream input, long toSkip) {
         if (input == null || toSkip < 0) {
             return 0L;
@@ -508,6 +848,14 @@ public abstract class IoUtilsWraps {
         return 0L;
     }
 
+    /**
+     * Skips the requested number of bytes or characters.
+     *
+     * @param input The input source
+     * @param toSkip The number of bytes or characters to skip
+     *
+     * @return the number of units actually skipped
+     */
     public static long skip(@Nullable ReadableByteChannel input, long toSkip) {
         if (input == null || toSkip < 0) {
             return 0L;
@@ -519,6 +867,14 @@ public abstract class IoUtilsWraps {
         return 0L;
     }
 
+    /**
+     * Skips the requested number of bytes or characters.
+     *
+     * @param input The input source
+     * @param toSkip The number of bytes or characters to skip
+     *
+     * @return the number of units actually skipped
+     */
     public static long skip(@Nullable Reader input, long toSkip) {
         if (input == null || toSkip < 0) {
             return 0L;
@@ -530,6 +886,12 @@ public abstract class IoUtilsWraps {
         return 0L;
     }
 
+    /**
+     * Skips exactly the requested number of bytes or characters.
+     *
+     * @param input The input source
+     * @param toSkip The number of bytes or characters to skip
+     */
     public static void skipFully(@Nullable InputStream input, long toSkip) {
         if (input == null || toSkip < 0) {
             return;
@@ -540,6 +902,12 @@ public abstract class IoUtilsWraps {
         }
     }
 
+    /**
+     * Skips exactly the requested number of bytes or characters.
+     *
+     * @param input The input source
+     * @param toSkip The number of bytes or characters to skip
+     */
     public static void skipFully(@Nullable ReadableByteChannel input, long toSkip) {
         if (input == null || toSkip < 0) {
             return;
@@ -550,6 +918,12 @@ public abstract class IoUtilsWraps {
         }
     }
 
+    /**
+     * Skips exactly the requested number of bytes or characters.
+     *
+     * @param input The input source
+     * @param toSkip The number of bytes or characters to skip
+     */
     public static void skipFully(@Nullable Reader input, long toSkip) {
         if (input == null || toSkip < 0) {
             return;
@@ -560,6 +934,13 @@ public abstract class IoUtilsWraps {
         }
     }
 
+    /**
+     * Wraps the source in a buffered input stream.
+     *
+     * @param source The source
+     *
+     * @return a buffered input stream, or null when the source is null
+     */
     @Nullable
     public static InputStream toBufferedInputStream(@Nullable InputStream source) {
         if (source == null) {
@@ -572,6 +953,14 @@ public abstract class IoUtilsWraps {
         return null;
     }
 
+    /**
+     * Wraps the source in a buffered input stream.
+     *
+     * @param source The source
+     * @param size The requested buffer or content size
+     *
+     * @return a buffered input stream, or null when the source is null
+     */
     @Nullable
     public static InputStream toBufferedInputStream(@Nullable InputStream source, int size) {
         if (source == null || size <= 0) {
@@ -584,6 +973,13 @@ public abstract class IoUtilsWraps {
         return null;
     }
 
+    /**
+     * Reads the source into a byte array.
+     *
+     * @param source The source
+     *
+     * @return a byte array, or null when the source cannot be read
+     */
     @Nullable
     public static byte[] toByteArray(@Nullable InputStream source) {
         if (source == null) {
@@ -596,6 +992,14 @@ public abstract class IoUtilsWraps {
         return null;
     }
 
+    /**
+     * Reads the source into a byte array.
+     *
+     * @param source The source
+     * @param size The requested buffer or content size
+     *
+     * @return a byte array, or null when the source cannot be read
+     */
     @Nullable
     public static byte[] toByteArray(@Nullable InputStream source, int size) {
         if (source == null || size <= 0) {
@@ -608,6 +1012,14 @@ public abstract class IoUtilsWraps {
         return null;
     }
 
+    /**
+     * Reads the source into a byte array.
+     *
+     * @param source The source
+     * @param size The requested buffer or content size
+     *
+     * @return a byte array, or null when the source cannot be read
+     */
     @Nullable
     public static byte[] toByteArray(@Nullable InputStream source, long size) {
         if (source == null || size <= 0L) {
@@ -620,6 +1032,14 @@ public abstract class IoUtilsWraps {
         return null;
     }
 
+    /**
+     * Reads the source into a byte array.
+     *
+     * @param source The source
+     * @param charset The charset
+     *
+     * @return a byte array, or null when the source cannot be read
+     */
     @Nullable
     public static byte[] toByteArray(@Nullable Reader source, @Nullable Charset charset) {
         if (source == null) {
@@ -632,6 +1052,14 @@ public abstract class IoUtilsWraps {
         return null;
     }
 
+    /**
+     * Reads the source into a byte array.
+     *
+     * @param source The source
+     * @param charset The charset
+     *
+     * @return a byte array, or null when the source cannot be read
+     */
     @Nullable
     public static byte[] toByteArray(@Nullable Reader source, @Nullable String charset) {
         if (source == null) {
@@ -644,6 +1072,13 @@ public abstract class IoUtilsWraps {
         return null;
     }
 
+    /**
+     * Reads the source into a byte array.
+     *
+     * @param source The source
+     *
+     * @return a byte array, or null when the source cannot be read
+     */
     @Nullable
     public static byte[] toByteArray(@Nullable URI source) {
         if (source == null) {
@@ -656,6 +1091,13 @@ public abstract class IoUtilsWraps {
         return null;
     }
 
+    /**
+     * Reads the source into a byte array.
+     *
+     * @param source The source
+     *
+     * @return a byte array, or null when the source cannot be read
+     */
     @Nullable
     public static byte[] toByteArray(@Nullable URL source) {
         if (source == null) {
@@ -668,6 +1110,13 @@ public abstract class IoUtilsWraps {
         return null;
     }
 
+    /**
+     * Reads the source into a byte array.
+     *
+     * @param source The source
+     *
+     * @return a byte array, or null when the source cannot be read
+     */
     @Nullable
     public static byte[] toByteArray(@Nullable URLConnection source) {
         if (source == null) {
@@ -680,6 +1129,14 @@ public abstract class IoUtilsWraps {
         return null;
     }
 
+    /**
+     * Reads the source into a char array.
+     *
+     * @param source The source
+     * @param charset The charset
+     *
+     * @return a char array, or null when the source cannot be read
+     */
     @Nullable
     public static char[] toCharArray(@Nullable InputStream source, @Nullable Charset charset) {
         if (source == null) {
@@ -692,6 +1149,14 @@ public abstract class IoUtilsWraps {
         return null;
     }
 
+    /**
+     * Reads the source into a char array.
+     *
+     * @param source The source
+     * @param charset The charset
+     *
+     * @return a char array, or null when the source cannot be read
+     */
     @Nullable
     public static char[] toCharArray(@Nullable InputStream source, @Nullable String charset) {
         if (source == null) {
@@ -704,6 +1169,13 @@ public abstract class IoUtilsWraps {
         return null;
     }
 
+    /**
+     * Reads the source into a char array.
+     *
+     * @param source The source
+     *
+     * @return a char array, or null when the source cannot be read
+     */
     @Nullable
     public static char[] toCharArray(@Nullable Reader source) {
         if (source == null) {
@@ -716,6 +1188,14 @@ public abstract class IoUtilsWraps {
         return null;
     }
 
+    /**
+     * Reads the source into a string.
+     *
+     * @param source The source
+     * @param charset The charset
+     *
+     * @return the source content as a string, or null when it cannot be read
+     */
     @Nullable
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static String toString(@Nullable byte[] source, @Nullable Charset charset) {
@@ -729,6 +1209,14 @@ public abstract class IoUtilsWraps {
         return null;
     }
 
+    /**
+     * Reads the source into a string.
+     *
+     * @param source The source
+     * @param charset The charset
+     *
+     * @return the source content as a string, or null when it cannot be read
+     */
     @Nullable
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static String toString(@Nullable byte[] source, @Nullable String charset) {
@@ -742,6 +1230,14 @@ public abstract class IoUtilsWraps {
         return null;
     }
 
+    /**
+     * Reads the source into a string.
+     *
+     * @param source The source
+     * @param charset The charset
+     *
+     * @return the source content as a string, or null when it cannot be read
+     */
     @Nullable
     public static String toString(@Nullable InputStream source, @Nullable Charset charset) {
         if (source == null) {
@@ -754,6 +1250,14 @@ public abstract class IoUtilsWraps {
         return null;
     }
 
+    /**
+     * Reads the source into a string.
+     *
+     * @param source The source
+     * @param charset The charset
+     *
+     * @return the source content as a string, or null when it cannot be read
+     */
     @Nullable
     public static String toString(@Nullable InputStream source, @Nullable String charset) {
         if (source == null) {
@@ -766,6 +1270,13 @@ public abstract class IoUtilsWraps {
         return null;
     }
 
+    /**
+     * Reads the source into a string.
+     *
+     * @param source The source
+     *
+     * @return the source content as a string, or null when it cannot be read
+     */
     @Nullable
     public static String toString(@Nullable Reader source) {
         if (source == null) {
@@ -778,6 +1289,14 @@ public abstract class IoUtilsWraps {
         return null;
     }
 
+    /**
+     * Reads the source into a string.
+     *
+     * @param source The source
+     * @param charset The charset
+     *
+     * @return the source content as a string, or null when it cannot be read
+     */
     @Nullable
     public static String toString(@Nullable URI source, @Nullable Charset charset) {
         if (source == null) {
@@ -790,6 +1309,14 @@ public abstract class IoUtilsWraps {
         return null;
     }
 
+    /**
+     * Reads the source into a string.
+     *
+     * @param source The source
+     * @param charset The charset
+     *
+     * @return the source content as a string, or null when it cannot be read
+     */
     @Nullable
     public static String toString(@Nullable URI source, @Nullable String charset) {
         if (source == null) {
@@ -802,6 +1329,14 @@ public abstract class IoUtilsWraps {
         return null;
     }
 
+    /**
+     * Reads the source into a string.
+     *
+     * @param source The source
+     * @param charset The charset
+     *
+     * @return the source content as a string, or null when it cannot be read
+     */
     @Nullable
     public static String toString(@Nullable URL source, @Nullable Charset charset) {
         if (source == null) {
@@ -814,6 +1349,14 @@ public abstract class IoUtilsWraps {
         return null;
     }
 
+    /**
+     * Reads the source into a string.
+     *
+     * @param source The source
+     * @param charset The charset
+     *
+     * @return the source content as a string, or null when it cannot be read
+     */
     @Nullable
     public static String toString(@Nullable URL source, @Nullable String charset) {
         if (source == null) {
@@ -826,6 +1369,12 @@ public abstract class IoUtilsWraps {
         return null;
     }
 
+    /**
+     * Writes the data to the target.
+     *
+     * @param data The data to write
+     * @param target The target
+     */
     public static void write(@Nullable byte[] data, @Nullable OutputStream target) {
         if (ArrayUtils.isEmpty(data) || target == null) {
             return;
@@ -836,6 +1385,13 @@ public abstract class IoUtilsWraps {
         }
     }
 
+    /**
+     * Writes the data to the target.
+     *
+     * @param data The data to write
+     * @param target The target
+     * @param charset The charset
+     */
     public static void write(@Nullable byte[] data, @Nullable Writer target, @Nullable Charset charset) {
         if (ArrayUtils.isEmpty(data) || target == null) {
             return;
@@ -846,6 +1402,13 @@ public abstract class IoUtilsWraps {
         }
     }
 
+    /**
+     * Writes the data to the target.
+     *
+     * @param data The data to write
+     * @param target The target
+     * @param charset The charset
+     */
     public static void write(@Nullable byte[] data, @Nullable Writer target, @Nullable String charset) {
         if (ArrayUtils.isEmpty(data) || target == null) {
             return;
@@ -856,6 +1419,13 @@ public abstract class IoUtilsWraps {
         }
     }
 
+    /**
+     * Writes the data to the target.
+     *
+     * @param data The data to write
+     * @param target The target
+     * @param charset The charset
+     */
     public static void write(@Nullable char[] data, @Nullable OutputStream target, @Nullable Charset charset) {
         if (ArrayUtils.isEmpty(data) || target == null) {
             return;
@@ -866,6 +1436,13 @@ public abstract class IoUtilsWraps {
         }
     }
 
+    /**
+     * Writes the data to the target.
+     *
+     * @param data The data to write
+     * @param target The target
+     * @param charset The charset
+     */
     public static void write(@Nullable char[] data, @Nullable OutputStream target, @Nullable String charset) {
         if (ArrayUtils.isEmpty(data) || target == null) {
             return;
@@ -876,6 +1453,12 @@ public abstract class IoUtilsWraps {
         }
     }
 
+    /**
+     * Writes the data to the target.
+     *
+     * @param data The data to write
+     * @param target The target
+     */
     public static void write(@Nullable char[] data, @Nullable Writer target) {
         if (ArrayUtils.isEmpty(data) || target == null) {
             return;
@@ -886,6 +1469,13 @@ public abstract class IoUtilsWraps {
         }
     }
 
+    /**
+     * Writes the data to the target.
+     *
+     * @param data The data to write
+     * @param target The target
+     * @param charset The charset
+     */
     public static void write(@Nullable CharSequence data, @Nullable OutputStream target, @Nullable Charset charset) {
         if (StringUtils.isEmpty(data) || target == null) {
             return;
@@ -896,6 +1486,13 @@ public abstract class IoUtilsWraps {
         }
     }
 
+    /**
+     * Writes the data to the target.
+     *
+     * @param data The data to write
+     * @param target The target
+     * @param charset The charset
+     */
     public static void write(@Nullable CharSequence data, @Nullable OutputStream target, @Nullable String charset) {
         if (StringUtils.isEmpty(data) || target == null) {
             return;
@@ -906,6 +1503,12 @@ public abstract class IoUtilsWraps {
         }
     }
 
+    /**
+     * Writes the data to the target.
+     *
+     * @param data The data to write
+     * @param target The target
+     */
     public static void write(@Nullable CharSequence data, @Nullable Writer target) {
         if (StringUtils.isEmpty(data) || target == null) {
             return;
@@ -916,6 +1519,13 @@ public abstract class IoUtilsWraps {
         }
     }
 
+    /**
+     * Writes the data to the target.
+     *
+     * @param data The data to write
+     * @param target The target
+     * @param charset The charset
+     */
     public static void write(@Nullable String data, @Nullable OutputStream target, @Nullable Charset charset) {
         if (StringUtils.isEmpty(data) || target == null) {
             return;
@@ -926,6 +1536,13 @@ public abstract class IoUtilsWraps {
         }
     }
 
+    /**
+     * Writes the data to the target.
+     *
+     * @param data The data to write
+     * @param target The target
+     * @param charset The charset
+     */
     public static void write(@Nullable String data, @Nullable OutputStream target, @Nullable String charset) {
         if (StringUtils.isEmpty(data) || target == null) {
             return;
@@ -936,6 +1553,12 @@ public abstract class IoUtilsWraps {
         }
     }
 
+    /**
+     * Writes the data to the target.
+     *
+     * @param data The data to write
+     * @param target The target
+     */
     public static void write(@Nullable String data, @Nullable Writer target) {
         if (StringUtils.isEmpty(data) || target == null) {
             return;
@@ -946,6 +1569,12 @@ public abstract class IoUtilsWraps {
         }
     }
 
+    /**
+     * Writes the data to the target in chunks.
+     *
+     * @param data The data to write
+     * @param target The target
+     */
     public static void writeChunked(@Nullable byte[] data, @Nullable OutputStream target) {
         if (ArrayUtils.isEmpty(data) || target == null) {
             return;
@@ -956,6 +1585,12 @@ public abstract class IoUtilsWraps {
         }
     }
 
+    /**
+     * Writes the data to the target in chunks.
+     *
+     * @param data The data to write
+     * @param target The target
+     */
     public static void writeChunked(@Nullable char[] data, @Nullable Writer target) {
         if (ArrayUtils.isEmpty(data) || target == null) {
             return;
@@ -966,6 +1601,13 @@ public abstract class IoUtilsWraps {
         }
     }
 
+    /**
+     * Writes the lines to the target using the given line ending.
+     *
+     * @param lines The lines to write
+     * @param lineEnding The line ending
+     * @param target The target
+     */
     public static void writeLines(@Nullable Collection<?> lines, @Nullable String lineEnding, @Nullable Writer target) {
         if (CollectionPlainWraps.isEmpty(lines) || target == null) {
             return;
@@ -976,6 +1618,14 @@ public abstract class IoUtilsWraps {
         }
     }
 
+    /**
+     * Writes the lines to the target using the given line ending.
+     *
+     * @param lines The lines to write
+     * @param lineEnding The line ending
+     * @param target The target
+     * @param charset The charset
+     */
     public static void writeLines(@Nullable Collection<?> lines, @Nullable String lineEnding, @Nullable OutputStream target, @Nullable Charset charset) {
         if (CollectionPlainWraps.isEmpty(lines) || target == null) {
             return;
@@ -986,6 +1636,14 @@ public abstract class IoUtilsWraps {
         }
     }
 
+    /**
+     * Writes the lines to the target using the given line ending.
+     *
+     * @param lines The lines to write
+     * @param lineEnding The line ending
+     * @param target The target
+     * @param charset The charset
+     */
     public static void writeLines(@Nullable Collection<?> lines, @Nullable String lineEnding, @Nullable OutputStream target, @Nullable String charset) {
         if (CollectionPlainWraps.isEmpty(lines) || target == null) {
             return;
