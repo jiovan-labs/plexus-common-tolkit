@@ -1,17 +1,18 @@
-# Plexus Javase Util
+# Plexus Common Toolkit
 
-Unikue plexus-javase-util is a package of utility classes for the Java SE's hierarchy, or are considered to be so standard as to justify existence in many other utilities.
+Jiovan plexus-common-tolkit is a package of utility classes for the java hierarchy, or are considered to be so standard as to justify existence in many other utilities.
 
 ## Quickstart
 
 - Import dependencies
 
 ```xml
-    <dependency>
-        <groupId>cn.unikue.commonplexus</groupId>
-        <artifactId>plexus-javase-util</artifactId>
-        <version>LATEST</version>
-    </dependency>
+
+<dependency>
+    <groupId>com.jiovan.plexus</groupId>
+    <artifactId>plexus-common-tolkit</artifactId>
+    <version>LATEST</version>
+</dependency>
 ```
 
 - There are many useful packages that may help you a lot, code with it as you wish.
@@ -33,7 +34,7 @@ Unikue plexus-javase-util is a package of utility classes for the Java SE's hier
 
 ## Document
 
-- Github: https://github.com/unikueltd/plexus-javase-util
+- Github: https://github.com/jiovan-labs/plexus-common-tolkit
 
 ## Requirement
 
@@ -47,12 +48,12 @@ See the `NOTICE.txt` file for required notices and attributions.
 
 ## Donation
 
-You like this package? Then [donate to us](https://unikue.cn/donation) to support the development.
+You like this package? Then [donate to us](https://jiovan.com/donation) to support the development.
 
 ## Copyright
 
-Beijing Unikue Network Technology Ltd.
+Beijing Jiovan Technology Ltd.
 
 ## Website
 
-- Unikue: https://unikue.cn
+- Jiovan: https://jiovan.com

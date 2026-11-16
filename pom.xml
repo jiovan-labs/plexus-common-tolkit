@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
- * Copyright (c) 2016 Unikue Ltd. All rights reserved.
+ * Copyright (c) 2016 Jiovan Ltd. All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,18 +20,18 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>cn.unikue.commonplexus</groupId>
-    <artifactId>plexus-javase-util</artifactId>
-    <version>2.3.2</version>
+    <groupId>com.jiovan.plexus</groupId>
+    <artifactId>plexus-common-tolkit</artifactId>
+    <version>2.5.0</version>
 
     <name>${project.artifactId}</name>
-    <description>Unikue Plexus JavaSE Util provides many easy-to-use utilities</description>
-    <url>https://github.com/unikueltd/plexus-javase-util</url>
+    <description>Jiovan Plexus Common Toolkit provides many easy-to-use utilities</description>
+    <url>https://github.com/jiovan-labs/plexus-common-tolkit</url>
     <inceptionYear>2016</inceptionYear>
 
     <organization>
-        <name>Unikue Ltd</name>
-        <url>https://unikue.cn</url>
+        <name>Jiovan Ltd</name>
+        <url>https://jiovan.com</url>
     </organization>
 
     <properties>
@@ -48,39 +48,38 @@
         <project.reporting.outputEncoding>${file.encoding}</project.reporting.outputEncoding>
 
         <commons-beanutils2.version>2.0.0-M2</commons-beanutils2.version>
-        <commons-codec.version>1.22.0</commons-codec.version>
-        <commons-collections4.version>4.5.0</commons-collections4.version>
+        <commons-codec.version>1.21.0</commons-codec.version>
+        <commons-collections4.version>4.6.0</commons-collections4.version>
         <commons-io.version>2.22.0</commons-io.version>
-        <commons-lang3.version>3.17.0</commons-lang3.version>
+        <commons-lang3.version>3.20.0</commons-lang3.version>
         <commons-text.version>1.15.0</commons-text.version>
         <exp4j.version>0.4.8</exp4j.version>
-        <guava.version>33.6.0-jre</guava.version>
-        <jakarta-annotation.version>2.1.1</jakarta-annotation.version>
+        <guava.version>33.8.0-jre</guava.version>
+        <jakarta-annotation.version>3.0.0</jakarta-annotation.version>
         <jakarta-json.version>2.1.3</jakarta-json.version>
-        <jakarta-json-bind.version>3.0.1</jakarta-json-bind.version>
-        <jakarta-persistence.version>3.1.0</jakarta-persistence.version>
-        <jakarta-validation.version>3.0.2</jakarta-validation.version>
+        <jakarta-json-bind.version>3.0.2</jakarta-json-bind.version>
+        <jakarta-persistence.version>3.2.0</jakarta-persistence.version>
+        <jakarta-validation.version>3.1.1</jakarta-validation.version>
         <jnanoid.version>2.0.0</jnanoid.version>
-        <jsoup.version>1.22.2</jsoup.version>
-        <jsqlparser.version>5.3</jsqlparser.version>
+        <jsoup.version>1.24.1</jsoup.version>
+        <jsqlparser.version>5.4</jsqlparser.version>
         <lombok.version>1.18.46</lombok.version>
-        <oshi.version>7.4.0</oshi.version>
-        <pinyin4j.version>2.7.3</pinyin4j.version>
+        <oshi.version>7.7.3</oshi.version>
+        <pinyin4j.version>4.0.0</pinyin4j.version>
         <slf4j.version>2.0.18</slf4j.version>
 
-        <junit-jupiter.version>5.12.2</junit-jupiter.version>
+        <junit-jupiter.version>6.0.3</junit-jupiter.version>
 
-        <javadoc-docent-maven-plugin.version>2.1.2</javadoc-docent-maven-plugin.version>
-        <maven-compiler-plugin.version>3.14.1</maven-compiler-plugin.version>
+        <maven-compiler-plugin.version>3.15.0</maven-compiler-plugin.version>
         <maven-install-plugin.version>3.1.4</maven-install-plugin.version>
-        <maven-jar-plugin.version>3.4.2</maven-jar-plugin.version>
-        <maven-javadoc-plugin.version>3.11.3</maven-javadoc-plugin.version>
-        <maven-resources-plugin.version>3.3.1</maven-resources-plugin.version>
-        <maven-source-plugin.version>3.3.1</maven-source-plugin.version>
+        <maven-jar-plugin.version>3.5.0</maven-jar-plugin.version>
+        <maven-javadoc-plugin.version>3.12.0</maven-javadoc-plugin.version>
+        <maven-resources-plugin.version>3.5.0</maven-resources-plugin.version>
+        <maven-source-plugin.version>3.4.0</maven-source-plugin.version>
         <maven-surefire-plugin.version>3.5.6</maven-surefire-plugin.version>
         <maven-gpg-plugin.version>3.2.8</maven-gpg-plugin.version>
-        <central-publishing-maven-plugin.version>0.11.0</central-publishing-maven-plugin.version>
-        <versions-maven-plugin.version>2.21.0</versions-maven-plugin.version>
+        <central-publishing-maven-plugin.version>0.12.0</central-publishing-maven-plugin.version>
+        <versions-maven-plugin.version>2.25.1</versions-maven-plugin.version>
     </properties>
 
     <dependencyManagement>
@@ -248,7 +247,7 @@
             <optional>true</optional>
         </dependency>
         <dependency>
-            <groupId>cn.unikue.forkextension.pinyin4j</groupId>
+            <groupId>com.jiovan.revival</groupId>
             <artifactId>pinyin4j</artifactId>
             <version>${pinyin4j.version}</version>
             <optional>true</optional>
@@ -348,19 +347,6 @@
                         <link>https://commons.apache.org/proper/commons-lang/apidocs</link>
                         <link>https://commons.apache.org/proper/commons-text/javadocs/api-release</link>
                     </links>
-                    <taglets>
-                        <taglet>
-                            <tagletClass>cn.unikue.mavenplugin.javadocdocent.taglet.ReferenceTaglet</tagletClass>
-                        </taglet>
-                        <taglet>
-                            <tagletClass>cn.unikue.mavenplugin.javadocdocent.taglet.WarningTaglet</tagletClass>
-                        </taglet>
-                    </taglets>
-                    <tagletArtifact>
-                        <groupId>cn.unikue.mavenplugin</groupId>
-                        <artifactId>javadoc-docent-maven-plugin</artifactId>
-                        <version>${javadoc-docent-maven-plugin.version}</version>
-                    </tagletArtifact>
                 </configuration>
                 <executions>
                     <execution>
@@ -437,14 +423,14 @@
     </build>
 
     <scm>
-        <url>https://github.com/unikueltd/plexus-javase-util</url>
-        <connection>scm:git:https://github.com/unikueltd/plexus-javase-util.git</connection>
-        <developerConnection>scm:git:https://github.com/unikueltd/plexus-javase-util.git</developerConnection>
+        <url>https://github.com/jiovan-labs/plexus-common-tolkit</url>
+        <connection>scm:git:https://github.com/jiovan-labs/plexus-common-tolkit.git</connection>
+        <developerConnection>scm:git:https://github.com/jiovan-labs/plexus-common-tolkit.git</developerConnection>
     </scm>
 
     <issueManagement>
         <system>Github</system>
-        <url>https://github.com/unikueltd/plexus-javase-util/issues</url>
+        <url>https://github.com/jiovan-labs/plexus-common-tolkit/issues</url>
     </issueManagement>
 
     <licenses>
@@ -457,7 +443,7 @@
 
     <developers>
         <developer>
-            <name>Unikue Ltd</name>
+            <name>Jiovan Ltd</name>
         </developer>
         <developer>
             <id>davidhsing</id>
@@ -469,8 +455,8 @@
             <roles>
                 <role>developer</role>
             </roles>
-            <organization>Unikue Ltd</organization>
-            <organizationUrl>https://unikue.cn</organizationUrl>
+            <organization>Jiovan Ltd</organization>
+            <organizationUrl>https://jiovan.com</organizationUrl>
             <timezone>China/Beijing</timezone>
         </developer>
     </developers>
