@@ -79,6 +79,7 @@ public abstract class AssertMessageWraps {
      * Generate assertion message for text with content requirement.
      *
      * @param argument the argument name
+     *
      * @return formatted assertion message
      */
     @Nonnull
@@ -91,6 +92,7 @@ public abstract class AssertMessageWraps {
      *
      * @param argument the argument name
      * @param superclass the expected superclass name
+     *
      * @return formatted assertion message
      */
     @Nonnull
@@ -103,6 +105,7 @@ public abstract class AssertMessageWraps {
      *
      * @param argument the argument name
      * @param subclass the expected subclass name
+     *
      * @return formatted assertion message
      */
     @Nonnull
@@ -114,6 +117,7 @@ public abstract class AssertMessageWraps {
      * Generate assertion message for null check.
      *
      * @param argument the argument name
+     *
      * @return formatted assertion message
      */
     @Nonnull
@@ -125,6 +129,7 @@ public abstract class AssertMessageWraps {
      * Generate assertion message for boolean expression check.
      *
      * @param expression the expression description
+     *
      * @return formatted assertion message
      */
     @Nonnull
@@ -137,6 +142,7 @@ public abstract class AssertMessageWraps {
      *
      * @param argument the argument name
      * @param comparison the value that should not be contained
+     *
      * @return formatted assertion message
      */
     @Nonnull
@@ -148,6 +154,7 @@ public abstract class AssertMessageWraps {
      * Generate assertion message for not-empty check.
      *
      * @param argument the argument name
+     *
      * @return formatted assertion message
      */
     @Nonnull
@@ -160,6 +167,7 @@ public abstract class AssertMessageWraps {
      *
      * @param argument the argument name
      * @param comparison the value to compare against
+     *
      * @return formatted assertion message
      */
     @Nonnull
@@ -171,6 +179,7 @@ public abstract class AssertMessageWraps {
      * Generate assertion message for not-null check.
      *
      * @param argument the argument name
+     *
      * @return formatted assertion message
      */
     @Nonnull
@@ -182,6 +191,7 @@ public abstract class AssertMessageWraps {
      * Generate assertion message for no-null-elements check.
      *
      * @param argument the argument name
+     *
      * @return formatted assertion message
      */
     @Nonnull
@@ -193,6 +203,7 @@ public abstract class AssertMessageWraps {
      * Generate assertion message for state invariant check.
      *
      * @param expression the state expression description
+     *
      * @return formatted assertion message
      */
     @Nonnull
@@ -205,6 +216,7 @@ public abstract class AssertMessageWraps {
      *
      * @param argument the argument name
      * @param comparison the value that should be contained
+     *
      * @return formatted assertion message
      */
     @Nonnull
@@ -216,6 +228,7 @@ public abstract class AssertMessageWraps {
      * Generate assertion message for empty check.
      *
      * @param argument the argument name
+     *
      * @return formatted assertion message
      */
     @Nonnull
@@ -228,6 +241,7 @@ public abstract class AssertMessageWraps {
      *
      * @param argument the argument name
      * @param comparison the value to compare against
+     *
      * @return formatted assertion message
      */
     @Nonnull
@@ -239,6 +253,7 @@ public abstract class AssertMessageWraps {
      * Generate assertion message for existence check.
      *
      * @param argument the argument name
+     *
      * @return formatted assertion message
      */
     @Nonnull
@@ -250,6 +265,7 @@ public abstract class AssertMessageWraps {
      * Generate assertion message for non-existence check.
      *
      * @param argument the argument name
+     *
      * @return formatted assertion message
      */
     @Nonnull
@@ -261,6 +277,7 @@ public abstract class AssertMessageWraps {
      * Generate assertion message for year validation.
      *
      * @param argument the argument name
+     *
      * @return formatted assertion message
      */
     @Nonnull
@@ -272,6 +289,7 @@ public abstract class AssertMessageWraps {
      * Generate assertion message for month validation.
      *
      * @param argument the argument name
+     *
      * @return formatted assertion message
      */
     @Nonnull
@@ -283,6 +301,7 @@ public abstract class AssertMessageWraps {
      * Generate assertion message for day validation.
      *
      * @param argument the argument name
+     *
      * @return formatted assertion message
      */
     @Nonnull
@@ -294,6 +313,7 @@ public abstract class AssertMessageWraps {
      * Generate assertion message for directory check.
      *
      * @param argument the argument name
+     *
      * @return formatted assertion message
      */
     @Nonnull
@@ -305,6 +325,7 @@ public abstract class AssertMessageWraps {
      * Generate assertion message for file check.
      *
      * @param argument the argument name
+     *
      * @return formatted assertion message
      */
     @Nonnull
@@ -316,6 +337,7 @@ public abstract class AssertMessageWraps {
      * Generate assertion message for positive number check.
      *
      * @param argument the argument name
+     *
      * @return formatted assertion message
      */
     @Nonnull
@@ -327,6 +349,7 @@ public abstract class AssertMessageWraps {
      * Generate assertion message for negative number check.
      *
      * @param argument the argument name
+     *
      * @return formatted assertion message
      */
     @Nonnull
@@ -338,6 +361,7 @@ public abstract class AssertMessageWraps {
      * Generate assertion message for executable permission check.
      *
      * @param argument the argument name
+     *
      * @return formatted assertion message
      */
     @Nonnull
@@ -349,6 +373,7 @@ public abstract class AssertMessageWraps {
      * Generate assertion message for readable permission check.
      *
      * @param argument the argument name
+     *
      * @return formatted assertion message
      */
     @Nonnull
@@ -360,6 +385,7 @@ public abstract class AssertMessageWraps {
      * Generate assertion message for writable permission check.
      *
      * @param argument the argument name
+     *
      * @return formatted assertion message
      */
     @Nonnull
@@ -371,6 +397,7 @@ public abstract class AssertMessageWraps {
      * Generate assertion message for non-positive number check.
      *
      * @param argument the argument name
+     *
      * @return formatted assertion message
      */
     @Nonnull
@@ -382,6 +409,7 @@ public abstract class AssertMessageWraps {
      * Generate assertion message for non-negative number check.
      *
      * @param argument the argument name
+     *
      * @return formatted assertion message
      */
     @Nonnull

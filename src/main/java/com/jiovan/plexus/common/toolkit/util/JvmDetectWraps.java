@@ -66,6 +66,7 @@ public abstract class JvmDetectWraps {
      * It is equivalent to {@link MemoryUsage#getCommitted()} from {@link #getJvmHeapMemoryUsage()}.
      *
      * @return total heap memory in bytes (committed memory)
+     *
      * @see #getJvmFreeMemory()
      * @see #getJvmUsedMemory()
      * @see #getJvmHeapMemoryUsage()
@@ -81,6 +82,7 @@ public abstract class JvmDetectWraps {
      * Note: Free memory = totalMemory - usedMemory. The JVM may request more memory from OS when needed.
      *
      * @return free heap memory in bytes
+     *
      * @see #getJvmTotalMemory()
      * @see #getJvmUsedMemory()
      */
@@ -96,6 +98,7 @@ public abstract class JvmDetectWraps {
      * Note: The JVM heap can grow from totalMemory up to maxMemory as needed.
      *
      * @return maximum heap memory in bytes, or {@code -1} if undefined
+     *
      * @see #getJvmTotalMemory()
      */
     public static long getJvmMaxMemory() {
@@ -111,6 +114,7 @@ public abstract class JvmDetectWraps {
      * detailed memory metrics from the MemoryMXBean.
      *
      * @return used heap memory in bytes
+     *
      * @see #getJvmTotalMemory()
      * @see #getJvmFreeMemory()
      * @see #getJvmHeapMemoryUsage()
@@ -133,6 +137,7 @@ public abstract class JvmDetectWraps {
      * it uses a different measurement approach based on actual object allocation vs. heap calculation.
      *
      * @return memory usage object containing init, used, committed, and max values
+     *
      * @see java.lang.management.MemoryUsage
      */
     @Nonnull
@@ -153,6 +158,7 @@ public abstract class JvmDetectWraps {
      * Note: Non-heap memory is not subject to garbage collection in the same way as heap memory.
      *
      * @return memory usage object containing init, used, committed, and max values
+     *
      * @see java.lang.management.MemoryUsage
      */
     @Nonnull

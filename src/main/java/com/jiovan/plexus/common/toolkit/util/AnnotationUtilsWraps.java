@@ -39,6 +39,7 @@ public abstract class AnnotationUtilsWraps {
      *
      * @param element the annotated element to check
      * @param annotation the annotation type to look for
+     *
      * @return true if the annotation is present, false otherwise
      */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
@@ -51,6 +52,7 @@ public abstract class AnnotationUtilsWraps {
      *
      * @param element the annotated element to check
      * @param annotation the annotation type to look for
+     *
      * @return true if the annotation is absent, false otherwise
      */
     public static boolean isAbsent(@Nullable AnnotatedElement element, @Nullable Class<? extends Annotation> annotation) {
@@ -62,6 +64,7 @@ public abstract class AnnotationUtilsWraps {
      *
      * @param element the annotated element to check
      * @param annotations the annotation types to look for
+     *
      * @return true if all annotations are present, false otherwise
      */
     @SafeVarargs
@@ -74,6 +77,7 @@ public abstract class AnnotationUtilsWraps {
      *
      * @param element the annotated element to check
      * @param annotations the collection of annotation types to look for
+     *
      * @return true if all annotations are present, false otherwise
      */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
@@ -86,6 +90,7 @@ public abstract class AnnotationUtilsWraps {
      *
      * @param element the annotated element to check
      * @param annotations the annotation types to look for
+     *
      * @return true if all annotations are absent, false otherwise
      */
     @SafeVarargs
@@ -98,6 +103,7 @@ public abstract class AnnotationUtilsWraps {
      *
      * @param element the annotated element to check
      * @param annotations the collection of annotation types to look for
+     *
      * @return true if all annotations are absent, false otherwise
      */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
@@ -110,6 +116,7 @@ public abstract class AnnotationUtilsWraps {
      *
      * @param element the annotated element to check
      * @param annotations the annotation types to look for
+     *
      * @return true if any annotation is present, false otherwise
      */
     @SafeVarargs
@@ -122,6 +129,7 @@ public abstract class AnnotationUtilsWraps {
      *
      * @param element the annotated element to check
      * @param annotations the collection of annotation types to look for
+     *
      * @return true if any annotation is present, false otherwise
      */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
@@ -134,6 +142,7 @@ public abstract class AnnotationUtilsWraps {
      *
      * @param element the annotated element to check
      * @param annotations the annotation types to look for
+     *
      * @return true if any annotation is absent, false otherwise
      */
     @SafeVarargs
@@ -146,6 +155,7 @@ public abstract class AnnotationUtilsWraps {
      *
      * @param element the annotated element to check
      * @param annotations the collection of annotation types to look for
+     *
      * @return true if any annotation is absent, false otherwise
      */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})

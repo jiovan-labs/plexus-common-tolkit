@@ -35,6 +35,7 @@ public abstract class CaseFormatWraps {
      * Convert lower-hyphen format to lower_underscore format.
      *
      * @param text the text to convert
+     *
      * @return the converted text, or original if blank
      */
     public static String lowerHyphen2LowerUnderscore(@Nullable String text) {
@@ -45,6 +46,7 @@ public abstract class CaseFormatWraps {
      * Convert lower-hyphen format to lowerCamel format.
      *
      * @param text the text to convert
+     *
      * @return the converted text, or original if blank
      */
     public static String lowerHyphen2LowerCamel(@Nullable String text) {
@@ -55,6 +57,7 @@ public abstract class CaseFormatWraps {
      * Convert lower-hyphen format to UpperCamel format.
      *
      * @param text the text to convert
+     *
      * @return the converted text, or original if blank
      */
     public static String lowerHyphen2UpperCamel(@Nullable String text) {
@@ -65,6 +68,7 @@ public abstract class CaseFormatWraps {
      * Convert lower-hyphen format to UPPER_UNDERSCORE format.
      *
      * @param text the text to convert
+     *
      * @return the converted text, or original if blank
      */
     public static String lowerHyphen2UpperUnderscore(@Nullable String text) {
@@ -75,6 +79,7 @@ public abstract class CaseFormatWraps {
      * Convert lower_underscore format to lower-hyphen format.
      *
      * @param text the text to convert
+     *
      * @return the converted text, or original if blank
      */
     public static String lowerUnderscore2LowerHyphen(@Nullable String text) {
@@ -85,6 +90,7 @@ public abstract class CaseFormatWraps {
      * Convert lower_underscore format to lowerCamel format.
      *
      * @param text the text to convert
+     *
      * @return the converted text, or original if blank
      */
     public static String lowerUnderscore2LowerCamel(@Nullable String text) {
@@ -95,6 +101,7 @@ public abstract class CaseFormatWraps {
      * Convert lower_underscore format to UpperCamel format.
      *
      * @param text the text to convert
+     *
      * @return the converted text, or original if blank
      */
     public static String lowerUnderscore2UpperCamel(@Nullable String text) {
@@ -105,6 +112,7 @@ public abstract class CaseFormatWraps {
      * Convert lower_underscore format to UPPER_UNDERSCORE format.
      *
      * @param text the text to convert
+     *
      * @return the converted text, or original if blank
      */
     public static String lowerUnderscore2UpperUnderscore(@Nullable String text) {
@@ -115,6 +123,7 @@ public abstract class CaseFormatWraps {
      * Convert lowerCamel format to lower-hyphen format.
      *
      * @param text the text to convert
+     *
      * @return the converted text, or original if blank
      */
     public static String lowerCamel2LowerHyphen(@Nullable String text) {
@@ -125,6 +134,7 @@ public abstract class CaseFormatWraps {
      * Convert lowerCamel format to lower_underscore format.
      *
      * @param text the text to convert
+     *
      * @return the converted text, or original if blank
      */
     public static String lowerCamel2LowerUnderscore(@Nullable String text) {
@@ -135,6 +145,7 @@ public abstract class CaseFormatWraps {
      * Convert lowerCamel format to UpperCamel format.
      *
      * @param text the text to convert
+     *
      * @return the converted text, or original if blank
      */
     public static String lowerCamel2UpperCamel(@Nullable String text) {
@@ -145,6 +156,7 @@ public abstract class CaseFormatWraps {
      * Convert lowerCamel format to UPPER_UNDERSCORE format.
      *
      * @param text the text to convert
+     *
      * @return the converted text, or original if blank
      */
     public static String lowerCamel2UpperUnderscore(@Nullable String text) {
@@ -155,6 +167,7 @@ public abstract class CaseFormatWraps {
      * Convert UpperCamel format to lower-hyphen format.
      *
      * @param text the text to convert
+     *
      * @return the converted text, or original if blank
      */
     public static String upperCamel2LowerHyphen(@Nullable String text) {
@@ -165,6 +178,7 @@ public abstract class CaseFormatWraps {
      * Convert UpperCamel format to lower_underscore format.
      *
      * @param text the text to convert
+     *
      * @return the converted text, or original if blank
      */
     public static String upperCamel2LowerUnderscore(@Nullable String text) {
@@ -175,6 +189,7 @@ public abstract class CaseFormatWraps {
      * Convert UpperCamel format to lowerCamel format.
      *
      * @param text the text to convert
+     *
      * @return the converted text, or original if blank
      */
     public static String upperCamel2LowerCamel(@Nullable String text) {
@@ -185,6 +200,7 @@ public abstract class CaseFormatWraps {
      * Convert UpperCamel format to UPPER_UNDERSCORE format.
      *
      * @param text the text to convert
+     *
      * @return the converted text, or original if blank
      */
     public static String upperCamel2UpperUnderscore(@Nullable String text) {
@@ -195,6 +211,7 @@ public abstract class CaseFormatWraps {
      * Convert UPPER_UNDERSCORE format to lower-hyphen format.
      *
      * @param text the text to convert
+     *
      * @return the converted text, or original if blank
      */
     public static String upperUnderscore2LowerHyphen(@Nullable String text) {
@@ -205,6 +222,7 @@ public abstract class CaseFormatWraps {
      * Convert UPPER_UNDERSCORE format to lower_underscore format.
      *
      * @param text the text to convert
+     *
      * @return the converted text, or original if blank
      */
     public static String upperUnderscore2LowerUnderscore(@Nullable String text) {
@@ -215,6 +233,7 @@ public abstract class CaseFormatWraps {
      * Convert UPPER_UNDERSCORE format to lowerCamel format.
      *
      * @param text the text to convert
+     *
      * @return the converted text, or original if blank
      */
     public static String upperUnderscore2LowerCamel(@Nullable String text) {
@@ -225,6 +244,7 @@ public abstract class CaseFormatWraps {
      * Convert UPPER_UNDERSCORE format to UpperCamel format.
      *
      * @param text the text to convert
+     *
      * @return the converted text, or original if blank
      */
     public static String upperUnderscore2UpperCamel(@Nullable String text) {

@@ -306,6 +306,7 @@ public abstract class StringUtilsWraps {
      * @param suffixes The additional suffixes that are valid terminators
      *
      * @throws java.lang.UnsupportedOperationException if the {@code clear} operation is not supported by this collection
+     *
      * @see "org.springframework.util.ObjectUtils#addObjectToArray"
      */
     public static void appendIfMissing(@Nullable Collection<String> collection, @Nullable CharSequence append, @Nullable CharSequence... suffixes) {
@@ -405,6 +406,7 @@ public abstract class StringUtilsWraps {
      * @param suffixes The additional suffixes that are valid terminators
      *
      * @throws java.lang.UnsupportedOperationException if the {@code clear} operation is not supported by this collection
+     *
      * @see org.apache.commons.lang3.Strings#appendIfMissing
      */
     public static void appendIfMissingIgnoreCase(@Nullable Collection<String> collection, @Nullable CharSequence append, @Nullable CharSequence... suffixes) {
@@ -609,6 +611,7 @@ public abstract class StringUtilsWraps {
      * Replaces all line breaks and tabs with single spaces, and collapses multiple consecutive spaces into one.
      *
      * @param text the input text to process
+     *
      * @return trimmed single-line string, or {@code null} if input is blank
      */
     @Nullable
@@ -2759,6 +2762,7 @@ public abstract class StringUtilsWraps {
      * @param prefixes additional prefixes that are valid terminators
      *
      * @throws java.lang.UnsupportedOperationException if the {@code clear} operation is not supported by this collection
+     *
      * @see "org.springframework.util.ObjectUtils#addObjectToArray"
      */
     public static void prependIfMissing(@Nullable Collection<String> collection, @Nullable CharSequence prepend, @Nullable CharSequence... prefixes) {
@@ -2858,6 +2862,7 @@ public abstract class StringUtilsWraps {
      * @param prefixes additional prefixes that are valid terminators
      *
      * @throws java.lang.UnsupportedOperationException if the {@code clear} operation is not supported by this collection
+     *
      * @see "org.springframework.util.ObjectUtils#addObjectToArray"
      */
     public static void prependIfMissingIgnoreCase(@Nullable Collection<String> collection, @Nullable CharSequence prepend, @Nullable CharSequence... prefixes) {

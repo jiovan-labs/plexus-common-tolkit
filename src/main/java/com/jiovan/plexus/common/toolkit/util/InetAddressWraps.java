@@ -45,6 +45,7 @@ public abstract class InetAddressWraps {
      * Get InetAddress from byte array address without host name.
      *
      * @param address the raw IP address in network byte order
+     *
      * @return the InetAddress object, or null if address is invalid
      */
     @Nullable
@@ -57,6 +58,7 @@ public abstract class InetAddressWraps {
      *
      * @param host the host name associated with the address
      * @param address the raw IP address in network byte order
+     *
      * @return the InetAddress object, or null if address is invalid
      */
     @Nullable
@@ -76,6 +78,7 @@ public abstract class InetAddressWraps {
      * Get InetAddress by resolving host name.
      *
      * @param host the host name to resolve
+     *
      * @return the InetAddress object, or null if host is blank or resolution fails
      */
     @Nullable
@@ -94,6 +97,7 @@ public abstract class InetAddressWraps {
      * Get all InetAddresses by resolving host name.
      *
      * @param host the host name to resolve
+     *
      * @return array of InetAddress objects, or null if host is blank or resolution fails
      */
     @Nullable
@@ -121,6 +125,7 @@ public abstract class InetAddressWraps {
      * Get local IP address (first available) with fallback option.
      *
      * @param useDefault whether to return default localhost if no address found
+     *
      * @return the local IP address, or null/127.0.0.1 based on useDefault parameter
      */
     @Nullable
@@ -200,6 +205,7 @@ public abstract class InetAddressWraps {
      * Check if the address is a LAN address (localhost or private IPv4).
      *
      * @param address the IP address to check
+     *
      * @return true if the address is a LAN address, false otherwise
      */
     public static boolean isLanAddress(@Nullable String address) {
@@ -262,6 +268,7 @@ public abstract class InetAddressWraps {
      * @param inet4 The address of {@link String} representation
      *
      * @return a {@link Long} that represents an inet4 address from it's {@link String} representation
+     *
      * @throws NumberFormatException if the IP address format is invalid
      */
     @Nullable
@@ -283,6 +290,7 @@ public abstract class InetAddressWraps {
      * @param port The port number
      *
      * @return a {@link Long} that represents an inet4 address with port from it's {@link String} representation
+     *
      * @throws NumberFormatException if the IP address format is invalid
      */
     @Nullable

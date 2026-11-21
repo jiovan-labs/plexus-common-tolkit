@@ -72,6 +72,7 @@ public abstract class SqlTimestampWraps {
      * @param format The date/time format pattern
      *
      * @return the parsed Timestamp, or null if parsing fails
+     *
      * @throws ParseException if the string cannot be parsed
      */
     @Nullable
@@ -88,6 +89,7 @@ public abstract class SqlTimestampWraps {
      * @param locale The locale to use for parsing
      *
      * @return the parsed Timestamp, or null if parsing fails
+     *
      * @throws ParseException if the string cannot be parsed
      */
     @Nullable

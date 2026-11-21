@@ -79,6 +79,7 @@ public class MapStringLookup<V> implements StringLookup {
      * Returns the value associated with the given key.
      *
      * @param key the key to look up, or null when absent
+     *
      * @return the string representation of the mapped value, the placeholder when configured for a missing key or null value, or null otherwise
      */
     @Override

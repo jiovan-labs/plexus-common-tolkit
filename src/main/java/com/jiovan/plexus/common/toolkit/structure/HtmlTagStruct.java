@@ -114,6 +114,7 @@ public class HtmlTagStruct implements Serializable {
      *
      * @param key the attribute key, or null when absent
      * @param value the value, or null when absent
+     *
      * @return this structure
      */
     public HtmlTagStruct addAttribute(@Nullable HTML.Attribute key, @Nullable String value) {
@@ -127,6 +128,7 @@ public class HtmlTagStruct implements Serializable {
      *
      * @param key the data key, or null or blank when absent
      * @param value the value, or null when absent
+     *
      * @return this structure
      */
     public HtmlTagStruct addData(@Nullable String key, @Nullable String value) {
@@ -139,6 +141,7 @@ public class HtmlTagStruct implements Serializable {
      * Appends the given lines to the sub-nodes of this tag.
      *
      * @param lines the lines to add, or null when absent
+     *
      * @return this structure
      */
     public HtmlTagStruct appendSubNode(@Nullable String... lines) {
@@ -149,6 +152,7 @@ public class HtmlTagStruct implements Serializable {
      * Appends the given lines to the sub-nodes of this tag.
      *
      * @param lines the lines to add, or null when absent
+     *
      * @return this structure
      */
     public HtmlTagStruct appendSubNode(@Nullable Collection<String> lines) {
@@ -161,6 +165,7 @@ public class HtmlTagStruct implements Serializable {
      * Prepends the given lines to the sub-nodes of this tag.
      *
      * @param lines the lines to add, or null when absent
+     *
      * @return this structure
      */
     public HtmlTagStruct prependSubNode(@Nullable String... lines) {
@@ -171,6 +176,7 @@ public class HtmlTagStruct implements Serializable {
      * Prepends the given lines to the sub-nodes of this tag.
      *
      * @param lines the lines to add, or null when absent
+     *
      * @return this structure
      */
     public HtmlTagStruct prependSubNode(@Nullable Collection<String> lines) {
@@ -237,6 +243,7 @@ public class HtmlTagStruct implements Serializable {
      * Removes and returns the value of the given HTML attribute.
      *
      * @param key the attribute key, or null when absent
+     *
      * @return the removed attribute value, or null when the key is null or no value was mapped
      */
     public String removeAttribute(@Nullable HTML.Attribute key) {
@@ -247,6 +254,7 @@ public class HtmlTagStruct implements Serializable {
      * Removes and returns the value associated with the given data key.
      *
      * @param key the data key, or null or blank when absent
+     *
      * @return the removed data value, or null when the key is null or blank or no value was mapped
      */
     public String removeData(@Nullable String key) {
@@ -267,6 +275,7 @@ public class HtmlTagStruct implements Serializable {
      * Returns the HTML representation of this tag using the given attribute quote character.
      *
      * @param delimiter the quote character used to surround attribute values
+     *
      * @return the HTML representation of this tag, or null when no tag is set
      */
     @Nullable

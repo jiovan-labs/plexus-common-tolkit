@@ -51,6 +51,7 @@ import org.apache.commons.lang3.StringUtils;
  * Utilities for {@link java.nio.file.Files}
  *
  * @author David Hsing
+ *
  * @see java.nio.file.Files
  */
 @SuppressWarnings({"unused", "BooleanMethodIsAlwaysInverted", "UnusedReturnValue"})
@@ -111,6 +112,7 @@ public abstract class FilePlainWraps {
      * Format bytes into a human-readable string (e.g., 1.5 GB, 256 MB, 1024 KB).
      *
      * @param bytes the number of bytes
+     *
      * @return formatted string with appropriate unit, or "0 B" if bytes is 0 or negative
      */
     @Nonnull

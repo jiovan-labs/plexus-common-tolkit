@@ -68,6 +68,7 @@ public class BooleanTextStruct extends TextStampStruct {
      *
      * @param success the success flag
      * @param texts the text messages, or null when absent
+     *
      * @return a structure with the given success flag and text messages
      */
     @Nonnull
@@ -80,6 +81,7 @@ public class BooleanTextStruct extends TextStampStruct {
      *
      * @param success the success flag
      * @param texts the text messages, or null when absent
+     *
      * @return a structure with the given success flag and text messages
      */
     @Nonnull
@@ -101,6 +103,7 @@ public class BooleanTextStruct extends TextStampStruct {
      * Creates a successful structure with the given text messages.
      *
      * @param texts the text messages, or null when absent
+     *
      * @return a successful structure with the given text messages
      */
     @Nonnull
@@ -112,6 +115,7 @@ public class BooleanTextStruct extends TextStampStruct {
      * Creates a successful structure with the given text messages.
      *
      * @param texts the text messages, or null when absent
+     *
      * @return a successful structure with the given text messages
      */
     @Nonnull
@@ -133,6 +137,7 @@ public class BooleanTextStruct extends TextStampStruct {
      * Creates a failed structure with the given text messages.
      *
      * @param texts the text messages, or null when absent
+     *
      * @return a failed structure with the given text messages
      */
     @Nonnull
@@ -144,6 +149,7 @@ public class BooleanTextStruct extends TextStampStruct {
      * Creates a failed structure with the given text messages.
      *
      * @param texts the text messages, or null when absent
+     *
      * @return a failed structure with the given text messages
      */
     @Nonnull

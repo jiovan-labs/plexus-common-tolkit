@@ -58,7 +58,9 @@ public class SqlDateConverter extends DateTimeConverter<Date> {
      *
      * @param type the target type, which must be assignable from Date
      * @param value the value to convert, or null when absent
+     *
      * @return the converted value, or null when the value is null
+     *
      * @throws Exception when the value cannot be converted
      */
     @Override

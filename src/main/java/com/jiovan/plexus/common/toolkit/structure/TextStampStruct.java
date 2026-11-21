@@ -74,6 +74,7 @@ public class TextStampStruct implements Serializable {
      * Adds the given text messages to this structure.
      *
      * @param texts the text messages, or null when absent
+     *
      * @return this structure
      */
     public TextStampStruct addText(@Nullable String... texts) {
@@ -84,6 +85,7 @@ public class TextStampStruct implements Serializable {
      * Adds the given text messages to this structure.
      *
      * @param texts the text messages, or null when absent
+     *
      * @return this structure
      */
     public TextStampStruct addText(@Nullable Collection<String> texts) {
@@ -97,6 +99,7 @@ public class TextStampStruct implements Serializable {
      *
      * @param index the zero-based index
      * @param texts the text messages, or null when absent
+     *
      * @return this structure
      */
     public TextStampStruct addTextAt(int index, @Nullable String... texts) {
@@ -108,6 +111,7 @@ public class TextStampStruct implements Serializable {
      *
      * @param index the zero-based index
      * @param texts the text messages, or null when absent
+     *
      * @return this structure
      */
     public TextStampStruct addTextAt(int index, @Nullable Collection<String> texts) {
@@ -130,6 +134,7 @@ public class TextStampStruct implements Serializable {
      * Returns the text message at the given index.
      *
      * @param index the zero-based index
+     *
      * @return the text at the given index, or null when the index is out of bounds
      */
     public String getText(int index) {
@@ -167,6 +172,7 @@ public class TextStampStruct implements Serializable {
      * Returns all text messages joined with the given delimiter.
      *
      * @param delimiter the delimiter character
+     *
      * @return the joined text, or an empty string when no texts are present
      */
     public String getCompositeText(char delimiter) {
@@ -177,6 +183,7 @@ public class TextStampStruct implements Serializable {
      * Returns all text messages joined with the given delimiter.
      *
      * @param delimiter the delimiter, or null when no delimiter is needed
+     *
      * @return the joined text, or an empty string when no texts are present
      */
     public String getCompositeText(@Nullable String delimiter) {
@@ -196,6 +203,7 @@ public class TextStampStruct implements Serializable {
      * Returns all text messages numbered and joined with the given delimiter.
      *
      * @param delimiter the delimiter character
+     *
      * @return the ordered composite text, or null when no texts are present
      */
     public String getCompositeTextOrdering(char delimiter) {
@@ -207,6 +215,7 @@ public class TextStampStruct implements Serializable {
      *
      * @param delimiter the delimiter character
      * @param order the ordering format, or null for no numbering
+     *
      * @return the ordered composite text, or null when no texts are present
      */
     public String getCompositeTextOrdering(char delimiter, @Nullable String order) {
@@ -217,6 +226,7 @@ public class TextStampStruct implements Serializable {
      * Returns all text messages numbered and joined with the given delimiter.
      *
      * @param delimiter the delimiter, or null when no delimiter is needed
+     *
      * @return the ordered composite text, or null when no texts are present
      */
     public String getCompositeTextOrdering(@Nullable String delimiter) {
@@ -228,6 +238,7 @@ public class TextStampStruct implements Serializable {
      *
      * @param delimiter the delimiter, or null when no delimiter is needed
      * @param order the ordering format, or null for no numbering
+     *
      * @return the ordered composite text, or null when no texts are present
      */
     public String getCompositeTextOrdering(@Nullable String delimiter, @Nullable String order) {
@@ -263,6 +274,7 @@ public class TextStampStruct implements Serializable {
      * Removes the text message at the given index when the index is in bounds.
      *
      * @param index the zero-based index
+     *
      * @return this structure
      */
     public TextStampStruct removeText(int index) {

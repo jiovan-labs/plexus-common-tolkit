@@ -69,6 +69,7 @@ public class EntityToSqlTranslator {
      * @param entity the entity to translate, or null when absent
      * @param schema the schema name, or null to use the value from the {@code Table} annotation
      * @param table the table name, or null to use the value from the {@code Table} annotation or the class name
+     *
      * @return the INSERT statement, or null when the entity is null or no column values were found
      */
     public String toInsertSql(@Nullable Object entity, @Nullable String schema, @Nullable String table) {
@@ -94,6 +95,7 @@ public class EntityToSqlTranslator {
      * @param entity the entity to translate, or null when absent
      * @param schema the schema name, or null to use the value from the {@code Table} annotation
      * @param table the table name, or null to use the value from the {@code Table} annotation or the class name
+     *
      * @return the DELETE statement, or null when the entity is null or no column values were found
      */
     public String toDeleteSql(@Nullable Object entity, @Nullable String schema, @Nullable String table) {
@@ -124,6 +126,7 @@ public class EntityToSqlTranslator {
      * @param entity the entity to inspect, or null when absent
      * @param schema the schema name, or null to use the value from the {@code Table} annotation
      * @param table the table name, or null to use the value from the {@code Table} annotation or the class name
+     *
      * @return the structure holding the schema, table, and column values, or null when the entity is null
      */
     @SuppressWarnings({"deprecation", "DataFlowIssue", "RedundantSuppression"})

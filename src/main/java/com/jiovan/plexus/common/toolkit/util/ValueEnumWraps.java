@@ -37,6 +37,7 @@ public abstract class ValueEnumWraps extends EnumPlainWraps {
      *
      * @param enumClazz the enum class to check
      * @param key the key to search for
+     *
      * @return true if the enum contains the key, false otherwise
      */
     public static <K, E extends Enum<E> & KeyValueEnum<K, ?>> boolean containsKey(@Nullable Class<E> enumClazz, @Nullable K key) {
@@ -48,6 +49,7 @@ public abstract class ValueEnumWraps extends EnumPlainWraps {
      *
      * @param enumClazz the enum class to check
      * @param key the key to search for
+     *
      * @return true if the enum contains the key ignoring case, false otherwise
      */
     public static <K extends CharSequence, E extends Enum<E> & KeyValueEnum<K, ?>> boolean containsKeyIgnoreCase(@Nullable Class<E> enumClazz, @Nullable K key) {
@@ -59,6 +61,7 @@ public abstract class ValueEnumWraps extends EnumPlainWraps {
      *
      * @param enumClazz the enum class to check
      * @param value the value to search for
+     *
      * @return true if the enum contains the value, false otherwise
      */
     public static <V, E extends Enum<E> & ValueEnum<V>> boolean containsValue(@Nullable Class<E> enumClazz, @Nullable V value) {
@@ -70,6 +73,7 @@ public abstract class ValueEnumWraps extends EnumPlainWraps {
      *
      * @param enumClazz the enum class to check
      * @param value the value to search for
+     *
      * @return true if the enum contains the value ignoring case, false otherwise
      */
     public static <V extends CharSequence, E extends Enum<E> & ValueEnum<V>> boolean containsValueIgnoreCase(@Nullable Class<E> enumClazz, @Nullable V value) {
@@ -81,6 +85,7 @@ public abstract class ValueEnumWraps extends EnumPlainWraps {
      *
      * @param enumClazz the enum class to search
      * @param key the key to match
+     *
      * @return the matching enum constant, or null if not found
      */
     @Nullable
@@ -94,6 +99,7 @@ public abstract class ValueEnumWraps extends EnumPlainWraps {
      * @param enumClazz the enum class to search
      * @param key the key to match
      * @param defaultValue the default value to return if not found
+     *
      * @return the matching enum constant, or defaultValue if not found
      */
     @Nullable
@@ -106,6 +112,7 @@ public abstract class ValueEnumWraps extends EnumPlainWraps {
      *
      * @param enumClazz the enum class to search
      * @param key the key to match
+     *
      * @return the matching enum constant, or null if not found
      */
     @Nullable
@@ -119,6 +126,7 @@ public abstract class ValueEnumWraps extends EnumPlainWraps {
      * @param enumClazz the enum class to search
      * @param key the key to match
      * @param defaultValue the default value to return if not found
+     *
      * @return the matching enum constant, or defaultValue if not found
      */
     @Nullable
@@ -131,6 +139,7 @@ public abstract class ValueEnumWraps extends EnumPlainWraps {
      *
      * @param enumClazz the enum class to search
      * @param value the value to match
+     *
      * @return the matching enum constant, or null if not found
      */
     @Nullable
@@ -144,6 +153,7 @@ public abstract class ValueEnumWraps extends EnumPlainWraps {
      * @param enumClazz the enum class to search
      * @param value the value to match
      * @param defaultValue the default value to return if not found
+     *
      * @return the matching enum constant, or defaultValue if not found
      */
     @Nullable
@@ -156,6 +166,7 @@ public abstract class ValueEnumWraps extends EnumPlainWraps {
      *
      * @param enumClazz the enum class to search
      * @param value the value to match
+     *
      * @return the matching enum constant, or null if not found
      */
     @Nullable
@@ -169,6 +180,7 @@ public abstract class ValueEnumWraps extends EnumPlainWraps {
      * @param enumClazz the enum class to search
      * @param value the value to match
      * @param defaultValue the default value to return if not found
+     *
      * @return the matching enum constant, or defaultValue if not found
      */
     @Nullable
@@ -181,6 +193,7 @@ public abstract class ValueEnumWraps extends EnumPlainWraps {
      *
      * @param enumClazz the enum class to search
      * @param value the value to look up
+     *
      * @return the key associated with the value, or null if not found
      */
     @Nullable
@@ -194,6 +207,7 @@ public abstract class ValueEnumWraps extends EnumPlainWraps {
      * @param enumClazz the enum class to search
      * @param value the value to look up
      * @param defaultValue the default value to return if not found
+     *
      * @return the key associated with the value, or defaultValue if not found
      */
     @Nullable
@@ -207,6 +221,7 @@ public abstract class ValueEnumWraps extends EnumPlainWraps {
      *
      * @param enumClazz the enum class to search
      * @param key the key to look up
+     *
      * @return the value associated with the key, or null if not found
      */
     @Nullable
@@ -220,6 +235,7 @@ public abstract class ValueEnumWraps extends EnumPlainWraps {
      * @param enumClazz the enum class to search
      * @param key the key to look up
      * @param defaultValue the default value to return if not found
+     *
      * @return the value associated with the key, or defaultValue if not found
      */
     @Nullable

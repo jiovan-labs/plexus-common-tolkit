@@ -61,6 +61,7 @@ public abstract class IgnorableFailable {
      * Adapts a bi-consumer into a bi-consumer that ignores thrown exceptions.
      *
      * @param consumer the failable bi-consumer to adapt
+     *
      * @return a bi-consumer that silently ignores thrown exceptions
      */
     @Nonnull
@@ -73,6 +74,7 @@ public abstract class IgnorableFailable {
      *
      * @param consumer the failable bi-consumer to adapt
      * @param throwable the exception type to ignore, or null to ignore all exceptions
+     *
      * @return a bi-consumer that silently ignores thrown exceptions
      */
     @Nonnull
@@ -90,6 +92,7 @@ public abstract class IgnorableFailable {
      * Adapts a bi-function into a bi-function that ignores thrown exceptions.
      *
      * @param function the failable bi-function to adapt
+     *
      * @return a bi-function that returns null when an exception is thrown
      */
     @Nonnull
@@ -102,6 +105,7 @@ public abstract class IgnorableFailable {
      *
      * @param function the failable bi-function to adapt
      * @param throwable the exception type to ignore, or null to ignore all exceptions
+     *
      * @return a bi-function that returns null when an exception is thrown
      */
     @Nonnull
@@ -120,6 +124,7 @@ public abstract class IgnorableFailable {
      * Adapts a bi-predicate into a bi-predicate that ignores thrown exceptions.
      *
      * @param predicate the failable bi-predicate to adapt
+     *
      * @return a bi-predicate that returns {@code false} when an exception is thrown
      */
     @Nonnull
@@ -132,6 +137,7 @@ public abstract class IgnorableFailable {
      *
      * @param predicate the failable bi-predicate to adapt
      * @param throwable the exception type to ignore, or null to ignore all exceptions
+     *
      * @return a bi-predicate that returns {@code false} when an exception is thrown
      */
     @Nonnull
@@ -150,6 +156,7 @@ public abstract class IgnorableFailable {
      * Adapts a callable into a callable that ignores thrown exceptions.
      *
      * @param callable the failable callable to adapt
+     *
      * @return a callable that returns null when an exception is thrown
      */
     @Nonnull
@@ -162,6 +169,7 @@ public abstract class IgnorableFailable {
      *
      * @param callable the failable callable to adapt
      * @param throwable the exception type to ignore, or null to ignore all exceptions
+     *
      * @return a callable that returns null when an exception is thrown
      */
     @Nonnull
@@ -180,6 +188,7 @@ public abstract class IgnorableFailable {
      * Adapts a consumer into a consumer that ignores thrown exceptions.
      *
      * @param consumer the failable consumer to adapt
+     *
      * @return a consumer that silently ignores thrown exceptions
      */
     @Nonnull
@@ -192,6 +201,7 @@ public abstract class IgnorableFailable {
      *
      * @param consumer the failable consumer to adapt
      * @param throwable the exception type to ignore, or null to ignore all exceptions
+     *
      * @return a consumer that silently ignores thrown exceptions
      */
     @Nonnull
@@ -209,6 +219,7 @@ public abstract class IgnorableFailable {
      * Adapts a function into a function that ignores thrown exceptions.
      *
      * @param function the failable function to adapt
+     *
      * @return a function that returns null when an exception is thrown
      */
     @Nonnull
@@ -221,6 +232,7 @@ public abstract class IgnorableFailable {
      *
      * @param function the failable function to adapt
      * @param throwable the exception type to ignore, or null to ignore all exceptions
+     *
      * @return a function that returns null when an exception is thrown
      */
     @Nonnull
@@ -239,6 +251,7 @@ public abstract class IgnorableFailable {
      * Adapts a predicate into a predicate that ignores thrown exceptions.
      *
      * @param predicate the failable predicate to adapt
+     *
      * @return a predicate that returns {@code false} when an exception is thrown
      */
     @Nonnull
@@ -251,6 +264,7 @@ public abstract class IgnorableFailable {
      *
      * @param predicate the failable predicate to adapt
      * @param throwable the exception type to ignore, or null to ignore all exceptions
+     *
      * @return a predicate that returns {@code false} when an exception is thrown
      */
     @Nonnull
@@ -269,6 +283,7 @@ public abstract class IgnorableFailable {
      * Adapts a runnable into a runnable that ignores thrown exceptions.
      *
      * @param runnable the failable runnable to adapt
+     *
      * @return a runnable that silently ignores thrown exceptions
      */
     @Nonnull
@@ -281,6 +296,7 @@ public abstract class IgnorableFailable {
      *
      * @param runnable the failable runnable to adapt
      * @param throwable the exception type to ignore, or null to ignore all exceptions
+     *
      * @return a runnable that silently ignores thrown exceptions
      */
     @Nonnull
@@ -298,6 +314,7 @@ public abstract class IgnorableFailable {
      * Adapts a supplier into a supplier that ignores thrown exceptions.
      *
      * @param supplier the failable supplier to adapt
+     *
      * @return a supplier that returns null when an exception is thrown
      */
     @Nonnull
@@ -310,6 +327,7 @@ public abstract class IgnorableFailable {
      *
      * @param supplier the failable supplier to adapt
      * @param throwable the exception type to ignore, or null to ignore all exceptions
+     *
      * @return a supplier that returns null when an exception is thrown
      */
     @Nonnull
@@ -328,6 +346,7 @@ public abstract class IgnorableFailable {
      * Calls the given failable callable, ignoring any thrown exception.
      *
      * @param callable the failable callable to invoke
+     *
      * @return the result of the callable, or null when an exception is thrown
      */
     @Nullable
@@ -340,6 +359,7 @@ public abstract class IgnorableFailable {
      *
      * @param callable the failable callable to invoke
      * @param throwable the exception type to ignore, or null to ignore all exceptions
+     *
      * @return the result of the callable, or null when an exception is thrown
      */
     @Nullable
@@ -356,6 +376,7 @@ public abstract class IgnorableFailable {
      * Gets the value from the given failable supplier, ignoring any thrown exception.
      *
      * @param supplier the failable supplier to invoke
+     *
      * @return the supplied value, or null when an exception is thrown
      */
     @Nullable
@@ -368,6 +389,7 @@ public abstract class IgnorableFailable {
      *
      * @param supplier the failable supplier to invoke
      * @param throwable the exception type to ignore, or null to ignore all exceptions
+     *
      * @return the supplied value, or null when an exception is thrown
      */
     @Nullable
@@ -384,6 +406,7 @@ public abstract class IgnorableFailable {
      * Gets the boolean value from the given failable supplier, ignoring any thrown exception.
      *
      * @param supplier the failable boolean supplier to invoke
+     *
      * @return the supplied value, or {@code false} when an exception is thrown
      */
     public static boolean getAsBoolean(@Nonnull FailableBooleanSupplier<?> supplier) {
@@ -395,6 +418,7 @@ public abstract class IgnorableFailable {
      *
      * @param supplier the failable boolean supplier to invoke
      * @param throwable the exception type to ignore, or null to ignore all exceptions
+     *
      * @return the supplied value, or {@code false} when an exception is thrown
      */
     public static <E extends Throwable> boolean getAsBoolean(@Nonnull FailableBooleanSupplier<?> supplier, @Nullable Class<E> throwable) {
@@ -410,6 +434,7 @@ public abstract class IgnorableFailable {
      * Gets the double value from the given failable supplier, ignoring any thrown exception.
      *
      * @param supplier the failable double supplier to invoke
+     *
      * @return the supplied value, or zero when an exception is thrown
      */
     public static double getAsDouble(@Nonnull FailableDoubleSupplier<?> supplier) {
@@ -421,6 +446,7 @@ public abstract class IgnorableFailable {
      *
      * @param supplier the failable double supplier to invoke
      * @param throwable the exception type to ignore, or null to ignore all exceptions
+     *
      * @return the supplied value, or zero when an exception is thrown
      */
     public static <E extends Throwable> double getAsDouble(@Nonnull FailableDoubleSupplier<?> supplier, @Nullable Class<E> throwable) {
@@ -436,6 +462,7 @@ public abstract class IgnorableFailable {
      * Gets the int value from the given failable supplier, ignoring any thrown exception.
      *
      * @param supplier the failable int supplier to invoke
+     *
      * @return the supplied value, or zero when an exception is thrown
      */
     public static int getAsInt(@Nonnull FailableIntSupplier<?> supplier) {
@@ -447,6 +474,7 @@ public abstract class IgnorableFailable {
      *
      * @param supplier the failable int supplier to invoke
      * @param throwable the exception type to ignore, or null to ignore all exceptions
+     *
      * @return the supplied value, or zero when an exception is thrown
      */
     public static <E extends Throwable> int getAsInt(@Nonnull FailableIntSupplier<?> supplier, @Nullable Class<E> throwable) {
@@ -462,6 +490,7 @@ public abstract class IgnorableFailable {
      * Gets the long value from the given failable supplier, ignoring any thrown exception.
      *
      * @param supplier the failable long supplier to invoke
+     *
      * @return the supplied value, or zero when an exception is thrown
      */
     public static long getAsLong(@Nonnull FailableLongSupplier<?> supplier) {
@@ -473,6 +502,7 @@ public abstract class IgnorableFailable {
      *
      * @param supplier the failable long supplier to invoke
      * @param throwable the exception type to ignore, or null to ignore all exceptions
+     *
      * @return the supplied value, or zero when an exception is thrown
      */
     public static <E extends Throwable> long getAsLong(@Nonnull FailableLongSupplier<?> supplier, @Nullable Class<E> throwable) {
@@ -488,6 +518,7 @@ public abstract class IgnorableFailable {
      * Gets the short value from the given failable supplier, ignoring any thrown exception.
      *
      * @param supplier the failable short supplier to invoke
+     *
      * @return the supplied value, or zero when an exception is thrown
      */
     public static short getAsShort(@Nonnull FailableShortSupplier<?> supplier) {
@@ -499,6 +530,7 @@ public abstract class IgnorableFailable {
      *
      * @param supplier the failable short supplier to invoke
      * @param throwable the exception type to ignore, or null to ignore all exceptions
+     *
      * @return the supplied value, or zero when an exception is thrown
      */
     public static <E extends Throwable> short getAsShort(@Nonnull FailableShortSupplier<?> supplier, @Nullable Class<E> throwable) {
@@ -539,6 +571,7 @@ public abstract class IgnorableFailable {
      * @param predicate the failable bi-predicate to evaluate
      * @param t the first argument to test, or null
      * @param u the second argument to test, or null
+     *
      * @return {@code true} when the predicate matches and no exception is thrown; {@code false} otherwise
      */
     public static <T, U> boolean test(@Nonnull FailableBiPredicate<T, U, ?> predicate, @Nullable T t, @Nullable U u) {
@@ -552,6 +585,7 @@ public abstract class IgnorableFailable {
      * @param t the first argument to test, or null
      * @param u the second argument to test, or null
      * @param throwable the exception type to ignore, or null to ignore all exceptions
+     *
      * @return {@code true} when the predicate matches and no exception is thrown; {@code false} otherwise
      */
     public static <T, U, E extends Throwable> boolean test(@Nonnull FailableBiPredicate<T, U, ?> predicate, @Nullable T t, @Nullable U u, @Nullable Class<E> throwable) {
@@ -568,6 +602,7 @@ public abstract class IgnorableFailable {
      *
      * @param predicate the failable predicate to evaluate
      * @param t the first argument to test, or null
+     *
      * @return {@code true} when the predicate matches and no exception is thrown; {@code false} otherwise
      */
     public static <T> boolean test(@Nonnull FailablePredicate<T, ?> predicate, @Nullable T t) {
@@ -580,6 +615,7 @@ public abstract class IgnorableFailable {
      * @param predicate the failable predicate to evaluate
      * @param t the first argument to test, or null
      * @param throwable the exception type to ignore, or null to ignore all exceptions
+     *
      * @return {@code true} when the predicate matches and no exception is thrown; {@code false} otherwise
      */
     public static <T, E extends Throwable> boolean test(@Nonnull FailablePredicate<T, ?> predicate, @Nullable T t, @Nullable Class<E> throwable) {

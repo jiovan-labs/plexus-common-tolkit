@@ -43,6 +43,7 @@ public abstract class CharUtilsWraps {
      *
      * @param character the first character
      * @param comparison the character to compare with
+     *
      * @return true if both characters are equal, false otherwise
      */
     public static boolean equals(@Nullable Character character, @Nullable Character comparison) {
@@ -54,6 +55,7 @@ public abstract class CharUtilsWraps {
      *
      * @param character the first character
      * @param comparison the character to compare with
+     *
      * @return true if both characters are equal ignoring case, false otherwise
      */
     public static boolean equalsIgnoreCase(@Nullable Character character, @Nullable Character comparison) {
@@ -71,6 +73,7 @@ public abstract class CharUtilsWraps {
      *
      * @param character the character to check
      * @param comparisons the characters to compare with
+     *
      * @return true if character equals any comparison, false otherwise
      */
     public static boolean equalsAny(@Nullable Character character, @Nullable Character... comparisons) {
@@ -82,6 +85,7 @@ public abstract class CharUtilsWraps {
      *
      * @param character the character to check
      * @param comparisons the collection of characters to compare with
+     *
      * @return true if character equals any in collection, false otherwise
      */
     public static boolean equalsAny(@Nullable Character character, @Nullable Collection<Character> comparisons) {
@@ -93,6 +97,7 @@ public abstract class CharUtilsWraps {
      *
      * @param character the character to check
      * @param comparisons the characters to compare with
+     *
      * @return true if character equals any comparison ignoring case, false otherwise
      */
     public static boolean equalsAnyIgnoreCase(@Nullable Character character, @Nullable Character... comparisons) {
@@ -104,6 +109,7 @@ public abstract class CharUtilsWraps {
      *
      * @param character the character to check
      * @param comparisons the collection of characters to compare with
+     *
      * @return true if character equals any in collection ignoring case, false otherwise
      */
     public static boolean equalsAnyIgnoreCase(@Nullable Character character, @Nullable Collection<Character> comparisons) {
@@ -114,7 +120,9 @@ public abstract class CharUtilsWraps {
      * Convert char array to String.
      *
      * @param chars the char array to convert
+     *
      * @return the String representation, or null if array is empty
+     *
      * @see org.apache.commons.lang3.CharSequenceUtils#toCharArray
      */
     @Nullable
@@ -131,6 +139,7 @@ public abstract class CharUtilsWraps {
      * Convert char array to String array (each char becomes a String).
      *
      * @param chars the char array to convert
+     *
      * @return the String array, or null if input is empty
      */
     @Nullable
@@ -148,6 +157,7 @@ public abstract class CharUtilsWraps {
      * Convert char array to List of Strings (each char becomes a String).
      *
      * @param chars the char array to convert
+     *
      * @return the List of Strings, or null if input is empty
      */
     @Nullable
@@ -164,6 +174,7 @@ public abstract class CharUtilsWraps {
      * Convert char array to Set of Strings (each char becomes a String, duplicates removed).
      *
      * @param chars the char array to convert
+     *
      * @return the Set of Strings, or null if input is empty
      */
     @Nullable

@@ -176,10 +176,12 @@ public abstract class JdkDateWraps {
      * @param minuteOfHour The minute-of-hour to represent, from 0 to 59
      * @param secondOfMinute The second-of-minute to represent, from 0 to 59
      * @param nanoOfSecond The nano-of-second to represent, from 0 to 999,999,999
+     *
      * @return a {@link java.util.Date} with specified calendar fields
      *
      * @throws java.lang.IllegalArgumentException if any calendar fields are invalid
      * @throws java.time.DateTimeException if the value of any field is out of range, or if the day-of-month is invalid for the month-year
+     *
      * @see java.util.GregorianCalendar
      */
     @Nonnull

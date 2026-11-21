@@ -41,6 +41,7 @@ public abstract class CalendarPlainWraps {
      *
      * @param date the date to extract from
      * @param field the calendar field to get
+     *
      * @return the field value, or null if date is null or field is invalid
      */
     @Nullable
@@ -54,6 +55,7 @@ public abstract class CalendarPlainWraps {
      * @param date the date to extract from
      * @param field the calendar field to get
      * @param zone the timezone to use
+     *
      * @return the field value, or null if date is null or field is invalid
      */
     @Nullable
@@ -67,6 +69,7 @@ public abstract class CalendarPlainWraps {
      * @param date the date to extract from
      * @param field the calendar field to get
      * @param locale the locale to use
+     *
      * @return the field value, or null if date is null or field is invalid
      */
     public static Integer getCalendarField(@Nullable Date date, int field, @Nullable Locale locale) {
@@ -101,6 +104,7 @@ public abstract class CalendarPlainWraps {
      *
      * @param month the month value (1-12)
      * @param style the text style to use
+     *
      * @return the month display name, or null if invalid
      */
     @Nullable
@@ -114,6 +118,7 @@ public abstract class CalendarPlainWraps {
      * @param month the month value (1-12)
      * @param style the text style to use
      * @param locale the locale to use
+     *
      * @return the month display name, or null if invalid
      */
     @Nullable
@@ -126,6 +131,7 @@ public abstract class CalendarPlainWraps {
      *
      * @param month the Month enum
      * @param style the text style to use
+     *
      * @return the month display name, or null if invalid
      */
     @Nullable
@@ -139,6 +145,7 @@ public abstract class CalendarPlainWraps {
      * @param month the Month enum
      * @param style the text style to use
      * @param locale the locale to use
+     *
      * @return the month display name, or null if any parameter is null
      */
     @Nullable

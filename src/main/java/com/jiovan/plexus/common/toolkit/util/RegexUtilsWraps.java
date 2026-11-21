@@ -1186,6 +1186,7 @@ public abstract class RegexUtilsWraps {
      *
      * @param text  text to remove from, may be null
      * @param regex  the regular expression to which this sequence is to be matched
+     *
      * @return the text with any removes processed, {@code null} if null input
      */
     public static String removeAll(@Nullable CharSequence text, @Nullable Pattern regex) {

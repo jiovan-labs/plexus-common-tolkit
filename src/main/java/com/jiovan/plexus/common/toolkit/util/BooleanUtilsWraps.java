@@ -51,6 +51,7 @@ public abstract class BooleanUtilsWraps {
      * Check if all Boolean values are true.
      *
      * @param values the Boolean values to check
+     *
      * @return true if all values are true, false otherwise
      */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
@@ -62,6 +63,7 @@ public abstract class BooleanUtilsWraps {
      * Check if all String representations are true.
      *
      * @param values the String values to check
+     *
      * @return true if all values represent true, false otherwise
      */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
@@ -73,6 +75,7 @@ public abstract class BooleanUtilsWraps {
      * Check if all Integer representations are true (1 = true).
      *
      * @param values the Integer values to check
+     *
      * @return true if all values represent true, false otherwise
      */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
@@ -84,6 +87,7 @@ public abstract class BooleanUtilsWraps {
      * Check if all Object representations are true.
      *
      * @param values the Object values to check
+     *
      * @return true if all values represent true, false otherwise
      */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
@@ -95,6 +99,7 @@ public abstract class BooleanUtilsWraps {
      * Check if all Boolean values are not true (false or null).
      *
      * @param values the Boolean values to check
+     *
      * @return true if all values are not true, false otherwise
      */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
@@ -106,6 +111,7 @@ public abstract class BooleanUtilsWraps {
      * Check if all String representations are not true.
      *
      * @param values the String values to check
+     *
      * @return true if all values do not represent true, false otherwise
      */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
@@ -117,6 +123,7 @@ public abstract class BooleanUtilsWraps {
      * Check if all Integer representations are not true.
      *
      * @param values the Integer values to check
+     *
      * @return true if all values do not represent true, false otherwise
      */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
@@ -128,6 +135,7 @@ public abstract class BooleanUtilsWraps {
      * Check if all Object representations are not true.
      *
      * @param values the Object values to check
+     *
      * @return true if all values do not represent true, false otherwise
      */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
@@ -139,6 +147,7 @@ public abstract class BooleanUtilsWraps {
      * Check if all Boolean values are false.
      *
      * @param values the Boolean values to check
+     *
      * @return true if all values are false, false otherwise
      */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
@@ -150,6 +159,7 @@ public abstract class BooleanUtilsWraps {
      * Check if all String representations are false.
      *
      * @param values the String values to check
+     *
      * @return true if all values represent false, false otherwise
      */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
@@ -161,6 +171,7 @@ public abstract class BooleanUtilsWraps {
      * Check if all Integer representations are false (0 = false).
      *
      * @param values the Integer values to check
+     *
      * @return true if all values represent false, false otherwise
      */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
@@ -172,6 +183,7 @@ public abstract class BooleanUtilsWraps {
      * Check if all Object representations are false.
      *
      * @param values the Object values to check
+     *
      * @return true if all values represent false, false otherwise
      */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
@@ -183,6 +195,7 @@ public abstract class BooleanUtilsWraps {
      * Check if all Boolean values are not false (true or null).
      *
      * @param values the Boolean values to check
+     *
      * @return true if all values are not false, false otherwise
      */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
@@ -194,6 +207,7 @@ public abstract class BooleanUtilsWraps {
      * Check if all String representations are not false.
      *
      * @param values the String values to check
+     *
      * @return true if all values do not represent false, false otherwise
      */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
@@ -205,6 +219,7 @@ public abstract class BooleanUtilsWraps {
      * Check if all Integer representations are not false.
      *
      * @param values the Integer values to check
+     *
      * @return true if all values do not represent false, false otherwise
      */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
@@ -216,6 +231,7 @@ public abstract class BooleanUtilsWraps {
      * Check if all Object representations are not false.
      *
      * @param values the Object values to check
+     *
      * @return true if all values do not represent false, false otherwise
      */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
@@ -227,6 +243,7 @@ public abstract class BooleanUtilsWraps {
      * Check if any Boolean value is true.
      *
      * @param values the Boolean values to check
+     *
      * @return true if any value is true, false otherwise
      */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
@@ -238,6 +255,7 @@ public abstract class BooleanUtilsWraps {
      * Check if any String representation is true.
      *
      * @param values the String values to check
+     *
      * @return true if any value represents true, false otherwise
      */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
@@ -249,6 +267,7 @@ public abstract class BooleanUtilsWraps {
      * Check if any Integer representation is true.
      *
      * @param values the Integer values to check
+     *
      * @return true if any value represents true, false otherwise
      */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
@@ -260,6 +279,7 @@ public abstract class BooleanUtilsWraps {
      * Check if any Object representation is true.
      *
      * @param values the Object values to check
+     *
      * @return true if any value represents true, false otherwise
      */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
@@ -271,6 +291,7 @@ public abstract class BooleanUtilsWraps {
      * Check if any Boolean value is not true.
      *
      * @param values the Boolean values to check
+     *
      * @return true if any value is not true, false otherwise
      */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
@@ -282,6 +303,7 @@ public abstract class BooleanUtilsWraps {
      * Check if any String representation is not true.
      *
      * @param values the String values to check
+     *
      * @return true if any value does not represent true, false otherwise
      */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
@@ -293,6 +315,7 @@ public abstract class BooleanUtilsWraps {
      * Check if any Integer representation is not true.
      *
      * @param values the Integer values to check
+     *
      * @return true if any value does not represent true, false otherwise
      */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
@@ -304,6 +327,7 @@ public abstract class BooleanUtilsWraps {
      * Check if any Object representation is not true.
      *
      * @param values the Object values to check
+     *
      * @return true if any value does not represent true, false otherwise
      */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
@@ -315,6 +339,7 @@ public abstract class BooleanUtilsWraps {
      * Check if any Boolean value is false.
      *
      * @param values the Boolean values to check
+     *
      * @return true if any value is false, false otherwise
      */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
@@ -326,6 +351,7 @@ public abstract class BooleanUtilsWraps {
      * Check if any String representation is false.
      *
      * @param values the String values to check
+     *
      * @return true if any value represents false, false otherwise
      */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
@@ -337,6 +363,7 @@ public abstract class BooleanUtilsWraps {
      * Check if any Integer representation is false.
      *
      * @param values the Integer values to check
+     *
      * @return true if any value represents false, false otherwise
      */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
@@ -348,6 +375,7 @@ public abstract class BooleanUtilsWraps {
      * Check if any Object representation is false.
      *
      * @param values the Object values to check
+     *
      * @return true if any value represents false, false otherwise
      */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
@@ -359,6 +387,7 @@ public abstract class BooleanUtilsWraps {
      * Check if any Boolean value is not false.
      *
      * @param values the Boolean values to check
+     *
      * @return true if any value is not false, false otherwise
      */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
@@ -370,6 +399,7 @@ public abstract class BooleanUtilsWraps {
      * Check if any String representation is not false.
      *
      * @param values the String values to check
+     *
      * @return true if any value does not represent false, false otherwise
      */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
@@ -381,6 +411,7 @@ public abstract class BooleanUtilsWraps {
      * Check if any Integer representation is not false.
      *
      * @param values the Integer values to check
+     *
      * @return true if any value does not represent false, false otherwise
      */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
@@ -392,6 +423,7 @@ public abstract class BooleanUtilsWraps {
      * Check if any Object representation is not false.
      *
      * @param values the Object values to check
+     *
      * @return true if any value does not represent false, false otherwise
      */
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
@@ -1091,6 +1123,7 @@ public abstract class BooleanUtilsWraps {
      * Check if value represents true (String).
      *
      * @param value the String value to check
+     *
      * @return true if value represents true, false otherwise
      */
     public static boolean isTrue(@Nullable String value) {
@@ -1101,6 +1134,7 @@ public abstract class BooleanUtilsWraps {
      * Check if value represents true (Integer).
      *
      * @param value the Integer value to check
+     *
      * @return true if value represents true, false otherwise
      */
     public static boolean isTrue(@Nullable Integer value) {
@@ -1111,6 +1145,7 @@ public abstract class BooleanUtilsWraps {
      * Check if value represents true (Object).
      *
      * @param value the Object value to check
+     *
      * @return true if value represents true, false otherwise
      */
     public static boolean isTrue(@Nullable Object value) {
@@ -1130,6 +1165,7 @@ public abstract class BooleanUtilsWraps {
      * Check if value represents false (String).
      *
      * @param value the String value to check
+     *
      * @return true if value represents false, false otherwise
      */
     public static boolean isFalse(@Nullable String value) {
@@ -1140,6 +1176,7 @@ public abstract class BooleanUtilsWraps {
      * Check if value represents false (Integer).
      *
      * @param value the Integer value to check
+     *
      * @return true if value represents false, false otherwise
      */
     public static boolean isFalse(@Nullable Integer value) {
@@ -1150,6 +1187,7 @@ public abstract class BooleanUtilsWraps {
      * Check if value represents false (Object).
      *
      * @param value the Object value to check
+     *
      * @return true if value represents false, false otherwise
      */
     public static boolean isFalse(@Nullable Object value) {
@@ -1169,6 +1207,7 @@ public abstract class BooleanUtilsWraps {
      * Check if value does not represent true (String).
      *
      * @param value the String value to check
+     *
      * @return true if value does not represent true, false otherwise
      */
     public static boolean isNotTrue(@Nullable String value) {
@@ -1179,6 +1218,7 @@ public abstract class BooleanUtilsWraps {
      * Check if value does not represent true (Integer).
      *
      * @param value the Integer value to check
+     *
      * @return true if value does not represent true, false otherwise
      */
     public static boolean isNotTrue(@Nullable Integer value) {
@@ -1189,6 +1229,7 @@ public abstract class BooleanUtilsWraps {
      * Check if value does not represent true (Object).
      *
      * @param value the Object value to check
+     *
      * @return true if value does not represent true, false otherwise
      */
     public static boolean isNotTrue(@Nullable Object value) {
@@ -1208,6 +1249,7 @@ public abstract class BooleanUtilsWraps {
      * Check if value does not represent false (String).
      *
      * @param value the String value to check
+     *
      * @return true if value does not represent false, false otherwise
      */
     public static boolean isNotFalse(@Nullable String value) {
@@ -1218,6 +1260,7 @@ public abstract class BooleanUtilsWraps {
      * Check if value does not represent false (Integer).
      *
      * @param value the Integer value to check
+     *
      * @return true if value does not represent false, false otherwise
      */
     public static boolean isNotFalse(@Nullable Integer value) {
@@ -1228,6 +1271,7 @@ public abstract class BooleanUtilsWraps {
      * Check if value does not represent false (Object).
      *
      * @param value the Object value to check
+     *
      * @return true if value does not represent false, false otherwise
      */
     public static boolean isNotFalse(@Nullable Object value) {
@@ -1249,6 +1293,7 @@ public abstract class BooleanUtilsWraps {
      * @param value the String to convert
      * @param truthy the String that represents true
      * @param falsy the String that represents false
+     *
      * @return the Boolean object, or null if conversion fails
      */
     public static Boolean toBooleanObject(@Nullable String value, @Nullable String truthy, @Nullable String falsy) {
@@ -1262,6 +1307,7 @@ public abstract class BooleanUtilsWraps {
      * @param truthy the String that represents true
      * @param falsy the String that represents false
      * @param nil the String that represents null
+     *
      * @return the Boolean object, or null if conversion fails
      */
     @Nullable
@@ -1279,6 +1325,7 @@ public abstract class BooleanUtilsWraps {
      * @param value the String to convert
      * @param truthy the String that represents true
      * @param falsy the String that represents false
+     *
      * @return the Boolean object, or null if conversion fails
      */
     public static Boolean toBooleanObjectIgnoreCase(@Nullable String value, @Nullable String truthy, @Nullable String falsy) {
@@ -1296,6 +1343,7 @@ public abstract class BooleanUtilsWraps {
      * @return a Boolean object that converted from the {@code value} String
      *
      * @throws java.lang.IllegalArgumentException if the String doesn't match
+     *
      * @see org.apache.commons.lang3.BooleanUtils#toBooleanObject(java.lang.String, java.lang.String, java.lang.String, java.lang.String)
      */
     public static Boolean toBooleanObjectIgnoreCase(@Nullable String value, @Nullable String truthy, @Nullable String falsy, @Nullable String nil) {
@@ -1325,6 +1373,7 @@ public abstract class BooleanUtilsWraps {
      * @param value the String to convert
      * @param truthy the String that represents true
      * @param falsy the String that represents false
+     *
      * @return the Boolean object, or null if conversion fails
      */
     @Nullable
@@ -1339,6 +1388,7 @@ public abstract class BooleanUtilsWraps {
      * @param truthy the String that represents true
      * @param falsy the String that represents false
      * @param nil the String that represents null
+     *
      * @return the Boolean object, or null if conversion fails
      */
     @Nullable
@@ -1356,6 +1406,7 @@ public abstract class BooleanUtilsWraps {
      * @param value the boolean value to convert
      * @param truthy the character for true
      * @param falsy the character for false
+     *
      * @return the String representation
      */
     public static String toString(boolean value, char truthy, char falsy) {
@@ -1368,6 +1419,7 @@ public abstract class BooleanUtilsWraps {
      * @param value the Boolean value to convert
      * @param truthy the character for true
      * @param falsy the character for false
+     *
      * @return the String representation, or null if value is null
      */
     public static String toString(@Nullable Boolean value, char truthy, char falsy) {
@@ -1381,6 +1433,7 @@ public abstract class BooleanUtilsWraps {
      * @param truthy the character for true
      * @param falsy the character for false
      * @param nil the character for null
+     *
      * @return the String representation
      */
     public static String toString(@Nullable Boolean value, char truthy, char falsy, char nil) {
@@ -1394,6 +1447,7 @@ public abstract class BooleanUtilsWraps {
      * @param truthy the character for true
      * @param falsy the character for false
      * @param nil the String for null
+     *
      * @return the String representation
      */
     public static String toString(@Nullable Boolean value, char truthy, char falsy, String nil) {
@@ -1404,6 +1458,7 @@ public abstract class BooleanUtilsWraps {
      * Convert boolean value to "1" or "0".
      *
      * @param value the boolean value to convert
+     *
      * @return "1" if true, "0" if false
      */
     public static String toString10(boolean value) {
@@ -1414,6 +1469,7 @@ public abstract class BooleanUtilsWraps {
      * Convert Boolean value to "1", "0", or null.
      *
      * @param value the Boolean value to convert
+     *
      * @return "1" if true, "0" if false, null if null
      */
     public static String toString10(@Nullable Boolean value) {
@@ -1425,6 +1481,7 @@ public abstract class BooleanUtilsWraps {
      *
      * @param value the boolean value to convert
      * @param uppercase whether to use uppercase
+     *
      * @return "ON" or "OFF" if uppercase, "on" or "off" otherwise
      */
     public static String toStringOnOff(boolean value, boolean uppercase) {
@@ -1437,6 +1494,7 @@ public abstract class BooleanUtilsWraps {
      *
      * @param value the Boolean value to convert
      * @param uppercase whether to use uppercase
+     *
      * @return "ON", "OFF", or null if null; uppercase based on parameter
      */
     public static String toStringOnOff(@Nullable Boolean value, boolean uppercase) {
@@ -1449,6 +1507,7 @@ public abstract class BooleanUtilsWraps {
      *
      * @param value the boolean value to convert
      * @param uppercase whether to use uppercase
+     *
      * @return "TRUE" or "FALSE" if uppercase, "true" or "false" otherwise
      */
     public static String toStringTrueFalse(boolean value, boolean uppercase) {
@@ -1461,6 +1520,7 @@ public abstract class BooleanUtilsWraps {
      *
      * @param value the Boolean value to convert
      * @param uppercase whether to use uppercase
+     *
      * @return "TRUE", "FALSE", or null if null; uppercase based on parameter
      */
     public static String toStringTrueFalse(@Nullable Boolean value, boolean uppercase) {
@@ -1473,6 +1533,7 @@ public abstract class BooleanUtilsWraps {
      *
      * @param value the boolean value to convert
      * @param uppercase whether to use uppercase
+     *
      * @return "YES" or "NO" if uppercase, "yes" or "no" otherwise
      */
     public static String toStringYesNo(boolean value, boolean uppercase) {
@@ -1485,6 +1546,7 @@ public abstract class BooleanUtilsWraps {
      *
      * @param value the Boolean value to convert
      * @param uppercase whether to use uppercase
+     *
      * @return "YES", "NO", or null if null; uppercase based on parameter
      */
     public static String toStringYesNo(@Nullable Boolean value, boolean uppercase) {
@@ -1496,6 +1558,7 @@ public abstract class BooleanUtilsWraps {
      * Convert boolean value to "t" or "f".
      *
      * @param value the boolean value to convert
+     *
      * @return "t" if true, "f" if false
      */
     public static String toStringTF(boolean value) {
@@ -1507,6 +1570,7 @@ public abstract class BooleanUtilsWraps {
      *
      * @param value the boolean value to convert
      * @param uppercase whether to use uppercase
+     *
      * @return "T" or "F" if uppercase, "t" or "f" otherwise
      */
     public static String toStringTF(boolean value, boolean uppercase) {
@@ -1517,6 +1581,7 @@ public abstract class BooleanUtilsWraps {
      * Convert Boolean value to "t", "f", or null.
      *
      * @param value the Boolean value to convert
+     *
      * @return "t" if true, "f" if false, null if null
      */
     public static String toStringTF(@Nullable Boolean value) {
@@ -1528,6 +1593,7 @@ public abstract class BooleanUtilsWraps {
      *
      * @param value the Boolean value to convert
      * @param uppercase whether to use uppercase
+     *
      * @return "T", "F", or null if null; uppercase based on parameter
      */
     public static String toStringTF(@Nullable Boolean value, boolean uppercase) {
@@ -1538,6 +1604,7 @@ public abstract class BooleanUtilsWraps {
      * Convert boolean value to "y" or "n".
      *
      * @param value the boolean value to convert
+     *
      * @return "y" if true, "n" if false
      */
     public static String toStringYN(boolean value) {
@@ -1549,6 +1616,7 @@ public abstract class BooleanUtilsWraps {
      *
      * @param value the boolean value to convert
      * @param uppercase whether to use uppercase
+     *
      * @return "Y" or "N" if uppercase, "y" or "n" otherwise
      */
     public static String toStringYN(boolean value, boolean uppercase) {
@@ -1559,6 +1627,7 @@ public abstract class BooleanUtilsWraps {
      * Convert Boolean value to "y", "n", or null.
      *
      * @param value the Boolean value to convert
+     *
      * @return "y" if true, "n" if false, null if null
      */
     public static String toStringYN(@Nullable Boolean value) {
@@ -1570,6 +1639,7 @@ public abstract class BooleanUtilsWraps {
      *
      * @param value the Boolean value to convert
      * @param uppercase whether to use uppercase
+     *
      * @return "Y", "N", or null if null; uppercase based on parameter
      */
     public static String toStringYN(@Nullable Boolean value, boolean uppercase) {

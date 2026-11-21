@@ -45,11 +45,11 @@ public abstract class ClassLoaderWraps {
     @Nullable
     @SuppressWarnings({"DataFlowIssue", "RedundantSuppression"})
     public static String[] getLoadedLibraryNames(@Nullable ClassLoader loader, boolean extension) {
-        String[] pathnames = getLoadedLibraryPathnames(loader);
-        if (ArrayUtils.isEmpty(pathnames)) {
+        String[] names = getLoadedLibraryPathnames(loader);
+        if (ArrayUtils.isEmpty(names)) {
             return null;
         }
-        return Arrays.stream(pathnames).map(item -> extension ? FilenameUtils.getName(item) : FilenameUtils.getBaseName(item)).toArray(String[]::new);
+        return Arrays.stream(names).map(item -> extension ? FilenameUtils.getName(item) : FilenameUtils.getBaseName(item)).toArray(String[]::new);
     }
 
     /**
@@ -101,6 +101,7 @@ public abstract class ClassLoaderWraps {
      * Convert ClassLoader to String representation.
      *
      * @param loader the ClassLoader to convert
+     *
      * @return the String representation, or null if loader is null
      */
     @Nullable

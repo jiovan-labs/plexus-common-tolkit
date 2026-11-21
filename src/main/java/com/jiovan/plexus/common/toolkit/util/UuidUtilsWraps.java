@@ -41,6 +41,7 @@ public abstract class UuidUtilsWraps {
      * Check if the string is a valid hyphenated UUID format (8-4-4-4-12).
      *
      * @param uuid the string to check
+     *
      * @return true if the string is a valid hyphenated UUID, false otherwise
      */
     public static boolean isHyphenUuid(@Nullable String uuid) {
@@ -51,6 +52,7 @@ public abstract class UuidUtilsWraps {
      * Check if the string is a valid plain UUID format (32 hex characters without hyphens).
      *
      * @param uuid the string to check
+     *
      * @return true if the string is a valid plain UUID, false otherwise
      */
     public static boolean isPlainUuid(@Nullable String uuid) {
@@ -61,6 +63,7 @@ public abstract class UuidUtilsWraps {
      * Convert string to UUID object.
      *
      * @param uuid the string to convert
+     *
      * @return the UUID object, or null if string is blank or invalid
      */
     @Nullable
@@ -79,6 +82,7 @@ public abstract class UuidUtilsWraps {
      * Convert plain UUID string to hyphenated format.
      *
      * @param uuid the plain UUID string (32 characters) or already hyphenated UUID
+     *
      * @return the hyphenated UUID string, or original if not plain UUID
      */
     public static String toHyphenUuid(@Nullable String uuid) {
@@ -89,6 +93,7 @@ public abstract class UuidUtilsWraps {
      * Convert plain UUIDs to hyphenated format in-place.
      *
      * @param uuids the collection of plain UUID strings to convert
+     *
      * @throws java.lang.UnsupportedOperationException if the <tt>clear</tt> operation is not supported by the source collection
      */
     public static void toHyphenUuid(@Nullable Collection<String> uuids) {
@@ -104,6 +109,7 @@ public abstract class UuidUtilsWraps {
      * Convert hyphenated UUID string to plain format (remove hyphens).
      *
      * @param uuid the hyphenated UUID string (36 characters) or already plain UUID
+     *
      * @return the plain UUID string, or original if not hyphenated UUID
      */
     @Nullable
@@ -115,6 +121,7 @@ public abstract class UuidUtilsWraps {
      * Convert hyphenated UUIDs to plain format in-place.
      *
      * @param uuids the collection of hyphenated UUID strings to convert
+     *
      * @throws java.lang.UnsupportedOperationException if the <tt>clear</tt> operation is not supported by the source collection
      */
     public static void toPlainUuid(@Nullable Collection<String> uuids) {

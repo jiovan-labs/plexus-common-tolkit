@@ -75,6 +75,7 @@ public class BooleanDataStruct<T> extends DataTextStruct<T> {
      * @param success the success flag
      * @param data the data payload, or null when absent
      * @param texts the text messages, or null when absent
+     *
      * @return a structure with the given success flag, data, and text messages
      */
     @Nonnull
@@ -88,6 +89,7 @@ public class BooleanDataStruct<T> extends DataTextStruct<T> {
      * @param success the success flag
      * @param data the data payload, or null when absent
      * @param texts the text messages, or null when absent
+     *
      * @return a structure with the given success flag, data, and text messages
      */
     @Nonnull
@@ -109,6 +111,7 @@ public class BooleanDataStruct<T> extends DataTextStruct<T> {
      * Creates a successful structure with the given text messages.
      *
      * @param texts the text messages, or null when absent
+     *
      * @return a successful structure with the given text messages
      */
     @Nonnull
@@ -120,6 +123,7 @@ public class BooleanDataStruct<T> extends DataTextStruct<T> {
      * Creates a successful structure with the given text messages.
      *
      * @param texts the text messages, or null when absent
+     *
      * @return a successful structure with the given text messages
      */
     @Nonnull
@@ -131,6 +135,7 @@ public class BooleanDataStruct<T> extends DataTextStruct<T> {
      * Creates a successful structure containing the given data.
      *
      * @param data the data payload, or null when absent
+     *
      * @return a successful structure containing the given data
      */
     @Nonnull
@@ -143,6 +148,7 @@ public class BooleanDataStruct<T> extends DataTextStruct<T> {
      *
      * @param data the data payload, or null when absent
      * @param texts the text messages, or null when absent
+     *
      * @return a successful structure containing the given data and text messages
      */
     @Nonnull
@@ -155,6 +161,7 @@ public class BooleanDataStruct<T> extends DataTextStruct<T> {
      *
      * @param data the data payload, or null when absent
      * @param texts the text messages, or null when absent
+     *
      * @return a successful structure containing the given data and text messages
      */
     @Nonnull
@@ -176,6 +183,7 @@ public class BooleanDataStruct<T> extends DataTextStruct<T> {
      * Creates a failed structure with the given text messages.
      *
      * @param texts the text messages, or null when absent
+     *
      * @return a failed structure with the given text messages
      */
     @Nonnull
@@ -187,6 +195,7 @@ public class BooleanDataStruct<T> extends DataTextStruct<T> {
      * Creates a failed structure with the given text messages.
      *
      * @param texts the text messages, or null when absent
+     *
      * @return a failed structure with the given text messages
      */
     @Nonnull
@@ -198,6 +207,7 @@ public class BooleanDataStruct<T> extends DataTextStruct<T> {
      * Creates a failed structure containing the given data.
      *
      * @param data the data payload, or null when absent
+     *
      * @return a failed structure containing the given data
      */
     @Nonnull
@@ -210,6 +220,7 @@ public class BooleanDataStruct<T> extends DataTextStruct<T> {
      *
      * @param data the data payload, or null when absent
      * @param texts the text messages, or null when absent
+     *
      * @return a failed structure containing the given data and text messages
      */
     @Nonnull
@@ -222,6 +233,7 @@ public class BooleanDataStruct<T> extends DataTextStruct<T> {
      *
      * @param data the data payload, or null when absent
      * @param texts the text messages, or null when absent
+     *
      * @return a failed structure containing the given data and text messages
      */
     @Nonnull
